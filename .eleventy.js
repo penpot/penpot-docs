@@ -4,6 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginTOC = require('eleventy-plugin-nesting-toc');
+const pluginAncestry = require("@tigersway/eleventy-plugin-ancestry");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItPlantUML = require("assassin-custom-plantuml");
@@ -18,6 +19,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h1', 'h2', 'h3']
   });
+  eleventyConfig.addPlugin(pluginAncestry);
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -65,7 +67,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
+        const content_404 = fs.readFileSync('_dist/404.html');
 
         browserSync.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
@@ -105,7 +107,7 @@ module.exports = function(eleventyConfig) {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site"
+      output: "_dist"
     }
   };
 };
