@@ -1,19 +1,22 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
+const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginAncestry = require("@tigersway/eleventy-plugin-ancestry");
+const metagen = require('eleventy-plugin-metagen');
 const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const markdownItPlantUML = require("assassin-custom-plantuml");
-const metagen = require('eleventy-plugin-metagen');
+const markdownItPlantUML = require("markdown-it-plantuml");
+const elasticlunr = require("elasticlunr");
 
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginAncestry);
   eleventyConfig.addPlugin(metagen);
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h1', 'h2', 'h3']
@@ -32,6 +35,12 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
+  // Remove trailing # in automatic generated toc, because of
+  // anchors added at the end of the titles.
+  eleventyConfig.addFilter('stripHash', (toc) => {
+    return toc.replace(/ #\<\/a\>/g, "</a>");
+  });
+
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
     if( n < 0 ) {
@@ -41,17 +50,41 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // Get the lowest in a list of numbers.
   eleventyConfig.addFilter("min", (...numbers) => {
     return Math.min.apply(null, numbers);
   });
 
+  // Build a search index
+  eleventyConfig.addFilter("search", (collection) => {
+    // What fields we'd like our index to consist of
+    // TODO: remove html tags from content
+    var index = elasticlunr(function () {
+      this.addField("title");
+      this.addField("content");
+      this.setRef("id");
+    });
+
+    // loop through each page and add it to the index
+    collection.forEach((page) => {
+      index.addDoc({
+        id: page.url,
+        title: page.template.frontMatter.data.title,
+        content: page.template.inputContent,
+      });
+    });
+
+    return index.toJSON();
+  });
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true
   }).use(markdownItAnchor, {
     permalink: true,
@@ -65,7 +98,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
+        const content_404 = fs.readFileSync('_dist/404.html');
 
         browserSync.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
@@ -105,7 +138,7 @@ module.exports = function(eleventyConfig) {
       input: ".",
       includes: "_includes",
       data: "_data",
-      output: "_site"
+      output: "_dist"
     }
   };
 };

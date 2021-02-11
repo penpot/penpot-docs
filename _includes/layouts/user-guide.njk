@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-developer-guide
+templateClass: tmpl-user-guide
 ---
 
 {%- macro show_children(item) -%}
@@ -10,7 +10,7 @@ templateClass: tmpl-developer-guide
       <a href="{{ child.url }}">{{ child.data.title }}</a>
       {{ show_children(child) }}
       {%- if child.url == page.url -%}
-        {{ content | toc(tags=['h2', 'h3']) | stripHash | safe }}
+        {{ content | toc(tags=['h2', 'h3']) | safe }}
       {%- endif -%}
     </li>
     {%- if loop.last -%}</ul>{%- endif -%}
@@ -18,11 +18,11 @@ templateClass: tmpl-developer-guide
 {%- endmacro -%}
 
 <div class="main-container with-sidebar">
-  <aside id="stickySidebar" class="sidebar">
-    {%- set root = '/developer-guide/index' | find -%}
+  <aside class="sidebar">
+    {%- set root = '/user-guide/index' | find -%}
+    <div id="toc-title">Table of contents</div>
     <div id="toc">
-      <div class="header mobile" id="toc-title">{{ root.data.title }}</div>
-      <a class="header" href="{{ root.url }}">{{ root.data.title }}</a>
+      <a href="{{ root.url }}">{{ root.data.title }}</a>
       {{ show_children(root) }}
     </div>
   </aside>

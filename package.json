@@ -23,22 +23,20 @@
     "url": "https://github.com/penpot/penpot-docs/issues"
   },
   "homepage": "https://docs.penpot.app",
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
-    "@akebifiky/remark-simple-plantuml": "^1.0.2",
-    "@code-blocks/eleventy-plugin": "^0.1.7",
-    "@code-blocks/prism": "^0.1.6",
-    "@fec/eleventy-plugin-remark": "^2.1.0",
-    "assassin-custom-plantuml": "^2.1.5",
+    "@tigersway/eleventy-plugin-ancestry": "^0.5.0",
+    "elasticlunr": "^0.9.5",
     "eleventy-plugin-metagen": "^1.1.0",
     "eleventy-plugin-nesting-toc": "^1.2.0",
     "eleventy-plugin-youtube-embed": "^1.5.0",
     "luxon": "^1.25.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.2.5"
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-plantuml": "^1.4.1"
   },
-  "dependencies": {}
+  "devDependencies": {}
 }
