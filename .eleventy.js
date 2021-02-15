@@ -1,25 +1,25 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
+const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginTOC = require('eleventy-plugin-nesting-toc');
 const pluginAncestry = require("@tigersway/eleventy-plugin-ancestry");
+const metagen = require('eleventy-plugin-metagen');
+const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const markdownItPlantUML = require("assassin-custom-plantuml");
-const metagen = require('eleventy-plugin-metagen');
+const markdownItPlantUML = require("markdown-it-plantuml");
 
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginAncestry);
   eleventyConfig.addPlugin(metagen);
   eleventyConfig.addPlugin(pluginTOC, {
     tags: ['h1', 'h2', 'h3']
   });
-  eleventyConfig.addPlugin(pluginAncestry);
 
   eleventyConfig.setDataDeepMerge(true);
 
