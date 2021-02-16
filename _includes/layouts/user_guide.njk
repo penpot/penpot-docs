@@ -3,6 +3,8 @@ layout: layouts/base.njk
 templateClass: tmpl-user-guide
 ---
 
+
+<div class="main-container sidebar">
 {%- macro show_children(item) -%}
   <ul>
   {%- for child in item | children | sorted('data.title') %}
@@ -16,8 +18,6 @@ templateClass: tmpl-user-guide
   {%- endfor %}
   </ul>
 {%- endmacro -%}
-
-<div class="main-container">
   <aside class="sidebar">
     {%- set root = '/user_guide/index' | find -%}
     <a href="{{ root.url }}">{{ root.data.title }}</a>
@@ -28,5 +28,3 @@ templateClass: tmpl-user-guide
     {{ content | safe }}
   </content>
 </div>
-
-

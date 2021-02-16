@@ -259,8 +259,11 @@ a[href].direct-link:focus:visited,
   display: flex;
   justify-content: center;
 }
-
 .main-container {
+  margin: auto;
+  max-width: 80rem;
+}
+.main-container.sidebar {
   display: grid;
   grid-template-columns: minmax(100px, 25%) 1fr;
 }
