@@ -15,7 +15,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Source Sans Pro',system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
 }
@@ -44,7 +44,9 @@ main :first-child {
   margin-top: 0;
 }
 header {
+  display: flex;
   border-bottom: 1px dashed var(--lightgray);
+  padding: 2rem;
 }
 header:after {
   content: "";
@@ -116,25 +118,40 @@ pre {
 
 /* Header */
 .home {
-  padding: 0 1rem;
-  float: left;
-  margin: 1rem 0; /* 16px /16 */
+  position: absolute;
+  display: flex;
+  top: 22px;
+  left: 2rem;
   font-size: 1em; /* 16px /16 */
+  text-decoration: none;
+}
+.home svg {
+  height: 40px;
+  width: 130px;
 }
 .home :link:not(:hover) {
   text-decoration: none;
 }
+.home h1 {
+  font-size: 1.4rem;
+  display: inline;
+  margin: 6px 0 0 16px;
+  font-weight: normal;
+  /* color: var(--darkgray); */
+}
 
 /* Nav */
 .nav {
-  padding: 0;
+  display: flex;
   list-style: none;
-  float: left;
-  margin-left: 1em;
+  margin: 0 auto;
+  padding: 0;
 }
 .nav-item {
   display: inline-block;
-  margin-right: 1em;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+  font-size: 1.2rem;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
