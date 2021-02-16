@@ -29,6 +29,7 @@ img,
 h1, h2,
 .main-content {
   max-width: 42rem;
+  position: relative;
 }
 p,
 .tmpl-post li {
@@ -308,8 +309,4 @@ a[href].direct-link:focus:visited,
   background-color: var(--advice);
   padding: 2rem;
   border-radius: 4px;
-}
-
-.secondary-title {
-  position: relative;
 }
