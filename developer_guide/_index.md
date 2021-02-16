@@ -1,5 +1,5 @@
 ---
-layout: layouts/developer_guide.njk
+title: Developer guide
 eleventyNavigation:
   key: Developer guide
   order: 3
@@ -7,44 +7,66 @@ eleventyNavigation:
 
 # Developer guide
 
-(DEV) Lorem ipsum dolor sit amet.
+This documentation intends to explain how to get penpot application and run it
+locally, to test it or make changes to it.
 
-@startuml C4_Elements
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
-!include DEVICONS/react.puml
-!include DEVICONS/java.puml
-!include DEVICONS/clojure.puml
-!include DEVICONS/postgresql.puml
-!include DEVICONS/redis.puml
-!include DEVICONS/chrome.puml
+> If you only want to run it or change external parts, the simplest approach is
+to use the official docker image, as explained below.
 
-HIDE_STEREOTYPE()
+> If you want to modify the core application, see instead the
+[Development Environment guide](../core_developer/development_environment).
 
-Person(user, "User")
-System_Boundary(frontend, "Frontend") {
-    Container(frontend_app, "Frontend app", "React / ClojureScript", "", "react")
-    Container(worker, "Worker", "Web worker")
-}
 
-System_Boundary(backend, "Backend") {
-    Container(backend_app, "Backend app", "Clojure / JVM", "", "clojure")
-    ContainerDb(db, "Database", "PostgreSQL", "", "postgresql")
-    ContainerDb(redis, "Broker", "Redis", "", "redis")
-    Container(exporter, "Exporter", "Clojure / JVM", "", "clojure")
-    Container(browser, "Headless browser", "Chrome", "", "chrome")
-}
+## Install Docker ##
 
-Rel(user, frontend_app, "Uses", "HTTPS")
-BiRel_L(frontend_app, worker, "Works with")
-BiRel(frontend_app, backend_app, "Open", "websocket")
-Rel(frontend_app, backend_app, "Uses", "RPC API")
-Rel(backend_app, db, "Uses", "SQL")
-Rel(redis, backend_app, "Subscribes", "pub/sub")
-Rel(backend_app, redis, "Notifies", "pub/sub")
-Rel(frontend_app, exporter, "Uses", "HTTPS")
-Rel(exporter, browser, "Uses", "puppeteer")
-Rel(browser, frontend_app, "Uses", "HTTPS")
+Skip this section if you already have docker installed, up and running.
 
-@enduml
+You can install docker and its dependencies from your distribution repository
+with:
 
+```bash
+sudo apt-get install docker docker-compose
+```
+
+Or follow installation instructions from docker.com; (for Debian
+https://docs.docker.com/engine/install/debian/).
+
+Ensure that the docker is started and optionally enable it to start with the
+system:
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+And finally, add your user to the docker group:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+This will make use of the docker without `sudo` command all the time.
+
+NOTE: probably you will need to re-login again to make this change take effect.
+
+
+## Start penpot application ##
+
+You can create it from scratch or take a base from the [penpot repository][1]
+
+[1]: https://raw.githubusercontent.com/penpot/penpot/develop/docker/images/docker-compose.yaml
+
+```bash
+wget https://raw.githubusercontent.com/penpot/penpot/develop/docker/images/docker-compose.yaml
+```
+
+And then:
+
+```bash
+docker-compose -p penpot -f docker-compose.yaml up
+```
+
+The docker compose file contains the essential configuration for getting the
+application running, and many essential configurations already explained in the
+comments. All other configuration options are explained in the [Configuration
+guide](../configuration).

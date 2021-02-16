@@ -1,0 +1,4 @@
+{
+  "layout": "layouts/developer_guide.njk",
+  "tags": "developer_guide"
+}

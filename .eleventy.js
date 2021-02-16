@@ -34,6 +34,12 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
+  // Remove trailing # in automatic generated toc, because of
+  // anchors added at the end of the titles.
+  eleventyConfig.addFilter('stripHash', (toc) => {
+    return toc.replace(/ #\<\/a\>/g, "</a>");
+  });
+
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
     if( n < 0 ) {

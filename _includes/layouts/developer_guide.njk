@@ -3,9 +3,25 @@ layout: layouts/base.njk
 templateClass: tmpl-developer-guide
 ---
 
+{%- macro show_children(item) -%}
+  <ul>
+  {%- for child in item | children | sorted('data.title') %}
+    <li>
+      <a href="{{ child.url }}">{{ child.data.title }}</a>
+      {{ show_children(child) }}
+      {%- if child.url == page.url -%}
+        {{ content | toc(tags=['h2', 'h3', 'h4']) | stripHash | safe }}
+      {%- endif -%}
+    </li>
+  {%- endfor %}
+  </ul>
+{%- endmacro -%}
+
 <div class="main-container sidebar">
   <aside class="sidebar">
-    {{ content | toc | safe }}
+    {%- set root = '/developer_guide/index' | find -%}
+    <a href="{{ root.url }}">{{ root.data.title }}</a>
+    {{ show_children(root) }}
   </aside>
 
   <content class="main-content">
