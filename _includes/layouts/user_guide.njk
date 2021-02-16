@@ -5,6 +5,7 @@ templateClass: tmpl-user-guide
 
 
 <div class="main-container sidebar">
+
 {%- macro show_children(item) -%}
   <ul>
   {%- for child in item | children | sorted('data.title') %}
@@ -27,4 +28,5 @@ templateClass: tmpl-user-guide
   <content class="main-content">
     {{ content | safe }}
   </content>
+  
 </div>
