@@ -46,9 +46,6 @@ a[href]:visited {
 main {
   padding: 1rem;
 }
-main :first-child {
-  margin-top: 2rem;
-}
 header {
   display: flex;
   border-bottom: 1px dashed var(--graylight);
@@ -262,7 +259,9 @@ a[href].post-tag:visited {
   font-family: sans-serif;
   text-decoration: none;
   font-style: normal;
-  margin-left: .1em;
+  margin-left: 1rem;
+  position: absolute;
+  top: 0.4rem;
 }
 a[href].direct-link,
 a[href].direct-link:visited {
@@ -272,8 +271,12 @@ a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
-  color: #aaa;
+  color: var(--primarydark);
 }
+:hover > a[href].direct-link:hover {
+  color: var(--primary);
+}
+
 
 /* Particular classes */
 
@@ -305,4 +308,8 @@ a[href].direct-link:focus:visited,
   background-color: var(--advice);
   padding: 2rem;
   border-radius: 4px;
+}
+
+.secondary-title {
+  position: relative;
 }
