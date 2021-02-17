@@ -273,7 +273,7 @@ a[href].post-tag:visited {
   font-style: normal;
   margin-left: 1rem;
   position: absolute;
-  top: 0.4rem;
+  /* top: 0.4rem; */
 }
 a[href].direct-link,
 a[href].direct-link:visited {
