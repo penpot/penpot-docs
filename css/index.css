@@ -32,9 +32,16 @@ h1, h2, h3,
   position: relative;
 }
 p,
-.tmpl-post li {
+li {
   line-height: 1.6;
 }
+ul, ol {
+  margin-bottom: 2rem;
+}
+li {
+  margin-bottom: 1rem;
+}
+
 a[href] {
   color: var(--primarydark);
 }
