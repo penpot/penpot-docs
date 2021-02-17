@@ -17,10 +17,10 @@ templateClass: tmpl-developer-guide
   </ul>
 {%- endmacro -%}
 
-<div class="main-container sidebar">
+<div class="main-container with-sidebar">
   <aside class="sidebar">
     {%- set root = '/developer_guide/index' | find -%}
-    <a href="{{ root.url }}">{{ root.data.title }}</a>
+    <a class="header" href="{{ root.url }}">{{ root.data.title }}</a>
     {{ show_children(root) }}
   </aside>
 

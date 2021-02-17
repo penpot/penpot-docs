@@ -310,20 +310,44 @@ a[href].direct-link:focus:visited,
   margin: auto;
   max-width: 80rem;
 }
-.main-container.sidebar {
+.main-container.with-sidebar {
   display: grid;
   grid-template-columns: minmax(100px, 25%) 1fr;
 }
 .main-content {
   margin: 0 auto;
 }
-.main-container.sidebar .main-content {
-  margin-left: 40px;
+.main-container.with-sidebar .main-content {
+  margin-left: 4rem;
 }
 
-.toc ol {
-  list-style-type: none;
+.main-container .sidebar {
+  padding-top: 4rem;
 }
+.main-container .sidebar a[href] {
+  color: var(--darkest);
+  text-decoration: none;
+}
+.main-container .sidebar .header {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.main-container .sidebar ul,
+.main-container .sidebar ol {
+  list-style: none;
+  padding-left: 1rem;
+  margin-left: 0;
+}
+/* first level */
+.main-container .sidebar ul li {
+}
+/* second level */
+.main-container .sidebar ul li li {
+}
+/* third level */
+.main-container .sidebar .toc li {
+}
+
 
 .advice {
   background-color: var(--advice);
