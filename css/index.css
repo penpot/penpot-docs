@@ -193,6 +193,7 @@ pre {
   display: inline-block;
   margin-left: 1.4rem;
   margin-right: 1.4rem;
+  margin-bottom: 0;
   font-size: 1.2rem;
 }
 .nav-item a[href]:not(:hover) {
