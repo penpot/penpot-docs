@@ -162,7 +162,7 @@ pre {
 .home {
   position: absolute;
   display: flex;
-  top: 22px;
+  top: 26px;
   left: 2rem;
   font-size: 1em; /* 16px /16 */
   text-decoration: none;
@@ -335,14 +335,29 @@ a[href].direct-link:focus:visited,
 .main-container .sidebar ul,
 .main-container .sidebar ol {
   list-style: none;
-  padding-left: 1rem;
+  padding-left: 0;
   margin-left: 0;
+  padding-top: 1rem;
+}
+.main-container .sidebar > ul ul,
+.main-container .sidebar > ul ol {
+  padding-left: 1rem;
 }
 /* first level */
 .main-container .sidebar ul li {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.main-container .sidebar > ul > li,
+.main-container .sidebar > ol > li {
+margin-bottom: 1.4rem;
+margin-top: 1.4rem;
 }
 /* second level */
 .main-container .sidebar ul li li {
+  font-weight: normal;
+  font-size: 1rem;
 }
 /* third level */
 .main-container .sidebar .toc li {
@@ -393,4 +408,3 @@ a[href].direct-link:focus:visited,
 #no-results-found p {
   margin: 0;
 }
-
