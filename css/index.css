@@ -351,8 +351,8 @@ a[href].direct-link:focus:visited,
 }
 .main-container .sidebar > ul > li,
 .main-container .sidebar > ol > li {
-margin-bottom: 1.4rem;
-margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
 }
 /* second level */
 .main-container .sidebar ul li li {
@@ -362,7 +362,6 @@ margin-top: 1.4rem;
 /* third level */
 .main-container .sidebar .toc li {
 }
-
 
 .advice {
   background-color: var(--advice);

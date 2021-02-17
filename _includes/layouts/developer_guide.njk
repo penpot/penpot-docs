@@ -4,17 +4,17 @@ templateClass: tmpl-developer-guide
 ---
 
 {%- macro show_children(item) -%}
-  <ul>
   {%- for child in item | children | sorted('data.title') %}
+    {%- if loop.first -%}<ul>{%- endif -%}
     <li>
       <a href="{{ child.url }}">{{ child.data.title }}</a>
       {{ show_children(child) }}
       {%- if child.url == page.url -%}
-        {{ content | toc(tags=['h2', 'h3', 'h4']) | stripHash | safe }}
+        {{ content | toc(tags=['h2', 'h3']) | stripHash | safe }}
       {%- endif -%}
     </li>
+    {%- if loop.last -%}</ul>{%- endif -%}
   {%- endfor %}
-  </ul>
 {%- endmacro -%}
 
 <div class="main-container with-sidebar">
