@@ -323,6 +323,7 @@ a[href].direct-link:focus:visited,
 
 .main-container .sidebar {
   padding-top: 4rem;
+  padding-right: 4rem;
 }
 .main-container .sidebar a[href] {
   color: var(--darkest);
@@ -348,6 +349,7 @@ a[href].direct-link:focus:visited,
   font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  line-height: 1.2;
 }
 .main-container .sidebar > ul > li,
 .main-container .sidebar > ol > li {
