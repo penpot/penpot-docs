@@ -101,7 +101,12 @@ hr {
   height: 1px;
   border: none;
 }
-
+blockquote {
+  border-left: 4px solid var(--graylight);
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding-left: 2rem;
+}
 
 pre,
 code {
@@ -353,8 +358,8 @@ a[href].direct-link:focus:visited,
 }
 .main-container .sidebar > ul > li,
 .main-container .sidebar > ol > li {
-margin-bottom: 1.4rem;
-margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
 }
 /* second level */
 .main-container .sidebar ul li li {
