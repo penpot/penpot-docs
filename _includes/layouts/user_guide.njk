@@ -7,15 +7,16 @@ templateClass: tmpl-user-guide
 <div class="main-container with-sidebar">
 
 {%- macro show_children(item) -%}
-  <ul>
   {%- for child in item | children | sorted('data.title') %}
+    {%- if loop.first -%}<ul>{%- endif -%}
     <li>
       <a href="{{ child.url }}">{{ child.data.title }}</a>
       {{ show_children(child) }}
       {%- if child.url == page.url -%}
-        {{ content | toc(tags=['h2', 'h3', 'h4']) | safe }}
+        {{ content | toc(tags=['h2', 'h3']) | safe }}
       {%- endif -%}
     </li>
+    {%- if loop.last -%}</ul>{%- endif -%}
   {%- endfor %}
   </ul>
 {%- endmacro -%}
