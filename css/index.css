@@ -337,13 +337,15 @@ a[href].direct-link:focus:visited,
 .main-container .sidebar .header {
   font-size: 1.6rem;
   font-weight: bold;
+  display: block;
+  margin-bottom: 2rem;
 }
 .main-container .sidebar ul,
 .main-container .sidebar ol {
   list-style: none;
   padding-left: 0;
-  margin-left: 0;
-  padding-top: 1rem;
+  margin: 0;
+  padding-top: 0.2rem;
 }
 .main-container .sidebar > ul ul,
 .main-container .sidebar > ul ol {
@@ -352,14 +354,15 @@ a[href].direct-link:focus:visited,
 /* first level */
 .main-container .sidebar ul li {
   font-weight: 600;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   line-height: 1.2;
+  margin: 0;
 }
 .main-container .sidebar > ul > li,
 .main-container .sidebar > ol > li {
-  margin-bottom: 1.4rem;
-  margin-top: 1.4rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 /* second level */
 .main-container .sidebar ul li li {
