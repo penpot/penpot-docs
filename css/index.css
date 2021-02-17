@@ -78,7 +78,8 @@ h2 {
 }
 h3 {
   font-size: 2rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 p, li {
   font-size: 1.1rem;
