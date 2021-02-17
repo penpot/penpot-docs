@@ -354,3 +354,43 @@ a[href].direct-link:focus:visited,
   padding: 2rem;
   border-radius: 4px;
 }
+
+.search {
+  position: relative;
+}
+
+#search-results {
+  position: absolute;
+  right: 0;
+  top: 1.5rem;
+  background: white;
+  border: 1px solid black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+#search-results h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+#search-results a {
+  text-decoration: none;
+}
+
+#no-results-found {
+  position: absolute;
+  right: 0;
+  top: 1.5rem;
+  background: white;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+#no-results-found p {
+  margin: 0;
+}
+

@@ -20,6 +20,8 @@
         twitterHandle=twitter or metadata.twitter,
         name=name
     %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+    <script src="/js/search.js"></script>
   </head>
   <body>
     <header>
@@ -38,6 +40,17 @@
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}
       </ul>
+
+      <div class="search">
+        <label for="search-field">Search</label>
+        <input type="search" placeholder="Search..." autocomplete="off" id="search-field" />
+
+        <ul id="search-results" style="display: none"></ul>
+
+        <div id="no-results-found" style="display: none">
+          <p>No results found.</p>
+        </div>
+      </div>
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>

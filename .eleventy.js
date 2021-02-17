@@ -9,6 +9,7 @@ const pluginTOC = require('eleventy-plugin-nesting-toc');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItPlantUML = require("markdown-it-plantuml");
+const elasticlunr = require("elasticlunr");
 
 
 module.exports = function(eleventyConfig) {
@@ -49,12 +50,36 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // Get the lowest in a list of numbers.
   eleventyConfig.addFilter("min", (...numbers) => {
     return Math.min.apply(null, numbers);
   });
 
+  // Build a search index
+  eleventyConfig.addFilter("search", (collection) => {
+    // What fields we'd like our index to consist of
+    // TODO: remove html tags from content
+    var index = elasticlunr(function () {
+      this.addField("title");
+      this.addField("content");
+      this.setRef("id");
+    });
+
+    // loop through each page and add it to the index
+    collection.forEach((page) => {
+      index.addDoc({
+        id: page.url,
+        title: page.template.frontMatter.data.title,
+        content: page.template.inputContent,
+      });
+    });
+
+    return index.toJSON();
+  });
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
