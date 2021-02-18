@@ -20,11 +20,15 @@ templateClass: tmpl-developer-guide
 <div class="main-container with-sidebar">
   <aside class="sidebar">
     {%- set root = '/developer_guide/index' | find -%}
-    <a class="header" href="{{ root.url }}">{{ root.data.title }}</a>
-    {{ show_children(root) }}
+    <div id="toc-title">Table of contents</div>
+    <div id="toc">
+      <a class="header" href="{{ root.url }}">{{ root.data.title }}</a>
+      {{ show_children(root) }}
+    </div>
   </aside>
 
   <content class="main-content">
     {{ content | safe }}
   </content>
+
 </div>
