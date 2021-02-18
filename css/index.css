@@ -52,12 +52,16 @@ a[href]:visited {
   /* color: var(--primarydark); */
 }
 main {
-  padding: 1rem;
+  padding: 95px 1rem 1rem 1rem;
 }
 header {
   display: flex;
   border-bottom: 1px dashed var(--graylight);
   padding: 2rem;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 1
 }
 header:after {
   content: "";
@@ -350,30 +354,36 @@ a[href].direct-link:focus:visited,
   margin: 0;
   padding-top: 0.2rem;
 }
-.main-container .sidebar > ul ul,
-.main-container .sidebar > ul ol {
+.main-container .sidebar #toc > ul ul,
+.main-container .sidebar #toc > ul ol {
   padding-left: 1rem;
 }
 /* first level */
-.main-container .sidebar ul li {
+.main-container .sidebar ul li,
+.main-container .sidebar ul li a {
   font-weight: 600;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 1.2rem;
   line-height: 1.2;
   margin: 0;
 }
-.main-container .sidebar > ul > li,
-.main-container .sidebar > ol > li {
+.main-container .sidebar #toc > ul > li,
+.main-container .sidebar #toc > ol > li {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
 /* second level */
-.main-container .sidebar ul li li {
+.main-container .sidebar ul li li,
+.main-container .sidebar ul li li a {
   font-weight: normal;
   font-size: 1rem;
 }
 /* third level */
 .main-container .sidebar .toc li {
+}
+
+.main-container .sidebar #toc {
+  position: fixed;
+  background-color: white;
 }
 
 .advice {
@@ -622,3 +632,5 @@ a[href].direct-link:focus:visited,
     display: none;
   }
 }
+
+/* todo: fijar sidebar y header, imgs de bg */
