@@ -18,7 +18,12 @@ body {
   margin: 0;
   font-family: 'Source Sans Pro',system-ui, sans-serif;
   color: var(--graydark);
+}
+body {
   background-color: var(--white);
+  /* background-image: linear-gradient(rgba(68, 68, 68, 0.05), white);
+  background-size: 100% 300px;
+  background-repeat: no-repeat; */
 }
 p:last-child {
   margin-bottom: 0;
@@ -53,10 +58,13 @@ a[href]:visited {
 }
 main {
   padding: 95px 1rem 1rem 1rem;
+  background-image: url(/img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center 120px;
 }
 header {
   display: flex;
-  border-bottom: 1px dashed var(--graylight);
+  border-bottom: 1px solid var(--graylight);
   padding: 2rem;
   position: fixed;
   width: 100%;
@@ -383,7 +391,6 @@ a[href].direct-link:focus:visited,
 
 .main-container .sidebar #toc {
   position: fixed;
-  background-color: white;
   max-width: 300px;
 }
 
@@ -403,7 +410,7 @@ a[href].direct-link:focus:visited,
   border: 2px solid var(--graylight);
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 8rem;
-  transition: width 200ms 200ms;
+  /* transition: width 200ms 200ms; */
 }
 .search label {
   position: absolute;
@@ -546,7 +553,7 @@ a[href].direct-link:focus:visited,
   }
   .main-container h1 {
     font-size: 4.6rem;
-    margin-top: -7rem;
+    margin-top: -4rem;
   }
   .main-container h2 {
     font-size: 3rem;
@@ -585,6 +592,7 @@ a[href].direct-link:focus:visited,
     padding: 1rem 1rem;
     margin: 0;
     position: relative;
+    background: white;
   }
   .main-container.with-sidebar .sidebar .header:before {
     content: "";
