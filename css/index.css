@@ -61,7 +61,7 @@ header {
   position: fixed;
   width: 100%;
   background-color: white;
-  z-index: 1
+  z-index: 10;
 }
 header:after {
   content: "";
@@ -384,6 +384,7 @@ a[href].direct-link:focus:visited,
 .main-container .sidebar #toc {
   position: fixed;
   background-color: white;
+  max-width: 300px;
 }
 
 .advice {
@@ -503,6 +504,7 @@ a[href].direct-link:focus:visited,
 }
 .help-sections li h3 {
   margin-top: 0;
+  padding-top: 0;
   line-height: 1.2;
 }
 .help-sections li p {
@@ -524,22 +526,37 @@ a[href].direct-link:focus:visited,
   margin-top: 20px;
 }
 
+.main-container h1 {
+  margin-top: -6rem;
+  padding-top: 10rem;
+}
+.main-container h2 {
+  margin-top: -5.4rem;
+  padding-top: 10rem;
+}
+.main-container h3 {
+  margin-top: -6rem;
+  padding-top: 10rem;
+}
+
 
 @media (max-width: 900px) {
   hr {
     margin-top: 5rem;
   }
-  h1 {
+  .main-container h1 {
     font-size: 4.6rem;
-    margin-top: 2rem;
+    margin-top: -7rem;
   }
-  h2 {
+  .main-container h2 {
     font-size: 3rem;
-    margin-top: 4.6rem;
+    padding-top: 9rem;
+    margin-top: -4rem;
   }
-  h3 {
+  .main-container h3 {
     font-size: 2rem;
-    margin-top: 4rem;
+    padding-top: 8rem;
+    margin-top: -4rem;
   }
   main {
     padding: 2rem;
@@ -555,6 +572,8 @@ a[href].direct-link:focus:visited,
   }
   .main-container.with-sidebar .sidebar {
     padding: 0;
+    position: relative;
+    z-index: 1;
   }
   .main-container.with-sidebar .sidebar .header {
     display: none;
@@ -580,6 +599,13 @@ a[href].direct-link:focus:visited,
     background-repeat: no-repeat;
     transition: transform 200ms ease-in-out;
   }
+
+  .main-container.with-sidebar .sidebar #toc {
+    position: relative;
+    margin-top: 6rem;
+    max-width: none;
+    z-index: 2;
+  }
   .main-container.with-sidebar .sidebar #toc > ul {
     background: white;
     border: 1px solid var(--graylight);
@@ -588,7 +614,7 @@ a[href].direct-link:focus:visited,
     margin: 0;
     padding: 2rem;
     box-shadow: 2px 0 10px rgba(68, 68, 68, 0.1);
-      display: none;
+    display: none;
   }
   .main-container.with-sidebar .sidebar #toc.open > ul{
     display: block;
@@ -602,17 +628,17 @@ a[href].direct-link:focus:visited,
   hr {
     margin-top: 4rem;
   }
-  h1 {
+  .main-container h1 {
     font-size: 4rem;
-    margin-top: 1rem;
+    margin-top: -6rem;
   }
-  h2 {
+  .main-container h2 {
     font-size: 2.6rem;
-    margin-top: 4rem;
+    margin-top: -6rem;
   }
-  h3 {
+  .main-container h3 {
     font-size: 1.6rem;
-    margin-top: 3rem;
+    margin-top: -7rem;
   }
   header {
     padding: 1rem;
