@@ -340,6 +340,9 @@ a[href].direct-link:focus:visited,
   display: block;
   margin-bottom: 2rem;
 }
+.main-container.with-sidebar .sidebar .header.mobile {
+  display: none;
+}
 .main-container .sidebar ul,
 .main-container .sidebar ol {
   list-style: none;
@@ -513,6 +516,21 @@ a[href].direct-link:focus:visited,
 
 
 @media (max-width: 900px) {
+  hr {
+    margin-top: 5rem;
+  }
+  h1 {
+    font-size: 4.6rem;
+    margin-top: 2rem;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-top: 4.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
   main {
     padding: 2rem;
   }
@@ -529,6 +547,10 @@ a[href].direct-link:focus:visited,
     padding: 0;
   }
   .main-container.with-sidebar .sidebar .header {
+    display: none;
+  }
+  .main-container.with-sidebar .sidebar .header.mobile {
+    display: block;
     border: 1px solid var(--graylight);
     border-radius: 4px;
     padding: 1rem 1rem;
@@ -546,9 +568,9 @@ a[href].direct-link:focus:visited,
     background-image: url(/img/caret-down.svg);
     background-size: 16px 16px;
     background-repeat: no-repeat;
-    transform: rotate(180deg);
+    transition: transform 200ms ease-in-out;
   }
-  .main-container.with-sidebar .sidebar > ul {
+  .main-container.with-sidebar .sidebar #toc > ul {
     background: white;
     border: 1px solid var(--graylight);
     color: var(--graymedium);
@@ -556,6 +578,13 @@ a[href].direct-link:focus:visited,
     margin: 0;
     padding: 2rem;
     box-shadow: 2px 0 10px rgba(68, 68, 68, 0.1);
+      display: none;
+  }
+  .main-container.with-sidebar .sidebar #toc.open > ul{
+    display: block;
+  }
+  .main-container.with-sidebar .sidebar .open .header:before {
+    transform: rotate(180deg);
   }
 
 }
