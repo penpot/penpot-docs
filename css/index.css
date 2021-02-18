@@ -387,7 +387,7 @@ a[href].direct-link:focus:visited,
 }
 .search input {
   border: 2px solid var(--graylight);
-  padding: 0.5rem;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 8rem;
   transition: width 200ms 200ms;
 }
@@ -400,6 +400,15 @@ a[href].direct-link:focus:visited,
 }
 .search input:focus {
   width: 18rem;
+}
+.search-icon {
+  position: absolute;
+  right: 8px;
+  top: 9px;
+  fill: var(--graymedium);
+}
+.search input:focus + .search-icon {
+fill: var(--darkest);
 }
 
 
