@@ -14,7 +14,7 @@ locally, to test it or make changes to it.
 to use the official docker image, as explained below.
 
 > If you want to modify the core application, see instead the
-[Development Environment guide](../core_developer/development_environment).
+[Development Environment guide](../core_developer/development-environment).
 
 
 ## Install Docker ##
