@@ -46,7 +46,7 @@
       const noResultsEl = document.getElementById("no-results-found");
       resEl.style.display = "none";
       noResultsEl.style.display = "none";
-    }, 100);
+    }, 200);
   };
 
   fetch("/search-index.json").then((response) =>

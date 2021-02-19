@@ -410,7 +410,7 @@ a[href].direct-link:focus:visited,
   border: 2px solid var(--graylight);
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 8rem;
-  /* transition: width 200ms 200ms; */
+  transition: width 200ms 200ms;
 }
 .search label {
   position: absolute;
