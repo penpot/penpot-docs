@@ -125,6 +125,8 @@ PENPOT_REGISTRATION_ENABLED=true
 PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
 ```
 
+When disabling registation, remember to also do it [in frontend](#auth-with-3rd-party-2).
+
 #### Server REPL
 
 The production environment by default starts a server REPL where you
@@ -208,6 +210,13 @@ var penpotGoogleClientID = "<google-client-id-here>";
 var penpotGitlabClientID = "<gitlab-client-id-here>";
 var penpotGithubClientID = "<github-client-id-here>";
 var penpotLoginWithLDAP = <true|false>;
+```
+
+You can disable new user registration, if you want only 3rd party
+authorized users:
+
+```js
+var penpotRegistrationEnabled = <true|false>;
 ```
 
 **NOTE:** The configuration should match the backend configuration for
