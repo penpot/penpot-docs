@@ -18,11 +18,11 @@ templateClass: tmpl-user-guide
 {%- endmacro -%}
 
 <div class="main-container with-sidebar">
-  <aside class="sidebar">
+  <aside id="stickySidebar" class="sidebar">
     {%- set root = '/user-guide/index' | find -%}
-    <div id="toc-title">Table of contents</div>
     <div id="toc">
-      <a href="{{ root.url }}">{{ root.data.title }}</a>
+      <div class="header mobile" id="toc-title">{{ root.data.title }}</div>
+      <a class="header" href="{{ root.url }}">{{ root.data.title }}</a>
       {{ show_children(root) }}
     </div>
   </aside>
