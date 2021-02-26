@@ -36,12 +36,16 @@ h1, h2, h3,
   max-width: 42rem;
   position: relative;
 }
+img {
+  width: 100%;
+}
 p,
 li {
   line-height: 1.6;
 }
 ul, ol {
   margin-bottom: 2rem;
+  padding-left: 1rem;
 }
 li {
   margin-bottom: 1rem;
@@ -458,6 +462,10 @@ a[href].direct-link:focus:visited,
   padding: 2rem;
   border-radius: 4px;
 }
+.hint {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
 
 .search {
   position: absolute;
@@ -632,6 +640,69 @@ a[href].direct-link:focus:visited,
 .main-container h3 {
   margin-top: 0rem;
   padding-top: 7rem;
+}
+
+
+.intro-sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 0 4rem 0;
+  list-style: none;
+}
+.intro-sections li {
+  position: relative;
+  margin: 1rem 2rem 1rem 0;
+  background-color: #eee;
+  flex: 33%;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgb(28 56 71 / 5%);
+  border: 1px solid var(--graylight);
+  border-radius: 8px;
+}
+.intro-sections li:hover {
+  border-color: var(--primary);
+}
+.intro-sections li > a {
+  display: block;
+  padding: 2.6rem;
+  color: var(--graydark);
+  text-decoration: none;
+}
+.intro-sections li h3 {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.2;
+}
+.intro-sections li p {
+  color: var(--graymedium);
+  font-size: 1.2rem;
+}
+
+
+table, tr, th, td {
+    color: var(--graydark);
+    padding: 1rem;
+    vertical-align: top;
+    border: 1px solid var(--graylight);
+    border-collapse: collapse;
+    font-size: 1.124rem;
+}
+table {
+  background-color: white;
+  box-shadow: 0px 4px 20px rgb(28 56 71 / 5%);
+}
+/* th {
+  background: rgba(0,0,0,.06);
+} */
+table>tbody>tr:first-child>td,
+table>thead>tr:first-child>th {
+    font-weight: bold;
+    background: none repeat scroll 0 0 #ededed;
+}
+table tr:nth-child(odd) {
+    background: rgba(0,0,0,.02);
 }
 
 
