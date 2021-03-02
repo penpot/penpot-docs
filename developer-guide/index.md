@@ -14,7 +14,7 @@ locally, to test it or make changes to it.
 to use the official docker image, as explained below.
 
 > If you want to modify the core application, see instead the
-[Development Environment guide](../core_developer/development-environment).
+[Development Environment guide](/developer-guide/core-developer/development-environment).
 
 
 ## Install Docker ##
@@ -69,4 +69,4 @@ docker-compose -p penpot -f docker-compose.yaml up
 The docker compose file contains the essential configuration for getting the
 application running, and many essential configurations already explained in the
 comments. All other configuration options are explained in the [Configuration
-guide](../configuration).
+guide](/developer-guide/configuration).
