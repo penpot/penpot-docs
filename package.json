@@ -33,9 +33,9 @@
     "eleventy-plugin-metagen": "^1.1.0",
     "eleventy-plugin-nesting-toc": "^1.2.0",
     "eleventy-plugin-youtube-embed": "^1.5.0",
-    "luxon": "^1.25.0",
-    "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.2.5",
+    "luxon": "^1.26.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^7.0.2",
     "markdown-it-plantuml": "^1.4.1"
   },
   "devDependencies": {}
