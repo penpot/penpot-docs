@@ -1,5 +1,5 @@
 ---
-title: 1. Architecture
+title: 3. Architecture
 ---
 
 # Architecture
@@ -97,7 +97,7 @@ worker, that may be used to queue tasks to be scheduled and executed when the
 backend is idle. Other tasks are email sending, collecting data for telemetry
 and detecting unused media attachment, for removing them from the file storage.
 
-## Broker
+## PubSub
 
 To manage subscriptions to a file, to be notified of changes, we use a redis
 server as a pub/sub broker. Whenever a user visits a file and opens a

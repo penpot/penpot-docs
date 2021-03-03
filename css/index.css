@@ -148,6 +148,7 @@ pre {
   padding: 1em;
   margin: .5em 0;
   background-color: #f6f6f6;
+  overflow: auto;
 }
 .highlight-line {
   display: block;
@@ -370,6 +371,17 @@ a[href].direct-link:focus:visited,
   color: var(--primary);
 }
 
+[id]::before {
+  visibility: hidden;
+  content: '';
+}
+
+:target[id]::before {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 94px;
+}
 
 /* Particular classes */
 
@@ -381,6 +393,7 @@ a[href].direct-link:focus:visited,
 .main-container {
   margin: auto;
   max-width: 80rem;
+  min-height: 60vh;
 }
 .main-container.with-sidebar {
   /* display: grid;
@@ -635,11 +648,11 @@ a[href].direct-link:focus:visited,
 }
 .main-container h2 {
   margin-top: 0rem;
-  padding-top: 7rem;
+  padding-top: 4rem;
 }
 .main-container h3 {
   margin-top: 0rem;
-  padding-top: 7rem;
+  padding-top: 2rem;
 }
 
 
