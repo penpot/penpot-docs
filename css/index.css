@@ -753,6 +753,7 @@ table tr:nth-child(odd) {
   .main-container.with-sidebar .sidebar .header:before {
     content: "";
     position: absolute;
+    visibility: visible;
     z-index: 1;
     width: 16px;
     height: 16px;
@@ -788,6 +789,9 @@ table tr:nth-child(odd) {
   }
   .footer-inside {
     flex-direction: column;
+  }
+  :target[id]::before {
+    display: inline;
   }
 
 }
@@ -843,6 +847,7 @@ table tr:nth-child(odd) {
   .help-sections li a {
     padding: 1.4rem;
   }
+
 }
 
 /* todo: fijar sidebar y header, imgs de bg */
