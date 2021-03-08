@@ -9,7 +9,7 @@ templateClass: tmpl-developer-guide
     <li>
       <a href="{{ child.url }}">{{ child.data.title }}</a>
       {%- if page.url.includes(child.url) -%}
-      {{ show_children(child) }}
+        {{ show_children(child) }}
       {%- endif -%}
       {%- if child.url == page.url -%}
         {{ content | toc(tags=['h2', 'h3']) | stripHash | safe }}

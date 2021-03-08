@@ -8,7 +8,9 @@ templateClass: tmpl-user-guide
     {%- if loop.first -%}<ul>{%- endif -%}
     <li>
       <a href="{{ child.url }}">{{ child.data.title }}</a>
-      {{ show_children(child) }}
+      {%- if page.url.includes(child.url) -%}
+        {{ show_children(child) }}
+      {%- endif -%}
       {%- if child.url == page.url -%}
         {{ content | toc(tags=['h2', 'h3']) | safe }}
       {%- endif -%}
