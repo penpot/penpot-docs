@@ -69,8 +69,9 @@ main {
 header {
   display: flex;
   border-bottom: 1px solid var(--graylight);
-  padding: 2rem;
-  position: fixed;
+  padding: 1.6rem;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: white;
   z-index: 10;
@@ -187,28 +188,60 @@ pre {
 }
 
 /* Header */
-.home {
-  position: absolute;
+.preheader {
+  background: var(--graydark);
+  padding: 1rem 1.6rem;
   display: flex;
-  top: 26px;
-  left: 2rem;
+  align-items: center;
+}
+.preheader .home {
   font-size: 1em; /* 16px /16 */
   text-decoration: none;
+  flex: 1;
 }
-.home svg {
-  height: 40px;
-  width: 130px;
+.preheader .home svg {
+  height: 36px;
+  width: 116px;
+  fill: white;
 }
-.home :link:not(:hover) {
+.preheader .home :link:not(:hover) {
   text-decoration: none;
 }
-.home span {
+.header-inner {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+.header-title {
   font-size: 1.4rem;
   display: inline;
-  margin: 6px 0 0 16px;
   font-weight: normal;
   color: var(--graymedium);
+  text-decoration: none;
+  font-weight: 300;
 }
+
+.button {
+  align-items: center;
+  background: var(--primary);
+  color: var(--graydark) !important;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .4s;
+  min-height: 2rem;
+}
+.button:hover {
+  background: white;
+}
+
 
 /* Nav */
 .nav {
@@ -216,13 +249,14 @@ pre {
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  align-items: center;
 }
 .nav-item {
   display: inline-block;
   margin-left: 1.4rem;
   margin-right: 1.4rem;
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
@@ -413,11 +447,12 @@ a[href].direct-link:focus:visited,
   margin-left: 4rem;
 } */
 
+
 .main-container .sidebar {
-  padding-top: 4rem;
+  padding-top: 0;
   padding-right: 2rem;
   position: sticky;
-  top: 4rem;
+  top: 8rem;
   align-self: start;
 }
 .main-container .sidebar a[href] {
@@ -487,8 +522,8 @@ a[href].direct-link:focus:visited,
 
 .search {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: 0;
+  top: -0.2rem;
   z-index: 1;
 }
 .search input {
@@ -728,6 +763,15 @@ table tr:nth-child(odd) {
   hr {
     margin-top: 5rem;
   }
+  .header-title {
+    display: none;
+  }
+  .preheader {
+    padding: 1rem;
+  }
+  .preheader .button {
+    width: 100%;
+  }
   .home {
     display: none;
   }
@@ -772,7 +816,7 @@ table tr:nth-child(odd) {
 
   .main-container.with-sidebar .sidebar #toc {
     position: relative;
-    margin-top: 6rem;
+    margin-top: 0;
     max-width: none;
     z-index: 2;
   }
@@ -826,8 +870,7 @@ table tr:nth-child(odd) {
     font-size: 1rem;
   }
   .search {
-    top: 0.6rem;
-    right: 0.6rem;
+    top: -0.3rem;
   }
   .search input {
     width: 2rem;
