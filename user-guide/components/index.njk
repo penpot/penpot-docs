@@ -1,0 +1,44 @@
+---
+title: 12· Components
+---
+
+<h1 id="components">Components</h1>
+<p class="main-paragraph">Speed your workflow with the reusable power of components.</p>
+<p>A component is an object or group of objects that can be reused multiple times across user files (projects and teams in the future). All copies of a component used in user files are linked. That is, any update made to the Main component is reflected in all component copies (if you accept the update) . You can even create overrides for specific parts of component copies.</p>
+
+<p>A component has two aspects:</p>
+<ul>
+  <li><strong>Main component</strong> is the source that defines the component. Main components exist only in the library, not in the viewport.</li>
+  <li><strong>Component copy</strong> or instance, is a copy of the Main component that is placed at the viewport. Component copies are linked to their Main component.</li>
+</ol>
+
+<h3 id="component-create">Create a component</h3>
+<p>To create a component:</p>
+<ol>
+  <li>Select an object or a group of them</li>
+  <li>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> or right click and select the option “Create component” at the object menu.</li>
+</ol>
+<p><img src="/img/components-create.gif" alt="components" /></p>
+
+<h3 id="component-update">Update main components</h3>
+<p>To update changes to a Main component:</p>
+<ol>
+  <li>Make a change in a component copy.</li>
+  <li>Right click and select the option “Update main component” at the component menu.</li>
+</ol>
+<p><img src="/img/components-update.gif" alt="components" /></p>
+<p>If a file is using a component from a Shared library that has been updated, a notification will be shown offering the options for update or dismiss.</p>
+<p><img src="/img/components-updatenotification.png" alt="components" /></p>
+
+<h3 id="component-overrides">Component overrides</h3>
+<p>Overrides are differences at the copy components from their main components. With overrides you can keep changes at the component copies while maintaining synchronization with the Main component.</p>
+<p>Component layers with overrides are marked with a “*” at the layers list.</p>
+<p><img src="/img/components-overrides.gif" alt="components" /></p>
+<h4>Reset overrides</h4>
+<p>Right click and select the option “Reset overrides” at the component menu to get it to the state of the Main component.</p>
+
+<h3 id="component-detach">Detach instance</h3>
+<p>Detach a component copy to unlink it from its Main component by transforming it in a group layer. Right click and select the option “Detach instance” at the component menu.</p>
+
+<h3 id="component-show">Show main component</h3>
+<p>To easily show the Main component of a component copy there is the option at the component menu “Show main component” that will open the library where the component belongs.</p>
