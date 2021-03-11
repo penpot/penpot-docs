@@ -91,7 +91,16 @@ table td,
 table th {
   padding-right: 1em;
 }
-
+kbd {
+  border: 1px solid var(--graylight);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  box-shadow: 0 1px 0px 1px rgb(0 0 0 / 10%);
+  background-color: #fff;
+  margin-left: 0.16rem;
+  margin-right: 0.16rem;
+  white-space: nowrap;
+}
 
 h1 {
   font-size: 5rem;
