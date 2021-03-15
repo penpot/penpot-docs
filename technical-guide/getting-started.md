@@ -32,7 +32,7 @@ sudo usermod -aG docker $USER
 *NOTE*: probably you will need to re-login again to make this change take effect.
 
 
-For more advanced setup, docker already has a guide for [rootleass docker][1]
+For more advanced setup, docker already has a guide for [rootless docker][1]
 
 [1]: https://docs.docker.com/engine/security/rootless/
 
