@@ -619,51 +619,72 @@ a[href].direct-link:focus:visited,
   padding: 0 0 4rem 0;
   list-style: none;
 }
-.help-sections li {
+.help-sections > li {
   position: relative;
   margin: 1rem;
   background-color: #eee;
   flex: 47%;
-  background-color: white;
   box-shadow: 0px 8px 20px rgb(28 56 71 / 5%);
   border: 1px solid var(--graylight);
   border-radius: 8px;
   min-height: 12rem;
+  background-color: white;
 }
-.help-sections li:hover {
+.help-sections .illus {
+  background-size: auto 75%;
+  background-position: 0.6rem center;
+  padding-left: 12rem;
+  background-repeat: no-repeat;
+}
+.help-sections > li.no-link.illus-contact {
+  padding-left: 14.6rem;
+}
+.help-sections .illus-userguide {
+  background-image: url(/img/home-userguide.png);
+}
+.help-sections .illus-faq {
+  background-image: url(/img/home-faq.png);
+}
+.help-sections .illus-techguide {
+  background-image: url(/img/home-techguide.png);
+}
+.help-sections .illus-contact {
+  background-image: url(/img/home-contact.png);
+}
+.help-sections > li:hover {
   border-color: var(--primary);
 }
-.help-sections li > a {
+.help-sections > li > a {
   display: block;
   padding: 2.6rem;
   color: var(--graydark);
   text-decoration: none;
 }
-.help-sections li h3 {
+.help-sections > li h3 {
   margin-top: 0;
   padding-top: 0;
   line-height: 1.2;
 }
-.help-sections li p {
+.help-sections > li p {
   color: var(--graymedium);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
-.help-sections li.no-link {
+.help-sections > li.no-link {
   padding: 2.6rem;
 }
-.help-sections li.soon:hover {
+.help-sections > li.soon:hover {
   border-color: var(--graylight);
 }
-.help-sections li.soon h3 {
+.help-sections > li.soon h3 {
   opacity: 0.4;
 }
-.help-sections li .advice {
+.help-sections > li .advice {
   padding: 1rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
-.help-sections li.github {
+.help-sections > li.github {
   min-height: auto;
   border: none;
   border-radius: 0;
@@ -671,22 +692,22 @@ a[href].direct-link:focus:visited,
   border-top: 1px dashed var(--graylight);
   margin-top: 4rem;
 }
-.help-sections li.github a:hover h3 {
+.help-sections > li.github a:hover h3 {
   color: var(--primarydark);
   transition: color 200ms ease-in-out;
 }
-.help-sections li.github a:hover svg {
+.help-sections > li.github a:hover svg {
   fill: var(--primarydark);
   transition: fill 300ms ease-in-out;
 }
-.help-sections li.github a {
+.help-sections > li.github a {
   display: flex;
   align-items: center;
 }
-.help-sections li.github .content {
+.help-sections > li.github .content {
   margin-left: 2rem;
 }
-.help-sections li.github svg {
+.help-sections > li.github svg {
   width: 72px;
   height: 72px;
 }
@@ -898,11 +919,17 @@ table tr:nth-child(odd) {
   .help-sections {
     flex-direction: column;
   }
-  .help-sections li {
+  .help-sections > li {
     margin: 0 0 1rem 0;
   }
-  .help-sections li a {
+  .help-sections > li > a,
+  .help-sections .illus,
+  .help-sections > li.no-link.illus-contact {
     padding: 1.4rem;
+    min-height: auto;
+  }
+  .help-sections .illus {
+    background-image: none;
   }
 
 }
