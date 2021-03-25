@@ -452,6 +452,14 @@ a[href].direct-link:focus:visited,
 .main-content {
   margin: 0 auto;
 }
+.main-illus {
+  text-align: center;
+}
+.main-illus img {
+  margin-top: 2rem;
+  width: 60%;
+  max-width: 22rem;
+}
 /* .main-container.with-sidebar .main-content {
   margin-left: 4rem;
 } */
@@ -714,7 +722,7 @@ a[href].direct-link:focus:visited,
 
 .main-container h1 {
   margin-top: 0rem;
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 .main-container h2 {
   margin-top: 0rem;

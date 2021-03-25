@@ -5,6 +5,10 @@ eleventyNavigation:
   order: 4
 ---
 
+<div class="main-illus">
+  <img src="/img/home-techguide.png" alt="Technical guide" border="0">
+</div>
+
 # Overview
 
 This documentation intends to explain how to get penpot application
@@ -23,4 +27,3 @@ If you are a developer and want to get into the code, we recommend the
 environment and many other dev-oriented documentation.
 
 [3]: /technical-guide/developer/
-
