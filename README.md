@@ -33,3 +33,13 @@ You can then point a browser to [http://localhost:8081](http://localhost:8081).
 * [c4model](https://c4model.com) for software architecture, and an
 [implementation in plantuml](https://github.com/plantuml-stdlib/C4-PlantUML).
 
+
+## License ##
+
+```
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+Copyright (c) UXBOX Labs SL
+```
