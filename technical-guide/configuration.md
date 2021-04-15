@@ -14,10 +14,14 @@ using environment variables. All penpot related variables start with
 **default** values, and the examples that do not have values are
 optional.
 
+
 ## Common ##
 
 This section will list all common configuration that affects backend
-and frontend, and they need to be in sync to work correctly.
+and frontend. If you are using the default docker compose, all the
+environment variables will be available for both frontend and backend
+at the same time because a single environment file is used:
+`config.env`.
 
 
 ### Registration ###
@@ -39,6 +43,7 @@ You also can restict the registrations to a closed list of domains:
 # comma separated list of domains (backend only)
 PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
 ```
+
 
 ### Demo users ###
 
@@ -163,6 +168,7 @@ you are using official docker images this is already solved for you.
 Essential database configuration:
 
 ```bash
+# Backend
 PENPOT_DATABASE_USERNAME=penpot
 PENPOT_DATABASE_PASSWORD=penpot
 PENPOT_DATABASE_URI=postgresql://127.0.0.1/penpot
@@ -181,6 +187,7 @@ have an SMTP service, uncomment the appropiate settings section in
 Setting up the default FROM and REPLY-TO:
 
 ```bash
+# Backend
 PENPOT_SMTP_DEFAULT_REPLY_TO=Penpot <no-reply@example.com>
 PENPOT_SMTP_DEFAULT_FROM=Penpot <no-reply@example.com>
 ```
@@ -188,6 +195,7 @@ PENPOT_SMTP_DEFAULT_FROM=Penpot <no-reply@example.com>
 Enable SMTP:
 
 ```bash
+# Backend
 PENPOT_SMTP_ENABLED=true
 PENPOT_SMTP_HOST=<host>
 PENPOT_SMTP_PORT=587
@@ -210,6 +218,7 @@ This is the default backend when you use the official docker images and
 the default configuration looks like this:
 
 ```bash
+# Backend
 PENPOT_STORAGE_BACKEND=fs
 PENPOT_STORAGE_FS_DIRECTORY=/opt/data/assets
 ```
@@ -236,6 +245,7 @@ In case you want to use this backend, proceed using the following
 environment variable:
 
 ```bash
+# Backend
 PENPOT_STORAGE_BACKEND=db
 ```
 
@@ -270,6 +280,7 @@ redis URI. Redis is used mainly for websocket notifications
 coordination.
 
 ```bash
+# Backend
 PENPOT_REDIS_URI=redis://localhost/0
 ```
 
@@ -282,6 +293,7 @@ configured.
 You can set the port where the backend http server will listen for requests.
 
 ```bash
+# Backend
 PENPOT_HTTP_SERVER_PORT=6060
 ```
 
@@ -290,6 +302,7 @@ environment variable in case you go to serve penpot to the users, and
 it should point to public URI where users will access the application:
 
 ```bash
+# Backend
 PENPOT_PUBLIC_URI=http://localhost:9001
 ```
 
@@ -337,6 +350,7 @@ that this is a demostration purpose instance (no backups, periodical
 data wipe, ...), set the following variable:
 
 ```bash
+# Frontend
 PENPOT_DEMO_WARNING=true
 ```
 
@@ -349,6 +363,7 @@ backend.
 
 
 ```bash
+# Backend & Frontend
 PENPOT_PUBLIC_URI=http://pubic-domain
 ```
 

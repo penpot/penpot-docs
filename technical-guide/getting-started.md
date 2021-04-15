@@ -18,8 +18,6 @@ many ways, the recommended approach is using **docker** and
 Probably the best approach to install docker is following the official docker
 installation guide: https://docs.docker.com/engine/install/
 
-
-
 Optionally, after installing docker, you can tweak your sistem for
 avoid constanly using of **sudo**. The easy, single step way is
 executong the following command that will add the current user to the
@@ -48,11 +46,13 @@ one][2] from penpot repository:
 
 ```bash
 wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
+wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/config.env
 ```
 
-The default compose file has all essential configuration variables
-already set and they are pretty auto-explained. So we can proceed starting
-the application without touching anything:
+The configuration is defined using environment variables in the
+`config.env` file and the downloaded file already comes with the
+essential variables already set and other commented with appropriate
+comments.
 
 ```bash
 docker-compose -p penpot -f docker-compose.yaml up -d
