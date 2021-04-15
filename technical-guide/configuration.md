@@ -54,7 +54,7 @@ You can enable demo users using the following variable:
 PENPOT_ALLOW_DEMO_USERS=true
 ```
 
-### OAuth Providers
+### Authentication Providers
 
 #### Google
 
@@ -96,6 +96,32 @@ PENPOT_GITHUB_CLIENT_ID=<client-id>
 # Backend only
 PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 ```
+
+#### OpenID Connect
+
+**NOTE:** Since version 1.5.0
+
+Allow integrate with a generic authentication provider that implements
+the OIDC protocol (usualy used for SSO).
+
+```bash
+# Backend
+# Mainly used for auto discovery the openid endpoints
+PENPOT_OIDC_BASE_URI=<uri>
+
+# Backend & Frontend
+PENPOT_OIDC_CLIENT_ID=<client-id>
+
+# Backend
+PENPOT_OIDC_CLIENT_SECRET=<client-id>
+
+## Optional backend variables, used mainly if you want override; they are
+## autodiscovered using the standard openid mechanism.
+PENPOT_OIDC_AUTH_URI=<uri>
+PENPOT_OIDC_TOKEN_URI=<uri>
+PENPOT_OIDC_USER_URI=<uri>
+```
+
 
 ### LDAP ###
 
