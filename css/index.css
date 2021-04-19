@@ -656,6 +656,9 @@ a[href].direct-link:focus:visited,
 .help-sections .illus-techguide {
   background-image: url(/img/home-techguide.png);
 }
+.help-sections .illus-contributing {
+  background-image: url(/img/home-contributing.png);
+}
 .help-sections .illus-contact {
   background-image: url(/img/home-contact.png);
 }
@@ -698,6 +701,7 @@ a[href].direct-link:focus:visited,
   border-radius: 0;
   box-shadow: none;
   border-top: 1px dashed var(--graylight);
+  border-bottom: 1px dashed var(--graylight);
   margin-top: 4rem;
 }
 .help-sections > li.github a:hover h3 {
@@ -718,6 +722,19 @@ a[href].direct-link:focus:visited,
 .help-sections > li.github svg {
   width: 72px;
   height: 72px;
+}
+.contact-block {
+  text-align: center;
+  padding-top: 12rem;
+  margin-bottom: 6rem;
+  background-size: auto 75%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: url(/img/home-contact.png);
+}
+.contact-block p,
+.contact-block h3 {
+  max-width: initial;
 }
 
 .main-container h1 {
@@ -804,6 +821,32 @@ table tr:nth-child(odd) {
   .header-title {
     display: none;
   }
+  header {
+    padding: 1rem;
+    position: relative;
+  }
+  header .nav-item:first-child {
+    display: none;
+  }
+  .header-inner {
+    display: block;
+  }
+  .search {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .search input {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .search input:focus {
+    /* width: calc(100vw - 1.4rem); */
+    width: 100%;
+  }
+  .search input:focus + .search-icon {
+    display: none;
+  }
   .preheader {
     padding: 1rem;
   }
@@ -857,6 +900,7 @@ table tr:nth-child(odd) {
     margin-top: 0;
     max-width: none;
     z-index: 2;
+    padding-right: 0;
   }
   .main-container.with-sidebar .sidebar #toc > ul {
     background: white;
@@ -898,27 +942,10 @@ table tr:nth-child(odd) {
     padding-top: 1.4rem;
     font-size: 1.4rem;
   }
-  header {
-    padding: 1rem;
-    position: relative;
-  }
   header .nav-item {
     margin-left: 0.6rem;
     margin-right: 0.6rem;
     font-size: 1rem;
-  }
-  .search {
-    top: -0.3rem;
-  }
-  .search input {
-    width: 2rem;
-    padding: 0.5rem;
-  }
-  .search input:focus {
-    width: calc(100vw - 1.4rem);
-  }
-  .search input:focus + .search-icon {
-    display: none;
   }
   .main-container.with-sidebar .sidebar #toc {
     padding: 0;
