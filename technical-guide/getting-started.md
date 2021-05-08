@@ -18,7 +18,7 @@ many ways, the recommended approach is using **docker** and
 Probably the best approach to install docker is following the official docker
 installation guide: https://docs.docker.com/engine/install/
 
-Optionally, after installing docker, you can tweak your sistem for
+Optionally, after installing docker, you can tweak your system for
 avoid constanly using of **sudo**. The easy, single step way is
 executong the following command that will add the current user to the
 docker group:
