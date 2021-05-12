@@ -109,10 +109,6 @@ PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 Allow integrate with a generic authentication provider that implements
 the OIDC protocol (usualy used for SSO).
 
-The unique common (backend & frontend) setting is:
-```bash
-```
-
 All the other options are backend only:
 
 ```bash
