@@ -109,22 +109,45 @@ PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 Allow integrate with a generic authentication provider that implements
 the OIDC protocol (usualy used for SSO).
 
+The unique common (backend & frontend) setting is:
 ```bash
-# Backend
-# Mainly used for auto discovery the openid endpoints
-PENPOT_OIDC_BASE_URI=<uri>
+```
 
-# Backend & Frontend
+All the other options are backend only:
+
+```bash
+## Frontend & Backend
+
 PENPOT_OIDC_CLIENT_ID=<client-id>
 
-# Backend
+## Backend only
+
+# Mainly used for auto discovery the openid endpoints
+PENPOT_OIDC_BASE_URI=<uri>
 PENPOT_OIDC_CLIENT_SECRET=<client-id>
 
-## Optional backend variables, used mainly if you want override; they are
-## autodiscovered using the standard openid mechanism.
+# Optional backend variables, used mainly if you want override; they are
+# autodiscovered using the standard openid-connect mechanism.
 PENPOT_OIDC_AUTH_URI=<uri>
 PENPOT_OIDC_TOKEN_URI=<uri>
 PENPOT_OIDC_USER_URI=<uri>
+
+# Optional list of roles that users are required to have. If no role
+# is provided, roles checking  disabled.
+PENPOT_OIDC_ROLES="role1 role2"
+
+# Attribute to use for lookup roles on the user object. Optional, if
+# not provided, the roles checking will be disabled.
+PENPOT_OIDC_ROLES_ATTR=
+```
+
+Since version 1.6.0:
+
+```bash
+# This settings allow overwrite the required scopes, use with caution
+# because penpot requres at least `name` and `email` attrs found on the
+# user info. Optional, defaults to `openid profile`.
+PENPOT_OIDC_SCOPES="scope1 scope2"
 ```
 
 
