@@ -61,6 +61,18 @@ PENPOT_ALLOW_DEMO_USERS=true
 
 ### Authentication Providers
 
+#### Callback URI
+
+Insert the following callback URI to your oauth provider (changing <your_domain> and <oauth_provider> according to your setup):
+
+```bash
+# General URI
+https://<your_domain>/api/auth/oauth/<oauth_provider>/callback
+
+# E.g. Gitlab:
+https://<your_domain>/api/auth/oauth/gitlab/callback
+```
+
 #### Google
 
 Allow use google as oauth provider:
