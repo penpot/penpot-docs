@@ -395,7 +395,7 @@ backend.
 
 ```bash
 # Backend & Frontend
-PENPOT_PUBLIC_URI=http://pubic-domain
+PENPOT_PUBLIC_URI=http://public-domain
 ```
 
 This environment variable indicates where the exporter can access to
