@@ -39,7 +39,7 @@ System_Boundary(backend, "Backend") {
     Container(backend_app, "Backend app", "Clojure / JVM", "", "clojure")
     ContainerDb(db, "Database", "PostgreSQL", "", "postgresql")
     ContainerDb(redis, "Broker", "Redis", "", "redis")
-    Container(exporter, "Exporter", "Clojure / JVM", "", "clojure")
+    Container(exporter, "Exporter", "ClojureScript / nodejs", "", "clojure")
     Container(browser, "Headless browser", "Chrome", "", "chrome")
 }
 
