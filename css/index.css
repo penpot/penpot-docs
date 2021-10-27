@@ -638,7 +638,7 @@ a[href].direct-link:focus:visited,
   min-height: 12rem;
   background-color: white;
 }
-.help-sections .illus {
+.illus {
   background-size: auto 75%;
   background-position: 0.6rem center;
   padding-left: 12rem;
@@ -647,20 +647,26 @@ a[href].direct-link:focus:visited,
 .help-sections > li.no-link.illus-contact {
   padding-left: 14.6rem;
 }
-.help-sections .illus-userguide {
+.illus-userguide {
   background-image: url(/img/home-userguide.png);
 }
-.help-sections .illus-faq {
+.illus-faq {
   background-image: url(/img/home-faq.png);
 }
-.help-sections .illus-techguide {
+.illus-techguide {
   background-image: url(/img/home-techguide.png);
 }
-.help-sections .illus-contributing {
+.illus-contributing {
   background-image: url(/img/home-contributing.png);
 }
-.help-sections .illus-contact {
+.illus-contact {
   background-image: url(/img/home-contact.png);
+}
+.illus-libraries {
+  padding-left: 13rem;
+  background-size: auto 90%;
+  background-position: 0.6rem center;
+  background-image: url(/img/contributing-libraries.png);
 }
 .help-sections > li:hover {
   border-color: var(--primary);
