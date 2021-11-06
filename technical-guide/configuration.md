@@ -158,6 +158,18 @@ Since version 1.6.0:
 PENPOT_OIDC_SCOPES="scope1 scope2"
 ```
 
+#### Azure Active Directory using OpenID Connect
+
+Allows integrating with Azure Active Directory as authentication provider:
+
+```bash
+# Backend & Frontend
+PENPOT_OIDC_CLIENT_ID=<client-id>
+
+## Backend only
+PENPOT_OIDC_BASE_URI=https://login.microsoftonline.com/<tenant-id>/v2.0/
+PENPOT_OIDC_CLIENT_SECRET=<client-secret>
+```
 
 ### LDAP ###
 
