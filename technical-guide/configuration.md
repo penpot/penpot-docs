@@ -75,10 +75,7 @@ https://<your_domain>/api/auth/oauth/gitlab/callback
 
 #### Google
 
-Allow use google as oauth provider:
-
-
-On backend:
+Allows integrating with Google as OAuth provider:
 
 ```bash
 # Backend & Frontend
@@ -88,9 +85,9 @@ PENPOT_GOOGLE_CLIENT_ID=<client-id>
 PENPOT_GOOGLE_CLIENT_SECRET=<client-secret>
 ```
 
-#### Gitlab
+#### GitLab
 
-Allows use gitlab as oauth provider:
+Allows integrating with GitLab as OAuth provider:
 
 ```bash
 # Backend & Frontend
@@ -101,10 +98,9 @@ PENPOT_GITLAB_BASE_URI=https://gitlab.com
 PENPOT_GITLAB_CLIENT_SECRET=<client-secret>
 ```
 
-#### Github
+#### GitHub
 
-Allows use github as oauth provider:
-
+Allows integrating with GitHub as OAuth provider:
 
 ```bash
 # Backend & Frontend
@@ -118,8 +114,8 @@ PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 
 **NOTE:** Since version 1.5.0
 
-Allow integrate with a generic authentication provider that implements
-the OIDC protocol (usualy used for SSO).
+Allows integrating with a generic authentication provider that implements
+the OIDC protocol (usually used for SSO).
 
 All the other options are backend only:
 
