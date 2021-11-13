@@ -20,7 +20,7 @@ installation guide: https://docs.docker.com/engine/install/
 
 Optionally, after installing docker, you can tweak your system for
 avoid constanly using of **sudo**. The easy, single step way is
-executong the following command that will add the current user to the
+executing the following command that will add the current user to the
 docker group:
 
 ```bash
