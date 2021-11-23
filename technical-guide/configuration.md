@@ -54,7 +54,7 @@ content. Very useful for testing or demostration purposes.
 
 You can enable demo users using the following variable:
 
-```
+```bash
 # backend & frontend
 PENPOT_ALLOW_DEMO_USERS=true
 ```
