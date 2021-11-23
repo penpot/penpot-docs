@@ -17,7 +17,7 @@ And launch a development server:
 npm start
 ```
 
-You can then point a browser to [http://localhost:8081](http://localhost:8081).
+You can then point a browser to [http://localhost:8080](http://localhost:8080).
 
 
 ## Tooling
