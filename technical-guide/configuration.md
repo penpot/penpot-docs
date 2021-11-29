@@ -23,6 +23,12 @@ environment variables will be available for both frontend and backend
 at the same time because a single environment file is used:
 `config.env`.
 
+There are two types of configuration: options (properties that
+requieres some value) and flags (that just enables or disables
+something). The `PENPOT_FLAGS` environment variable will have an
+ordered list of strings using this format:
+`<enable|disable>-<flag-name>`.
+
 
 ### Registration ###
 
@@ -33,8 +39,7 @@ If you want to completelly disable registration, use the following
 variable in both fontend & backend:
 
 ```bash
-# backend & frontend
-PENPOT_REGISTRATION_ENABLED=false
+PENPOT_FLAGS="$PENPOT_FLAGS disable-registration"
 ```
 
 You also can restict the registrations to a closed list of domains:
@@ -55,8 +60,7 @@ content. Very useful for testing or demostration purposes.
 You can enable demo users using the following variable:
 
 ```bash
-# backend & frontend
-PENPOT_ALLOW_DEMO_USERS=true
+PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-users"
 ```
 
 ### Authentication Providers
@@ -174,6 +178,9 @@ Penpot comes with support for *Lightweight Directory Access Protocol*
 this authentication backend.
 
 ```bash
+# Common
+PENPOT_FLAGS="$PENPOT_FLAGS enable-login-with-ldap"
+
 # Backend
 PENPOT_LDAP_HOST=ldap
 PENPOT_LDAP_PORT=10389
@@ -186,9 +193,6 @@ PENPOT_LDAP_ATTRS_USERNAME=uid
 PENPOT_LDAP_ATTRS_EMAIL=mail
 PENPOT_LDAP_ATTRS_FULLNAME=cn
 PENPOT_LDAP_ATTRS_PHOTO=jpegPhoto
-
-# Frontend
-PENPOT_LOGIN_WITH_LDAP=true
 ```
 
 If you miss something, please open an issue and we discuss it.
@@ -235,7 +239,7 @@ Enable SMTP:
 
 ```bash
 # Backend
-PENPOT_SMTP_ENABLED=true
+PENPOT_FLAGS="$PENPOT_FLAGS enable-smtp"
 PENPOT_SMTP_HOST=<host>
 PENPOT_SMTP_PORT=587
 PENPOT_SMTP_USER=<username>
@@ -390,7 +394,7 @@ data wipe, ...), set the following variable:
 
 ```bash
 # Frontend
-PENPOT_DEMO_WARNING=true
+PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-warning"
 ```
 
 
@@ -409,3 +413,19 @@ PENPOT_PUBLIC_URI=http://public-domain
 This environment variable indicates where the exporter can access to
 the public frontend application (because it uses special pages from it
 to render the shapes in the underlying headless web browser).
+
+
+## Other Flags
+
+- `enable-cors`: Enables the default cors cofiguration that allows all
+  domains (this configuration is designed only for dev purposes right
+  now).
+- `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that
+  lists all rpc methods available on backend.
+- `enable-insecure-registration`: Enables the insecure process of
+  profile registrion deactivating the email verification process (only
+  for local or internal setups).
+- `disable-secure-session-cookies`: By default, penpot uses the
+  `secure` flag on cookies, this flag disables it; it is usefull if
+  you have plan to serve penpot under different domain than
+  `localhost` without HTTPS.
