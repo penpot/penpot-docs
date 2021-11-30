@@ -90,6 +90,6 @@ need to execute:
 docker-compose -f docker-compose.yaml pull
 ```
 
-This will fetch the latest images. When you do docker-compose down and up
+This will fetch the latest images. When you do docker-compose up
 again, the containers will be recreated with the latest version.
 
