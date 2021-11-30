@@ -6,7 +6,7 @@ title: 4.1. Environment
 
 ## System requirements
 
-You should have `docker` and `docker-compose` installed in your system
+You should have `docker` and `docker-compose V2` installed in your system
 in order to set up properly the development enviroment.
 
 You can [look here][1] for complete instructions.
