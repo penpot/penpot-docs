@@ -80,3 +80,16 @@ For more advanced setups, look a the [Configuration][3] section.
 
 [3]: /technical-guide/configuration/
 
+
+## Update Penpot ##
+
+To get the latest version of Penpot in your local installation, you just
+need to execute:
+
+```bash
+docker-compose -f docker-compose.yaml pull
+```
+
+This will fetch the latest images. When you do docker-compose down and up
+again, the containers will be recreated with the latest version.
+
