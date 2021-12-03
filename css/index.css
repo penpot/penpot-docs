@@ -801,7 +801,7 @@ table, tr, th, td {
     vertical-align: top;
     border: 1px solid var(--graylight);
     border-collapse: collapse;
-    font-size: 1.124rem;
+    font-size: 1.10rem;
 }
 table {
   background-color: white;
