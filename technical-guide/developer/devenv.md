@@ -94,15 +94,14 @@ npx shadow-cljs cljs-repl main
 ### Exporter
 
 The exporter build process is located in the **window 2** and in the
-same way as frontend application, it is build and watched using
+same way as frontend application, it is built and watched using
 **shadow-cljs**.
 
 The main difference is that exporter will be executed in a nodejs, on
 the server side instead of browser.
 
-There you will found the window split in two slices. On the top slice
-you will have the build process and on the bot slice shell ready to
-execute the generated bundle.
+The window is split into two slices. The top slice shows the build process and
+on the bottom slice has a shell ready to execute the generated bundle.
 
 You can start the exporter process executing:
 
@@ -133,5 +132,5 @@ On the REPL you have these helper functions:
 And many other that are defined in the `dev/user.clj` file.
 
 If an exception is raised or an error occurs when code is reloaded, just use
-`(repl/refresh-all)` to finish the code swapping correctly and use use
+`(repl/refresh-all)` to finish loading the code correctly and then use
 `(restart)` again.
