@@ -6,15 +6,16 @@ title: 4.1. Environment
 
 ## System requirements
 
-You should have `docker` and `docker-compose V2` installed in your system
-in order to set up properly the development enviroment.
+You need to have `docker` and `docker-compose V2` installed on your system
+in order to correctly set up the development environment.
 
 You can [look here][1] for complete instructions.
 
 [1]: /technical-guide/getting-started/#docker
 
 
-Optionally, increment user watches:
+Optionally, to improve performance, you can also increase the maximum number of
+user files able to be watched for changes with inotify:
 
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
@@ -23,8 +24,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 ## Getting Started
 
-**It requires a minimum knowledge of [tmux](https://github.com/tmux/tmux/wiki)
-usage in order to use the development environment.**
+**The interactive development environment requires some familiarity of [tmux](https://github.com/tmux/tmux/wiki).**
 
 To start it, clone penpot repository, and execute:
 
@@ -60,6 +60,8 @@ current window.
 
 For more info: https://tmuxcheatsheet.com/
 
+It may take a minute or so, but once all of the services have started, you can
+connect to penpot by browsing to (http://localhost:3449).
 
 <!-- ## Inside the tmux session -->
 
