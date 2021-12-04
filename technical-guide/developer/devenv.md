@@ -52,7 +52,7 @@ manage.sh script:
 ```
 
 Having the the container running and tmux opened inside the container,
-you are free to execute any commands and open many shells as you want.
+you are free to execute commands and open as many shells as you want.
 
 You can create a new shell just pressing the **Ctr+b c** shortcut. And
 **Ctrl+b w** for switch between windows, **Ctrl+b &** for kill the
@@ -61,7 +61,7 @@ current window.
 For more info: https://tmuxcheatsheet.com/
 
 It may take a minute or so, but once all of the services have started, you can
-connect to penpot by browsing to (http://localhost:3449).
+connect to penpot by browsing to http://localhost:3449 .
 
 <!-- ## Inside the tmux session -->
 
@@ -118,8 +118,8 @@ This process does not start automatically.
 The backend related process is located in the tmux **window 3**, and
 you can go directly to it using `ctrl+b 3` shortcut.
 
-By default the backend will be started in non-interactive mode for convenience
-but you can just press `Ctrl+c` and execute this to start the repl:
+By default the backend will be started in a non-interactive mode for convenience
+but you can press `Ctrl+c` to exit and execute the following to start the repl:
 
 ```bash
 ./scripts/repl
@@ -132,6 +132,6 @@ On the REPL you have these helper functions:
 
 And many other that are defined in the `dev/user.clj` file.
 
-If some exception is raised when code is reloaded, just use
-`(repl/refresh-all)` in order to finish correctly the code swaping and
-later use `(restart)` again.
+If an exception is raised or an error occurs when code is reloaded, just use
+`(repl/refresh-all)` to finish the code swapping correctly and use use
+`(restart)` again.
