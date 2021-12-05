@@ -3,39 +3,44 @@ title: 05· Objects
 ---
 
 <h1 id="objects">Objects</h1>
-<p class="main-paragraph">Objects are the items that you can place at the viewport. Artboards, shapes, texts, path and graphics are objects. Learn the specifics of the different objects that you can use at Penpot to get the most of them.</p>
+<p class="main-paragraph">Objects are items that you can place in the viewport. Artboards, shapes, texts, paths and graphics are objects. The following describes the different objects that you have
+available in Penpot, and how to get the most of them.</p>
 
 <h3 id="artboards">Artboards</h3>
-<p>An artboard is a frame with fixed edges. Using artboards is really useful if you want to design for a specific screen or print size. Objects inside artboards only show parts that fall within its shape.</p>
+<p>An artboard is a frame with fixed edges. Artboards are useful if you want to design for a specific screen or print size. Objects inside artboards only show the parts that fall within its shape.</p>
+
 <h4>Create artboards</h4>
-<p>You can create artboards with custom sizes or choose one of the provided presets with the most common resolution for devices and print. </p>
+<p>You can create an artboard with a custom sizes or choose one of the provided presets with the most common resolution for devices and standard print sizes. </p>
 <p><img src="/img/artboards-creation.gif" alt="artboards" /></p>
+
 <h4>Select and move artboards</h4>
 <p>Click on the artboard name or double click over an area without layers.</p>
 <p>To move an artboard you have to select it first and then drag it from its name or from an area without layers. </p>
 <p><strong>Tip:</strong> If you hold <kbd>Shift/⇧</kbd> while dragging you can do it from any part of the artboard, regardless where the layers are.</p>
 <p><img src="/img/artboards-move.gif" alt="artboards" /></p>
+
 <h4>Grids and prototyping</h4>
-<p>Artboards have two main particularities over the rest of the objects: you can set grids on them and you can connect them to create interactions.</p>
+<p>Artboards have two additional features: you can set grids on them to assist with aligning objects, and you can connect them to each other to create interactions.</p>
 <p><img src="/img/artboards-grid-int.png" alt="artboards" /></p>
 
 
 <h3 id="rectangles-ellipses">Rectangles and ellipses</h3>
-<p>Rectangle and ellipses are two basic, “primitive” geometric shapes that are really useful to kickstart your designs.</p>
-<p>Shortcuts are <kbd>E</kbd> for ellipses and <kbd>R</kbd> for rectangles.</p>
-<p>To know details about how to edit and modify them go to <a href="/user-guide/04-layer-basics/">Layer basics</a>.</p>
+<p>Rectangle and ellipses are two basic “primitive” geometric shapes that are useful when starting
+a design.</p>
+<p>The shortcut keys are <kbd>E</kbd> for ellipses and <kbd>R</kbd> for rectangles.</p>
+<p>To find out more about how to edit and modify these shapes go to <a href="/user-guide/04-layer-basics/">Layer basics</a>.</p>
 <p><img src="/img/rect-ellipses.gif" alt="shapes" /></p>
 
 
-<h3 id="texts">Texts</h3>
-<p>To insert a text you have to activate the text tool first clicking on the icon at the toolbar or pressing <kbd>T</kbd>. Then you have to ways to create a text layer:</p>
+<h3 id="text">Text</h3>
+<p>To insert text you have to activate the text tool by first clicking on the icon at the toolbar or pressing <kbd>T</kbd>. Then you have two ways to create a text layer:</p>
 <ol>
   <li><strong>Click</strong> to create a textbox without any specific dimensions.</li>
   <li><strong>Drag</strong> to create a textbox with a fixed size.</li>
 </ol>
 <p><img src="/img/text-creation.gif" alt="text" /></p>
 <h4>Edit and style text content</h4>
-<p>Press <kbd>Enter</kbd> with a text layer selected to start editing the text content. You can style parts of the text content as a rich text.</p>
+<p>Press <kbd>Enter</kbd> with a text layer selected to start editing the text content. You can style parts of the text content as rich text.</p>
 <p><img src="/img/text-edit.gif" alt="text" /></p>
 <h4>Text options</h4>
 <p><img src="/img/text-options.png" alt="text" /></p>
@@ -52,12 +57,15 @@ title: 05· Objects
   <li><strong>Text decoration:</strong> none, underline, strikethrough.</li>
 </ol>
 
+<h3 id="curves">Curves (freehand)</h3>
+<p>The curve tool allows a path to be created directly in a freehand mode.
+Select the curve tool by clicking on the icon at the toolbar or pressing <kbd>Ctrl</kbd> + <kbd>c</kbd>.
+<p>The path created will contain a lot of points, but it is edited the same way as any other curve.</p>
 
 <h3 id="paths">Paths (bezier)</h3>
-<p>A path is composed by two or more nodes that will form a vector shape. To draw a new path you have to activate the text path by clicking on the icon at the toolbar or pressing <kbd>P</kbd>. Then you have two ways to create a text shape:</p>
+<p>A path is composed of two or more nodes and the line segments between them, which may also be curved. To draw a new path you have to select the path tool by clicking on the icon at the toolbar or pressing <kbd>P</kbd>. Then you have two ways to create the path:</p>
 <ol>
   <li><strong>Click</strong> to create a new corner node.</li>
-  <li><strong>Click and drag</strong> to create a curved node.</li>
   <li><strong>Click and drag</strong> to create a curved node.</li>
 </ol>
 <p>To finish the path:</p>
@@ -67,16 +75,18 @@ title: 05· Objects
 </ol>
 <p><strong>Tip:</strong> If you hold <kbd>Shift/⇧</kbd> while adding nodes the angle between the current and the next will change in 45 degree increments.</p>
 <p><img src="/img/paths-create.gif" alt="paths" /></p>
+
 <h4>Edit nodes</h4>
-<p>Double click a path or select and press <kbd>Enter</kbd> to start editing a node. Then you can choose individual nodes or create new ones. Press <kbd>Esc</kbd> to exit node edition. </p>
+<p>To edit a node double click on a path or select and press <kbd>Enter</kbd>.
+You can choose to edit individual nodes or create new ones. Press <kbd>Esc</kbd> to exit node edition. </p>
 <p><img src="/img/paths-edit.gif" alt="paths" /></p>
 <h4>Node types</h4>
-<p>There are two types of nodes: curve or corner (straight). The type of a selected node can be changed at the bezier menu. Curved nodes have bezier handles that allow to modify the curvature of a path contours.</p>
+<p>There are two types of nodes: curve or corner (straight). The type of a selected node can be changed at the bezier menu. Curved nodes have bezier handles that allow the curvature of a path to be modified.</p>
 <p><img src="/img/paths-nodes.gif" alt="paths" /></p>
 
 
 <h3 id="images">Images</h3>
-<p>You have several options to insert an image in a Penpot file:</p>
+<p>There are several options for inserting an image into a Penpot file:</p>
 <ol>
   <li>Use the <strong>image tool</strong> at the toolbar or press <kbd>K</kbd> to inspect images in your file system.</li>
   <li><strong>Drag</strong> an image from your computer to the viewport.</li>
@@ -84,3 +94,9 @@ title: 05· Objects
   <li>Drag an image from a Penpot <strong>library</strong>.</li>
 </ol>
 <p><img src="/img/" alt="" /></p>
+
+<h3 id="comments">Comments</h3>
+<p>The comment tool lets you place comments and notes directly in your pages.
+These will only appear when the comment tool is chosen. Click on the comment tool
+or press <kbd>c</kbd> to select.
+</p>
