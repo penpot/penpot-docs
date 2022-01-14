@@ -27,8 +27,9 @@ title: 12· Prototyping
   <strong>3)</strong> Destination
   <strong>4)</strong> Prototype mode tab
   <strong>5)</strong> Add interaction button
-  <strong>6)</strong> Interaction (settings expanded)
-  <strong>7)</strong> View mode launcher
+  <strong>6)</strong> Interaction action
+  <strong>7)</strong> Animation settings
+  <strong>8)</strong> View mode launcher
 </p>
 
 <h3 id="prototyping-triggers">Interaction triggers</h3>
@@ -78,6 +79,50 @@ title: 12· Prototyping
 
 <h4 id="prototyping-actions-url">Open URL</h4>
 <p>This action opens an URL in a new tab. This is useful to add external links outside of the prototype.</p>
+
+
+<h3 id="prototyping-animations">Interaction animations</h3>
+<p><img src="/img/prototyping-animations.png" alt="prototyping" /></p>
+<p>The animation defines the transition between artboards when the interaction is triggered. Penpot currently provides the following actions (more of them will come):</p>
+<ul>
+  <li><strong>Dissolve</strong>.</li>
+  <li><strong>Slide</strong>.</li>
+  <li><strong>Push</strong>.</li>
+</ul>
+
+<h4 id="prototyping-animations-dissolve">Dissolve</h4>
+<p><img src="/img/prototyping-animations-dissolve.gif" alt="prototyping" /></p>
+<p>Dissolve means that the destination artboard fades in while the origin artboard fades out.</p>
+<p>Options:</p>
+<ul>
+  <li>Easing.</li>
+  <li>Duration.</li>
+</ul>
+
+<h4 id="prototyping-animations-Slide">Slide</h4>
+<p><img src="/img/prototyping-animations-slide.gif" alt="prototyping" /></p>
+<p>Slide animation will move the destination frame in or out of the view.</p>
+<p>Options:</p>
+<ul>
+  <li>IN / OUT.</li>
+  <li>Direction (right, down, left, top)</li>.
+  <li>Easing.</li>
+  <li>Duration.</li>
+  <li>Offset effect.</li>
+</ul>
+<p><strong>Offset effect</strong> means that the origin artboard will slightly fade and move in the same direction of the destination artboard.</p>
+
+<h4 id="prototyping-animations-push">Push</h4>
+<p><img src="/img/prototyping-animations-push.gif" alt="prototyping" /></p>
+<p>Push animations will move the destination artboard into view pushing out the origin artboard.</p>
+<ul>
+  <li>Direction (right, down, left, top)</li>
+  <li>Easing.</li>
+  <li>Duration.</li>
+</ul>
+
+
+
 
 <h3 id="prototyping-flows">Flows</h3>
 <p>Design projects usually need to define multiple casuistics for different devices and user journeys. Flows allow you to define one or multiple starting points within the same page so you can better organize and present your prototypes.</p>
