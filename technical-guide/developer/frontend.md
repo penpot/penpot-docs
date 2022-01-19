@@ -201,64 +201,37 @@ app.util.debug.debug_none()
 ### How it works ###
 
 All the translation strings of this application are stored in
-`resources/locales.json` file. It has a self explanatory format that
-looks like this:
+standard *gettext* files in `frontend/translations/*.po`.
 
-```json
-{
-  "auth.email-or-username" : {
-    "used-in" : [ "src/app/main/ui/auth/login.cljs" ],
-    "translations" : {
-      "en" : "Email or Username",
-      "fr" : "adresse email ou nom d'utilisateur"
-    }
-  },
-  "labels.num-projects" : {
-    "translations": {
-      "en": ["1 project", "%s projects"]
-    }
-  },
-}
-```
-
-For development convenience, you can forget about the specific format
-of that file, and just add a simple key-value entry pairs like this:
+They have a self explanatory format that looks like this:
 
 ```
-{
-  [...],
-  "foo1": "bar1",
-  "foo2": "bar2"
-}
+#: src/app/main/ui/auth/register.cljs, src/app/main/ui/auth/login.cljs
+msgid "auth.create-demo-account"
+msgstr "Create demo account"
 ```
 
-The file is automatically bundled into the `index.html` file on
+The files are automatically bundled into the `index.html` file on
 compile time (in development and production). The bundled content is a
 simplified version of this data structure for avoid loading unnecesary
-data.
+data. The development environment has a watch process that detect
+changes on that file and recompiles the `index.html`.
 
-The development environment has a watch process that detect changes on
-that file and recompiles the `index.html`. **There are no hot reload
-for translations strings**, you just need to refresh the browser tab
-for refresh the translations in the running the application.
+**There are no hot reload for translations strings**, you just need to
+refresh the browser tab for refresh the translations in the running the
+application.
 
-If you have used the short (key-value) format, the watch process will
-automatically convert it to the apropriate format before generate the
-`index.html`.
-
-Finally, when you have finished adding texts, execute the following
-command to reformat the file, and track the usage locations (the
-"used-in" list) before commiting the file into the repository:
+Finally, when you have finished adding texts, execute the following command
+inside the devenv, to reformat the file before commiting the file into the
+repository:
 
 ```bash
 # cd <repo>/frontend
-yarn run collect-locales
+yarn run validate-translations
 ```
 
-NOTE: Later, we will need to think and implement the way to export and
-import to other formats (mainly for Transifex and similar services
-compatibility).
-
+At Penpot core team we maintain manually the english and spanish .po files. All
+the others are managed in https://weblate.org.
 
 ### How to use it ###
 
@@ -266,23 +239,47 @@ You need to use the `app.util.i18n/tr` function for lookup translation
 strings:
 
 ```clojure
-(require '[app.util.i18n :refer [tr])
+(require [app.util.i18n :as i18n :refer [tr]])
 
-(tr "auth.email-or-username")
-;; => "Email or Username"
+(tr "auth.create-demo-account")
+;; => "Create demo account"
+```
+
+If you want to insert a variable into a translated text, use `%s` as
+placeholder, and then pass the variable value to the `(tr ...)` call.:
+
+```
+#: src/app/main/ui/settings/change_email.cljs
+msgid "notifications.validation-email-sent"
+msgstr "Verification email sent to %s. Check your email!"
+```
+
+```clojure
+(require [app.util.i18n :as i18n :refer [tr]])
+
+(tr "notifications.validation-email-sent" email)
+;; => "Verification email sent to test@example.com. Check your email!"
 ```
 
 If you have defined plurals for some translation resource, then you
 need to pass an additional parameter marked as counter in order to
 allow the system know when to show the plural:
 
-```clojure
-(require '[app.util.i18n :as i18n :refer [tr]])
+```
+#: src/app/main/ui/dashboard/team.cljs
+msgid "labels.num-of-projects"
+msgid_plural "labels.num-of-projects"
+msgstr[0] "1 project"
+msgstr[1] "%s projects"
+```
 
-(tr "labels.num-projects" (i18n/c 10))
+```clojure
+(require [app.util.i18n :as i18n :refer [tr]])
+
+(tr "labels.num-of-projects" (i18n/c 10))
 ;; => "10 projects"
 
-(tr "labels.num-projects" (i18n/c 1))
+(tr "labels.num-of-projects" (i18n/c 1))
 ;; => "1 project"
 ```
 
