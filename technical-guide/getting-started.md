@@ -68,7 +68,7 @@ need to create a user in order be able login into the application. You
 can create an additional, already activated user using this command:
 
 ```bash
-docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile
+docker exec -ti penpot_penpot-backend_1 ./manage.sh create-profile
 ```
 
 In general, the application is ready to be used without email
