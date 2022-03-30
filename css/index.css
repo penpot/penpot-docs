@@ -36,6 +36,31 @@ h1, h2, h3,
   max-width: 42rem;
   position: relative;
 }
+
+@media (max-width: 997px) {
+  .main-content {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 966px) {
+  .main-content {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 933px) {
+  .main-content {
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 901px) {
+  .main-content {
+    max-width: 35rem;
+  }
+}
+
 img {
   max-width: 100%;
 }
