@@ -49,7 +49,6 @@ You also can restict the registrations to a closed list of domains:
 PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
 ```
 
-
 ### Demo users ###
 
 Penpot comes with facilities for fast creation of demo users without the need
@@ -62,6 +61,9 @@ You can enable demo users using the following variable:
 ```bash
 PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-users"
 ```
+
+They are disabled by default since 1.13.0
+
 
 ### Authentication Providers
 
@@ -157,6 +159,19 @@ Since version 1.6.0:
 # user info. Optional, defaults to `openid profile`.
 PENPOT_OIDC_SCOPES="scope1 scope2"
 ```
+
+Since version 1.12.0
+
+```bash
+# Attribute to use for lookup the name on the user object. Optional,
+# if not perovided, the `name` prop will be used.
+PENPOT_OIDC_NAME_ATTR=
+
+# Attribute to use for lookup the email on the user object. Optional,
+# if not perovided, the `email` prop will be used.
+PENPOT_OIDC_EMAIL_ATTR=
+```
+
 
 #### Azure Active Directory using OpenID Connect
 
@@ -262,8 +277,8 @@ the default configuration looks like this:
 
 ```bash
 # Backend
-PENPOT_STORAGE_BACKEND=fs
-PENPOT_STORAGE_FS_DIRECTORY=/opt/data/assets
+PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
 ```
 
 The main downside of this backend is the hard dependency on nginx
@@ -289,7 +304,7 @@ environment variable:
 
 ```bash
 # Backend
-PENPOT_STORAGE_BACKEND=db
+PENPOT_ASSETS_STORAGE_BACKEND=db
 ```
 
 
@@ -307,14 +322,13 @@ AWS_ACCESS_KEY_ID=<you-access-key-id-here>
 AWS_SECRET_ACCESS_KEY=<your-secret-access-key-here>
 
 # Backend configuration
-PENPOT_STORAGE_BACKEND=s3
-PENPOT_STORAGE_S3_REGION=<aws-region>
-PENPOT_STORAGE_S3_BUCKET=<bucket-name>
+PENPOT_ASSETS_STORAGE_BACKEND=assets-s3
+PENPOT_STORAGE_ASSETS_S3_REGION=<aws-region>
+PENPOT_STORAGE_ASSETS_S3_BUCKET=<bucket-name>
+
+# Optional if you want to use it with non AWS, S3 compatible service:
+PENPOT_STORAGE_ASSETS_S3_ENDPOINT=<endpoint-uri>
 ```
-
-Right now, only `eu-central-1` region is supported. If you need
-others, open an issue.
-
 
 ### Redis
 
@@ -338,6 +352,7 @@ You can set the port where the backend http server will listen for requests.
 ```bash
 # Backend
 PENPOT_HTTP_SERVER_PORT=6060
+PENPOT_HTTP_SERVER_HOST=localhost
 ```
 
 Additionally, you probably will need to set the `PENPOT_PUBLIC_URI`
@@ -415,7 +430,7 @@ the public frontend application (because it uses special pages from it
 to render the shapes in the underlying headless web browser).
 
 
-## Other Flags
+## Other flags
 
 - `enable-cors`: Enables the default cors cofiguration that allows all
   domains (this configuration is designed only for dev purposes right
@@ -429,3 +444,13 @@ to render the shapes in the underlying headless web browser).
   `secure` flag on cookies, this flag disables it; it is usefull if
   you have plan to serve penpot under different domain than
   `localhost` without HTTPS.
+- `disable-login`: allows disable password based login form.
+- `disable-registration`: disables registration (still enabled for
+  invitations only).
+
+Since version 1.13.0:
+
+- `enable-log-invitation-tokens`: for cases where you don't have email
+  configured, this will log to console the invitation tokens.
+- `enable-log-emails`: if you want to log in console send emails. This
+  only works if smtp is not configured.

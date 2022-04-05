@@ -14,9 +14,13 @@ many ways, the recommended approach is using **docker** and
 
 **Skip this section if you already have docker installed, up and running.**
 
-
 Probably the best approach to install docker is following the official docker
 installation guide: https://docs.docker.com/engine/install/
+
+And the [docker compose
+(v2)](https://docs.docker.com/compose/cli-command/#installing-compose-v2). You
+can use the old `docker-compose` of course, but all the decomentation
+supposes you are using the V2.
 
 Optionally, after installing docker, you can tweak your system for
 avoid constanly using of **sudo**. The easy, single step way is
@@ -27,13 +31,7 @@ docker group:
 sudo usermod -aG docker $USER
 ```
 
-*NOTE*: probably you will need to re-login again to make this change take effect.
-
-
-For more advanced setup, docker already has a guide for [rootless docker][1]
-
-[1]: https://docs.docker.com/engine/security/rootless/
-
+**NOTE**: probably you will need to re-login again to make this change take effect.
 
 
 ## Start Penpot ##
@@ -55,7 +53,7 @@ essential variables already set and other commented with appropriate
 comments.
 
 ```bash
-docker-compose -p penpot -f docker-compose.yaml up -d
+docker compose -p penpot -f docker-compose.yaml up -d
 ```
 
 This will start listening on http://localhost:9001
@@ -71,10 +69,9 @@ can create an additional, already activated user using this command:
 docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile
 ```
 
-In general, the application is ready to be used without email
-configuration; for example when no smtp configuration is found you
-should be able to change the user email (in profile section) without
-the email validation step.
+**NOTE:** take care that the `penpot-penpot-backend-1` name depends of
+many factors, per example you may using docker-compose v1 or v2; you
+can look for exact name executing the `docker ps`.
 
 For more advanced setups, look a the [Configuration][3] section.
 
