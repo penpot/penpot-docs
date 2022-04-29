@@ -134,3 +134,13 @@ And many other that are defined in the `dev/user.clj` file.
 If an exception is raised or an error occurs when code is reloaded, just use
 `(repl/refresh-all)` to finish loading the code correctly and then use
 `(restart)` again.
+
+## Email
+
+To test email sending, the devenv includes [MailCatcher](https://mailcatcher.me/),
+a SMTP server that is used for develop. It does not send any mail outbounds.
+Instead, it stores them in memory and allows to browse them via a web interface
+similar to a webmail client. Simply navigate to:
+
+[http://localhost:1080]()
+
