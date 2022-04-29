@@ -31,102 +31,87 @@ For performance reasons, all used icons are statically defined in the
 
 ## Logging, Tracing & Debugging
 
-As a traditional way for debugging and tracing you have the followimg approach:
-
-
-Print data to the devtool console using clojurescript helper:
-**prn**. This helper automatically formats the clojure and js data
-structures as plain EDN for easy visual inspection of the data and the
-type of the data.
-
-```clojure
-(prn "message" expression)
-```
-
-An alternative is using the pprint function, usefull for pretty
-printing a medium-big data structure to completely understand it.
-
-```clojure
-;; on the ns part
-(:require [cljs.pprint :refer [pprint]])
-
-;; On the code
-(pprint expression)
-;; => Outputs a clojure value as a string, nicely formatted and with data type information.
-```
-
-Use the js native functions for printing data.  The clj->js converts
-the clojure data structure to js data structure and it is
-inspeccionable in the devtools console.
-
-```clojure
-(js/console.log "message" (clj->js expression))
-```
-
-
-Also we can insert breakpoints in the code with this function:
-
-```clojure
-(js-debugger)
-```
-
-You can also set a breakpoint from the sources tab in devtools. One
-way of locating a source file is to output a trace with
-(js/console.log) and then clicking in the source link that shows in
-the console.
-
-
 ### Logging framework
 
-Additionally to the traditional way of putting traces in the code, we
-have a logging framework with steroids. It is usefull for casual
-debugging (as replacement for a `prn` and `js/console.log`) and for
-permanent traces in the code.
-
-You have the ability to specify the logging level per namespace and
-all logging is elided in production build.
-
-Lets start with a simple example:
+To trace and debug the execution of the code, one method is to enable the log
+traces that currently are in the code using the [Logging
+framework](/technical-guide/developer/common/#system-logging). You can edit a
+module and set a lower log level, to see more traces in console. Search for
+this kind lines and change to `:info` or `:debug`:
 
 ```clojure
 (ns some.ns
   (:require [app.util.logging :as log]))
 
-;; This function sets the level of the current namespace; messages
-;; with level behind this will not be printed.
 (log/set-level! :info)
-
-
-;; Log some data; The `app.util.logging` has the following
-;; functions/macros:
-
-(log/error :msg "error message")
-(log/warn :msg "warn message")
-(log/info :msg "info message")
-(log/debug :msg "debug message")
-(log/trace :msg "trace message")
 ```
 
-Each macro accepts an arbitrary number of key values pairs:
+Or you can change it live with the debug utility (see below):
+
+```javascript
+debug.set_logging("namespace", "level")
+```
+
+### Temporary traces
+
+Of course, you have the tradicional way of inserting temporary traces inside
+the code to output data to the devtools console. There are several ways of
+doing this.
+
+#### Use clojurescript helper `prn`
+
+This helper automatically formats the clojure and js data structures as plain
+[EDN](https://clojuredocs.org/clojure.edn) for visual inspection and to know
+the exact type of the data.
 
 ```clojure
-(log/info :foo "bar" :msg "test" :value 1 :items #{1 2 3})
+(prn "message" expression)
 ```
 
-Some keys ara treated as special cases for helping in debugging:
+![prn example](/img/traces1.png)
+
+#### Use `pprint` function
+
+This gives a human-readable formatting to the data, useful for easy understanding
+of larger data structures.
 
 ```clojure
-;; The special case for :js/whatever; if you namespace the key
-;; with `js/`, the variable will be printed as javascript
-;; inspectionable object.
+(:require [cljs.pprint :refer [pprint]])
 
-(let [foobar {:a 1 :b 2}]
-  (log/info :msg "Some data" :js/data foobar))
-
-;; The special case for `:err`; If you attach this key, the
-;; exception stack trace is printed as additional log entry.
+;; On the code
+(pprint expression)
 ```
 
+![pprint example](/img/traces2.png)
+
+#### Use the js native functions
+
+The `clj->js` function converts the clojure data structure into a javacript
+object, interactively inspectionable in the devtools.console.
+
+```clojure
+(js/console.log "message" (clj->js expression))
+```
+
+![clj->js example](/img/traces3.png)
+
+
+### Breakpoints
+
+You can insert standard javascript debugger breakpoints in the code, with this
+function:
+
+```clojure
+(js-debugger)
+```
+
+The Clojurescript environment generates source maps to trace your code step by
+step and inspect variable values. You may also insert breakpoints from the
+sources tab, like when you debug javascript code.
+
+One way of locating a source file is to output a trace with `(js/console.log)`
+and then clicking in the source link that shows in the console at the right
+of the trace.
 
 
 ### Access to clojure from js console
@@ -141,49 +126,66 @@ console (there is autocompletion for help):
 app.main.store.emit_BANG_(app.main.data.workspace.reset_zoom)
 ```
 
+### Debug utility
 
-### Debug state and objects
+We have defined, at `src/debug.cljs`, a `debug` namespace with many functions
+easily accesible from devtools console.
 
-There are also some useful functions to visualize the global state or
-any complex object. To use them from clojure:
+#### Change log level
 
-```clojure
-(ns app.util.debug)
-(logjs <msg> <var>) ; to print the value of a variable
-(tap <fn>) ; to include a function with side effect (e.g. logjs) in a transducer.
-
-(ns app.main.store)
-(dump-state) ; to print in console all the global state
-(dump-objects) ; to print in console all objects in workspace
-```
-
-But last ones are most commonly used from javscript console:
+You can change the [log level](/technical-guide/developer/common/#system-logging)
+of one namespace without reloading the page:
 
 ```javascript
-app.main.store.dump_state()
-app.main.store.dump_objects()
+debug.set_logging("namespace", "level")
 ```
 
-And we have also exported `pprint` and `clj->js` functions for the console:
+#### Dump state and objects
+
+There are some functions to inspect the global state or parts of it:
 
 ```javascript
-pp(js_expression) // equivalent to cljs.pprint.pprint(js_expression)
-dbg(js_expression) // equivalent to cljs.core.clj__GT_js(js_expression)
+// print the whole global state
+debug.dump_state()
+
+// print the latest events in the global stream
+debug.dump_buffer()
+
+// print a key of the global state
+debug.get_state(":workspace-data :pages 0")
+
+// print the objects list of the current page
+debug.dump_objects()
+
+// print a single object by name
+debug.dump_object("Rect-1")
+
+// print the currently selected objects
+debug.dump_selected()
+
+// print all objects in the current page and local library components.
+// Objects are displayed as a tree in the same order of the
+// layers tree, and also links to components are shown.
+debug.dump_tree()
+
+// This last one has two optional flags. The first one displays the
+// object ids, and the second one the {touched} state.
+debug.dump_tree(true, true)
 ```
 
-
-
+And a bunch of other utilities (see the file for more).
 
 ## Workspace visual debug
 
 Debugging a problem in the viewport algorithms for grouping and
 rotating is difficult. We have set a visual debug mode that displays
 some annotations on screen, to help understanding what's happening.
+This is also in the `debug` namespace.
 
 To activate it, open the javascript console and type:
 
 ```js
-app.util.debug.toggle_debug("option")
+debug.toggle_debug("option")
 ```
 
 Current options are `bounding-boxes`, `group`, `events` and
@@ -192,8 +194,8 @@ Current options are `bounding-boxes`, `group`, `events` and
 You can also activate or deactivate all visual aids with
 
 ```js
-app.util.debug.debug_all()
-app.util.debug.debug_none()
+debug.debug_all()
+debug.debug_none()
 ```
 
 ## Translations (I18N) ##

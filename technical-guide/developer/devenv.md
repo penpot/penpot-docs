@@ -1,5 +1,5 @@
 ---
-title: 4.1. Environment
+title: 4.1. Dev environment
 ---
 
 # Development environment
