@@ -30,7 +30,7 @@ If you don't have experience using Docker or if you want a fully automatically m
 
 * If you are a developer and want to get into the code, we recommend the [Developer Guide][4] that explains how to properly setup a development environment and many other dev-oriented documentation.
 
-[1]: /technical-guide/getting-started/
-[2]: /technical-guide/configuration/
+[1]: /technical-guide/getting-started/#install-with-elestio
+[2]: /technical-guide/getting-started/#install-with-docker
 [3]: /technical-guide/configuration/
 [4]: /technical-guide/developer/
