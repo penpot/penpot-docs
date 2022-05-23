@@ -11,7 +11,7 @@ in order to correctly set up the development environment.
 
 You can [look here][1] for complete instructions.
 
-[1]: /technical-guide/getting-started/#docker
+[1]: /technical-guide/getting-started/#install-with-docker
 
 
 Optionally, to improve performance, you can also increase the maximum number of

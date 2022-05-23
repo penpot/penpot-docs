@@ -11,19 +11,26 @@ eleventyNavigation:
 
 # Overview
 
-This documentation intends to explain how to get penpot application
-and run it locally, to test it or make changes to it.
+This documentation intends to explain how to get Penpot application and run it locally, test it, or make changes to it.
 
-The official installation guide is described in the [Getting
-Started][1] section; and complemented with the [Configuration][2]
-section for more advanced setups.
+There are two main options for creating a local on-premise instance:
 
-[1]: /technical-guide/getting-started/
-[2]: /technical-guide/configuration/
+1. Using the platform of our partner <a href="https://elest.io/" target="_blank">Elestio</a>.
+2. Doing the installation yourself with Docker.
 
+<p class="advice">
+If you don't have experience using Docker or if you want a fully automatically managed service, we recommend using Elestio. Otherwise, go for Docker.
+</p>
 
-If you are a developer and want to get into the code, we recommend the
-[Developer Guide][3] that explains how to properly setup a development
-environment and many other dev-oriented documentation.
+* In the [Install with Elestio][1] section, you can find details on how to open an Elestio account and create your Penpot instance.
 
-[3]: /technical-guide/developer/
+* In the [Install with Docker][2] section, you can find the official Docker installation guide.
+
+* In the [Configuration][3] section, you can find more advanced setup options.
+
+* If you are a developer and want to get into the code, we recommend the [Developer Guide][4] that explains how to properly setup a development environment and many other dev-oriented documentation.
+
+[1]: /technical-guide/getting-started/#install-with-elestio
+[2]: /technical-guide/getting-started/#install-with-docker
+[3]: /technical-guide/configuration/
+[4]: /technical-guide/developer/
