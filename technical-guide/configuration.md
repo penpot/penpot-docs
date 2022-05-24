@@ -1,8 +1,8 @@
 ---
-title: 2. Configuration
+title: 2. Advanced Configuration
 ---
 
-# Configuration #
+# Advanced Configuration #
 
 This section intends to explain all available configuration options.
 
