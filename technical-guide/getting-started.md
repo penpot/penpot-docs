@@ -15,7 +15,7 @@ If you don't have experience using Docker or if you want a fully automatically m
 
 This section details how to get Penpot up and running using Elestio. Elestio is using the same Docker compose as recommended in “Install with Docker” therefore you can also use the [Configuration][1] options.
 
-[1]: /technical-guide/getting-started/#configuration
+[1]: /technical-guide/getting-started/#configuration elestio
 
 
 ### Get an Elestio account ###
@@ -46,9 +46,9 @@ By clicking on the Service you go to all the details and configuration options.
 
 In Network/CNAME you can find the URL of your instance. Copy and paste this into a browser and start using Penpot.
 
-### Configuration ###
+### Configuration Elestio ###
 
-If you want to make changes to your Penpot setup click on the “Update config” button in Software. Here you can see the “Docker compose” used to create the instance. In “ENV” top middle left you can make configuration changes that will be reflected in the Docker compose. You can find more information on the configuration options in Configuration. In the “ENV” file a “#” at the start of the line means it is text and not considered part of the configuration. This means you will need to delete it to get some of the configuration options to work. Once you made all your changes hit “Update & restart”. After a couple of minutes, your changes will be active.
+If you want to make changes to your Penpot setup click on the “Update config” button in Software. Here you can see the “Docker compose” used to create the instance. In “ENV” top middle left you can make configuration changes that will be reflected in the Docker compose. You can find more information on the configuration options in [Advanced Configuration][3]. In the “ENV” file a “#” at the start of the line means it is text and not considered part of the configuration. This means you will need to delete it to get some of the configuration options to work. Once you made all your changes hit “Update & restart”. After a couple of minutes, your changes will be active.
 
 Get in contact with us through <a href="mailto:support@penpot.app">support@penpot.app</a> if you have any questions or need help.
 
@@ -129,7 +129,7 @@ docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile
 many factors, per example you may using docker-compose v1 or v2; you
 can look for exact name executing the `docker ps`.
 
-For more advanced setups, look a the [Configuration][3] section.
+For more advanced setups, look a the [Advanced Configuration][3] section.
 
 [3]: /technical-guide/configuration/
 
