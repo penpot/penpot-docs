@@ -15,7 +15,7 @@ If you don't have experience using Docker or if you want a fully automatically m
 
 This section details how to get Penpot up and running using Elestio. Elestio is using the same Docker compose as recommended in “Install with Docker” therefore you can also use the [Configuration][1] options.
 
-[1]: /technical-guide/getting-started/#configuration elestio
+[1]: /technical-guide/getting-started/#configuration-elestio
 
 
 ### Get an Elestio account ###
@@ -31,14 +31,14 @@ You can choose to deploy on any one of five leading cloud providers or on-premis
 ### Deploy Penpot using Elestio ###
 
 Now you can Create your service in “Services”:
-1. Look for Penpot
-2. Select a Service Cloud Provider
-3. Select Service Cloud Region
-4. Select Service Plan (for a team of 20 you should be fine with 2GB RAM)
-5. Select Elestio Service Support
-6. Provide Service Name (this will show in the URL of your instance) & Admin email (used to create the admin account)
-7. Select Advanced Configuration options (you can also do this later
-8. Hit “Create Service” on the bottom right
+1. Look for Penpot.
+2. Select a Service Cloud Provider.
+3. Select Service Cloud Region.
+4. Select Service Plan (for a team of 20 you should be fine with 2GB RAM).
+5. Select Elestio Service Support.
+6. Provide Service Name (this will show in the URL of your instance) & Admin email (used to create the admin account).
+7. Select Advanced Configuration options (you can also do this later).
+8. Hit “Create Service” on the bottom right.
 
 It will take a couple of minutes to get the instance launched. When the status turns to “Service is running” you are ready to get started.
 
