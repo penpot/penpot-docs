@@ -30,14 +30,14 @@ You can choose to deploy on any one of five leading cloud providers or on-premis
 
 ### Deploy Penpot using Elestio ###
 
-Now you can Create you service in “Services”:
+Now you can Create your service in “Services”:
 1. Look for Penpot
-2. Select a Service provider
+2. Select a Service Cloud Provider
 3. Select Service Cloud Region
-4. Select Service Plan (we recommend minimum xxxx)
+4. Select Service Plan (for a team of 20 you should be fine with 2GB RAM)
 5. Select Elestio Service Support
 6. Provide Service Name (this will show in the URL of your instance) & Admin email (used to create the admin account)
-7. There are Advanced Configuration options, but you can also do these later
+7. Select Advanced Configuration options (you can also do this later
 8. Hit “Create Service” on the bottom right
 
 It will take a couple of minutes to get the instance launched. When the status turns to “Service is running” you are ready to get started.
