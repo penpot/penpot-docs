@@ -440,6 +440,7 @@ to render the shapes in the underlying headless web browser).
 - `enable-insecure-registration`: Enables the insecure process of
   profile registrion deactivating the email verification process (only
   for local or internal setups).
+- `enable-user-feedback`: Enables the feedback form at the dashboard.
 - `disable-secure-session-cookies`: By default, penpot uses the
   `secure` flag on cookies, this flag disables it; it is usefull if
   you have plan to serve penpot under different domain than
