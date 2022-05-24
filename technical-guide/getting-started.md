@@ -15,7 +15,7 @@ If you don't have experience using Docker or if you want a fully automatically m
 
 This section details how to get Penpot up and running using Elestio. Elestio is using the same Docker compose as recommended in “Install with Docker” therefore you can also use the [Configuration][1] options.
 
-[1]: /technical-guide/getting-started/#configuration elestio
+[1]: /technical-guide/getting-started/#configuration-elestio
 
 
 ### Get an Elestio account ###
