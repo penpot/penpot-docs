@@ -1,11 +1,9 @@
 ---
-title: 08· Exporting Objects
+title: 08· Exporting elements
 ---
 
-<h1 id="export">Exporting Objects</h1>
+<h1 id="export">Exporting elements</h1>
 <p class="main-paragraph">In Penpot you can setup export presets for different file formats and scales.</p>
-
-<p class="advice">Multiexport options are among the main priorities of the Penpot team. Related features are coming *very* soon. Stay tunned.</p>
 
 <h3 id="export-howto">How to Export</h3>
 <p>To export an object you need to select it and at the Design panel add an export preset pressing the “+” button of the Export section.</p>
@@ -29,9 +27,24 @@ title: 08· Exporting Objects
   1) When exporting objects with masks, the mask does not work when opening the PDF file with some open source tools (e.g. evince or inkscape). This is not a Penpot fault, but <a href="https://gitlab.freedesktop.org/poppler/poppler/-/issues/1210" target="_blank">a bug in poppler</a>, a library used by many of the open source tools. If you open the file with an official Adobe viewer, or a tool like okular or in a browser like Chrome or Firefox, you can see it well.
 </blockquote>
 
-<h3 id="export-multiple">Multiple Export Presets</h3>
+<h3 id="export-multiple">Multiple export presets</h3>
 <p>You can set as many export presets you need for the same object. Set multiple exports to get the same object in different scales and/or formats with just one click.</p>
 <p><img src="/img/export-multiple.png" alt="export" /></p>
+
+<h3 id="export-multiple-elements">Exporting multiple elements</h3>
+<h4>Make your export selection.</h4>
+<p>To export multiple elements you first have to select the elements you'd like to export. If the selected elements already have export settings those will be included in the export. You can also add new export settings for multiselections.</p>
+<p><img src="/img/export-selection.png" alt="export" /></p>
+<p>You can also launch the export for a page from the main menu or using the shortcut <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>. This option will include in the export all the export pressets set among a selection or in the page if nothing is selected.</p>
+<p><img src="/img/export-menu.png" alt="export" /></p>
+
+<h4>Manage the export selection.</h4>
+<p>Before confirming your export for multiple elements you will have the option to check their names, sizes and formats and a last chance to deselect the export settings you don't want to go on this batch.</p>
+<p><img src="/img/export-selection-window.png" alt="export" /></p>
+
+<h4>Check the export progress.</h4>
+<p>A popup will show the exporting progress and will show errors if any.</p>
+<p><img src="/img/export-progress.png" alt="export" /></p>
 
 <h3 id="export-artboards-pdf">Export Artboards to PDF</h3>
 <p>If you have a presentation made at Penpot you might want to create a document that can be shared with anyone, regardless of having a Penpot account, or just to be able to use your presentation offline (essential for talks and classes). You can easily export all the artboards of a page to a single pdf file from the file menu.</p>
