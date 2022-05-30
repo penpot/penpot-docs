@@ -75,7 +75,7 @@ installation guide: https://docs.docker.com/engine/install/
 
 And the [docker compose
 (v2)](https://docs.docker.com/compose/cli-command/#installing-compose-v2). You
-can use the old `docker-compose` of course, but all the decomentation
+can use the old `docker-compose` of course, but all the documentation
 supposes you are using the V2.
 
 Optionally, after installing docker, you can tweak your system for
