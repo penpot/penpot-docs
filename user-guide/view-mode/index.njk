@@ -1,5 +1,5 @@
 ---
-title: 14· View mode
+title: 12· View mode
 ---
 
 <h1 id="viewmode">View mode</h1>
@@ -14,7 +14,7 @@ title: 14· View mode
 <p><strong>Note:</strong> the View mode shows only artboards and their contents. Anything outside an artboard will not be shown at the View mode.</p>
 <p><img src="/img/viewmode-play.png" alt="viewmode" /></p>
 
-<h3 id="viewmode-features">Features</h3>
+<h3 id="viewmode-features">Features and options</h3>
 <p>From the View mode you can:</p>
 <ul>
   <li><strong>Navigate through artboards</strong> pressing <kbd>→</kbd> and <kbd>←</kbd> keys.</li>
@@ -25,6 +25,48 @@ title: 14· View mode
   <li>Create a <strong>shareable link</strong>. The Share link is a public url that you can destroy anytime. You have control of what pages will be shown at the link, being able to choose between showing all pages, the current page or selecting specific pages.<p> <p>The option to share the design workspace in viewer mode is still disabled but coming soon.</p><img src="/img/viewmode-share-link-options.gif" alt="viewmode" /></p></li>
   <li><strong>Zooming options</strong>. Zoom in <kbd>+</kbd>, Zoom out <kbd>-</kbd>, Zoom to 100% <kbd>Shift+0</kbd>, Zoom to fit all <kbd>Shift+1</kbd>, Zoom to selected object <kbd>Shift+2</kbd>, Full screen.</li>
   <li>Activate the browser <strong>fullscreen mode</strong>.</li>
-  <li>Activate the <strong>Code mode</strong>.</li>
+  <li>Activate the <strong>Handoff</strong>.</li>
   <li>Activate the <strong>Comments mode</strong>.</li>
 </ul>
+
+
+<h2 id="viewmode-handoff">Handoff</h2>
+<p>At the Handoff you can inspect your designs to get specifications such as object properties, measurements and distances. You can also get code snippets for styles (currently CSS only but more coming) and SVG markup.<p>
+
+<h3 id="viewmode-handoff-activate">Inspect Designs</h3>
+<p>You can activate the Handoff from the View mode. Click the code button at the middle of the navbar. Then you will see two sidebars:</p>
+<ul>
+<li>On the <strong>left sidebar</strong> you can see the layers tree. Select a layer to inspect it.</li>
+<li>At the <strong>right sidebar:</strong> you can switch between Info and Code tabs to get design specifications or code.</li>
+</ul>
+<p><img src="/img/codemode-activate.gif" alt="codemode" /></p>
+
+<h3 id="viewmode-handoff-measurements">Distances and measurements</h3>
+<p>You can easily get measurements and distances between an object and other objects and artboard edges.</p>
+<p>To get distances:</p>
+<ul>
+<li>Click on an object or select it at the layers panel.</li>
+<li>Hover other objects to see the distances between them and the selected one.</li>
+<li>Hover a free space at the artboard or the area around it to get the distance from the object to the artboard edges.</li>
+</ul>
+<p><img src="/img/codemode-measures.gif" alt="codemode" /></p>
+
+<h3 id="viewmode-handoff-info">Info panel</h3>
+<p>At the info panel you can see specifications about style and content of an object. Different types of objects can have different sets of properties.</p>
+<p><img src="/img/codemode-properties.gif" alt="codemode" /></p>
+
+<h4>Copy properties</h4>
+<p>You can copy property values individually or full sections of them pressing the copy buttons that are shown at the right when hovering. For example you could copy all the layout properties or only the width.</p>
+<p><img src="/img/codemode-copy.gif" alt="codemode" /></p>
+
+<h3 id="viewmode-handoff-code">Code panel</h3>
+<p>Press the code tab to get actual code snippets. Select an object to get ready to use code for styles (currently CSS only but more coming) and SVG markup.</p>
+<p><img src="/img/codemode-code.png" alt="codemode" /></p>
+
+<h3 id="viewmode-handoff-export">Export</h3>
+<p>Export option is available at the bottom of the Info panel. Export presets set at the workspace will be available at the Handoff. New export presets can be added ath the Code mode but will not persist (won’t be found at the workspace).</p>
+
+<h2 id="viewmode-comments">Comments</h3>
+<p>You can activate comments at the View mode by pressing the comments icon at the top navbar.</p>
+<p class="advice">At the View mode only artboards are shown so the comments that are placed outside artboards will not show here.</p>
+<p><img src="/img/comments-view.png" alt="comments" /></p>
