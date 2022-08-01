@@ -437,7 +437,7 @@ to render the shapes in the underlying headless web browser).
   now).
 - `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that
   lists all rpc methods available on backend.
-- `enable-insecure-registration`: Enables the insecure process of
+- `enable-insecure-register`: Enables the insecure process of
   profile registrion deactivating the email verification process (only
   for local or internal setups).
 - `enable-user-feedback`: Enables the feedback form at the dashboard.
