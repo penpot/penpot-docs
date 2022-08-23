@@ -72,14 +72,21 @@ the exact type of the data.
 
 #### Use `pprint` function
 
-This gives a human-readable formatting to the data, useful for easy understanding
-of larger data structures.
+We have set up a wrapper over [fipp](https://github.com/brandonbloom/fipp)
+`pprint` function, that gives a human-readable formatting to the data, useful
+for easy understanding of larger data structures.
+
+The wrapper allows to easily specify `level`, `length` and `width` parameters,
+with reasonable defaults, to control the depth level of objects to print, the
+number of attributes to show and the display width.
 
 ```clojure
-(:require [cljs.pprint :refer [pprint]])
+(:require [app.common.pprint :refer [pprint]])
 
 ;; On the code
-(pprint expression)
+(pprint shape {:level 2
+               :length 21
+               :width 30})
 ```
 
 ![pprint example](/img/traces2.png)
