@@ -6,15 +6,17 @@ Penpot documentation website
 To view this site locally, first set up the environment:
 
 ```
-nvm install     (if necessary)
+nvm install         (if necessary)
 nvm use
-npm install
+npm install -g yarn (if necessary)
+
+yarn
 ```
 
 And launch a development server:
 
 ```
-npm start
+yarn run start
 ```
 
 You can then point a browser to [http://localhost:8080](http://localhost:8080).

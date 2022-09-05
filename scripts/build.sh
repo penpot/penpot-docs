@@ -4,5 +4,5 @@ source ~/.bashrc
 
 set -ex
 rm -rf ./_dist
-npm install
-npm run build
+yarn
+yarn run build
