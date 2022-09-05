@@ -67,17 +67,24 @@ They are disabled by default since 1.13.0
 
 ### Authentication Providers
 
-#### Callback URI
+For configure the authentication with third-party auth providers you
+will need to configure penpot and set the correct callback of your
+penpot instance in the auth-provider configuration.
 
-Insert the following callback URI to your oauth provider (changing <your_domain> and <oauth_provider> according to your setup):
+The callback has the following format:
 
-```bash
-# General URI
+```
 https://<your_domain>/api/auth/oauth/<oauth_provider>/callback
+```
 
-# E.g. Gitlab:
+
+You will need to change <your_domain> and <oauth_provider> according to your setup.
+This is how it looks with gitlab.com provider:
+
+```
 https://<your_domain>/api/auth/oauth/gitlab/callback
 ```
+
 
 #### Google
 
@@ -85,9 +92,10 @@ Allows integrating with Google as OAuth provider:
 
 ```bash
 # Backend & Frontend
-PENPOT_GOOGLE_CLIENT_ID=<client-id>
+PENPOT_FLAGS="[...] enable-login-with-google"
 
 # Backend only:
+PENPOT_GOOGLE_CLIENT_ID=<client-id>
 PENPOT_GOOGLE_CLIENT_SECRET=<client-secret>
 ```
 
@@ -97,10 +105,11 @@ Allows integrating with GitLab as OAuth provider:
 
 ```bash
 # Backend & Frontend
-PENPOT_GITLAB_CLIENT_ID=<client-id>
+PENPOT_FLAGS="[...] enable-login-with-gitlab"
 
 # Backend only
 PENPOT_GITLAB_BASE_URI=https://gitlab.com
+PENPOT_GITLAB_CLIENT_ID=<client-id>
 PENPOT_GITLAB_CLIENT_SECRET=<client-secret>
 ```
 
@@ -110,9 +119,10 @@ Allows integrating with GitHub as OAuth provider:
 
 ```bash
 # Backend & Frontend
-PENPOT_GITHUB_CLIENT_ID=<client-id>
+PENPOT_FLAGS="[...] enable-login-with-github"
 
 # Backend only
+PENPOT_GITHUB_CLIENT_ID=<client-id>
 PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 ```
 
@@ -127,10 +137,10 @@ All the other options are backend only:
 
 ```bash
 ## Frontend & Backend
-
-PENPOT_OIDC_CLIENT_ID=<client-id>
+PENPOT_FLAGS="[...] enable-login-with-oidc"
 
 ## Backend only
+PENPOT_OIDC_CLIENT_ID=<client-id>
 
 # Mainly used for auto discovery the openid endpoints
 PENPOT_OIDC_BASE_URI=<uri>
@@ -193,10 +203,10 @@ Penpot comes with support for *Lightweight Directory Access Protocol*
 this authentication backend.
 
 ```bash
-# Common
+## Backend & Frontend
 PENPOT_FLAGS="$PENPOT_FLAGS enable-login-with-ldap"
 
-# Backend
+## Backend only
 PENPOT_LDAP_HOST=ldap
 PENPOT_LDAP_PORT=10389
 PENPOT_LDAP_SSL=false
@@ -254,7 +264,7 @@ Enable SMTP:
 
 ```bash
 # Backend
-PENPOT_FLAGS="$PENPOT_FLAGS enable-smtp"
+PENPOT_FLAGS="[...] enable-smtp"
 PENPOT_SMTP_HOST=<host>
 PENPOT_SMTP_PORT=587
 PENPOT_SMTP_USERNAME=<username>
@@ -291,21 +301,6 @@ In case you want undestand how it internally works, you can take a look
 on the [nginx configuration file][1] used in the docker images.
 
 [1]: https://github.com/penpot/penpot/blob/main/docker/images/files/nginx.conf
-
-
-#### DB Backend ####
-
-This backend stores all the user uploaded assets on the database and
-is ideal for small setups when you don't want to worry about backups
-apart from the database.
-
-In case you want to use this backend, proceed using the following
-environment variable:
-
-```bash
-# Backend
-PENPOT_ASSETS_STORAGE_BACKEND=db
-```
 
 
 #### AWS S3 Backend ####
