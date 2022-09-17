@@ -109,7 +109,7 @@ essential variables already set and other commented with appropriate
 comments.
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml up -d
+docker-compose -p penpot -f docker-compose.yaml up -d
 ```
 
 This will start listening on http://localhost:9001
@@ -122,7 +122,7 @@ need to create a user in order be able login into the application. You
 can create an additional, already activated user using this command:
 
 ```bash
-docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile
+docker exec -ti penpot_penpot-backend_1 ./manage.sh create-profile
 ```
 
 **NOTE:** take care that the `penpot-penpot-backend-1` name depends of
