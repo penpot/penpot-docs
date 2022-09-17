@@ -109,7 +109,7 @@ essential variables already set and other commented with appropriate
 comments.
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml up -d
+docker-compose -p penpot -f docker-compose.yaml up -d
 ```
 
 This will start listening on http://localhost:9001
