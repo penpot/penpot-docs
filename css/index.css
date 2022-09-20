@@ -563,16 +563,20 @@ a[href].direct-link:focus:visited,
 }
 
 .search {
+  align-items: center;
+  display: flex;
   position: absolute;
   right: 0;
-  top: -0.2rem;
+  top: -6px;
   z-index: 1;
 }
 .search input {
-  border: 2px solid var(--graylight);
+  border: 1px solid var(--graylight);
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 8rem;
   transition: width 200ms 200ms;
+  height: 40px;
+  border-radius: 5px;
 }
 .search label {
   position: absolute;
@@ -586,8 +590,8 @@ a[href].direct-link:focus:visited,
 }
 .search-icon {
   position: absolute;
-  right: 8px;
-  top: 9px;
+  right: 13px;
+  top: calc(50% - 8px);
   fill: var(--graymedium);
   pointer-events: none;
 }
@@ -845,7 +849,7 @@ table tr:nth-child(odd) {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   hr {
     margin-top: 5rem;
   }
