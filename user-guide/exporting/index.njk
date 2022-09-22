@@ -1,8 +1,8 @@
 ---
-title: 08· Exporting elements
+title: 07· Exporting objects
 ---
 
-<h1 id="export">Exporting elements</h1>
+<h1 id="export">Exporting objects</h1>
 <p class="main-paragraph">In Penpot you can setup export presets for different file formats and scales.</p>
 
 <h3 id="export-howto">How to Export</h3>
@@ -22,10 +22,13 @@ title: 08· Exporting elements
   <li><strong>Suffix</strong> - Especially useful if you are exporting at different scales.</li>
   <li><strong>File format</strong> - PNG, SVG, JPEG, PDF.</li>
 </ul>
-<blockquote><strong>NOTE</strong>: exported PDF files try to leverage the capabilities of PDF vectorial format (unpixelated zoom, select & copy texts, etc.). But cannot guarantee that 100% of SVG features may be converted perfectly to PDF. You may see differences between an object display inside Penpot and in the exported file. If you need and exact match, a workaround is to export the object into PNG and convert it to PDF with some of the many tools that exist for it.<br /><br />
-  Currently known issues:<br /><br />
-  1) When exporting objects with masks, the mask does not work when opening the PDF file with some open source tools (e.g. evince or inkscape). This is not a Penpot fault, but <a href="https://gitlab.freedesktop.org/poppler/poppler/-/issues/1210" target="_blank">a bug in poppler</a>, a library used by many of the open source tools. If you open the file with an official Adobe viewer, or a tool like okular or in a browser like Chrome or Firefox, you can see it well.
-</blockquote>
+<p class="advice">
+  Exported PDF files try to leverage the capabilities of PDF vectorial format (unpixelated zoom, select & copy texts, etc.). But cannot guarantee that 100% of SVG features may be converted perfectly to PDF. You may see differences between an object display inside Penpot and in the exported file. If you need and exact match, a workaround is to export the object into PNG and convert it to PDF with some of the many tools that exist for it.<br /><br />
+</p>
+<p class="advice">
+  <strong>Currently known issue:</strong>
+  When exporting objects with masks, the mask does not work when opening the PDF file with some open source tools (e.g. evince or inkscape). This is not a Penpot fault, but <a href="https://gitlab.freedesktop.org/poppler/poppler/-/issues/1210" target="_blank">a bug in poppler</a>, a library used by many of the open source tools. If you open the file with an official Adobe viewer, or a tool like okular or in a browser like Chrome or Firefox, you can see it well.
+</p>
 
 <h3 id="export-multiple">Multiple export presets</h3>
 <p>You can set as many export presets you need for the same object. Set multiple exports to get the same object in different scales and/or formats with just one click.</p>
@@ -46,7 +49,7 @@ title: 08· Exporting elements
 <p>A popup will show the exporting progress and will show errors if any.</p>
 <p><img src="/img/export-progress.png" alt="export" /></p>
 
-<h3 id="export-artboards-pdf">Export Artboards to PDF</h3>
+<h3 id="export-artboards-pdf">Export Boards to PDF</h3>
 <p>If you have a presentation made at Penpot you might want to create a document that can be shared with anyone, regardless of having a Penpot account, or just to be able to use your presentation offline (essential for talks and classes). You can easily export all the artboards of a page to a single pdf file from the file menu.</p>
 
 <p>See the <a href="#pdf-note">NOTE above</a> for the PDF format.</p>

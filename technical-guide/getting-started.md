@@ -63,7 +63,7 @@ Elestio will update your instance automatically to the latest release unless you
 
 ## Install with Docker ##
 
-This section details everything you need to know to get Penpot up and running in production environments with Docker. Although it can be installed in many ways, the recommended approach is using **docker** and **docker-compose**.
+This section details everything you need to know to get Penpot up and running in production environments with Docker. Although it can be installed in many ways, the recommended approach is using **docker** and the command **docker compose**.
 
 ### Install Docker ###
 <p class="advice">
@@ -75,7 +75,7 @@ installation guide: https://docs.docker.com/engine/install/
 
 And the [docker compose
 (v2)](https://docs.docker.com/compose/cli-command/#installing-compose-v2). You
-can use the old `docker-compose` of course, but all the decomentation
+can use the old `docker-compose` of course, but all the documentation
 supposes you are using the V2.
 
 Optionally, after installing docker, you can tweak your system for
@@ -112,6 +112,8 @@ comments.
 docker compose -p penpot -f docker-compose.yaml up -d
 ```
 
+**NOTE:** if you use docker v1 it would be `docker-compose`.
+
 This will start listening on http://localhost:9001
 
 
@@ -122,12 +124,13 @@ need to create a user in order be able login into the application. You
 can create an additional, already activated user using this command:
 
 ```bash
-docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile
+docker exec -ti penpot-penpot-backend_1 ./manage.sh create-profile
 ```
 
-**NOTE:** take care that the `penpot-penpot-backend-1` name depends of
-many factors, per example you may using docker-compose v1 or v2; you
-can look for exact name executing the `docker ps`.
+**NOTE:** take care that the container name depends of many factors.
+For example you may using docker-compose v1 or v2, and it could be
+`penpot-penpot-backend-1` or `penpot_penpot-backend-1`. You can guess
+the exact name executing `docker ps`.
 
 For more advanced setups, look a the [Advanced Configuration][3] section.
 
@@ -140,8 +143,8 @@ To get the latest version of Penpot in your local installation, you just
 need to execute:
 
 ```bash
-docker-compose -f docker-compose.yaml pull
+docker compose -f docker-compose.yaml pull
 ```
 
-This will fetch the latest images. When you do docker-compose up
+This will fetch the latest images. When you do `docker compose up`
 again, the containers will be recreated with the latest version.
