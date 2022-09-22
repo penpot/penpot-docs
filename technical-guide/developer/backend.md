@@ -8,14 +8,43 @@ This guide intends to explain the essential details of the backend
 application.
 
 
+## REPL ##
+
+In the devenv environment you can execute `scripts/repl` to open a
+Clojure interactive shell ([REPL](https://codewith.mu/en/tutorials/1.0/repl)).
+
+Once there, you can execute `(restart)` to load and execute the backend
+process, or to reload it after making changes to the source code.
+
+Then you have access to all backend code. You can import and use any function
+o read any global variable:
+
+```clojure
+(require '[app.some.namespace :as some])
+(some/your-function arg1 arg2)
+```
+
+There is a specific namespace `app.srepl` with some functions useful to be
+executed from the repl and perform some tasks manually. Most of them accept
+a `system` parameter. There is a global variable with this name, that contains
+the runtime information and configuration needed for the functions to run.
+
+For example:
+
+```clojure
+(require '[app.srepl.main :as srepl])
+(srepl/send-test-email! system "test@example.com")
+```
+
+
 ## Fixtures ##
 
 This is a development feature that allows populate the database with a
 good amount of content (usually used for just test the application or
 perform performance tweaks on queries).
 
-In order to load fixtures, enter to the REPL environment executing the
-`bin/repl` script, and then execute `(app.cli.fixtures/run {:preset :small})`.
+In order to load fixtures, enter to the REPL environment with the `scripts/repl`
+script, and then execute `(app.cli.fixtures/run {:preset :small})`.
 
 You also can execute this as a standalone script with:
 
@@ -74,7 +103,7 @@ You can run the tests directly with:
 ~/penpot/backend$ clojure -M:dev:tests
 ```
 
-Alternatively, you can run them from a REPL. First start a REPL.
+Alternatively, you can run them from a shell. First start a REPL.
 
 ```bash
 ~/penpot/backend$ scripts/repl
@@ -102,3 +131,4 @@ You can run **clj-kondo** as-is (is included in the devenv image):
 cd penpot/backend;
 clj-kondo --lint src
 ```
+
