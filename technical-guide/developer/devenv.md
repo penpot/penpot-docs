@@ -51,7 +51,7 @@ manage.sh script:
 ./manage.sh drop-devenv  # removes all the containers, volumes and networks used by the devenv
 ```
 
-Having the the container running and tmux opened inside the container,
+Having the container running and tmux opened inside the container,
 you are free to execute commands and open as many shells as you want.
 
 You can create a new shell just pressing the **Ctr+b c** shortcut. And
