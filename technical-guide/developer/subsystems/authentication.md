@@ -1,5 +1,5 @@
 ---
-title: 4.6.1 Authentication
+title: 5.6.1 Authentication
 ---
 
 # User authentication
