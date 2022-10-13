@@ -1,5 +1,5 @@
 ---
-title: 4.6. Penpot subsystems
+title: 5.6. Penpot subsystems
 ---
 
 # Penpot subsystems
