@@ -15,7 +15,7 @@ The backend is written in Clojure, so front and back can share code and data
 structures without problem. Then, the code is compiled into JVM bytecode and
 run in a JVM environment.
 
-There are some additional components, explained below.
+There are some additional components, explained in subsections.
 
 @startuml C4_Elements
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
