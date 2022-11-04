@@ -142,5 +142,5 @@ a SMTP server that is used for develop. It does not send any mail outbounds.
 Instead, it stores them in memory and allows to browse them via a web interface
 similar to a webmail client. Simply navigate to:
 
-[http://localhost:1080]()
+[http://localhost:1080](http://localhost:1080)
 
