@@ -56,7 +56,7 @@ NOTE: It is an optional step because the application can start with an
 empty database.
 
 This by default will create a bunch of users that can be used to login
-in the aplication. All users uses the following pattern:
+in the application. All users uses the following pattern:
 
 - Username: `profileN@example.com`
 - Password: `123123`
