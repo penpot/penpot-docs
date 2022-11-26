@@ -36,7 +36,7 @@ Penpot comes with an option to completely disable the registration
 process or restrict it to some domains.
 
 If you want to completelly disable registration, use the following
-variable in both fontend & backend:
+variable in both frontend & backend:
 
 ```bash
 PENPOT_FLAGS="$PENPOT_FLAGS disable-registration"
