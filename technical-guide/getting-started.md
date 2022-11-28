@@ -124,7 +124,7 @@ need to create a user in order be able login into the application. You
 can create an additional, already activated user using this command:
 
 ```bash
-docker exec -ti penpot_penpot-backend_1 ./manage.sh create-profile -u "Your Email" -p "Your Password" -n "Your Full Name"
+docker exec -ti penpot-penpot-backend-1 ./manage.sh create-profile -u "Your Email" -p "Your Password" -n "Your Full Name"
 ```
 
 **NOTE:** take care that the container name depends of many factors.
