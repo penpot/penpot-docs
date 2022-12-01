@@ -565,6 +565,7 @@ a[href].direct-link:focus:visited,
 .search {
   align-items: center;
   display: flex;
+  flex-direction: column;
   position: absolute;
   right: 0;
   top: -6px;
@@ -591,7 +592,7 @@ a[href].direct-link:focus:visited,
 .search-icon {
   position: absolute;
   right: 13px;
-  top: calc(50% - 8px);
+  top: 11px;
   fill: var(--graymedium);
   pointer-events: none;
 }
@@ -609,6 +610,7 @@ a[href].direct-link:focus:visited,
   box-shadow: 0 0 10px rgba(68, 68, 68, 0.1);
   height: 85vh;
   overflow: auto;
+  width: 18rem;
 }
 #search-results li {
   padding: 0;
@@ -642,6 +644,7 @@ a[href].direct-link:focus:visited,
   margin: 0;
   padding: 2rem;
   box-shadow: 0 0 10px rgba(68, 68, 68, 0.1);
+  width: 18rem;
 }
 
 #no-results-found p {
@@ -882,6 +885,16 @@ table tr:nth-child(odd) {
   .search input:focus + .search-icon {
     display: none;
   }
+
+  #search-results {
+    width: 100%;
+  }
+
+  #no-results-found {
+    width: 100%;
+  }
+
+
   .preheader {
     padding: 1rem;
   }

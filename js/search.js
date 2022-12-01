@@ -7,14 +7,16 @@
       expand: true,
     });
 
+    const cleanResults = results.filter((r) => r.doc.title !== undefined)
+
     const resEl = document.getElementById("search-results");
     const noResultsEl = document.getElementById("no-results-found");
 
     resEl.innerHTML = "";
-    if (results.length > 0) {
+    if (cleanResults.length > 0) {
       resEl.style.display = "block";
       noResultsEl.style.display = "none";
-      results.map((r) => {
+      cleanResults.map((r) => {
         const { id, title, description } = r.doc;
         const el = document.createElement("li");
         resEl.appendChild(el);
