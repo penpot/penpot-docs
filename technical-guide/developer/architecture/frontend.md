@@ -1,5 +1,5 @@
 ---
-title: 3.1. Frontend app
+title: Frontend app
 ---
 
 # Frontend app

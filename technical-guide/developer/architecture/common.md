@@ -1,5 +1,5 @@
 ---
-title: 3.4. Common code
+title: Common code
 ---
 
 # Common code

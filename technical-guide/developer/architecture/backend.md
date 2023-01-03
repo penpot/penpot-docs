@@ -1,5 +1,5 @@
 ---
-title: 3.2. Backend app
+title: Backend app
 ---
 
 # Backend app
