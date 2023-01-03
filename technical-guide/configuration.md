@@ -1,33 +1,33 @@
 ---
-title: 2. Advanced Configuration
+title: 2. Penpot Configuration
 ---
 
-# Advanced Configuration #
+# Penpot Configuration #
 
 This section intends to explain all available configuration options.
 
-The main and unique approach to configure penpot application is
-using environment variables. All penpot related variables start with
-`PENPOT_` prefix.
+Penpot is configured using environment variables. All variables
+start with `PENPOT_` prefix.
+
+Variables are initialized in the `docker-compose.yaml` file, as explained in
+the Self-hosting guide with [Elestio][1] or [Docker][2].
+
+Additionally, if you are using the developer environment, you may override their
+values in the startup scripts, as explained in the [Developer Guide][3].
 
 **NOTE**: All the examples that have values represent the
 **default** values, and the examples that do not have values are
-optional.
+optional, and inactive by default.
 
 
 ## Common ##
 
-This section will list all common configuration that affects backend
-and frontend. If you are using the default docker compose, all the
-environment variables will be available for both frontend and backend
-at the same time because a single environment file is used:
-`config.env`.
+This section will list all common configuration between backend and frontend.
 
-There are two types of configuration: options (properties that
-requieres some value) and flags (that just enables or disables
-something). The `PENPOT_FLAGS` environment variable will have an
-ordered list of strings using this format:
-`<enable|disable>-<flag-name>`.
+There are two types of configuration: options (properties that requieres some
+value) and flags (that just enables or disables something). All flags are set in
+a single `PENPOT_FLAGS` environment variable will have an ordered list of
+strings using this format: `<enable|disable>-<flag-name>`.
 
 
 ### Registration ###
@@ -79,7 +79,7 @@ https://<your_domain>/api/auth/oauth/<oauth_provider>/callback
 
 
 You will need to change <your_domain> and <oauth_provider> according to your setup.
-This is how it looks with gitlab.com provider:
+This is how it looks with Gitlab provider:
 
 ```
 https://<your_domain>/api/auth/oauth/gitlab/callback
@@ -298,9 +298,7 @@ unless you want to install it outside the docker container and
 configure the nginx yourself.
 
 In case you want undestand how it internally works, you can take a look
-on the [nginx configuration file][1] used in the docker images.
-
-[1]: https://github.com/penpot/penpot/blob/main/docker/images/files/nginx.conf
+on the [nginx configuration file][4] used in the docker images.
 
 
 #### AWS S3 Backend ####
@@ -450,3 +448,8 @@ Since version 1.13.0:
   configured, this will log to console the invitation tokens.
 - `enable-log-emails`: if you want to log in console send emails. This
   only works if smtp is not configured.
+
+[1]: /technical-guide/getting-started#configure-penpot-with-elestio
+[2]: /technical-guide/getting-started#configure-penpot-with-docker
+[3]: /technical-guide/developer/common#dev-environment
+[4]: https://github.com/penpot/penpot/blob/main/docker/images/files/nginx.conf

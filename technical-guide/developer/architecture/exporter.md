@@ -1,5 +1,5 @@
 ---
-title: 3.3. Exporter app
+title: Exporter app
 ---
 
 # Exporter app

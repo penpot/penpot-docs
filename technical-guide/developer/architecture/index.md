@@ -1,5 +1,5 @@
 ---
-title: 3. Architecture
+title: 3.1. Architecture
 ---
 
 # Architecture
@@ -58,8 +58,8 @@ Rel(browser, frontend_app, "Uses", "HTTPS")
 
 See more at
 
- * [Frontend app](/technical-guide/architecture/frontend/)
- * [Backend app](/technical-guide/architecture/backend/)
- * [Exporter app](/technical-guide/architecture/exporter/)
- * [Common code](/technical-guide/architecture/common/)
+ * [Frontend app](/technical-guide/developer/architecture/frontend/)
+ * [Backend app](/technical-guide/developer/architecture/backend/)
+ * [Exporter app](/technical-guide/developer/architecture/exporter/)
+ * [Common code](/technical-guide/developer/architecture/common/)
 
