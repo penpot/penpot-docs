@@ -5,7 +5,7 @@ title: 03· Workspace basics
 <h1 id="workspace-basics">Workspace basics</h1>
 <p class="main-paragraph">The Workspace is where you create designs. You have an infinite canvas in where you can directly work but you also have the ability to create pages and boards that will help you to create exportable components.</p>
 
-<h3 id="viewport">The viewport</h3>
+<h2 id="viewport">The viewport</h2>
 <p>Surrounded by panels, header and toolbars, in the middle of the workspace, you can find the viewport. The viewport is the design area of a file page. It is practically infinite. If what you need is a frame with specific, limited dimensions, you can create an board.</p>
 <p><img src="/img/viewport.png" alt="the viewport" /></p>
 <h4>Navigate the viewport</h4>
@@ -14,12 +14,12 @@ title: 03· Workspace basics
 <p><img src="/img/viewport-navigate.gif" alt="navigate the viewport" /></p>
 
 
-<h3 id="workspace-menu">The menu</h3>
+<h2 id="workspace-menu">The menu</h2>
 <p>There's a main menu at the workspace where you will find groups with all the actions that you can do at file level. Export, view and edit options and preferences among them.</p>
 <p><img src="/img/workspace-menu.gif" alt="workspace menu" /></p>
 
 
-<h3 id="zoom">Zoom</h3>
+<h2 id="zoom">Zoom</h2>
 <strong>At the viewport</strong>
 <p>To zoom in and out hold <kbd>Ctrl</kbd> (or <kbd>⌘</kbd> if using macOS) and use the scroll wheel on your mouse. You also have a bunch of useful shortcuts for the most common zoom levels that you can find at the zoom menu in the navigation bar.</p>
 <p><a href="/user-guide/introduction/shortcuts/#zoom" target="_blank">All zoom shortcuts →</a></p>
@@ -29,37 +29,105 @@ title: 03· Workspace basics
 <p><img src="/img/zoom-layer.gif" alt="zoom layer" /></p>
 
 
-<h3 id="dynamic-alignment">Dynamic alignment</h3>
+<h2 id="dynamic-alignment">Dynamic alignment</h2>
 <p>While moving objects at the viewport Penpot will show alignment guides for the edges and the center of the layers at sight. Dynamic alignment also snaps the object that is being moved to those guides to help you align to the center of the edges of other objects.</p>
 <p><img src="/img/dynamic-alignment.gif" alt="Dynamic alignment" /></p>
 <p>If there are more than two objects nearby and you drag one of them Penpot will show their distance to help you distribute them equally. </p>
 <p><img src="/img/dynamic-alignment-measurement.gif" alt="Dynamic alignment" /></p>
 
 
-<h3 id="rulers">Rulers</h3>
+<h2 id="rulers">Rulers</h2>
 <p>Penpot has rulers that measure in pixels. Soon there will be guides that can be dragged from the rulers.</p>
 <p><img src="/img/rulers.gif" alt="rulers" /></p>
 
 
-<h3 id="snap-to-grid">Snap to grid</h3>
-<p>Objects automatically snap to the nearest point of a visible grid. This option can be disabled anytime from the main menu.</p>
-<p><img src="/img/snap-grid.gif" alt="snap to grid" /></p>
 
-<h3 id="snap-to-pixel">Snap to pixel</h3>
+
+
+
+<h2 id="grids">Grids</h2>
+<p>Grids are design aids that are used to help you to align content to a
+geometric structure. In Penpot there are three types of grids:
+<strong>square</strong>, <strong>columns</strong> and <strong>rows</strong>.</p>
+
+<p><strong>Note:</strong> Grids are only visible in the viewport and will never be shown on exports.</p>
+
+<h3 id="creating-grids">Creating grids</h3>
+<p>Grids are created at the boards level. To create a grid on board, select the board. In the Design panel there is a section for "Grids & Layouts". Click the "+" button to add a grid to the board. You can add as many grids as you want.</p>
+<p><img src="/img/grids-create.gif" alt="grids" /></p>
+
+<h3 id="hide-remove-grids">Hide and remove grids</h3>
+<p>You can hide an specific grid by clicking at the eye button of a grid configuration. If you want to remove a grid, use the "-" button at the right side of the grid pill.</p>
+<p><img src="/img/grids-hide-remove.gif" alt="grids" /></p>
+
+<h3 id="square-grids">Square grid</h3>
+<p><img src="/img/grids-square.gif" alt="grids" /></p>
+<p>The options for square or rectangular grids are:</p>
+<ul>
+  <li><strong>Size</strong> (in pixels) </li>
+  <li><strong>Color</strong></li>
+  <li><strong>Opacity</strong> </li>
+</ul>
+
+<h3 id="row-layouts">Row grid</h3>
+<p><img src="/img/grids-rows.gif" alt="grids" /></p>
+<p>The options for row grids are:</p>
+<ul>
+  <li><strong>Rows</strong></li>
+  <li><strong>Type</strong> - stretch, top, center bottom</li>
+  <li><strong>Height</strong> - "auto" by default.</li>
+  <li><strong>Gutter</strong> - the space between each row.</li>
+  <li><strong>Margin</strong></li>
+  <li><strong>Color</strong></li>
+  <li><strong>Opacity</strong></li>
+</ul>
+
+<h3 id="row-layouts">Column grid</h3>
+<p><img src="/img/grids-columns.gif" alt="grids" /></p>
+<p>Options for column grids are:</p>
+<ul>
+  <li><strong>Columns</strong></li>
+  <li><strong>Type</strong> - stretch, top, center bottom</li>
+  <li><strong>Width</strong> - "auto" by default.</li>
+  <li><strong>Gutter</strong> - the space between each column.</li>
+  <li><strong>Margin</strong></li>
+  <li><strong>Color</strong></li>
+  <li><strong>Opacity</strong></li>
+</ul>
+
+<h3 id="grid-defaults">Grid defaults</h3>
+<p>There are default settings available at file level. You can change the settings of a grid to the file defaults by using the "Use default" button. You can also set a grid to be the default by using the "Set as default" button.</p>
+<p><img src="/img/grids-defaults.gif" alt="grids" /></p>
+
+<h3 id="grid-visibility">Grid visibility</h3>
+<p>To hide or show all the grids at a file you can press <kbd>Ctrl/⌘</kbd> + <kbd>´</kbd> or use the option at the main menu at the top left of the navbar.</p>
+
+<h3 id="grid-snap">Snap to grid</h3>
+<p>If you want to enable or disable the snapping to grids you can press <kbd>Shift/⇧</kbd> + <kbd>Ctrl/⌘</kbd> + <kbd>´</kbd> or use the option at the main menu at the top left of the navbar.</p>
+<p><img src="/img/grids-snap-visibility.gif" alt="grids" /></p>
+
+<h2 id="guides">Guides</h2>
+<p>To create guides click anywhere on the ruler an drag to some point of the viewport. Click on the vertical ruler to create a vertical guide and the horizontal ruler to you know what.</p>
+<p><img src="/img/guides.gif" alt="grids" /></p>
+<p>To <strong>delete guides</strong> drag the guide to the ruler or select the guide and press delete / supr.</p>
+<p>To <strong>show/hide guides</strong> use the same shortcut as for rulers: <kbd>Shift/CMD + Ctrl + R</kbd></p>
+
+
+<h2 id="snap-to-pixel">Snap to pixel</h2>
 <p>Objects automatically snap to the pixel grid. If you need a different kind of precision like working at subpixel level using measures with decimals you can disable this option . This option can be disabled anytime from the main menu.</p>
 <p><img src="/img/snap-pixel.png" alt="snap to pixel" /></p>
 
-<h3 id="nudge-amount">Nudge amount</h3>
+<h2 id="nudge-amount">Nudge amount</h2>
 <p>Set your desired distance to move objects using the keyboard. This is a must if you’re working with grids (if you’re not, you should ;)), being able to adjust the movement to your baseline grid (8px? 5px?) is a huge timesaver that will improve your quality of life while designing.</p>
 <p><img src="/img/nudge-amount.png" alt="nudge amount" /></p>
 
-<h3 id="shortcuts-panel">Shortcuts panel</h3>
+<h2 id="shortcuts-panel">Shortcuts panel</h2>
 <p>Shortcuts boost your productivity but are not easy to find and learn. A handy panel at your workspace will help you with that.</p>
 <p>Display the shortcuts panel at the workspace by clicking on the shortcuts button at the bottom of the left toolbar or using the shortcut <kbd>?</kbd></p>
 <p>Categories and a filter will help you to find the shortcut you need.</p>
 <p><img src="/img/shortcuts-panel.gif" alt="Shortcuts panel" /></p>
 
-<h3 id="history">History</h3>
+<h2 id="history">History</h2>
 <p>The history panel keeps track of the latest changes on an opened file.</p>
 
 <h4>View history</h4>
