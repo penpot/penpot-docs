@@ -7,6 +7,8 @@ title: 1. Self-hosting guide
 This section details everything you need to know to get Penpot up and
 running in your own machine, as explained in the [introduction][1] section.
 
+If you need more context you can look at the <a href="https://community.penpot.app/t/self-hosting-penpot-i/2336" target="_blank">post about self-hosting</a> in Penpot community.
+
 ## Install with Elestio
 
 This section explains how to get Penpot up and running using <a href="https://elest.io/" target="_blank">Elestio</a>.
