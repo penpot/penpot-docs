@@ -132,5 +132,5 @@ server as a pub/sub broker. Whenever a user visits a file and opens a
 websocket, the backend creates a subscription in redis, with a topic that has
 the id of the file. If the user sends any change to the file, backend sends a
 notification to this topic, that is received by all subscribers. Then the
-notification is retrieved and send to the user via the websocket.
+notification is retrieved and sent to the user via the websocket.
 
