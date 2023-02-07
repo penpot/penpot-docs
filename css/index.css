@@ -87,9 +87,9 @@ a[href]:visited {
 }
 main {
   padding: 1rem;
-  background-image: url(/img/bg.png);
+  /* background-image: url(/img/bg.png);
   background-repeat: no-repeat;
-  background-position: center 120px;
+  background-position: center 120px; */
 }
 header {
   display: flex;
