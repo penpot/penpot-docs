@@ -4,12 +4,27 @@ title: 1. Self-hosting guide
 
 # Self-hosting guide
 
-This section details everything you need to know to get Penpot up and running in your own
-machine, as explained in the [introduction][1] section.
+This guide explains how to get your own Penpot instance, running on a machine you control, to test it, use it by you or your team, or even customize and extend it any way you like.
 
 If you need more context you can look at the <a
 href="https://community.penpot.app/t/self-hosting-penpot-i/2336" target="_blank">post
 about self-hosting</a> in Penpot community.
+
+**There is absolutely no difference between <a
+href="https://design.penpot.app">our SaaS offer</a> for Penpot and your
+self-hosted Penpot platform!**
+
+There are two main options for creating a Penpot instance:
+
+1. Using the platform of our partner <a href="https://elest.io/" target="_blank">Elestio</a>.
+2. Using <a href="https://docker.com" target="_blank">Docker</a> tool.
+
+<p class="advice">
+The recommended way is to use Elestio, since it's simpler, fully automatic and still greatly flexible. Use Docker if you already know the tool, if need full control of the process or have extra requirements and do not want to depend on any external provider, or need to do any special customization.
+</p>
+
+Or you can try <a href="#unofficial-self-host-options">other options</a>,
+offered by Penpot community.
 
 ## Install with Elestio
 
@@ -67,7 +82,7 @@ the configuration. This means you will need to delete it to get some of the conf
 options to work. Once you made all your changes hit “Update & restart”. After a couple of
 minutes, your changes will be active.
 
-You can find all configuration options in the [Configuration][2] section.
+You can find all configuration options in the [Configuration][1] section.
 
 Get in contact with us through <a href="mailto:support@penpot.app">support@penpot.app</a>
 if you have any questions or need help.
@@ -218,5 +233,13 @@ Postgres database and another one for the assets uploaded by your users (images 
 clips). There may be more volumes if you enable other features, as explained in the file
 itself.
 
-[1]: /technical-guide
-[2]: /technical-guide/configuration/
+## Unofficial self-host options
+
+There are some other options, **NOT SUPPORTED BY PENPOT**:
+
+* Install with <a href="https://community.penpot.app/t/how-to-develop-penpot-with-podman-penpotman/2113" target="_blank">Podman</a> instead of Docker.
+* Try the under development <a href="https://community.penpot.app/t/introducing-penpot-desktop/1468" target="_blank">Penpot Desktop app</a>.
+* Or try a fully manual installation if you have really special needs. For help, you can look at the [Architecture][2] section and the <a href="https://github.com/penpot/penpot/tree/develop/docker/images" target="_blank">Docker configuration files</a>.
+
+[1]: /technical-guide/configuration/
+[2]: /technical-guide/developer/architecture

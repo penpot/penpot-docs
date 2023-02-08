@@ -4,7 +4,8 @@ title: 2. Penpot Configuration
 
 # Penpot Configuration #
 
-This section intends to explain all available configuration options.
+This section intends to explain all available configuration options, when you
+are self-hosting Penpot or also if you are using the Penpot developer setup.
 
 Penpot is configured using environment variables. All variables start with `PENPOT_`
 prefix.
