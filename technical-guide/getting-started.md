@@ -1,8 +1,8 @@
 ---
-title: 1. Self-hosting guide
+title: 1. Self-hosting Guide
 ---
 
-# Self-hosting guide
+# Self-hosting Guide
 
 This guide explains how to get your own Penpot instance, running on a machine you control, to test it, use it by you or your team, or even customize and extend it any way you like.
 
