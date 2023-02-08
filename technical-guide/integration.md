@@ -21,7 +21,8 @@ In Penpot, webhooks are configured at Team level:
 ![Add a webhook](/img/webhooks.png)
 
 When you add a webhook, you specify the URL of a service you own. If the webhook
-is active, the URL will be called on any event that occurs anywhere in the team.
+is active, a POST request will be sent to the URL on any event that occurs anywhere
+in the team.
 
 You can specify the format of the call payload.
 
@@ -32,7 +33,7 @@ information and enriches the content with semantic information.
 
 ### Events list
 
-Unfortunately, we still have not a separated documentation for the webhook events.
+Unfortunately, we do not have any specific documentation for the webhooks yet.
 For the moment you can use the <a href="https://design.penpot.app/api/_doc"
 target="_blank">backend API documentation</a>, generated automatically from <a
 href="https://github.com/penpot/penpot/tree/main/backend/src/app/rpc"
