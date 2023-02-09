@@ -745,15 +745,6 @@ a[href].direct-link:focus:visited,
 .help-sections > li.soon h3 {
   opacity: 0.4;
 }
-.help-sections > li .advice {
-  padding: .3rem 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border-radius: 100px;
-  background-color: var(--color-gray-dark);
-  color: white;
-}
 .help-sections > li.github {
   min-height: auto;
   border: none;
