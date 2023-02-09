@@ -626,7 +626,7 @@ a[href].direct-link:focus:visited,
   margin: 0;
   padding: 0;
   box-shadow: 0 0 10px rgba(68, 68, 68, 0.1);
-  height: 85vh;
+  max-height: 85vh;
   overflow: auto;
   width: 18rem;
 }
