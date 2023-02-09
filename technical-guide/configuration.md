@@ -1,42 +1,42 @@
 ---
-title: 2. Advanced Configuration
+title: 2. Penpot Configuration
 ---
 
-# Advanced Configuration #
+# Penpot Configuration #
 
-This section intends to explain all available configuration options.
+This section intends to explain all available configuration options, when you
+are self-hosting Penpot or also if you are using the Penpot developer setup.
 
-The main and unique approach to configure penpot application is
-using environment variables. All penpot related variables start with
-`PENPOT_` prefix.
+Penpot is configured using environment variables. All variables start with `PENPOT_`
+prefix.
 
-**NOTE**: All the examples that have values represent the
-**default** values, and the examples that do not have values are
-optional.
+Variables are initialized in the `docker-compose.yaml` file, as explained in the
+Self-hosting guide with [Elestio][1] or [Docker][2].
+
+Additionally, if you are using the developer environment, you may override their values in
+the startup scripts, as explained in the [Developer Guide][3].
+
+**NOTE**: All the examples that have values represent the **default** values, and the
+examples that do not have values are optional, and inactive by default.
 
 
 ## Common ##
 
-This section will list all common configuration that affects backend
-and frontend. If you are using the default docker compose, all the
-environment variables will be available for both frontend and backend
-at the same time because a single environment file is used:
-`config.env`.
+This section will list all common configuration between backend and frontend.
 
-There are two types of configuration: options (properties that
-requieres some value) and flags (that just enables or disables
-something). The `PENPOT_FLAGS` environment variable will have an
-ordered list of strings using this format:
-`<enable|disable>-<flag-name>`.
+There are two types of configuration: options (properties that requieres some value) and
+flags (that just enables or disables something). All flags are set in a single
+`PENPOT_FLAGS` environment variable will have an ordered list of strings using this
+format: `<enable|disable>-<flag-name>`.
 
 
 ### Registration ###
 
-Penpot comes with an option to completely disable the registration
-process or restrict it to some domains.
+Penpot comes with an option to completely disable the registration process or restrict it
+to some domains.
 
-If you want to completelly disable registration, use the following
-variable in both fontend & backend:
+If you want to completelly disable registration, use the following variable in both
+frontend & backend:
 
 ```bash
 PENPOT_FLAGS="$PENPOT_FLAGS disable-registration"
@@ -51,10 +51,10 @@ PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
 
 ### Demo users ###
 
-Penpot comes with facilities for fast creation of demo users without the need
-of a registration process. The demo users by default have an expiration time of
-7 days, and once expired they are completly deleted with all the generated
-content. Very useful for testing or demostration purposes.
+Penpot comes with facilities for fast creation of demo users without the need of a
+registration process. The demo users by default have an expiration time of 7 days, and
+once expired they are completly deleted with all the generated content. Very useful for
+testing or demostration purposes.
 
 You can enable demo users using the following variable:
 
@@ -67,9 +67,9 @@ They are disabled by default since 1.13.0
 
 ### Authentication Providers
 
-For configure the authentication with third-party auth providers you
-will need to configure penpot and set the correct callback of your
-penpot instance in the auth-provider configuration.
+For configure the authentication with third-party auth providers you will need to
+configure penpot and set the correct callback of your penpot instance in the auth-provider
+configuration.
 
 The callback has the following format:
 
@@ -79,10 +79,25 @@ https://<your_domain>/api/auth/oauth/<oauth_provider>/callback
 
 
 You will need to change <your_domain> and <oauth_provider> according to your setup.
-This is how it looks with gitlab.com provider:
+This is how it looks with Gitlab provider:
 
 ```
 https://<your_domain>/api/auth/oauth/gitlab/callback
+```
+
+#### Penpot
+
+Consists on registration and authentication via pasword. It is enabled by default, but can
+be disabled with the following flags:
+
+```bash
+PENPOT_FLAGS="[...] disable-login-with-password"
+```
+
+And the registration also can be disabled with:
+
+```bash
+PENPOT_FLAGS="[...] disable-registration"
 ```
 
 
@@ -130,8 +145,8 @@ PENPOT_GITHUB_CLIENT_SECRET=<client-secret>
 
 **NOTE:** Since version 1.5.0
 
-Allows integrating with a generic authentication provider that implements
-the OIDC protocol (usually used for SSO).
+Allows integrating with a generic authentication provider that implements the OIDC
+protocol (usually used for SSO).
 
 All the other options are backend only:
 
@@ -198,9 +213,8 @@ PENPOT_OIDC_CLIENT_SECRET=<client-secret>
 
 ### LDAP ###
 
-Penpot comes with support for *Lightweight Directory Access Protocol*
-(LDAP). This is the example configuration we use internally for testing
-this authentication backend.
+Penpot comes with support for *Lightweight Directory Access Protocol* (LDAP). This is the
+example configuration we use internally for testing this authentication backend.
 
 ```bash
 ## Backend & Frontend
@@ -230,8 +244,8 @@ This section enumerates the backend only configuration variables.
 
 ### Database
 
-We only support PostgreSQL and we highly recommend >=13 version. If
-you are using official docker images this is already solved for you.
+We only support PostgreSQL and we highly recommend >=13 version. If you are using official
+docker images this is already solved for you.
 
 Essential database configuration:
 
@@ -247,10 +261,10 @@ The username and password are optional.
 
 ### Email (SMTP)
 
-By default, when no SMTP (email) is configured, the email will be printed to
-the console, which means that the emails will be shown in the stdout. If you
-have an SMTP service, uncomment the appropiate settings section in
-`docker-compose.yml` and configure those environment variables.
+By default, when no SMTP (email) is configured, the email will be printed to the console,
+which means that the emails will be shown in the stdout. If you have an SMTP service,
+uncomment the appropiate settings section in `docker-compose.yml` and configure those
+environment variables.
 
 Setting up the default FROM and REPLY-TO:
 
@@ -277,13 +291,13 @@ PENPOT_SMTP_TLS=true
 
 Storage refers to storage used for store the user uploaded assets.
 
-Assets storage is implemented using "plugable" backends. Currently
-there are three backends available: `db`, `fs` and `s3` (for AWS S3).
+Assets storage is implemented using "plugable" backends. Currently there are three
+backends available: `fs` and `s3` (for AWS S3).
 
 #### FS Backend (default) ####
 
-This is the default backend when you use the official docker images and
-the default configuration looks like this:
+This is the default backend when you use the official docker images and the default
+configuration looks like this:
 
 ```bash
 # Backend
@@ -291,23 +305,19 @@ PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
 PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
 ```
 
-The main downside of this backend is the hard dependency on nginx
-approach to serve files managed by an application (not a simple
-directory serving static files). But you should not worry about this
-unless you want to install it outside the docker container and
+The main downside of this backend is the hard dependency on nginx approach to serve files
+managed by an application (not a simple directory serving static files). But you should
+not worry about this unless you want to install it outside the docker container and
 configure the nginx yourself.
 
-In case you want undestand how it internally works, you can take a look
-on the [nginx configuration file][1] used in the docker images.
-
-[1]: https://github.com/penpot/penpot/blob/main/docker/images/files/nginx.conf
+In case you want undestand how it internally works, you can take a look on the [nginx
+configuration file][4] used in the docker images.
 
 
 #### AWS S3 Backend ####
 
-This backend uses AWS S3 bucket for store the user uploaded
-assets. For use it you should have an appropriate account on AWS cloud
-and have the credentials, region and the bucket.
+This backend uses AWS S3 bucket for store the user uploaded assets. For use it you should
+have an appropriate account on AWS cloud and have the credentials, region and the bucket.
 
 This is how configuration looks for S3 backend:
 
@@ -327,17 +337,15 @@ PENPOT_STORAGE_ASSETS_S3_ENDPOINT=<endpoint-uri>
 
 ### Redis
 
-The redis configuration is very simple, just provide with a valid
-redis URI. Redis is used mainly for websocket notifications
-coordination.
+The redis configuration is very simple, just provide with a valid redis URI. Redis is used
+mainly for websocket notifications coordination.
 
 ```bash
 # Backend
 PENPOT_REDIS_URI=redis://localhost/0
 ```
 
-If you are using the official docker compose file, this is already
-configured.
+If you are using the official docker compose file, this is already configured.
 
 
 ### HTTP
@@ -350,47 +358,23 @@ PENPOT_HTTP_SERVER_PORT=6060
 PENPOT_HTTP_SERVER_HOST=localhost
 ```
 
-Additionally, you probably will need to set the `PENPOT_PUBLIC_URI`
-environment variable in case you go to serve penpot to the users, and
-it should point to public URI where users will access the application:
+Additionally, you probably will need to set the `PENPOT_PUBLIC_URI` environment variable
+in case you go to serve penpot to the users, and it should point to public URI where users
+will access the application:
 
 ```bash
 # Backend
 PENPOT_PUBLIC_URI=http://localhost:9001
 ```
 
-### Server REPL
-
-This is a more advanced setting, because it allows to set a port where the
-server REPL will listen. Server REPL is very useful for performing diagnosis,
-executing code on the running process, and/or making hotfixes of isolated pure
-functions without restarting the process.
-
-The default configuration is:
-
-```bash
-PENPOT_SREPL_HOST=127.0.0.1
-PENPOT_SREPL_PORT=6062
-```
-
-You can connect to the repl using `netcat` or `telnet` in combination
-with `rlwrap`. Example:
-
-```bash
-$ rlwrap netcat localhost 6062
-user=>
-```
-
-
 ## Frontend ##
 
-In comparison with backend, frontend only has a small number of runtime
-configuration options, and they are located in the `<dist>/js/config.js`
-file.
+In comparison with backend, frontend only has a small number of runtime configuration
+options, and they are located in the `<dist>/js/config.js` file.
 
-If you are using the official docker images, the best approach to set
-any configuration is using environment variables, and the image
-automatically generates the `config.js` from them.
+If you are using the official docker images, the best approach to set any configuration is
+using environment variables, and the image automatically generates the `config.js` from
+them.
 
 **NOTE**: many frontend related configuration variables are explained in the
 [Common](#common) section, this section explains **frontend only** options.
@@ -398,9 +382,9 @@ automatically generates the `config.js` from them.
 
 ### Demo warning ###
 
-If you want to show a warning in the register and login page saying
-that this is a demostration purpose instance (no backups, periodical
-data wipe, ...), set the following variable:
+If you want to show a warning in the register and login page saying that this is a
+demostration purpose instance (no backups, periodical data wipe, ...), set the following
+variable:
 
 ```bash
 # Frontend
@@ -410,9 +394,8 @@ PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-warning"
 
 ## Exporter ##
 
-The exporter application only have a single configuration option and
-it can be provided using environment variables in the same way as
-backend.
+The exporter application only have a single configuration option and it can be provided
+using environment variables in the same way as backend.
 
 
 ```bash
@@ -420,33 +403,36 @@ backend.
 PENPOT_PUBLIC_URI=http://public-domain
 ```
 
-This environment variable indicates where the exporter can access to
-the public frontend application (because it uses special pages from it
-to render the shapes in the underlying headless web browser).
+This environment variable indicates where the exporter can access to the public frontend
+application (because it uses special pages from it to render the shapes in the underlying
+headless web browser).
 
 
 ## Other flags
 
-- `enable-cors`: Enables the default cors cofiguration that allows all
-  domains (this configuration is designed only for dev purposes right
-  now).
-- `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that
-  lists all rpc methods available on backend.
-- `enable-insecure-register`: Enables the insecure process of
-  profile registrion deactivating the email verification process (only
-  for local or internal setups).
+- `enable-cors`: Enables the default cors cofiguration that allows all domains (this
+  configuration is designed only for dev purposes right now).
+- `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that lists all rpc methods
+  available on backend.
+- `enable-insecure-register`: Enables the insecure process of profile registrion
+  deactivating the email verification process (only for local or internal setups).
 - `enable-user-feedback`: Enables the feedback form at the dashboard.
-- `disable-secure-session-cookies`: By default, penpot uses the
-  `secure` flag on cookies, this flag disables it; it is usefull if
-  you have plan to serve penpot under different domain than
-  `localhost` without HTTPS.
+- `disable-secure-session-cookies`: By default, penpot uses the `secure` flag on cookies,
+  this flag disables it; it is usefull if you have plan to serve penpot under different
+  domain than `localhost` without HTTPS.
 - `disable-login`: allows disable password based login form.
-- `disable-registration`: disables registration (still enabled for
-  invitations only).
+- `disable-registration`: disables registration (still enabled for invitations only).
+- `enable-prepl-server`: enables PREPL server, used by manage.py and other additional
+  tools for communicate internally with penpot backend.
 
 Since version 1.13.0:
 
-- `enable-log-invitation-tokens`: for cases where you don't have email
-  configured, this will log to console the invitation tokens.
-- `enable-log-emails`: if you want to log in console send emails. This
-  only works if smtp is not configured.
+- `enable-log-invitation-tokens`: for cases where you don't have email configured, this
+  will log to console the invitation tokens.
+- `enable-log-emails`: if you want to log in console send emails. This only works if smtp
+  is not configured.
+
+[1]: /technical-guide/getting-started#configure-penpot-with-elestio
+[2]: /technical-guide/getting-started#configure-penpot-with-docker
+[3]: /technical-guide/developer/common#dev-environment
+[4]: https://github.com/penpot/penpot/blob/main/docker/images/files/nginx.conf

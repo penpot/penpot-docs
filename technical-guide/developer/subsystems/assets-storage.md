@@ -1,5 +1,5 @@
 ---
-title: 4.6.2 Assets storage
+title: Assets storage
 ---
 
 # Assets storage

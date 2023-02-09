@@ -1,5 +1,5 @@
 ---
-title: 4.1. Dev environment
+title: 3.3. Dev environment
 ---
 
 # Development environment
@@ -51,7 +51,7 @@ manage.sh script:
 ./manage.sh drop-devenv  # removes all the containers, volumes and networks used by the devenv
 ```
 
-Having the the container running and tmux opened inside the container,
+Having the container running and tmux opened inside the container,
 you are free to execute commands and open as many shells as you want.
 
 You can create a new shell just pressing the **Ctr+b c** shortcut. And
@@ -142,5 +142,5 @@ a SMTP server that is used for develop. It does not send any mail outbounds.
 Instead, it stores them in memory and allows to browse them via a web interface
 similar to a webmail client. Simply navigate to:
 
-[http://localhost:1080]()
+[http://localhost:1080](http://localhost:1080)
 

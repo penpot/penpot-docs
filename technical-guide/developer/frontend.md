@@ -1,5 +1,5 @@
 ---
-title: 4.3. Frontend Guide
+title: 3.5. Frontend Guide
 ---
 
 # Frontend Guide
@@ -11,9 +11,9 @@ application.
 ## Icons & Assets
 
 The icons used on the frontend application are loaded using svgsprite
-(properly handled by the gulp watch task). All icons should be on SVG
+(properly handled by the gulp watch task). All icons should be in SVG
 format located in `resources/images/icons`. The gulp task will
-generate the sprite and the embedd it into the `index.html` file.
+generate the sprite and the embed it into the `index.html` file.
 
 Then, you can reference the icon from the sprite using the
 `app.builtins.icons/icon-xref` macro:
@@ -37,7 +37,7 @@ To trace and debug the execution of the code, one method is to enable the log
 traces that currently are in the code using the [Logging
 framework](/technical-guide/developer/common/#system-logging). You can edit a
 module and set a lower log level, to see more traces in console. Search for
-this kind lines and change to `:info` or `:debug`:
+this kind of line and change to `:info` or `:debug`:
 
 ```clojure
 (ns some.ns
@@ -54,7 +54,7 @@ debug.set_logging("namespace", "level")
 
 ### Temporary traces
 
-Of course, you have the tradicional way of inserting temporary traces inside
+Of course, you have the traditional way of inserting temporary traces inside
 the code to output data to the devtools console. There are several ways of
 doing this.
 
@@ -94,7 +94,7 @@ number of attributes to show and the display width.
 #### Use the js native functions
 
 The `clj->js` function converts the clojure data structure into a javacript
-object, interactively inspectionable in the devtools.console.
+object, interactively inspectable in the devtools.console.
 
 ```clojure
 (js/console.log "message" (clj->js expression))
