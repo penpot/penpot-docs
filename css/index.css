@@ -511,6 +511,7 @@ a[href].direct-link:focus:visited,
   position: sticky;
   top: 8rem;
   align-self: start;
+  max-width: 320px;
 }
 .main-container .sidebar a[href] {
   color: var(--darkest);
@@ -621,7 +622,7 @@ a[href].direct-link:focus:visited,
 
 #search-results {
   background: white;
-  border: 1px solid var(--graylight);
+  border: 1px solid var(--color-gray-medium);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -656,11 +657,11 @@ a[href].direct-link:focus:visited,
 
 #no-results-found {
   background: white;
-  border: 1px solid var(--graylight);
-  color: var(--graymedium);
+  border: 1px solid var(--color-gray-medium);
+  color: var(--color-gray-dark);
   list-style: none;
   margin: 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
   box-shadow: 0 0 10px rgba(68, 68, 68, 0.1);
   width: 18rem;
 }
@@ -756,11 +757,11 @@ a[href].direct-link:focus:visited,
 }
 .help-sections > li.github a:hover h3 {
   color: var(--primarydark);
-  transition: color 200ms ease-in-out;
+  transition: color 50ms ease-in-out;
 }
 .help-sections > li.github a:hover svg {
   fill: var(--primarydark);
-  transition: fill 300ms ease-in-out;
+  transition: fill 50ms ease-in-out;
 }
 .help-sections > li.github a {
   display: flex;
