@@ -391,6 +391,16 @@ variable:
 PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-warning"
 ```
 
+### Container Communication ###
+
+To connect the frontend to the exporter and backend, you need to fill out these environment variables.
+
+```bash
+# Frontend
+BACKEND_URL=http://your-penpot-backend
+EXPORT_URL=http://your-penpot-exporter
+```
+
 
 ## Exporter ##
 
