@@ -380,6 +380,19 @@ them.
 **NOTE**: many frontend related configuration variables are explained in the
 [Common](#common) section, this section explains **frontend only** options.
 
+But in case you have a custom setup you probably need setup the following environment
+variables on the frontend container:
+
+To connect the frontend to the exporter and backend, you need to fill out these environment variables.
+
+```bash
+# Frontend
+PENPOT_BACKEND_URI=http://your-penpot-backend
+PENPOT_EXPORTER_URI=http://your-penpot-exporter
+```
+
+These variables are used for generate correct nginx.conf file on container startup.
+
 
 ### Demo warning ###
 
@@ -391,7 +404,6 @@ variable:
 # Frontend
 PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-warning"
 ```
-
 
 ## Exporter ##
 
