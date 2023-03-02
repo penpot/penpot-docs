@@ -16,7 +16,7 @@ self-hosted Penpot platform!**
 
 There are two main options for creating a Penpot instance:
 
-1. Using the platform of our partner <a href="https://elest.io/" target="_blank">Elestio</a>.
+1. Using the platform of our partner <a href="https://elest.io/open-source/penpot" target="_blank">Elestio</a>.
 2. Using <a href="https://docker.com" target="_blank">Docker</a> tool.
 
 <p class="advice">
@@ -28,7 +28,7 @@ offered by Penpot community.
 
 ## Install with Elestio
 
-This section explains how to get Penpot up and running using <a href="https://elest.io/"
+This section explains how to get Penpot up and running using <a href="https://elest.io/open-source/penpot"
 target="_blank">Elestio</a>.
 
 This platform offers a fully managed service for on-premise instances of a selection of
