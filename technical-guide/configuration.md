@@ -228,6 +228,7 @@ PENPOT_LDAP_STARTTLS=false
 PENPOT_LDAP_BASE_DN=ou=people,dc=planetexpress,dc=com
 PENPOT_LDAP_BIND_DN=cn=admin,dc=planetexpress,dc=com
 PENPOT_LDAP_BIND_PASSWORD=GoodNewsEveryone
+PENPOT_LDAP_USER_QUERY=(&(|(uid=:username)(mail=:username))(memberOf=cn=penpot,ou=groups,dc=my-domain,dc=com))
 PENPOT_LDAP_ATTRS_USERNAME=uid
 PENPOT_LDAP_ATTRS_EMAIL=mail
 PENPOT_LDAP_ATTRS_FULLNAME=cn
