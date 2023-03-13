@@ -186,7 +186,7 @@ If you have registration disabled, you can create additional profiles using the
 command line interface:
 
 ```bash
-docker exec -ti penpot-penpot-backend-1 python ./manage.py create-profile
+docker exec -ti penpot-penpot-backend-1 python3 ./manage.py create-profile
 ```
 
 **NOTE:** the exact container name depends on your docker version and platform.
