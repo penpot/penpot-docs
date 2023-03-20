@@ -36,11 +36,35 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
   <li><strong>Direction:</strong> Row, reverse row, column, reverse column.</li>
   <li><strong>Wrap (Direction):</strong> Align content start / center / end / space-around / space-between.</li>
   <li><strong>Align items:</strong> Start, center, end.</li>
-  <li><strong>Justify content:</strong> start, center, end, space-around, space-between.</li>
+  <li><strong>Justify content:</strong> start, center, end, space-between, space-around, space-evenly.</li>
   <li><strong>Gap:</strong> Row, column.</li>
   <li><strong>Padding:</strong> Top, right, bottom, left.</li>
   <li><strong>Sizing:</strong> Fix/fit width, Fix/fit height.</li>
 </ul>
+
+<h3 id="flexlayout-elements">Positioning Flex elements</h3>
+<h4>Position static:</h4>
+<p>Static position is the default option for flex elements, meaning that they will be included in the flex flow, using flex properties.</p>
+<p><img src="/img/flexlayout-position-static.png" alt="Flex Layout" /></p>
+<h4>Position absolute:</h4>
+<p>Selecting absolute position will exclude the element from the Flex layout flow allowing you to freely position an element in a specific place regardless of the size of the layout where it belongs.</p>
+<p><img src="/img/flexlayout-position-absolute.png" alt="Flex Layout" /></p>
+<h4>Z-index:</h4>
+<p>With the new z-index option you can decide the order of overlapping elements while maintaining the layers order.</p>
+<p><img src="/img/flexlayout-position-z.gif" alt="Flex Layout" /></p>
+
+
+<h3 id="flexlayout-spacing">Managing flex spacing</h3>
+<p>When creating Flex layouts, the spacing is predicted, helping you to maintain your design composition.</p>
+<p><img src="/img/flexlayout-spacing-add.gif" alt="Flex Layout" /></p>
+
+<p>Set paddings, margins and gaps using their respective numeric inputs</p>
+<p>You can also <strong>click and drag</strong> to resize them while visualizing the value that is being edited:</p>
+<ul>
+  <li>Hold <kbd>Shift/⇧</kbd> while dragging to change the value of opposite sides uniformly.</li>
+  <li>Hold <kbd>Alt/⌥</kbd> while dragging to change the value of all sides uniformly.</li>
+</ul>
+<p><img src="/img/flexlayout-spacing.gif" alt="Flex Layout" /></p>
 
 
 <h3 id="flexlayout-code">Get code and specifications</h3>
