@@ -222,12 +222,12 @@ msgstr "Create demo account"
 
 The files are automatically bundled into the `index.html` file on
 compile time (in development and production). The bundled content is a
-simplified version of this data structure for avoid loading unnecesary
+simplified version of this data structure to avoid loading unnecesary
 data. The development environment has a watch process that detect
 changes on that file and recompiles the `index.html`.
 
 **There are no hot reload for translations strings**, you just need to
-refresh the browser tab for refresh the translations in the running the
+refresh the browser tab to refresh the translations in the running the
 application.
 
 Finally, when you have finished adding texts, execute the following command
