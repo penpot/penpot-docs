@@ -128,7 +128,7 @@ kbd {
   border-radius: 4px;
   padding: 0.4rem 0.6rem;
   box-shadow: 0 1px 0px 1px rgb(0 0 0 / 10%);
-  background-color: #fff;
+  background-color: var(--white);
   margin-left: 0.16rem;
   margin-right: 0.16rem;
   white-space: nowrap;
@@ -197,7 +197,7 @@ pre {
   hyphens: none;
   padding: 1em;
   margin: .5em 0;
-  background-color: #f6f6f6;
+  background-color: var(--color-gray-light);
   overflow: auto;
 }
 .highlight-line {
@@ -246,7 +246,7 @@ pre {
 .preheader .home svg {
   height: 36px;
   width: 116px;
-  fill: white;
+  fill: var(--white);
 }
 .preheader .home :link:not(:hover) {
   text-decoration: none;
@@ -375,7 +375,7 @@ footer {
     margin-right: auto;
 }
 .footer-inside .main-logo svg {
-    fill: #fff;
+    fill: var(--white);
     height: 50px;
     width: 140px;
 }
@@ -390,7 +390,7 @@ footer {
   padding: 0;
 }
 .footer-block li a {
-  color: #fff;
+  color: var(--white);
   /* font-size: 1.125rem; */
   font-size: 1rem;
   text-decoration: none;
@@ -424,7 +424,7 @@ footer {
 }
 a[href].post-tag,
 a[href].post-tag:visited {
-  color: #fff;
+  color: var(--white);
 }
 
 /* Warning */
