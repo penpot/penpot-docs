@@ -62,12 +62,12 @@ Personal access tokens function like an alternative to our login/password authen
 
 <p class="advice"><strong>Important:</strong> Treat your access tokens like passwords as they provide access to our account.</p> 
 
-#### Manage access tokens
+### Manage access tokens
 In Penpot, access tokens are configured at user account level. To manage your access tokens, go to Your account > Access tokens.
 
 ![Access tokens](/img/accesstokens-empty.png)
 
-#### Generate access tokens
+### Generate access tokens
 
 1. Press the "Generate new token" button.
 
@@ -83,9 +83,18 @@ In Penpot, access tokens are configured at user account level. To manage your ac
 
 ![Token created](/img/accesstokens-generate-0.png)
 
-#### Delete access tokens
+### Delete access tokens
 
 You can delete tokens anytime. You'll find the option at the menu at the right side of each token of the tokens list.
 
 ![Access tokens list](/img/accesstokens-created.png)
 
+### Using access tokens
+
+Having a personal token will allow you to use it instead of your password.
+
+This is an example of a curl command that you can run at the console to access your Penpot profile using an access token:
+
+```bash
+curl -H "Authorization: Token <replace-this-with-token>" https://design.penpot.app/api/rpc/command/get-profile
+```
