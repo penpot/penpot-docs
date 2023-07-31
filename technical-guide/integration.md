@@ -54,3 +54,47 @@ The payload of the webhook is similar, but there may be some changes (some
 parameters ommited or others added). The recommended way of understanding the
 webhook calls is by using <a href="https://webhook.site/" target="_blank">Webhook.site</a>.
 Generate a site URL and set it into Penpot. Then you can inspect the calls received.
+
+
+## Access tokens
+
+Personal access tokens function like an alternative to our login/password authentication system and can be used to allow an application to access the internal Penpot API.
+
+<p class="advice"><strong>Important:</strong> Treat your access tokens like passwords as they provide access to our account.</p> 
+
+### Manage access tokens
+In Penpot, access tokens are configured at user account level. To manage your access tokens, go to Your account > Access tokens.
+
+![Access tokens](/img/accesstokens-empty.png)
+
+### Generate access tokens
+
+1. Press the "Generate new token" button.
+
+![Creating token](/img/accesstokens-generate-2.png)
+
+2. Fill the name of the token. Descriptive names are recommended.
+
+3. Choose an expiration date. Current options are: Never, 30 days, 60 days, 90 days or 180 days.
+
+![Token expiration](/img/accesstokens-generate-1.png)
+
+4. Once you're happy with the name and the expiration date, press "Create token". At this step you will be able to copy the token to your clipboard.
+
+![Token created](/img/accesstokens-generate-0.png)
+
+### Delete access tokens
+
+You can delete tokens anytime. You'll find the option at the menu at the right side of each token of the tokens list.
+
+![Access tokens list](/img/accesstokens-created.png)
+
+### Using access tokens
+
+Having a personal token will allow you to use it instead of your password.
+
+This is an example of a curl command that you can run at the console to access your Penpot profile using an access token:
+
+```bash
+curl -H "Authorization: Token <replace-this-with-token>" https://design.penpot.app/api/rpc/command/get-profile
+```
