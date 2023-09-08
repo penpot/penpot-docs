@@ -200,7 +200,7 @@ You can check the correct name executing `docker ps`.
 **NOTE:** This script only will works when you properly have the `enable-prepl-server`
 flag set on backend (is set by default on the latest docker-compose.yaml file)
 
-You can find all configuration options in the [Configuration][2] section.
+You can find all configuration options in the [Configuration][1] section.
 
 
 ### Update Penpot
