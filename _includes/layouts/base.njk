@@ -49,6 +49,7 @@
         {%- for entry in collections.all | eleventyNavigation %}
           <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
         {%- endfor %}
+          <li class="nav-item"><a href="https://community.penpot.app/c/faq/17">FAQs</a></li>
         </ul>
         <div class="search">
           <label for="search-field">Search</label>
@@ -87,7 +88,7 @@
           <li><a href="/user-guide">User guide</a></li>
           <li><a href="/contributing-guide">Contributing guide</a></li>
           <li><a href="/technical-guide">Technical guide</a></li>
-          <li><a href="/faqs">FAQs</a></li>
+          <li><a href="https://community.penpot.app/c/faq/17">FAQs</a></li>
         </ul>
         <ul class="footer-block">
           <li><a href="https://penpot.app/#project">The Project</a></li>
