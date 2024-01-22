@@ -67,7 +67,7 @@ They are disabled by default since 1.13.0
 
 ### Authentication Providers
 
-For configure the authentication with third-party auth providers you will need to
+To configure the authentication with third-party auth providers you will need to
 configure penpot and set the correct callback of your penpot instance in the auth-provider
 configuration.
 
