@@ -35,7 +35,7 @@ format: `<enable|disable>-<flag-name>`.
 Penpot comes with an option to completely disable the registration process or restrict it
 to some domains.
 
-If you want to completelly disable registration, use the following variable in both
+If you want to completely disable registration, use the following variable in both
 frontend & backend:
 
 ```bash
