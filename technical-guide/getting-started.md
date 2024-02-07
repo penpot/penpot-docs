@@ -181,7 +181,7 @@ and other ones commented out with some explanations.
 #### Create users using CLI
 
 By default (or when `disable-email-verification` flag is used), email verification process
-is completly disabled for new registrations but is hightly recommended enabling email
+is completly disabled for new registrations but is highly recommended enabling email
 verification or disable registration if you are going to expose your penpot instance to
 the internet.
 
