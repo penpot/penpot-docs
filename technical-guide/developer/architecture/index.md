@@ -9,7 +9,7 @@ This section gives an overall structure of the system.
 Penpot has the architecture of a typical SPA. There is a frontend application,
 written in ClojureScript and using React framework, and served from a static
 web server. It talks to a backend application, that persists data on a
-PosgreSQL database.
+PostgreSQL database.
 
 The backend is written in Clojure, so front and back can share code and data
 structures without problem. Then, the code is compiled into JVM bytecode and

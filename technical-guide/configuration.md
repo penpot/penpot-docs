@@ -35,7 +35,7 @@ format: `<enable|disable>-<flag-name>`.
 Penpot comes with an option to completely disable the registration process or restrict it
 to some domains.
 
-If you want to completelly disable registration, use the following variable in both
+If you want to completely disable registration, use the following variable in both
 frontend & backend:
 
 ```bash
@@ -67,7 +67,7 @@ They are disabled by default since 1.13.0
 
 ### Authentication Providers
 
-For configure the authentication with third-party auth providers you will need to
+To configure the authentication with third-party auth providers you will need to
 configure penpot and set the correct callback of your penpot instance in the auth-provider
 configuration.
 
