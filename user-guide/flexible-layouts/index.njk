@@ -2,21 +2,24 @@
 title: 08· Flexible Layouts
 ---
 
-<h1 id="flexible-layouts">Flex Layout</h1>
+<h1 id="layouts">Flexible Layouts</h1>
+<p class="main-paragraph">Penpot's proposal tries to get as close as possible to the final output that we will see on the web. Design and development speak the same language in order to embrace web standards and improve communication between roles. At Penpot you have unique ways to create and manage adaptative layouts that have all the advantages of CSS standards.</p>
+
+
+<h2 id="layouts-flex">Flex Layout</h2>
 <p class="main-paragraph">Penpot's unique Flex Layout allows you to create flexible designs that can adapt automatically. Resize, fit, and fill content and containers without the need to do it manually.</p>
 
 <p class="advice">
  To help you learn the fundamentals of Flex Layout <a href="https://penpot.app/layout" target="_blank">here’s a dedicated website</a> where you will find a <strong>video tutorial</strong> and a <strong>playground template</strong>.
 </p>
 
-<h3 id="flexlayout-css">Flex Layout is based on CSS standards</h3>
-<p>Penpot's proposal tries to get as close as possible to the final output that we will see on the web. Design and development speak the same language in order to embrace web standards and improve communication between roles.
-Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more efficient way to lay out, align and distribute space among items in a container. As there are already many comprehensive explations about Flexbox we are not going to write another one. If you are interested we can recommend you to read the one at <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks</a>.</p>
+<h3 id="layouts-flex-css">Flex Layout is based on Flexbox CSS standard</h3>
+<p>Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more efficient way to lay out, align and distribute space among items in a container. As there are already many comprehensive explations about Flexbox we are not going to write another one. If you are interested we can recommend you to read the one at <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks</a>.</p>
 <p><img src="/img/csstricks-00-basic-terminology.svg" alt="Flex Layout" /></p>
 <small>Image from CSS Tricks</small>
 
 
-<h3 id="flexlayout-add">Add Flex Layout</h3>
+<h3 id="layouts-flex-add">Add Flex Layout</h3>
 <p>You can add Flex Layout to any layer, group, board or a selection including any of these. Once Flex Layout Flex is added the selected elements will be contained into a board with the Flex Layout properties. You have several ways to do this:</p>
 <ul>
   <li>From the Design panel at the right sidebar.</li>
@@ -26,13 +29,13 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
 <p><img src="/img/flexlayout-add.gif" alt="Flex Layout" /></p>
 
 
-<h3 id="flexlayout-arrange-reorder">Arrange and reorder objects to a Flex Layout</h3>
+<h3 id="layouts-flex-arrange-reorder">Arrange and reorder objects to a Flex Layout</h3>
 <p>To add an object to a Flex Layout you can just drag it at the position of your choice. You can also create or paste elements like in any regular board.</p>
 <p>To reorder elements you can drag them or use the <kbd>UP/DOWN</kbd> keystrokes.</p>
 <p><img src="/img/flexlayout-arrange.gif" alt="Flex Layout" /></p>
 
 
-<h3 id="flexlayout-properties">Flex Layout properties</h3>
+<h3 id="layouts-flex-properties">Flex Layout properties</h3>
 <p>You have properties for direction, align, justify, gap, padding, margin and sizing. Those are the same properties that you can use with CSS Flexbox. You can <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties" target="_blank">read here detailed explanations about Flexbox properties</a>.</p>
 <p><img src="/img/flexlayout-properties.png" alt="Flex Layout" /></p>
 <h4>Flex Layout properties:</h4>
@@ -46,7 +49,7 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
   <li><strong>Sizing:</strong> Fix/fit width, Fix/fit height.</li>
 </ul>
 
-<h3 id="flexlayout-elements">Positioning Flex elements</h3>
+<h3 id="layouts-flex-elements">Positioning Flex elements</h3>
 <h4>Position static:</h4>
 <p>Static position is the default option for flex elements, meaning that they will be included in the flex flow, using flex properties.</p>
 <p><img src="/img/flexlayout-position-static.png" alt="Flex Layout" /></p>
@@ -57,8 +60,7 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
 <p>With the z-index option you can decide the order of overlapping elements while maintaining the layers order.</p>
 <p><img src="/img/flexlayout-position-z.gif" alt="Flex Layout" /></p>
 
-
-<h3 id="flexlayout-spacing">Managing flex spacing</h3>
+<h3 id="layouts-flex-spacing">Managing flex spacing</h3>
 <p>When creating Flex layouts, the spacing is predicted, helping you to maintain your design composition.</p>
 <p><img src="/img/flexlayout-spacing-add.gif" alt="Flex Layout" /></p>
 
@@ -71,12 +73,11 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
 <p><img src="/img/flexlayout-spacing.gif" alt="Flex Layout" /></p>
 
 
-<h3 id="flexlayout-code">Get code and specifications</h3>
+<h3 id="layouts-flex-code">Get code and specifications</h3>
 <p>Designing with Flex Layout generates <em>ready for production</em> code. Select the flex board or its inner elements and then open the <a href="/user-guide/inspect" target="_blank">Inspect tab</a> to obtain its properties, detailed info and raw code.</p>
 <p><img src="/img/flexlayout-inspect.gif" alt="Flex Layout" /></p>
 
-
-<h3 id="flexlayout-examples">Flex Layout basic examples</h3>
+<h3 id="layouts-flex-examples">Flex Layout basic examples</h3>
 <h4>How to create a button</h4>
 <p>A classic example that will help you create flexible buttons that grow depending on its content.</p>
 <p><img src="/img/flexlayout-button.gif" alt="Flex Layout" /></p>
@@ -89,5 +90,64 @@ Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more ef
 <p>Use the <strong>wrap</strong> property along with <strong>row</strong> direction to get the elements positioned in multiple lines.</p>
 <p><img src="/img/flexlayout-wrap.gif" alt="Flex Layout" /></p>
 
+
+<h2 id="layouts-grid">Grid Layout</h2>
+<p class="main-paragraph">Grid Layout allows you to efficiently organize, align, and distribute items in 2-dimensional layouts. You can create rows and columns of elements, giving you fine-grained control over their expansion, alignment, and responsiveness to various screen sizes.</p>
+<figure>
+  <video autoplay loop title="A video showing different layers being grouped and dragged around the Canvas" muted="" playsinline="" controls="" width="100%" poster="/img/layouts-grid-main.png" height="auto">
+    <source src="/img/layouts-grid-main.mp4" type="video/mp4">
+  </video>
+  <figcaption>Rearranging cells in Grid Layout</figcaption>
+</figure>
+
+<h3 id="layouts-flex-css">Grid Layout is based on CSS Grid standard</h3>
+<p>Penpot's Grid Layout is built over CSS Grid, a fairly new CSS module that provides a more efficient way to lay out, align and distribute space among items in a container using two dimensions. If you are interested to know more about this CSS module we can recommend you to read this awesome <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guide to CSS Grid</a> at CSS Tricks.</p>
+
+
+<h3 id="layouts-grid-add">Add Grid Layout</h3>
+<p>You can add Grid Layout to any layer, group, board or a selection. Once Grid Layout Flex is added the selected elements will be contained into a board that handles its space through Grid Layout properties. You have several ways to do add Grid Layout:</p>
+<ul>
+  <li>From the Design panel at the right sidebar.</li>
+  <li>From the option at the selection menu (right click button).</li>
+  <li>Pressing <kbd>Ctrl/⌘</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>.</li>
+</ul>
+<p><img src="/img/flexlayout-add.gif" alt="Flex Layout" /></p>
+
+
+
+
+management
+- sidebar
+- board
+
+properties
+- positioning
+- alignment
+- direction
+
+Edition
+- Col & rows
+- Units (fr, auto, px)
+- Cells & Areas - naming
+
+code
+- html & css
+
+use cases
+- magazine
+- table
+- bento grid
+
+
+Differences grid flex
+- direction
+- space control
+- complexity
+- use cases
+
+keyboard
+- crear Shift
+- ctrl drag
+- drag shapes en grid con ctrl para que la shape la ponga en auto
 
 
