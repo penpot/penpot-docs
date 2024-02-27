@@ -15,8 +15,10 @@ title: 08· Flexible Layouts
 
 <h3 id="layouts-flex-css">Flex Layout is based on Flexbox CSS standard</h3>
 <p>Penpot's Flex Layout is built over Flexbox, a CSS module that provides a more efficient way to lay out, align and distribute space among items in a container. As there are already many comprehensive explations about Flexbox we are not going to write another one. If you are interested we can recommend you to read the one at <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks</a>.</p>
+<figure>
 <p><img src="/img/csstricks-00-basic-terminology.svg" alt="Flex Layout" /></p>
-<small>Image from CSS Tricks</small>
+<figcaption>Image from CSS Tricks</figcaption>
+</figure>
 
 
 <h3 id="layouts-flex-add">Add Flex Layout</h3>
@@ -26,7 +28,7 @@ title: 08· Flexible Layouts
   <li>From the option at the selection menu (right click button).</li>
   <li>Pressing <kbd>Ctrl/⌘</kbd> + <kbd>A</kbd>.</li>
 </ul>
-<p><img src="/img/flexlayout-add.gif" alt="Flex Layout" /></p>
+<p><img src="/img/layouts-add.png" alt="Adding Layouts" /></p>
 
 
 <h3 id="layouts-flex-arrange-reorder">Arrange and reorder objects to a Flex Layout</h3>
@@ -92,7 +94,7 @@ title: 08· Flexible Layouts
 
 
 <h2 id="layouts-grid">Grid Layout</h2>
-<p class="main-paragraph">Grid Layout allows you to efficiently organize, align, and distribute items in 2-dimensional layouts. You can create rows and columns of elements, giving you fine-grained control over their expansion, alignment, and responsiveness to various screen sizes.</p>
+<p class="main-paragraph">Grid Layout allows you to efficiently organize, align, and distribute items in 2-dimensional layouts. You can create rows and columns of elements, giving you fine-grained control over their expansion, alignment, and responsiveness to various screen sizes. It's a powerful tool for creating responsive designs.</p>
 <figure>
   <video autoplay loop title="A video showing different layers being grouped and dragged around the Canvas" muted="" playsinline="" controls="" width="100%" poster="/img/layouts-grid-main.png" height="auto">
     <source src="/img/layouts-grid-main.mp4" type="video/mp4">
@@ -101,7 +103,7 @@ title: 08· Flexible Layouts
 </figure>
 
 <h3 id="layouts-flex-css">Grid Layout is based on CSS Grid standard</h3>
-<p>Penpot's Grid Layout is built over CSS Grid, a fairly new CSS module that provides a more efficient way to lay out, align and distribute space among items in a container using two dimensions. If you are interested to know more about this CSS module we can recommend you to read this awesome <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guide to CSS Grid</a> at CSS Tricks.</p>
+<p>Penpot's Grid Layout is built over CSS Grid, a fairly new CSS module. If you are interested to know more about this CSS module we recommend checking out the comprehensive explanation <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guide to CSS Grid</a> at CSS Tricks.</p>
 
 
 <h3 id="layouts-grid-add">Add Grid Layout</h3>
@@ -111,43 +113,117 @@ title: 08· Flexible Layouts
   <li>From the option at the selection menu (right click button).</li>
   <li>Pressing <kbd>Ctrl/⌘</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>.</li>
 </ul>
-<p><img src="/img/flexlayout-add.gif" alt="Flex Layout" /></p>
+<p><img src="/img/layouts-add.png" alt="Adding Layouts" /></p>
+
+<h3 id="layouts-grid-properties">Grid Layout properties</h3>
+<p>There are properties both for Grid containers and  Grid items (cells, rows, cols). Those are the same properties that you can use with CSS Grid. You can <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-properties" target="_blank">read here detailed explanations about CSS Grid properties</a>.</p>
+
+<h4>Grid layout basic terminology</h4> 
+<ul>
+  <li><strong>Container:</strong> The container is the parent element of all the grid items.</li>
+  <li><strong>Cell:</strong> A single unit of the grid. Cells are the children elements of a grid container.</li>
+  <li><strong>Area:</strong> A composition of any number of grid cells.</li>
+  <li><strong>Gap:</strong> The space between grid items (cells and areas), both horizontally and vertically.</li>
+  <li><strong>Row:</strong> The horizontal and lines that define the rows of the grid.</li>
+  <li><strong>Column:</strong> The vertical lines that define the columns of the grid.</li>
+</ul>
 
 
+<h4>Grid containter properties</h4>
+<ul>
+  <li><strong>Direction:</strong> Row, column.</li>
+  <li><strong>Align items (vertically and horizontally):</strong> Start, center, end.</li>
+  <li><strong>Justify items (vertically and horizontally):</strong> start, center, end, space-around, space-between, stretch.</li>
+  <li><strong>Gap:</strong> Row, column.</li>
+  <li><strong>Padding:</strong> Top, right, bottom, left, vertical, horizontal.</li>
+</ul>
+
+<h4>Grid cell properties</h4>
+<strong>Auto, manual and Area</strong>
+<p>These are different ways to manage the element's position that therefore have different code representation.</p>
+<ul>
+  <li><strong>Auto:</strong> The elements are positioned in order inside the cells so taht If a new element enters the flow the rest get repositioned. This is the default behaviour.</li>
+  <li><strong>Manual:</strong> The elements are positioned in specific cells or areas. Elements inside area cells will have the css properties <code>grid-column</code> and <code>grid-row</code>.</li>
+  <li><strong>Area:</strong> A cell or area with an Area name. Areas behave as Manual cells.</li>
+</ul>
+
+<p><strong>Align self (vertically and horizontally):</strong> Start, center, end, stretch.</p>
 
 
-management
-- sidebar
-- board
+<h3 id="layouts-grid-elements">Placing grid elements</h3>
+<p>To place elements inside a grid layout, just drag them or paste them in a cell or area.</p>
+<p><strong>Tip:</strong> Drag an element over a grid and then press <kbd>Ctrl</kbd> to place it as auto. That way the layer will be postioned automatically in the first available cell or area.</p>
 
-properties
-- positioning
-- alignment
-- direction
-
-Edition
-- Col & rows
-- Units (fr, auto, px)
-- Cells & Areas - naming
-
-code
-- html & css
-
-use cases
-- magazine
-- table
-- bento grid
+<h4>Grid element properties</h4>
+<ul>
+  <li><strong>Position:</strong> static, absolute.</li>
+  <li><strong>Width:</strong> fix, 100%.</li>
+  <li><strong>Margin:</strong> top, right, bottom, left.</li>
+</ul>
 
 
-Differences grid flex
-- direction
-- space control
-- complexity
-- use cases
+<h3 id="layouts-grid-colsrows">Edit rows and columns</h3>
+<p>To edit grid layouts (rows, columns, units, cells, areas, etc) you can either select the board and press the "Edit grid" button or double click over the board.</p>
+<p>You have several ways to edit rows and columns:</p>
 
-keyboard
-- crear Shift
-- ctrl drag
-- drag shapes en grid con ctrl para que la shape la ponga en auto
+<h4>Design sidebar</h4>
+<p>From the design sidebar you will be able to:</p>
+<ul>
+  <li><strong>Get info about columns and rows:</strong> Press the 3 dots besides the Columns or the Rows section to get details.</li>
+  <li><strong>Add columns and rows</strong>: Press the + button to add a column or a row.</li>
+  <li><strong>Delete columns and rows</strong>: Press the - button to delete an specific column or row.</li>
+  <li><strong>Drag columns and rows</strong>: You can reorder columns and rows by clicking and dragging over the drag icon.</li>
+  <li><strong>Change sizes and units</strong>: Change specific sizes and units of each row and column.</li>
+</ul>
+<p><strong>Tip:</strong> You cand drag columns and rows while leaving the elements in the same position if you perform the action while pressing <kbd>Ctrl</kbd>.</p>
+
+<h4>Design viewport</h4>
+<p>From the design viewport you will be able to:</p>
+<ul>
+  <li><strong>Add columns and rows</strong>: Press the + button at the end of the headers to add a column or a row.</li>
+  <li><strong>Drag columns and rows</strong>: To drag columns and rows hover a column or row header until the hand cursor is shown and then click and drag it.</li>
+  <li><strong>Change sizes and units</strong>: Drag the columns and rows numbers and change specific sizes and units on their headers.</li>
+</ul>
+<p><strong>Tip:</strong> You cand drag columns and rows while leaving the elements in the same position if you perform the action while pressing <kbd>Ctrl</kbd>.</p>
+
+<h4>Contextual menu</h4>
+<p>To launch the contextual menu of rows and columns you can right click over a column or row header or left click on the menu button.</p>
+<p>From the contextual menu of rows and columns you will be able to:</p>
+<ul>
+  <li>Duplicate row/column</li>
+  <li>Add 1 row/column to the left</li>
+  <li>Add 1 row/column to the right</li>
+  <li>Delete row/column</li>
+  <li>Delete row/column and shapes</li>
+</ul>
+
+<h3 id="layouts-grid-units">Grid units</h3>
+<p>You can use different units at your grid columns and cells:</p>
+<ul>
+  <li><strong>FR:</strong> FR stands for "fractional unit", meaning "portiong of the remaining space". If a grid has 2 columns being one 1fr and othter 3fr, the first one will take 25% of the space while the other 75%.</li>
+  <li><strong>Auto:</strong> The row/col size will be automatically set, relative to the items and the available space.</li>
+  <li><strong>Pixels:</strong> Well, we all know pixels, don't we?</li>
+</ul>
+
+<h3 id="layouts-grid-areas">Areas</h3>
+<p>Areas are composition of any number of grid cells.</p>
+
+<h4>Create areas</h4>
+<p>You have two ways to create areas:</p>
+<p>1. Select more than one cell pressing left click while <kbd>Ctrl<kbd>), then press right click to open the menu and then press the option "Merge cells".</p>
+
+<p>2. Select one cell pressing left click, then hover near the limit to the cell you want to merge the selected cell with until the cursor changes. Then drag the cursor to merge the selected area to other areas in the same direction.</p>
+
+
+<h4>Name areas</h4>
+<p>To name an area, select the "Area" option at the grid cell properties (right sidebar) and fill the name of the area.</p>
+
+<h4>Undo areas</h4>
+<p>To turn areas back to regular cells, just select the "Auto" option at the grid cell properties (right sidebar).</p>
+
+
+<h3 id="layouts-grid-code">Grid code and specifications</h3>
+<p>Grid layout at Penpot behaves just like CSS Grid because is actually using the CSS Grid standard. This means that you can just switch to <a href="/user-guide/inspect" target="_blank">Inspect mode</a>, get the code and use it in real websites.</p>
+
 
 
