@@ -28,7 +28,7 @@ title: 08· Flexible Layouts
   <li>From the option at the selection menu (right click button).</li>
   <li>Pressing <kbd>Ctrl/⌘</kbd> + <kbd>A</kbd>.</li>
 </ul>
-<p><img src="/img/layouts-add.png" alt="Adding Layouts" /></p>
+<figure><img src="/img/flexible-layouts/layouts-add.png" alt="Adding Layouts" /></figure>
 
 
 <h3 id="layouts-flex-arrange-reorder">Arrange and reorder objects to a Flex Layout</h3>
@@ -39,7 +39,8 @@ title: 08· Flexible Layouts
 
 <h3 id="layouts-flex-properties">Flex Layout properties</h3>
 <p>You have properties for direction, align, justify, gap, padding, margin and sizing. Those are the same properties that you can use with CSS Flexbox. You can <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties" target="_blank">read here detailed explanations about Flexbox properties</a>.</p>
-<p><img src="/img/flexlayout-properties.png" alt="Flex Layout" /></p>
+<figure><img src="/img/flexible-layouts/flex-properties.png" alt="Flex Layout properties" /></figure>
+
 <h4>Flex Layout properties:</h4>
 <ul>
   <li><strong>Direction:</strong> Row, reverse row, column, reverse column.</li>
@@ -54,10 +55,10 @@ title: 08· Flexible Layouts
 <h3 id="layouts-flex-elements">Positioning Flex elements</h3>
 <h4>Position static:</h4>
 <p>Static position is the default option for flex elements, meaning that they will be included in the flex flow, using flex properties.</p>
-<p><img src="/img/flexlayout-position-static.png" alt="Flex Layout" /></p>
+<figure><img src="/img/flexible-layouts/flex-properties-element.png" alt="Flex Layout properties" /></figure>
 <h4>Position absolute:</h4>
 <p>Selecting absolute position will exclude the element from the Flex layout flow allowing you to freely position an element in a specific place regardless of the size of the layout where it belongs.</p>
-<p><img src="/img/flexlayout-position-absolute.png" alt="Flex Layout" /></p>
+<figure><img src="/img/flexible-layouts/flex-properties-element-absolute.png" alt="Flex Layout properties" /></figure>
 <h4>Z-index:</h4>
 <p>With the z-index option you can decide the order of overlapping elements while maintaining the layers order.</p>
 <p><img src="/img/flexlayout-position-z.gif" alt="Flex Layout" /></p>
@@ -96,8 +97,8 @@ title: 08· Flexible Layouts
 <h2 id="layouts-grid">Grid Layout</h2>
 <p class="main-paragraph">Grid Layout allows you to efficiently organize, align, and distribute items in 2-dimensional layouts. You can create rows and columns of elements, giving you fine-grained control over their expansion, alignment, and responsiveness to various screen sizes. It's a powerful tool for creating responsive designs.</p>
 <figure>
-  <video autoplay loop title="A video showing different layers being grouped and dragged around the Canvas" muted="" playsinline="" controls="" width="100%" poster="/img/layouts-grid-main.png" height="auto">
-    <source src="/img/layouts-grid-main.mp4" type="video/mp4">
+  <video autoplay loop title="A video showing different layers being grouped and dragged around the Canvas" muted="" playsinline="" controls="" width="100%" poster="/img/flexible-layouts/layouts-grid-main.png" height="auto">
+    <source src="/img/flexible-layouts/layouts-grid-main.mp4" type="video/mp4">
   </video>
   <figcaption>Rearranging cells in Grid Layout</figcaption>
 </figure>
@@ -113,12 +114,9 @@ title: 08· Flexible Layouts
   <li>From the option at the selection menu (right click button).</li>
   <li>Pressing <kbd>Ctrl/⌘</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>.</li>
 </ul>
-<p><img src="/img/layouts-add.png" alt="Adding Layouts" /></p>
+<figure><img src="/img/layouts-add.png" alt="Adding Layouts" /></figure>
 
-<h3 id="layouts-grid-properties">Grid Layout properties</h3>
-<p>There are properties both for Grid containers and  Grid items (cells, rows, cols). Those are the same properties that you can use with CSS Grid. You can <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-properties" target="_blank">read here detailed explanations about CSS Grid properties</a>.</p>
-
-<h4>Grid layout basic terminology</h4> 
+<h3 id="layouts-grid-terminology">Grid layout basic terminology</h3> 
 <ul>
   <li><strong>Container:</strong> The container is the parent element of all the grid items.</li>
   <li><strong>Cell:</strong> A single unit of the grid. Cells are the children elements of a grid container.</li>
@@ -128,8 +126,11 @@ title: 08· Flexible Layouts
   <li><strong>Column:</strong> The vertical lines that define the columns of the grid.</li>
 </ul>
 
+<h3 id="layouts-grid-properties">Grid Layout properties</h3>
+<p>There are properties both for Grid containers and  Grid items (cells, rows, cols). Those are the same properties that you can use with CSS Grid. You can <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-properties" target="_blank">read here detailed explanations about CSS Grid properties</a>.</p>
 
 <h4>Grid containter properties</h4>
+<figure><img src="/img/flexible-layouts/grid-properties-container.png" alt="Grid Layout properties" /></figure>
 <ul>
   <li><strong>Direction:</strong> Row, column.</li>
   <li><strong>Align items (vertically and horizontally):</strong> Start, center, end.</li>
@@ -139,6 +140,7 @@ title: 08· Flexible Layouts
 </ul>
 
 <h4>Grid cell properties</h4>
+<figure><img src="/img/flexible-layouts/grid-properties-cell.png" alt="Grid Layout properties" /></figure>
 <strong>Auto, manual and Area</strong>
 <p>These are different ways to manage the element's position that therefore have different code representation.</p>
 <ul>
@@ -210,7 +212,7 @@ title: 08· Flexible Layouts
 
 <h4>Create areas</h4>
 <p>You have two ways to create areas:</p>
-<p>1. Select more than one cell pressing left click while <kbd>Ctrl<kbd>), then press right click to open the menu and then press the option "Merge cells".</p>
+<p>1. Select more than one cell pressing left click while <kbd>Ctrl</kbd>, then press right click to open the menu and then press the option "Merge cells".</p>
 
 <p>2. Select one cell pressing left click, then hover near the limit to the cell you want to merge the selected cell with until the cursor changes. Then drag the cursor to merge the selected area to other areas in the same direction.</p>
 

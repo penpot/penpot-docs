@@ -177,7 +177,7 @@ blockquote {
 
 figure {
   padding: 0;
-  margin: 0;
+  margin: 0 0 2rem 0;
 }
 figcaption {
   color: var(--graymedium);
