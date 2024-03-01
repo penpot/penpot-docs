@@ -150,7 +150,7 @@ title: 08· Flexible Layouts
   <li><strong>Cell:</strong> A single unit of the grid. Cells are the children elements of a grid container.</li>
   <li><strong>Area:</strong> A composition of any number of grid cells.</li>
   <li><strong>Gap:</strong> The space between grid items (cells and areas), both horizontally and vertically.</li>
-  <li><strong>Row:</strong> The horizontal and lines that define the rows of the grid.</li>
+  <li><strong>Row:</strong> The horizontal lines that define the rows of the grid.</li>
   <li><strong>Column:</strong> The vertical lines that define the columns of the grid.</li>
 </ul>
 
@@ -162,17 +162,17 @@ title: 08· Flexible Layouts
 <ul>
   <li><strong>Direction:</strong> Row, column.</li>
   <li><strong>Align items (vertically and horizontally):</strong> Start, center, end.</li>
-  <li><strong>Justify items (vertically and horizontally):</strong> start, center, end, space-around, space-between, stretch.</li>
+  <li><strong>Justify items (vertically and horizontally):</strong> Start, center, end, space-around, space-between, stretch.</li>
   <li><strong>Gap:</strong> Row, column.</li>
   <li><strong>Padding:</strong> Top, right, bottom, left, vertical, horizontal.</li>
 </ul>
 
 <h4>Grid cell properties</h4>
 <figure><img src="/img/flexible-layouts/grid-properties-cell.png" alt="Grid Layout properties" /></figure>
-<strong>Auto, manual and Area</strong>
+<strong>Auto, Manual and Area</strong>
 <p>These are different ways to manage the element's position that therefore have different code representation.</p>
 <ul>
-  <li><strong>Auto:</strong> The elements are positioned in order inside the cells so taht If a new element enters the flow the rest get repositioned. This is the default behaviour.</li>
+  <li><strong>Auto:</strong> The elements are positioned in order inside the cells so that if a new element enters the flow the rest get repositioned. This is the default behaviour.</li>
   <li><strong>Manual:</strong> The elements are positioned in specific cells or areas. Elements inside area cells will have the css properties <code>grid-column</code> and <code>grid-row</code>.</li>
   <li><strong>Area:</strong> A cell or area with an Area name. Areas behave as Manual cells.</li>
 </ul>
@@ -246,13 +246,13 @@ title: 08· Flexible Layouts
 <h3 id="layouts-grid-units">Grid units</h3>
 <p>You can use different units at your grid columns and cells:</p>
 <ul>
-  <li><strong>FR:</strong> FR stands for "fractional unit", meaning "portiong of the remaining space". If a grid has 2 columns being one 1fr and othter 3fr, the first one will take 25% of the space while the other 75%.</li>
+  <li><strong>FR:</strong> FR stands for "fractional unit", meaning "portion of the remaining space". If a grid has 2 columns being one 1fr and the other 3fr, the first one will take 25% of the space while the other 75%.</li>
   <li><strong>Auto:</strong> The row/col size will be automatically set, relative to the items and the available space.</li>
   <li><strong>Pixels:</strong> Well, we all know pixels, don't we?</li>
 </ul>
 
 <h3 id="layouts-grid-areas">Areas</h3>
-<p>Areas are composition of any number of grid cells.</p>
+<p>Areas are compositions of any number of grid cells.</p>
 <figure>
   <video title="Managing areas in grid Layout" muted="" playsinline="" controls="" width="100%" poster="/img/flexible-layouts/layouts-grid-area.png" height="auto">
     <source src="/img/flexible-layouts/layouts-grid-area.mp4" type="video/mp4">
@@ -273,7 +273,7 @@ title: 08· Flexible Layouts
 <p>To turn areas back to regular cells, just select the "Auto" option at the grid cell properties (right sidebar).</p>
 
 <h3 id="layouts-grid-code">Grid code and specifications</h3>
-<p>Grid layout at Penpot behaves just like CSS Grid because is actually using the CSS Grid standard. This means that you can just switch to <a href="/user-guide/inspect" target="_blank">Inspect mode</a>, get the code and use it in real websites.</p>
+<p>Grid layout at Penpot behaves just like CSS Grid because it is actually using the CSS Grid standard. This means that you can just switch to <a href="/user-guide/inspect" target="_blank">Inspect mode</a>, get the code and use it in real websites.</p>
 <figure><img src="/img/flexible-layouts/layouts-grid-code.gif" alt="Inspecting code at Penpot" /></figure>
 
 
