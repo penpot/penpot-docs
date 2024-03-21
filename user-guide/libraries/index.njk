@@ -7,85 +7,132 @@ title: 09· Asset Libraries
 
 <h3 id="file-library">File library</h3>
 <p>Each file has a File Library where assets are stored. You can find File Libraries at the workspace. To access them, click the assets panel icon at the bottom of the left toolbar or press <kbd>Alt/⌥</kbd> + <kbd>i</kbd>.</p>
-<p><img src="/img/libraries-asset-types.png" alt="libraries" /></p>
+<figure>
+  <img src="/img/libraries/assets-tab.png" alt="Library assets tab">
+</figure>
 
 <h3 id="asset-types">Asset Types</h3>
 <p>In Penpot you can store four type of assets: components, graphics, colors and typographies:</p>
 <ul>
   <li><strong>Components:</strong> A component is an object or group of objects that can be reused multiple times across files (projects and teams in the future). Learn more at the <a href="/user-guide/components/">components section</a>.</li>
-  <li><strong>Graphics:</strong> Both bitmap and vector images can be stored at the Graphics section.</li>
   <li><strong>Colors:</strong> Create your color styles and use them on fills and strokes.</li>
   <li><strong>Typographies:</strong> Penpot allows you to save typography styles with a set of reusable properties. You can always unlink a typography style maintaining the properties for the text layer.</li>
+  <li><strong>[Deprecated] Graphics:</strong> In Penpot versions older than 2.0, bitmap and vector images can be stored at the Graphics section. This type was deprecated in favor of components.</li>
 </ul>
 
 <h3 id="add-assets-to-library">Adding Assets to Libraries</h3>
-<p>You can use the “+” icon to add assets. Each of the categories have their own specific action:</p>
-<ul>
-  <li><strong>Components:</strong> Each Main Component is automatically stored in the library so there is no button or specific action to do it. Learn more about components at the <a href="/user-guide/components/">components section</a>.</li>
-  <li><strong>Graphics:</strong> Click the “+” to inspect your local files and choose one or more images to upload them to the library.</li>
-  <li><strong>Colors:</strong> Click the “+” to launch the color picker and add a color to the library. Learn more about <a href="/user-guide/color/">managing color</a>.</li>
-  <li><strong>Typographies:</strong> All typography styles created from the text properties (at the right sidebar) are automatically stored at the library. You can also click the “+” to create a new typography style from scratch.</li>
-</ul>
-<p><img src="/img/assets-add.gif" alt="libraries" /></p>
+<p>You can use the “+” icon to add assets. Each of the categories have their own specific adding action.</p>
+
+<h4>Components</h4>
+<p>There are two ways to add components to an assets library:</p>
+<ol>
+  <li>Main components are automatically stored in the local library at the moment of being created. Learn more about components at the <a href="/user-guide/components/">components section</a>.</li>
+  <li>Clicking the “+” to launch import an image that will be added as a component.</li>
+</ol>
+<figure>
+  <video title="Add component" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/add-component.png" height="auto">
+    <source src="/img/libraries/add-component.mp4" type="video/mp4">
+  </video>
+</figure>
+
+<h4>Colors</h4>
+<p>Click the “+” to launch the color picker and add a color to the library. Learn more about <a href="/user-guide/color/">managing color</a></p>
+<figure>
+  <video title="Add color" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/add-color.png" height="auto">
+    <source src="/img/libraries/add-color.mp4" type="video/mp4">
+  </video>
+</figure>
+
+<h4>Typographies</h4>
+<p>All typography styles created from the text properties (at the right sidebar) are automatically stored at the library. You can also click the “+” to create a new typography style from scratch.</p>
+<figure>
+  <video title="Add typography" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/add-typography.png" height="auto">
+    <source src="/img/libraries/add-typography.mp4" type="video/mp4">
+  </video>
+</figure>
+
 <p><strong>Tip:</strong> If you select a text layer with certain properties (font family, size, line height...) and click the "+" at the Typographies section at the assets library (left sidebar), the created typography style will include the properties of the text layer.</p>
-<p><img src="/img/assets-add-typo.gif" alt="libraries" /></p>
 
 <h3 id="edit-assets">Edit assets</h3>
 <p>Press left click over any asset of the library to show the options menu. Some options are available only for certain assets.</p>
 <ul>
   <li><strong>Components:</strong> Rename, duplicate, delete, group.</li>
-  <li><strong>Graphics:</strong> Rename, delete, group.</li>
   <li><strong>Colors:</strong> Rename, edit, delete.</li>
   <li><strong>Typographies:</strong> Rename, edit, delete.</li>
 </ul>
-<p><img src="/img/assets-edit.gif" alt="libraries" /></p>
+<figure>
+  <video title="Asset options" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-options.png" height="auto">
+    <source src="/img/libraries/asset-options.mp4" type="video/mp4">
+  </video>
+</figure>
 
 <h3 id="edit-assets">Using Assets</h3>
 <ul>
   <li><strong>Components:</strong> Drag the component directly from the library to the viewport.</li>
-  <li><strong>Graphics:</strong> Same as components, just drag the selected graphic to the viewport.</li>
   <li><strong>Colors:</strong> With a shape or a text selected click a color from the library to apply it as a fill. If you press <kbd>Alt</kbd> (or <kbd>⌥</kbd> in macOS) while clicking, the color will be applied to the stroke.</li>
   <li><strong>Typographies:</strong> With a text layer selected click a typography style from the library to apply it.</li>
 </ul>
-<p><img src="/img/assets-use.gif" alt="libraries" /></p>
+<figure>
+  <video title="Asset use" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-use.png" height="auto">
+    <source src="/img/libraries/asset-use.mp4" type="video/mp4">
+  </video>
+</figure>
 
 <h3 id="manage-libraries">Manage and organize libraries</h3>
 <p>Learn how to better view and organize your assets:</p>
 
-<h4>View modes (list and grid)</h4>
+<h4>Assets list views</h4>
 <p>You can switch between list and grid views.</p>
 <ul>
   <li><strong>Grid view:</strong> With the thumbnails displayed is easier to visually identify the content of specific assets, specially components.</li>
   <li><strong>List view:</strong> Optimized to identify the assets by their names and view more assets at the same time.</li>
 </ul>
-<p><img src="/img/assets-viewmode.gif" alt="libraries" /></p>
+<figure>
+  <video title="Asset list" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-list.png" height="auto">
+    <source src="/img/libraries/asset-list.mp4" type="video/mp4">
+  </video>
+</figure>
 
-<h4>Ordering</h4>
+<h4>Order assets</h4>
 <p>Click the ordering button to change the alphabetical order.</p>
-<p><img src="/img/assets-order.gif" alt="libraries" /></p>
+<figure>
+  <video title="Asset order" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-order.png" height="auto">
+    <source src="/img/libraries/asset-order.mp4" type="video/mp4">
+  </video>
+</figure>
 
 <h4>Search assets</h4>
 <p>Use the Search assets box to filter the assets with names that match what you write.</p>
-<p><img src="/img/assets-search.png" alt="libraries" /></p>
+<figure>
+  <video title="Asset search" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-search.png" height="auto">
+    <source src="/img/libraries/asset-search.mp4" type="video/mp4">
+  </video>
+</figure>
 
 <h4>Filter assets</h4>
 <p>You can decide whether to show all asset types or only one (components, graphics, colors or typographies).</p>
-<p><img src="/img/assets-filter.gif" alt="libraries" /></p>
 
 <h4>Multiselect assets</h4>
-<p>Press <kbd>Ctrl/⌘</kbd> + left click to select multiple assets and perform operations on them simultaneously.</p>
-
-<h4>Grouping assets</h4>
+<figure>
+  <video title="Asset search" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-multiselect.png" height="auto">
+    <source src="/img/libraries/asset-multiselect.mp4" type="video/mp4">
+  </video>
+</figure>
+<h4>Group assets</h4>
 <p>Penpot allows you to create groups inside libraries. To create a group, use the slash-separated naming convention when renaming an asset and the group will be created automatically. e.g. <code>group / subgroup / asset_name</code>.</p>
 <p>Another way to create a group is to right click with more than one asset selected and then click “Group” in the contextual menu.</p>
-<p><img src="/img/library-groups.png" alt="libraries" /></p>
+
 <p>You can also move assets from or to groups by dragging them.</p>
 <p><img src="/img/library-drag-asset.gif" alt="libraries" /></p>
 
 <h3 id="shared-libraries">Shared libraries</h3>
 <p>You can turn any regular file into a Shared Library. This means that the File Library of this file will be available to other files of projects being worked on by the team.</p>
 <p>To add a Shared Library from another file, launch the libraries panel, then search and select the available libraries.</p>
-<p><img src="/img/shared-libraries.gif" alt="libraries" /></p>
+<figure>
+  <video title="Connecting a shared library" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/libraries-launch.png" height="auto">
+    <source src="/img/libraries/libraries-launch.mp4" type="video/mp4">
+  </video>
+</figure>
 
 <p>Shared libraries will be displayed at the libraries panel. Click on the link icon at the right of the Shared Library name to go to the file where the library is and edit its contents.</p>
 <p><img src="/img/shared-libraries.png" alt="libraries" /></p>
