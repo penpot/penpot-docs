@@ -8,7 +8,7 @@ title: 09· Asset Libraries
 <h2 id="assets">Assets</h2>
 
 <h3 id="asset-types">Asset types</h3>
-<p>In Penpot you can store four type of assets: components, graphics, colors and typographies:</p>
+<p>In Penpot you can store different type of assets:</p>
 <ul>
   <li><strong>Components:</strong> A component is an object or group of objects that can be reused multiple times across files (projects and teams in the future). Learn more at the <a href="/user-guide/components/">components section</a>.</li>
   <li><strong>Colors:</strong> Create your color styles and use them on fills and strokes.</li>
@@ -85,10 +85,10 @@ title: 09· Asset Libraries
   </video>
 </figure>
 
-<h4>Order assets</h4>
-<p>Click the ordering button to change the alphabetical order.</p>
+<h4>Sort assets</h4>
+<p>Click the sort button to change the alphabetical order.</p>
 <figure>
-  <video title="Asset order" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-order.png" height="auto">
+  <video title="Asset sort" muted="" playsinline="" controls="" width="auto" poster="/img/libraries/asset-order.png" height="auto">
     <source src="/img/libraries/asset-order.mp4" type="video/mp4">
   </video>
 </figure>
@@ -102,7 +102,7 @@ title: 09· Asset Libraries
 </figure>
 
 <h4>Filter assets</h4>
-<p>You can decide whether to show all asset types or only one (components, graphics, colors or typographies).</p>
+<p>You can decide whether to show all asset types or only one of your choice (components, colors or typographies).</p>
 
 <h4>Multiselect assets</h4>
 <figure>
@@ -137,14 +137,45 @@ title: 09· Asset Libraries
 
 <h2 id="libraries">Libraries</h2>
 
-<h3 id="file-library">File library</h3>
-<p>Each file has a File Library where assets are stored. You can find File Libraries at the workspace. To access them, click the assets panel icon at the bottom of the left toolbar or press <kbd>Alt/⌥</kbd> + <kbd>i</kbd>.</p>
+<h3 id="file-libraries">File libraries</h3>
+<p>Each file has its own file library which is where the assets that belong to this file are stored.</p> 
+<p>You have to ways to access to the file library from the file <a href="/user-guide/the-interface/#interface-workspace">workspace</a>:</p>
+<ul>
+  <li>Click the assets tab icon at the left sidebar.</li>
+  <li>Press <kbd>Alt/⌥</kbd> + <kbd>i</kbd>.</li>
+</ul>
 <figure>
   <img src="/img/libraries/assets-tab.png" alt="Library assets tab">
 </figure>
 
 <h3 id="shared-libraries">Shared libraries</h3>
-<p>You can turn any regular file into a Shared Library. This means that the File Library of this file will be available to other files of projects being worked on by the team.</p>
+<h4>Publish as shared library</h4>
+<p>You can publish any regular file as a shared library. This means that the file library of this file will be available to be connected at other files that exist in the same team, so its library assets can be reused tem.</p>
+<p>There are two ways to publish a library:</p>
+<ul>
+  <li>Using the file main menu.</li>
+  <li>From the libraries panel, that you can launch by clicking on the "Libraries" button that is found at the assets tab.</li>
+</ul>
+<figure>
+  <img src="/img/libraries/libraries-publish-menu.png" alt="Publish library">
+  <figcaption>Publishing a library from the main menu</figcaption>
+</figure>
+<figure>
+  <img src="/img/libraries/libraries-publish-panel.png" alt="Publish library">
+  <figcaption>Publishing a library from the libraries panel</figcaption>
+</figure>
+
+<h4>Unpublish as shared library</h4>
+<p>You can unpublish any library anytime the same way you can publish it, both from the file menu and the libraries panel.</p>
+<p>Unpublishing a library will disconnect it from the files where it was connected. The assets that have been already used in other files will remain, only not linked with the now unpublished library.</p>
+
+<h4>Library updates</h4>
+<p></p>
+<figure>
+  <img src="/img/libraries/libraries-updates.png" alt="Update libraries">
+</figure>
+
+<h4>Connect shared libraries</h4>
 <p>To add a Shared Library from another file, launch the libraries panel, then search and select the available libraries.</p>
 <figure>
   <video title="Connecting a shared library" muted="" playsinline="" controls="" width="100%" poster="/img/libraries/libraries-launch.png" height="auto">
@@ -152,11 +183,20 @@ title: 09· Asset Libraries
   </video>
 </figure>
 
-go to main 
-<p>Shared libraries will be displayed at the libraries panel. Click on the link icon at the right of the Shared Library name to go to the file where the library is and edit its contents.</p>
-<p><img src="/img/shared-libraries.png" alt="libraries" /></p>
+<h4>Disconnect shared library</h4>
+<p>You can disconnect any library anytime from the libraries panel just by clicking on the disconnect button.</p>
+<figure>
+  <img src="/img/libraries/libraries-disconnect.png" alt="Disconnect libraries">
+</figure>
 
+<h4>Use shared libraries</h4>
+<p>Shared libraries will be listed at the assets panel, at the workspace left sidebar. You can expand and collapse them to be able to access the assets of each connected shared library.</p>
+<figure>
+  <img src="/img/libraries/libraries-sidebar.png" alt="Connected libraries list">
+</figure>
 
-- publish
-- unpublish
-- updates
+<h4>Open shared library file</h4>
+<p>Click on the arrow icon at the right of a shared library name to go to the file where the library is and edit its contents.</p>
+<figure>
+  <img src="/img/libraries/libraries-open.png" alt="Open libraries">
+</figure>
