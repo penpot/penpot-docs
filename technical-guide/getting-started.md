@@ -216,6 +216,26 @@ This will fetch the latest images. When you do `docker compose up` again, the
 containers will be recreated with the latest version.
 
 
+**Important: Upgrade from version 1.x to 2.0**
+
+The migration to version 2.0, due to the incorporation of the new v2
+components, includes an additional process that runs automatically as
+soon as the application starts. If your on-premises Penpot instance
+contains a significant amount of data (such as hundreds of penpot
+files, especially those utilizing SVG components and assets
+extensively), this process may take a few minutes.
+
+In some cases, such as when the script encounters an error, it may be
+convenient to run the process manually. To do this, you can disable
+the automatic migration process using the `disable-v2-migration` flag
+in `PENPOT_FLAGS` environment variable. You can then execute the
+migration process manually with the following command:
+
+```bash
+docker exec -ti <container-name-or-id> ./run.sh app.migrations.v2
+```
+
+
 ### Backup Penpot
 
 Penpot uses <a href="https://docs.docker.com/storage/volumes" target="_blank">Docker
