@@ -8,9 +8,9 @@ To view this site locally, first set up the environment:
 ```
 nvm install         (if necessary)
 nvm use
-npm install -g yarn (if necessary)
+corepack enable (if necessary)
 
-yarn
+yarn install
 ```
 
 And launch a development server:
