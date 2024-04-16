@@ -205,9 +205,9 @@ debug.debug_all()
 debug.debug_none()
 ```
 
-## Translations (I18N) ##
+## Translations (I18N)
 
-### How it works ###
+### How it works
 
 All the translation strings of this application are stored in
 standard *gettext* files in `frontend/translations/*.po`.
@@ -250,7 +250,7 @@ frontend/src/app/util/i18n.cljs (supported-locales)
 frontend/gulpfile.js (const langs)
 ```
 
-### How to use it ###
+### How to use it
 
 You need to use the `app.util.i18n/tr` function for lookup translation
 strings:
@@ -300,9 +300,11 @@ msgstr[1] "%s projects"
 ;; => "1 project"
 ```
 
-## Tests ##
+## Tests
 
-Frontend tests have to be compiled first, and then run with node.
+### Unit tests
+
+Unit tests have to be compiled first, and then run with node.
 
 ```bash
 npx shadow-cljs compile tests && node target/tests.js
@@ -312,4 +314,48 @@ Or run the watch (that automatically runs the test):
 
 ```bash
 npx shadow-cljs watch tests
+```
+### Integration tests
+
+#### Setup
+
+To run integration tests locally, follow these steps.
+
+Ensure your development environment docker image is up to date.
+
+1. If it is not up to date, run:
+```bash
+./manage.sh pull-devenv
+```
+
+2. Once the update is complete, start the environment:
+```bash
+./manage.sh start-devenv
+```
+
+**NOTE** You can learn more about how to set up, start and stop our development environment [here](http://localhost:8080/technical-guide/developer/devenv/#getting-started)
+
+#### Running the integration tests
+
+1. To run the integration tests, open a new tab in the tmux opened by the development environment by pressing `Ctrl+B C` and navigate to the `frontend` folder:
+```bash
+cd penpot/frontend
+```
+
+2. Then, execute the following command:
+```bash
+yarn e2e:test
+```
+
+These tests will use a headless browser and display the results accordingly.
+
+#### Running tests with a browser
+
+To access the testing UI, please follow these steps:
+
+1. In a terminal on your host machine, navigate to the frontend folder and run:
+```bash
+# cd <repo>/frontend
+
+npx playwright test --ui
 ```
