@@ -19,13 +19,13 @@ updated, a comment has been added, etc.).
 #### Webhooks managament
 In Penpot, webhooks are configured at Team level-
 
-![Webhooks area](/img/tech-guide/webhooks.png)
+![Webhooks area](/img/tech-guide/webhooks.webp)
 
 #### Add webhooks
 When you add a webhook, you specify the URL of a service you own. If the webhook
 is active, a POST request will be sent to the URL on any event that occurs anywhere
 in the team.
-![Add a webhook](/img/tech-guide/add-webhook.png)
+![Add a webhook](/img/tech-guide/add-webhook.webp)
 
 You can specify the format of the call payload.
 
@@ -48,7 +48,7 @@ appropriate, with an equivalent payload.
 The payload content is specified as <a href="https://clojure.org/guides/spec"
 target="_blank">Clojure Spec</a> predicates:
 
-![Example of a RPC call](/img/tech-guide/webhook-call.png)
+![Example of a RPC call](/img/tech-guide/webhook-call.webp)
 
 The listed spec details all required (`:req` or `:req-un`) and optional
 (`:opt-un`) attributes of the RPC parameters.
@@ -68,23 +68,23 @@ Personal access tokens function like an alternative to our login/password authen
 ### Manage access tokens
 In Penpot, access tokens are configured at user account level. To manage your access tokens, go to Your account > Access tokens.
 
-![Access tokens](/img/tech-guide/access-tokens.png)
+![Access tokens](/img/tech-guide/access-tokens.webp)
 
 ### Generate access tokens
 
 1. Press the "Generate new token" button.
 
-![Creating token](/img/tech-guide/access-tokens-create-1.png)
+![Creating token](/img/tech-guide/access-tokens-create-1.webp)
 
 2. Fill the name of the token. Descriptive names are recommended.
 
 3. Choose an expiration date. Current options are: Never, 30 days, 60 days, 90 days or 180 days.
 
-![Token expiration](/img/tech-guide/access-tokens-create-2.png)
+![Token expiration](/img/tech-guide/access-tokens-create-2.webp)
 
 4. Once you're happy with the name and the expiration date, press "Create token". At this step you will be able to copy the token to your clipboard.
 
-![Token created](/img/tech-guide/access-tokens-create-3.png)
+![Token created](/img/tech-guide/access-tokens-create-3.webp)
 
 ### Delete access tokens
 
