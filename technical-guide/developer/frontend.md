@@ -333,11 +333,21 @@ Ensure your development environment docker image is up to date.
 ./manage.sh start-devenv
 ```
 
+3. Open a new tab in the tmux opened by the development environment by pressing `Ctrl+B C` and navigate to the `frontend` folder:
+```bash
+cd penpot/frontend
+```
+
+4. Install dependencies, this is necessary only the first time:
+```bash
+yarn playwright install
+```
+
 **NOTE** You can learn more about how to set up, start and stop our development environment [here](http://localhost:8080/technical-guide/developer/devenv/#getting-started)
 
 #### Running the integration tests
 
-1. To run the integration tests, open a new tab in the tmux opened by the development environment by pressing `Ctrl+B C` and navigate to the `frontend` folder:
+1. To run the integration tests, go to the frontend folder if you are not already there:
 ```bash
 cd penpot/frontend
 ```
@@ -347,15 +357,22 @@ cd penpot/frontend
 yarn e2e:test
 ```
 
+
 These tests will use a headless browser and display the results accordingly.
 
 #### Running tests with a browser
 
 To access the testing UI, please follow these steps:
 
-1. In a terminal on your host machine, navigate to the frontend folder and run:
+1. In a terminal on your host machine, navigate to the frontend folder and install dependencies, only the first time:
 ```bash
 # cd <repo>/frontend
 
+npx playwright install chromium
+```
+
+2. Then run the next command:
+```bash
 npx playwright test --ui
 ```
+> ❗**WARNING** It is important to be on the right folder `frontend` of the project or we may have silent errors trying to run the tests.
