@@ -1060,6 +1060,10 @@ table tr:nth-child(odd) {
   .help-sections .illus {
     background-image: none;
   }
+  .intro-sections .illus {
+    background-image: none;
+    padding-left: 0;
+}
 
 }
 
