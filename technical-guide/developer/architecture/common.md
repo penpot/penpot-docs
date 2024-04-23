@@ -29,7 +29,7 @@ the `#?` construct, like this, for example:
 
 Some of the modules need some refactoring, to organize them more cleanly.
 
-# Data model and business logic
+## Data model and business logic
 
 * **geom** contains functions to manage 2D geometric entities.
     - **point** defines the 2D Point type and many geometric transformations.
@@ -63,7 +63,7 @@ Some of the modules need some refactoring, to organize them more cleanly.
   approaching the process incrementally, rewriting one module each time, as
   needed.
 
-# Utilities
+## Utilities
 
 The main ones are:
 

@@ -2,7 +2,7 @@
 title: Frontend app
 ---
 
-# Frontend app
+### Frontend app
 
 The main application, with the user interface and the presentation logic.
 
@@ -19,7 +19,7 @@ connection, disconnection and mouse movements. And also to receive changes made
 by other users that are editing the same file, so it may be updated in real
 time.
 
-# Frontend structure
+## Frontend structure
 
 Penpot frontend app code resides under `frontend/src/app` path in the main repository.
 
@@ -130,7 +130,7 @@ Rel(ui_viewer, data_viewer, "Uses")
 
 @enduml
 
-## General namespaces
+### General namespaces
 
 * **store** contains the global state of the application. Uses an event loop
   paradigm, similar to Redux, with a global state object and a stream of events
@@ -149,7 +149,7 @@ Rel(ui_viewer, data_viewer, "Uses")
   kinds of errors in the ui or the data events, notify the user in a useful way,
   and allow to recover and continue working.
 
-## UI namespaces
+### UI namespaces
 
 * **ui** is the root web component. It reads the current url and mounts the needed
   subcomponent depending on the route.
@@ -179,7 +179,7 @@ Rel(ui_viewer, data_viewer, "Uses")
   of penpot screens (text or numeric inputs, selects, forms, buttons...).
 
 
-## Data namespaces
+### Data namespaces
 
 * **users** has events to login and register, fetch the user profile and update it.
 
@@ -205,7 +205,7 @@ Rel(ui_viewer, data_viewer, "Uses")
   keyboard shortcuts.
 
 
-# Worker app
+## Worker app
 
 Some operations are costly to make in real time, so we leave them to be
 executed asynchronously in a web worker. This way they don't impact the user
