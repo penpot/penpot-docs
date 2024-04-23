@@ -7,7 +7,7 @@ title: 11· Prototyping
 
 <p class="main-paragraph">Penpot allows you to prototype interactions by connecting boards, which can act as screens. Once the prototype is prepared with interactions and/or flows, it can be used at the View mode and shared through a link.<p>
 
-<h3 id="prototyping-connection">Connect boards</h3>
+<h2 id="prototyping-connection">Connect boards</h2>
 <figure>
   <video title="Connect boards" muted="" playsinline="" controls="" width="100%" poster="/img/prototype/prototype-connect.png" height="auto">
     <source src="/img/prototype/prototype-connect.mp4" type="video/mp4">
@@ -23,7 +23,7 @@ title: 11· Prototyping
   <li><strong>Launch</strong> the interactive prototype to see it in action in the <a href="/user-guide/view-mode/">View mode</a> (access by clicking the play button at the top right).</li>
 </ol>
 
-<h4 id="prototype-anatomy">Anatomy of a prototype</h4>
+<h3 id="prototype-anatomy">Anatomy of a prototype</h3>
 <figure>
   <img src="/img/prototype/prototype-anatomy.png" alt="Different elements that involve prototyping with Penpot">
 </figure>
@@ -40,7 +40,7 @@ title: 11· Prototyping
   <strong>10)</strong> Flow indicator and launcher
 </p>
 
-<h3 id="interaction-triggers">Interaction triggers</h3>
+<h2 id="interaction-triggers">Interaction triggers</h2>
 <figure>
   <img src="/img/prototype/prototype-trigger.png" alt="Prototype trigger options">
 </figure>
@@ -52,7 +52,7 @@ title: 11· Prototyping
   <li><strong>After delay:</strong> when a certain time has passed after a board is shown. Note: this can only be set at boards.</li>
 </ul>
 
-<h3 id="prototyping-actions">Interaction actions</h3>
+<h2 id="prototyping-actions">Interaction actions</h2>
 <figure>
   <img src="/img/prototype/prototype-action.png" alt="Prototype action options">
 </figure>
@@ -66,10 +66,10 @@ title: 11· Prototyping
   <li><strong>Open URL</strong>.</li>
 </ul>
 
-<h4 id="prototyping-actions-navigate">Navigate to</h4>
+<h3 id="prototyping-actions-navigate">Navigate to</h3>
 <p>The classic, most usual of the prototyping actions. It takes the user from one board to the destination set in the interaction.</p>
 
-<h4 id="prototyping-actions-overlay">Open overlay</h4>
+<h3 id="prototyping-actions-overlay">Open overlay</h3>
 <p>It opens a board right over the current board. This action is typically used to display tooltips, modal windows or notifications.</p>
 <figure>
   <video title="Prototype overlay" muted="" playsinline="" controls="" width="100%" poster="/img/prototype/prototype-overlay.png" height="auto">
@@ -86,23 +86,23 @@ title: 11· Prototyping
 <figure>
   <img src="/img/prototype/prototype-overlay-relative.png" alt="Prototype overlay relative position">
 </figure>
-<h4 id="prototyping-actions-overlay-toggle">Toggle overlay</h4>
+<h3 id="prototyping-actions-overlay-toggle">Toggle overlay</h3>
 <p>It opens an overlay if it is not already opened or closes it if it is already opened.</p>
 
-<h4 id="prototyping-actions-overlay-close">Close overlay</h4>
+<h3 id="prototyping-actions-overlay-close">Close overlay</h3>
 <p>This action will close a targeted board that is opened as an overlay. It can be also set to “self” so the board can be closed from itself.</p>
 
-<h4 id="prototyping-actions-previous">Previous screen</h4>
+<h3 id="prototyping-actions-previous">Previous screen</h3>
 <figure>
   <img src="/img/prototype/prototype-previous.png" alt="Prototype previous screen action">
 </figure>
 <p>It takes back to the last board shown. This action is typically used for back buttons, when the same screen can be accessed from different origins.</p>
 
-<h4 id="prototyping-actions-url">Open URL</h4>
+<h3 id="prototyping-actions-url">Open URL</h3>
 <p>This action opens an URL in a new tab. This is useful to add external links outside of the prototype.</p>
 
 
-<h3 id="prototyping-animations">Interaction animations</h3>
+<h2 id="prototyping-animations">Interaction animations</h2>
 <figure>
   <img src="/img/prototype/prototype-animation.png" alt="Prototype animation options">
 </figure>
@@ -113,7 +113,7 @@ title: 11· Prototyping
   <li><strong>Push</strong>.</li>
 </ul>
 
-<h4 id="prototyping-animations-dissolve">Dissolve</h4>
+<h3 id="prototyping-animations-dissolve">Dissolve</h3>
 <figure>
   <img src="/img/prototype/prototyping-animations-dissolve.gif" alt="Prototyping animations">
 </figure>
@@ -124,7 +124,7 @@ title: 11· Prototyping
   <li>Duration.</li>
 </ul>
 
-<h4 id="prototyping-animations-Slide">Slide</h4>
+<h3 id="prototyping-animations-Slide">Slide</h3>
 <figure>
   <img src="/img/prototype/prototyping-animations-slide.gif" alt="Prototyping animations">
 </figure>
@@ -139,7 +139,7 @@ title: 11· Prototyping
 </ul>
 <p><strong>Offset effect</strong> means that the origin board will slightly fade and move in the same direction of the destination board.</p>
 
-<h4 id="prototyping-animations-push">Push</h4>
+<h3 id="prototyping-animations-push">Push</h3>
 <figure>
   <img src="/img/prototype/prototyping-animations-push.gif" alt="Prototyping animations">
 </figure>
@@ -150,13 +150,13 @@ title: 11· Prototyping
   <li>Duration.</li>
 </ul>
 
-<h3 id="prototyping-flows">Flows</h3>
+<h2 id="prototyping-flows">Flows</h2>
 <p>Design projects usually need to define multiple casuistics for different devices and user journeys. Flows allow you to define one or multiple starting points within the same page so you can better organize and present your prototypes.</p>
 
 <p>A <strong>flow</strong> is defined by a starting board for an interaction. Flows can be selected independently at the view mode. Each flow has its own shareable link at the View mode.</p>
 
 
-<h4 id="prototyping-flows-starting">Starting points</h4>
+<h3 id="prototyping-flows-starting">Starting points</h3>
 <p><strong>A starting point</strong> is a board selected to be the first screen of a flow. You could set a board as a starting point just because you want this board to be the first one to be shown in the view mode, but you can also set more starting points to define different user journeys.</p>
 <p>There are several ways to create starting points:</p>
 <ul>
@@ -182,19 +182,19 @@ title: 11· Prototyping
 </li>
 </ul>
 
-<h4 id="prototyping-flows-multiple">Multiple flows</h4>
+<h3 id="prototyping-flows-multiple">Multiple flows</h3>
 <p>You can add as many flows as you want. The complete list of flows is shown at the prototype sidebar when no shape is selected.</p>
 <figure>
   <img src="/img/prototype/prototype-flows-multiple.png" alt="Prototyping flows">
 </figure>
 
-<h4 id="prototyping-flows-multiple">Flows at the view mode</h4>
+<h3 id="prototyping-flows-multiple">Flows at the view mode</h3>
 <p>At the view mode there’s a menu where you can access to all the flows set and easily switch between them.</p>
 <figure>
   <img src="/img/prototype/prototype-flows-viewmode.png" alt="Prototyping flows">
 </figure>
 
-<h3 id="prototyping-fix-scroll">Fix elements at scroll</h3>
+<h2 id="prototyping-fix-scroll">Fix elements at scroll</h2>
 <p>You can fix the position of an object when scrolling at the presentation view. This is tipically useful for prototyping fixed headers, navbars and floating buttons.</p>
 <figure>
   <img src="/img/prototype/prototype-fix-scroll.png" alt="Prototyping fix scroll">
