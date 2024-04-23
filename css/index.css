@@ -90,6 +90,8 @@ a[href]:hover {
 a[href]:visited {
   /* color: var(--primarydark); */
 }
+
+
 main {
   padding: 1rem;
   /* background-image: url(/img/bg.png);
@@ -445,7 +447,7 @@ a[href].post-tag:visited {
 }
 
 /* Direct Links / Markdown Headers */
-.direct-link {
+.main-content .direct-link {
   font-family: sans-serif;
   text-decoration: none;
   font-style: normal;
@@ -453,18 +455,20 @@ a[href].post-tag:visited {
   position: absolute;
   /* top: 0.4rem; */
 }
-a[href].direct-link,
-a[href].direct-link:visited {
+.main-content a[href].direct-link,
+.main-content a[href].direct-link:visited {
   color: transparent;
+  border-bottom: none;
 }
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
+.main-content a[href].direct-link:focus,
+.main-content a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: var(--primarydark);
 }
 :hover > a[href].direct-link:hover {
   color: var(--primary);
+  border-bottom: none;
 }
 
 [id]::before {
@@ -508,9 +512,24 @@ a[href].direct-link:focus:visited,
   width: 60%;
   max-width: 22rem;
 }
-/* .main-container.with-sidebar .main-content {
-  margin-left: 4rem;
-} */
+
+.main-content a[href],
+.pre-footer a[href],
+.contact-block a[href] {
+  color: var(--graydark);
+  text-decoration-line: none;
+  border-bottom: 2px solid var(--primary);
+}
+.main-content a[href]:hover,
+.pre-footer a[href]:hover,
+.contact-block a[href]:hover {
+  border-bottom: 2px solid var(--primarydark);
+  color: var(--darkest);
+}
+.main-content a[href]:has(img),
+.main-content a[href]:has(img):hover{
+  border-bottom: none;
+}
 
 
 .main-container .sidebar {
@@ -832,11 +851,15 @@ a[href].direct-link:focus:visited,
 .intro-sections li:hover {
   box-shadow: rgb(0 0 0 / 5%) 0px 4px 16px;
 }
-.intro-sections li > a {
+.intro-sections li > a[href] {
   display: block;
   padding: 2.6rem;
   color: var(--color-gray-dark);
   text-decoration: none;
+  border-bottom: none;
+}
+.intro-sections li > a[href]:hover {
+  border-bottom: none;
 }
 .intro-sections li h3 {
   margin-top: 0;
