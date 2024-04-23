@@ -144,7 +144,7 @@ h2 {
   margin-top: 6rem;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
@@ -755,10 +755,13 @@ a[href].post-tag:visited {
   color: var(--graydark);
   text-decoration: none;
 }
+.help-sections > li h2,
 .help-sections > li h3 {
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: 0;
   line-height: 1.2;
+  font-size: 2rem;
 }
 .help-sections > li p {
   color: var(--color-gray-dark);
@@ -770,6 +773,7 @@ a[href].post-tag:visited {
 .help-sections > li.soon:hover {
   border-color: var(--graylight);
 }
+.help-sections > li.soon h2,
 .help-sections > li.soon h3 {
   opacity: 0.4;
 }
@@ -782,6 +786,7 @@ a[href].post-tag:visited {
   border-bottom: 1px dashed var(--color-gray-medium);
   margin-top: 4rem;
 }
+.help-sections > li.github a:hover h2,
 .help-sections > li.github a:hover h3 {
   color: var(--primarydark);
   transition: color 50ms ease-in-out;
@@ -811,6 +816,7 @@ a[href].post-tag:visited {
   background-image: url(/img/home-contact.png);
 }
 .contact-block p,
+.contact-block h2,
 .contact-block h3 {
   max-width: initial;
 }
@@ -861,10 +867,13 @@ a[href].post-tag:visited {
 .intro-sections li > a[href]:hover {
   border-bottom: none;
 }
+.intro-sections li h2,
 .intro-sections li h3 {
   margin-top: 0;
   padding-top: 0;
   line-height: 1.2;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .intro-sections li p {
   font-size: 1.2rem;
@@ -1066,5 +1075,3 @@ table tr:nth-child(odd) {
 }
 
 }
-
-/* todo: fijar sidebar y header, imgs de bg */
