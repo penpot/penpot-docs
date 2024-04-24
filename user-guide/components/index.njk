@@ -17,8 +17,8 @@ title: 10· Components
 </figure>
 <p>All component copies used in a file are linked in a way that updates made to the Main component can reflect in their component copies. You can override properties for component copies, so that you can manage singularities while maintaining properties in common.</p>
 
-<h3 id="component-create">Creating components</h3>
-<h4>Create a component</h4>
+<h2 id="component-create">Creating components</h2>
+<h3>Create a component</h3>
 <ol>
   <li>Select an object or a group of them.</li>
   <li>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> or right click and select the option “Create component” at the object menu.</li>
@@ -29,10 +29,10 @@ title: 10· Components
   </video>
 </figure>
 
-<h4>Duplicate a component</h4>
+<h3>Duplicate a component</h3>
 <p>You can duplicate a component <a href="/user-guide/layer-basics/#duplicating-layers">the same way</a> you can duplicate any other layer. When duplicating a component, you are creating a component copy that will be linked to its main component.</p>
 
-<h4>Duplicate as main component</h4>
+<h3>Duplicate as main component</h3>
 <p>You can duplicate a  component as a new main component from the assets sidebar. Just select the component at the library, open the menu with right click and select the option "Duplicate main".</p>
 <figure>
   <video title="Duplicate main component" muted="" playsinline="" controls="" width="auto" poster="/img/components/components-duplicate-main.png" height="auto">
@@ -40,7 +40,7 @@ title: 10· Components
   </video>
 </figure>
 
-<h4>Delete a main component</h4>
+<h3>Delete a main component</h3>
 <p>You can delete main components and its copies anytime <a href="/user-guide/layer-basics/#deleting-layers">the same way</a> you can delete any other layer.</p>
 <p>Deleting a main component at the viewport means deleting it at the assets library and viceversa, so be careful!</p>
 <figure>
@@ -49,7 +49,7 @@ title: 10· Components
   </video>
 </figure>
 
-<h4>Restore a main component</h4>
+<h3>Restore a main component</h3>
 <p>If a main component has been deleted and you have access to a copy of it, you can use the copy to restore its main. There are two ways to do it:</p>
 <ul>
   <li>From the <strong>viewport menu</strong>: Select the component copy of a deleted main component, right click and press the option "Restore main component".</li>
@@ -60,8 +60,8 @@ title: 10· Components
   <figcaption>Mains and copies have different icons. Mains also have a title header at the viewport.</figcaption>
 </figure>
 
-<h3 id="component-group">Group components</h3>
-<h4>Create component groups</h4>
+<h2 id="component-group">Group components</h2>
+<h3>Create component groups</h3>
 <p>At the Components section from the Assets library, there are two ways to create groups in a components library.</p> 
 <ol>
   <li><strong>Using slashes (/):</strong> Select one component and rename it as follows: "FOLDER NAME/COMPONENT NAME". For example, "Buttons/Alert Button".</li>
@@ -73,10 +73,10 @@ title: 10· Components
   </video>
 </figure>
 
-<h4>Ungroup components</h4>
+<h3>Ungroup components</h3>
 <p>You can ungroup the components the same ways you can group them, via the menu option ("Ungroup" in this case) or renaming them.</p>
 
-<h4>Drag components to groups</h4>
+<h3>Drag components to groups</h3>
 <p>One very direct way to move components between groups at the assets library is by dragging them.</p>
 <figure>
   <video title="Drag components" muted="" playsinline="" controls="" width="auto" poster="/img/components/components-drag.png" height="auto">
@@ -84,10 +84,10 @@ title: 10· Components
   </video>
 </figure>
 
-<h3 id="component-find">Find components</h3>
+<h2 id="component-find">Find components</h2>
 <p>Where's my component? There are ways to find some components at the assets panel and at the design viewport.</p>
 
-<h4>Find a main component at the assets panel</h4>
+<h3>Find a main component at the assets panel</h3>
 <p>Select a main component at the viewport and then press "Show in assets panel" at the options of the right sidebar.</p>
 <figure>
   <video title="Show main component in the assets library" muted="" playsinline="" controls="" width="100%" poster="/img/components/components-show-asset.png" height="auto">
@@ -95,7 +95,7 @@ title: 10· Components
   </video>
 </figure>
 
-<h4>Find a main component at the viewport</h4>
+<h3>Find a main component at the viewport</h3>
 <p>Select a component copy and then press "Show main component" at the viewport menu or the right sidebar menu.</p>
 <figure>
   <video title="Show main component" muted="" playsinline="" controls="" width="auto" poster="/img/components/components-show-main.png" height="auto">
@@ -103,7 +103,7 @@ title: 10· Components
   </video>
 </figure>
 
-<h3 id="component-update">Update main component from copy</h3>
+<h2 id="component-update">Update main component from copy</h2>
 <p>You can push changes made at a component copy to a main component:</p>
 <ol>
   <li>Select a component copy that has changes that override one or more properties of its main component.</li>
@@ -117,14 +117,14 @@ title: 10· Components
   <img src="/img/components/components-update-shared.png" alt="Prompt shown to update a main component that is in a shared library" />
 </figure>
 
-<h3 id="component-overrides">Component overrides</h3>
+<h2 id="component-overrides">Component overrides</h2>
 <p>Main components represent the more generic information of an element in a design system. You will usually need to change specific things (like a text, a color or an icon) in a component while maintaining the inheritance of the rest of it properties. Component overrides allows you to do that in Penpot.</p>
 <p>Overrides are modifications made in a specific copy that are not in its main component. With overrides you can keep changes at the component copies while maintaining synchronization with the Main component.</p>
 <figure>
   <img src="/img/components/components-overrides.png" alt="Components overrides" />
 </figure>
 
-<h4>Reset overrides</h4>
+<h3>Reset overrides</h3>
 <p>Right click and select the option “Reset overrides” at the component menu to get it to the state of the Main component.</p>
 <figure>
   <video title="Reset component overrides" muted="" playsinline="" controls="" width="auto" poster="/img/components/components-reset-overrides.png" height="auto">
@@ -132,12 +132,12 @@ title: 10· Components
   </video>
 </figure>
 
-<h3 id="component-detach">Detach component</h3>
+<h2 id="component-detach">Detach component</h2>
 <p>Detach a component copy to unlink it from its Main component and transform it into a group layer. Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> or right click and select the option “Detach instance” at the component menu.</p>
 <p>You can also detach components in bulk by selecting several components and performing the same action.</p>
 
 
-<h3 id="component-swap">Swap components</h3>
+<h2 id="component-swap">Swap components</h2>
 <p>Penpot allows you to easily substitute component copies with other component copies.</p>
 <ol>
   <li>Select a component <strong>copy</strong>. You can not swap main components.</li>
@@ -152,7 +152,7 @@ title: 10· Components
 </figure>
 
 
-<h3 id="component-annotate">Annotate components</h3>
+<h2 id="component-annotate">Annotate components</h2>
 <p>You can add text annotations to main components. The annotations are shown in every component copy. It is extremely useful to attach specifications that can be read at each component copy.</p>
 <figure>
   <video title="Annotating components at Penpot" muted="" playsinline="" controls="" width="auto" poster="/img/components/components-annotation.png" height="auto">
@@ -165,7 +165,7 @@ title: 10· Components
   <img src="/img/components/components-annotations-inspect.png" alt="Annotations at inspect tab" />
 </figure>
 
-<h3 id="component-main-components-page">Main components page</h3>
+<h2 id="component-main-components-page">Main components page</h2>
 <p>If you find a page at a file called "Main components" this will probably mean that the file had assets with the previous components system and has been migrated to the current components system. The previous system didn't have the components as layers at the design file, only at the assets library, so when migrating a file to the new version Penpot automatically creates a page where to place all the components, grouping them using the library groups structure.</p>
 <figure>
   <img src="/img/components/components-page-main.png" alt="Main components page" />

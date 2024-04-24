@@ -13,7 +13,7 @@ inside a file. Then, if takes a screenshot if we are exporting to a bitmap
 image, or extract the svg from the DOM if we want a vectorial export, and write
 it to a file that the user can download.
 
-# Exporter structure
+## Exporter structure
 
 Penpot exporter app code resides under `exporter/src/app` path in the main repository.
 

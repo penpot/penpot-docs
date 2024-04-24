@@ -18,7 +18,7 @@ worker, that may be used to queue tasks to be scheduled and executed when the
 backend is idle. Other tasks are email sending, collecting data for telemetry
 and detecting unused media attachment, for removing them from the file storage.
 
-# Backend structure
+## Backend structure
 
 Penpot backend app code resides under `backend/src/app` path in the main repository.
 
@@ -102,7 +102,7 @@ Rel(backend_app, redis, "Notifies", "pub/sub")
   storage and semaphores).
 * `util/` has a collection of generic utility functions.
 
-## RPC calls
+### RPC calls
 
 The RPC (Remote Procedure Call) subsystem consists of a mechanism that allows
 to expose clojure functions as an HTTP endpoint. We take advantage of being
@@ -125,7 +125,7 @@ conversions.
 This way, frontend can execute backend calls like it was calling an async function,
 with all the power of Clojure data structures.
 
-## PubSub
+### PubSub
 
 To manage subscriptions to a file, to be notified of changes, we use a redis
 server as a pub/sub broker. Whenever a user visits a file and opens a
