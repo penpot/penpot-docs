@@ -73,7 +73,7 @@ and start using Penpot.
 ### Configure Penpot with Elestio
 
 If you want to make changes to your Penpot setup click on the “Update config” button in
-Software. Here you can see the “Docker compose” used to create the instance. In “ENV” top
+Software. Here you can see the “docker-compose” used to create the instance. In “ENV” top
 middle left you can make configuration changes that will be reflected in the Docker
 compose.
 
@@ -120,7 +120,7 @@ Docker Desktop has a graphical control panel (GUI) to manage the service and vie
 containers, images and volumes. But need the command line (Terminal in Linux and Mac, or
 PowerShell in Windows) to build and run the containers, and execute other operations.
 
-It already includes **docker compose** utility, needed by Penpot.
+It already includes **docker-compose** utility, needed by Penpot.
 
 #### Docker Engine
 
@@ -135,8 +135,8 @@ compose](https://docs.docker.com/compose/cli-command/#installing-compose-v2) (V2
 plugin. You can use the old **docker-compose** tool, but all the documentation supposes
 you are using the V2.
 
-You can easily check which version of **docker compose** you have. If you can execute
-`docker compose` command, then you have V2. If you need to write `docker-compose` (with a
+You can easily check which version of **docker-compose** you have. If you can execute
+`docker-compose` command, then you have V2. If you need to write `docker-compose` (with a
 `-`) for it to work, you have the old version.
 
 ### Start Penpot
@@ -157,7 +157,7 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/penpot/penpot/main
 Then simply launch composer:
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml up -d
+docker-compose -p penpot -f docker-compose.yaml up -d
 ```
 
 At the end it will start listening on http://localhost:9001
@@ -168,7 +168,7 @@ At the end it will start listening on http://localhost:9001
 If you want to stop running Penpot, just type
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml down
+docker-compose -p penpot -f docker-compose.yaml down
 ```
 
 
@@ -209,10 +209,10 @@ To get the latest version of Penpot in your local installation, you just need to
 execute:
 
 ```bash
-docker compose -f docker-compose.yaml pull
+docker-compose -f docker-compose.yaml pull
 ```
 
-This will fetch the latest images. When you do `docker compose up` again, the
+This will fetch the latest images. When you do `docker-compose up` again, the
 containers will be recreated with the latest version.
 
 
@@ -252,7 +252,7 @@ If you use Docker Desktop, <a
 href="https://www.docker.com/blog/back-up-and-share-docker-volumes-with-this-extension/"
 target="_blank">there is an extension</a> that may ease the backup process.
 
-If you use the default **docker compose** file, there are two volumes used: one for the
+If you use the default **docker-compose** file, there are two volumes used: one for the
 Postgres database and another one for the assets uploaded by your users (images and svg
 clips). There may be more volumes if you enable other features, as explained in the file
 itself.
