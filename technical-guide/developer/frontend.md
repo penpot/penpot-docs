@@ -382,9 +382,9 @@ POMs do not necessarily refer to entire pages but can also represent specific re
 In a POM, we define locators for page elements:
 
 ```js
-class LoginPage {
+class LoginPage extends BasePage {
   constructor(page) {
-    this.page = page;
+    super(page)
     this.loginButton = page.getByRole("button", { name: "Login" });
     this.passwordInput = page.getByLabel("Password");
     this.emailInput = page.getByLabel("Email");
@@ -436,33 +436,68 @@ test("User submits a wrong formatted email", async ({ page }) => {
 });
 ```
 
-#### Mocking (EN REVISIÓN¡¡¡)
+#### Mocking
 
 **API calls**
 
-In order to mock and API call we need the url and the body of the response.
-The body should be
+In order to mock API calls we just need to inherit our POM from `BasePage` and then call the method `mockRPC` like this:
 
 ```js
-export const interceptRPC = async (page, path, jsonFilename, options = {}) => {
-  const defaults = {
-    status: 200,
-  };
-  const interceptConfig = { ...defaults, ...options };
-
-  await page.route(`**/api/rpc/command/${path}`, (route) => {
-    route.fulfill({
-      interceptConfig,
-      contentType: "application/transit+json",
-      path: `playwright/fixtures/${jsonFilename}`,
-    });
-  });
-};
+export class MyPOM extends BasePage {
+  setupMyPOMRPCs() {
+    this.mockRPC("rpc/command/name", "json-file-with-fake-response.json")
+    // We can use regular expressions to match API calls.
+    this.mockRPC(/this\/can\/be\/a\/regex/, "json-file-with-fake-response.json")
+    // ...and pass options like `status` or `contentType`.
+    this.mockRPC("something/not/found", "json-file-with-fake-response.json", {
+      status: 404
+    })
+  }
+}
 ```
 
 **Websockets**
 
-NPI
+To test WebSocket communications it is necessary to initialize the `MockWebSocketHelper`. This can be done by inheriting your POM from `BaseWebSocketPage` and then calling the static method `setupWebSockets` on the `beforeEach` test hook like this:
+
+```js
+test.beforeEach(async ({ page }) => {
+  // ... Other page initialization ...
+
+  // In this case we call `BaseWebSocketPage` but it could be
+  // the name of your inherited class.
+  await BaseWebSocketPage.setupWebSockets(page)
+
+  // ... Other page initialization ...
+})
+```
+
+And then you should be able to `await` for a specific WebSocket endpoint with
+`waitForWebSocket` or call `waitForNotificationsWebSocket` if you want to mock
+the `/ws/notifications` WebSocket.
+
+```js
+export class MyPOM extends BaseWebSocketPage {
+  // ... Your Page Object Model code
+}
+
+test("My test", ({ page }) => {
+  const myPOM = new MyPOM(page)
+
+  const ws = await myPOM.waitForNotificationsWebSocket()
+  // ^ this is equivalent to:
+  // const ws = await myPOM.waitForWebSocket('ws://0.0.0.0:3500/ws/notifications')
+
+  // Simulate the open event of the WebSocket.
+  ws.mockOpen()
+
+  // Simulate a message sent from the server.
+  ws.mockMessage(data)
+
+  // Simulate the close event of the WebSocket.
+  ws.mockClose()
+})
+```
 
 ### Testing best practices
 
@@ -475,8 +510,6 @@ This is a summary of the most important points to take into account:
 Queries are the methods to find elements on the page.
 Your test should simulate as closely as possible the way users interact with the application.
 Depending on the content of the page and the element to be selected, we will choose one method or the other following these priorities:
-
-Todo: añadir ejemplos
 
 - **Queries Accessible to Everyone**: Queries that simulate the experience of visual users or use assistive technologies.
 
@@ -685,28 +718,15 @@ test("Check if user is logged out", async () => {
 
 **User-Centric Approach:** Tests should be named from the perspective of user actions.
 
-Instead of
-
-`testLoginFunctionality`,
-
-use
-
-`shouldLoginSuccessfully` or `verifyLoginFailureMessage`.
+Instead of `testLoginFunctionality`, use `shouldLoginSuccessfully` or `verifyLoginFailureMessage`.
 
 **Descriptive Names:** Test names should be descriptive, clearly indicating the action being tested.
 
-`shouldDisplayErrorMessageOnInvalidCredentials`
-
-communicates the expected behavior more effectively than
-
-`test1`.
+`shouldDisplayErrorMessageOnInvalidCredentials` communicates the expected behavior more effectively than `test1`.
 
 **Clarity and Conciseness:** Keep test names clear and concise, avoiding unnecessary verbosity.
 
-`verifyErrorMessageShownOnInvalidCredentials`
-
-is clearer than
-
+`verifyErrorMessageShownOnInvalidCredentials` is clearer than
 `ensureThatAnErrorMessageIsDisplayedWhenIncorrectCredentialsAreEntered`.
 
 **Use Action Verbs:** Start test names with action verbs to denote the action being tested.
