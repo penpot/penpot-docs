@@ -24,7 +24,7 @@ examples that do not have values are optional, and inactive by default.
 
 This section will list all common configuration between backend and frontend.
 
-There are two types of configuration: options (properties that requieres some value) and
+There are two types of configuration: options (properties that require some value) and
 flags (that just enables or disables something). All flags are set in a single
 `PENPOT_FLAGS` environment variable will have an ordered list of strings using this
 format: `<enable|disable>-<flag-name>`.
@@ -42,7 +42,7 @@ frontend & backend:
 PENPOT_FLAGS="$PENPOT_FLAGS disable-registration"
 ```
 
-You also can restict the registrations to a closed list of domains:
+You also can restrict the registrations to a closed list of domains:
 
 ```bash
 # comma separated list of domains (backend only)
@@ -53,8 +53,8 @@ PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
 
 Penpot comes with facilities for fast creation of demo users without the need of a
 registration process. The demo users by default have an expiration time of 7 days, and
-once expired they are completly deleted with all the generated content. Very useful for
-testing or demostration purposes.
+once expired they are completely deleted with all the generated content. Very useful for
+testing or demonstration purposes.
 
 You can enable demo users using the following variable:
 
@@ -87,7 +87,7 @@ https://<your_domain>/api/auth/oauth/gitlab/callback
 
 #### Penpot
 
-Consists on registration and authentication via pasword. It is enabled by default, but can
+Consists on registration and authentication via password. It is enabled by default, but can
 be disabled with the following flags:
 
 ```bash
@@ -264,7 +264,7 @@ The username and password are optional.
 
 By default, when no SMTP (email) is configured, the email will be printed to the console,
 which means that the emails will be shown in the stdout. If you have an SMTP service,
-uncomment the appropiate settings section in `docker-compose.yml` and configure those
+uncomment the appropriate settings section in `docker-compose.yml` and configure those
 environment variables.
 
 Setting up the default FROM and REPLY-TO:
@@ -311,7 +311,7 @@ managed by an application (not a simple directory serving static files). But you
 not worry about this unless you want to install it outside the docker container and
 configure the nginx yourself.
 
-In case you want undestand how it internally works, you can take a look on the [nginx
+In case you want understand how it internally works, you can take a look on the [nginx
 configuration file][4] used in the docker images.
 
 
@@ -397,7 +397,7 @@ These variables are used for generate correct nginx.conf file on container start
 ### Demo warning ###
 
 If you want to show a warning in the register and login page saying that this is a
-demostration purpose instance (no backups, periodical data wipe, ...), set the following
+demonstration purpose instance (no backups, periodical data wipe, ...), set the following
 variable:
 
 ```bash
@@ -423,7 +423,7 @@ headless web browser).
 
 ## Other flags
 
-- `enable-cors`: Enables the default cors cofiguration that allows all domains (this
+- `enable-cors`: Enables the default cors configuration that allows all domains (this
   configuration is designed only for dev purposes right now).
 - `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that lists all rpc methods
   available on backend.
@@ -431,11 +431,11 @@ headless web browser).
   deactivating the email verification process (only for local or internal setups).
 - `enable-user-feedback`: Enables the feedback form at the dashboard.
 - `disable-secure-session-cookies`: By default, penpot uses the `secure` flag on cookies,
-  this flag disables it; it is usefull if you have plan to serve penpot under different
+  this flag disables it; it is useful if you have plan to serve penpot under different
   domain than `localhost` without HTTPS.
 - `disable-login`: allows disable password based login form.
 - `disable-registration`: disables registration (still enabled for invitations only).
-- `enable-prepl-server`: enables PREPL server, used by manage.py and other additional
+- `enable-prepl-server`: enables PREPL server, used by `manage.py` and other additional
   tools for communicate internally with penpot backend.
 
 Since version 1.13.0:
