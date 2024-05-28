@@ -372,7 +372,7 @@ npx playwright test --ui
 
 > ⚠️ **WARNING:** It is important to be in the right folder (`frontend`) to launch the command above, or you may have errors trying to run the tests.
 
-> ❗️ **IMPORTANT**: You might need to [install Playwright's browsers and dependencies](https://playwright.dev/docs/intro) in your host machine with: `npx playwright install --with-deps`.
+> ❗️ **IMPORTANT**: You might need to [install Playwright's browsers and dependencies](https://playwright.dev/docs/intro) in your host machine with: `npx playwright install --with-deps`. In case you are using a Linux distribution other than Ubuntu, [you might need to install the dependencies manually](https://github.com/microsoft/playwright/issues/11122).
 
 ### How to write a test
 
