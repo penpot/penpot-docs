@@ -24,7 +24,7 @@ title: 5.4. API
     ```javascript
     revn: number
     ```
-#### Source: [index.d.ts:1](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L1)
+#### Source: [index.d.ts:1](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L1)
 
 ### PenpotPage
 
@@ -62,7 +62,7 @@ title: 5.4. API
   **Returns:**
 `PenpotShape[]`
 
-#### Source: [index.d.ts:7](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L7)
+#### Source: [index.d.ts:7](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L7)
 
 ### PenpotFill
 
@@ -97,7 +97,7 @@ title: 5.4. API
     ```javascript
     fillImage?: PenpotImageData
     ```
-#### Source: [index.d.ts:33](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L33)
+#### Source: [index.d.ts:33](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L33)
 
 ### PenpotStroke
 
@@ -152,7 +152,7 @@ title: 5.4. API
     ```javascript
     strokeColorGradient?: PenpotGradient
     ```
-#### Source: [index.d.ts:51](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L51)
+#### Source: [index.d.ts:51](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L51)
 
 ### PenpotColor
 
@@ -202,7 +202,7 @@ title: 5.4. API
     ```javascript
     image?: PenpotImageData
     ```
-#### Source: [index.d.ts:64](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L64)
+#### Source: [index.d.ts:64](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L64)
 
 ### PenpotShadow
 
@@ -247,7 +247,7 @@ title: 5.4. API
     ```javascript
     color?: PenpotColor
     ```
-#### Source: [index.d.ts:76](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L76)
+#### Source: [index.d.ts:76](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L76)
 
 ### PenpotBlur
 
@@ -272,7 +272,7 @@ title: 5.4. API
     ```javascript
     hidden?: boolean
     ```
-#### Source: [index.d.ts:87](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L87)
+#### Source: [index.d.ts:87](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L87)
 
 ### PenpotFrameGuideColumnParams
 
@@ -308,7 +308,7 @@ title: 5.4. API
     ```javascript
     gutter?: number
     ```
-#### Source: [index.d.ts:94](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L94)
+#### Source: [index.d.ts:94](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L94)
 
 ### PenpotFrameGuideSquareParams
 
@@ -324,7 +324,7 @@ title: 5.4. API
     ```javascript
     size?: number
     ```
-#### Source: [index.d.ts:103](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L103)
+#### Source: [index.d.ts:103](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L103)
 
 ### PenpotFrameGuideColumn
 
@@ -344,7 +344,7 @@ title: 5.4. API
     ```javascript
     params: PenpotFrameGuideColumnParams
     ```
-#### Source: [index.d.ts:108](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L108)
+#### Source: [index.d.ts:108](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L108)
 
 ### PenpotFrameGuideRow
 
@@ -364,7 +364,7 @@ title: 5.4. API
     ```javascript
     params: PenpotFrameGuideColumnParams
     ```
-#### Source: [index.d.ts:114](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L114)
+#### Source: [index.d.ts:114](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L114)
 
 ### PenpotFrameGuideSquare
 
@@ -384,14 +384,14 @@ title: 5.4. API
     ```javascript
     params: PenpotFrameGuideSquareParams
     ```
-#### Source: [index.d.ts:120](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L120)
+#### Source: [index.d.ts:120](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L120)
 
 ### PenpotExport
 
 ```javascript
 PenpotExport: undefined
 ```
-#### Source: [index.d.ts:131](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L131)
+#### Source: [index.d.ts:131](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L131)
 
 ### PenpotTrack
 
@@ -406,7 +406,7 @@ PenpotExport: undefined
     ```javascript
     value: null | number
     ```
-#### Source: [index.d.ts:135](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L135)
+#### Source: [index.d.ts:135](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L135)
 
 ### PenpotCommonLayout
 
@@ -490,7 +490,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:140](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L140)
+#### Source: [index.d.ts:140](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L140)
 
 ### PenpotGridLayout
 
@@ -727,7 +727,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:177](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L177)
+#### Source: [index.d.ts:177](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L177)
 
 ### PenpotFlexLayout
 
@@ -835,7 +835,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:194](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L194)
+#### Source: [index.d.ts:194](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L194)
 
 ### PenpotShapeBase
 
@@ -1063,7 +1063,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:201](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L201)
+#### Source: [index.d.ts:201](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L201)
 
 ### PenpotFrame
 
@@ -1371,7 +1371,7 @@ PenpotExport: undefined
   **Returns:**
 `PenpotGridLayout`
 
-#### Source: [index.d.ts:293](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L293)
+#### Source: [index.d.ts:293](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L293)
 
 ### PenpotGroup
 
@@ -1638,7 +1638,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:312](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L312)
+#### Source: [index.d.ts:312](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L312)
 
 ### PenpotBool
 
@@ -1905,7 +1905,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:321](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L321)
+#### Source: [index.d.ts:321](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L321)
 
 ### PenpotRectangle
 
@@ -2138,7 +2138,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:330](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L330)
+#### Source: [index.d.ts:330](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L330)
 
 ### PenpotPath
 
@@ -2371,7 +2371,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:334](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L334)
+#### Source: [index.d.ts:334](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L334)
 
 ### PenpotText
 
@@ -2659,7 +2659,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:338](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L338)
+#### Source: [index.d.ts:338](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L338)
 
 ### PepotFrame
 
@@ -2897,7 +2897,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:354](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L354)
+#### Source: [index.d.ts:354](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L354)
 
 ### PenpotCircle
 
@@ -3130,7 +3130,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:359](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L359)
+#### Source: [index.d.ts:359](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L359)
 
 ### PenpotSvgRaw
 
@@ -3363,7 +3363,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:363](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L363)
+#### Source: [index.d.ts:363](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L363)
 
 ### PenpotImage
 
@@ -3596,7 +3596,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:367](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L367)
+#### Source: [index.d.ts:367](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L367)
 
 ### PenpotViewport
 
@@ -3616,7 +3616,7 @@ PenpotExport: undefined
     ```javascript
     bounds: PenpotBounds
     ```
-#### Source: [index.d.ts:379](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L379)
+#### Source: [index.d.ts:379](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L379)
 
 ### EventsMap
 
@@ -3646,7 +3646,7 @@ PenpotExport: undefined
     ```javascript
     finish: string
     ```
-#### Source: [index.d.ts:396](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L396)
+#### Source: [index.d.ts:396](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L396)
 
 ### PenpotLibraryElement
 
@@ -3671,7 +3671,7 @@ PenpotExport: undefined
     ```javascript
     path: string
     ```
-#### Source: [index.d.ts:406](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L406)
+#### Source: [index.d.ts:406](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L406)
 
 ### PenpotLibraryColor
 
@@ -3723,7 +3723,7 @@ PenpotExport: undefined
   **Returns:**
 `PenpotStroke`
 
-#### Source: [index.d.ts:413](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L413)
+#### Source: [index.d.ts:413](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L413)
 
 ### PenpotLibraryTypography
 
@@ -3822,7 +3822,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:421](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L421)
+#### Source: [index.d.ts:421](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L421)
 
 ### PenpotContext
 
@@ -4010,7 +4010,7 @@ PenpotExport: undefined
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:451](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L451)
+#### Source: [index.d.ts:454](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L454)
 
 ### Penpot
 
@@ -4264,7 +4264,7 @@ These are methods and properties available on the  `penpot`  global object.
   **Returns:**
 `PenpotText`
 
-#### Source: [index.d.ts:484](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L484)
+#### Source: [index.d.ts:487](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L487)
 
 ## Type Aliases
 
@@ -4273,82 +4273,82 @@ These are methods and properties available on the  `penpot`  global object.
 ```javascript
 PenpotGradient: undefined
 ```
-#### Source: [index.d.ts:14](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L14)
+#### Source: [index.d.ts:14](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L14)
 
 ### PenpotImageData
 
 ```javascript
 PenpotImageData: undefined
 ```
-#### Source: [index.d.ts:24](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L24)
+#### Source: [index.d.ts:24](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L24)
 
 ### PenpotStrokeCap
 
 ```javascript
 PenpotStrokeCap: round | square | line-arrow | triangle-arrow | square-marker | circle-marker | diamond-marker
 ```
-#### Source: [index.d.ts:42](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L42)
+#### Source: [index.d.ts:42](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L42)
 
 ### PenpotFrameGuide
 
 ```javascript
 PenpotFrameGuide: PenpotFrameGuideColumn | PenpotFrameGuideRow | PenpotFrameGuideSquare
 ```
-#### Source: [index.d.ts:126](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L126)
+#### Source: [index.d.ts:126](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L126)
 
 ### PenpotTrackType
 
 ```javascript
 PenpotTrackType: flex | fixed | percent | auto
 ```
-#### Source: [index.d.ts:133](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L133)
+#### Source: [index.d.ts:133](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L133)
 
 ### PenpotPoint
 
 ```javascript
 PenpotPoint: undefined
 ```
-#### Source: [index.d.ts:371](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L371)
+#### Source: [index.d.ts:371](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L371)
 
 ### PenpotBounds
 
 ```javascript
 PenpotBounds: undefined
 ```
-#### Source: [index.d.ts:372](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L372)
+#### Source: [index.d.ts:372](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L372)
 
 ### PenpotShape
 
 ```javascript
 PenpotShape: PenpotFrame | PenpotGroup | PenpotBool | PenpotRectangle | PenpotPath | PenpotText | PenpotCircle | PenpotSvgRaw | PenpotImage
 ```
-#### Source: [index.d.ts:385](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L385)
+#### Source: [index.d.ts:385](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L385)
 
 ### PenpotTheme
 
 ```javascript
 PenpotTheme: light | dark
 ```
-#### Source: [index.d.ts:404](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L404)
+#### Source: [index.d.ts:404](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L404)
 
 ### PenpotLibraryComponent
 
 ```javascript
 PenpotLibraryComponent: undefined
 ```
-#### Source: [index.d.ts:436](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L436)
+#### Source: [index.d.ts:436](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L436)
 
 ### PenpotLibrary
 
 ```javascript
 PenpotLibrary: undefined
 ```
-#### Source: [index.d.ts:440](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L440)
+#### Source: [index.d.ts:440](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L440)
 
 ### PenpotLibraryContext
 
 ```javascript
 PenpotLibraryContext: undefined
 ```
-#### Source: [index.d.ts:446](https://github.com/penpot/penpot-plugins/blob/79c1231e567c325f0986d0976d251c1966371a2d/libs/plugin-types/index.d.ts#L446)
+#### Source: [index.d.ts:449](https://github.com/penpot/penpot-plugins/blob/ca915052152f11dd6c97dd04dd1206bb3d59adf4/libs/plugin-types/index.d.ts#L449)
 
