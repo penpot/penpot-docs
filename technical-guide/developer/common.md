@@ -362,5 +362,124 @@ and runs all tests or a selection. It is defined in `backend/dev/user.clj` and
 
 ### Writing unit tests
 
-(tbd)
+We write tests using the standard [Clojure test
+API](https://clojure.github.io/clojure/clojure.test-api.html). You can find a
+[guide to writing unit tests](https://practical.li/clojure/testing/unit-testing) at Practicalli
+Clojure, that we follow as much as possible.
+
+#### Sample files helpers
+
+An important issue when writing tests in Penpot is to have files with the
+specific configurations we need to test. For this, we have defined a namespace
+of helpers to easily create files and its elements with sample data.
+
+To make handling of uuids more convenient, those functions have a uuid
+registry. Whenever you create an object, you may give a `:label`, and the id of
+the object will be stored in the registry associated with this label, so you
+can easily recover it later.
+
+You have functions to create files, pages and shapes, to connect them and
+specify their attributes, having all of them default values if not set.
+
+Files also store in metadata the **current page**, so you can control in what
+page the `add-` and `get-` functions will operate.
+
+```clojure
+(ns common-tests.sample-helpers-test
+  (:require
+   [app.common.test-helpers.files :as thf]
+   [app.common.test-helpers.ids-map :as thi]
+   [app.common.test-helpers.shapes :as ths]
+   [clojure.test :as t]))
+
+(t/deftest test-create-file
+  (let [;; Create a file with one page
+        f1 (thf/sample-file :file1)
+
+        ;; Same but define the label of the page, to retrieve it later
+        f2 (thf/sample-file :file2 :page-label :page1)
+
+        ;; Set the :name attribute of the created file
+        f3 (thf/sample-file :file3 :name "testing file")
+
+        ;; Create an isolated page
+        p2 (thf/sample-page :page2 :name "testing page")
+
+        ;; Create a second page and add to the file
+        f4 (-> (thf/sample-file :file4 :page-label :page3)
+               (thf/add-sample-page :page4 :name "other testing page"))
+
+        ;; Create an isolated shape
+        p2 (thf/sample-shape :shape1 :type :rect :name "testing shape")
+
+        ;; Add a couple of shapes to a previous file, in different pages
+        f5 (-> f4
+               (ths/add-sample-shape :shape2)
+               (thf/switch-to-page :page4)
+               (ths/add-sample-shape :shape3 :name "other testing shape"
+                                     :width 100))
+
+        ;; Retrieve created shapes
+        s1 (ths/get-shape f4 :shape1)
+        s2 (ths/get-shape f5 :shape2 :page-label :page3)
+        s3 (ths/get-shape f5 :shape3)]
+
+    ;; Check some values
+    (t/is (= (:name f1) "Test file"))
+    (t/is (= (:name f3) "testing file"))
+    (t/is (= (:id f2) (thi/id :file2)))
+    (t/is (= (:id (thf/current-page f2)) (thi/id :page1)))
+    (t/is (= (:id s1) (thi/id :shape1)))
+    (t/is (= (:name s1) "Rectangle"))
+    (t/is (= (:name s3) "testing shape"))
+    (t/is (= (:width s3) 100))
+    (t/is (= (:width (:selrect s3)) 100))))
+```
+
+Also there are functions to make some transformations, like creating a
+component, instantiating it or swapping a copy.
+
+```clojure
+(ns app.common-tests.sample-components-test
+  (:require
+   [app.common.test-helpers.components :as thc]
+   [app.common.test-helpers.files :as thf]
+   [app.common.test-helpers.shapes :as ths]))
+
+(t/deftest test-create-component
+  (let [;; Create a file with one component
+        f1 (-> (thf/sample-file :file1)
+               (ths/add-sample-shape :frame1 :type :frame)
+               (ths/add-sample-shape :rect1 :type :rect
+                                     :parent-label :frame1)
+               (thc/make-component :component1 :frame1))]))
+```
+
+Finally, there are composition helpers, to build typical structures with a
+single line of code. And the files module has some functions to display the
+contents of a file, in a way similar to `debug/dump-tree` but showing labels
+instead of ids:
+
+```clojure
+(ns app.common-tests.sample-compositions-test
+  (:require
+   [app.common.test-helpers.compositions :as tho]
+   [app.common.test-helpers.files :as thf]))
+
+(t/deftest test-create-composition
+  (let [f1 (-> (thf/sample-file :file1)
+               (tho/add-simple-component-with-copy :component1
+                                                   :main-root
+                                                   :main-child
+                                                   :copy-root))]
+  (ctf/dump-file f1 :show-refs? true)))
+
+;; {:main-root} [:name Frame1] # [Component :component1]
+;;   :main-child [:name Rect1]
+;;
+;; :copy-root [:name Frame1]   #--> [Component :component1] :main-root
+;;   <no-label> [:name Rect1]  ---> :main-child
+```
+
+You can see more examples of usage by looking at the existing unit tests.
 
