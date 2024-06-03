@@ -228,3 +228,139 @@ This macro enables you to have assertions on production code, that
 generate runtime exceptions when failed (make sure you handle them
 appropriately).
 
+## Unit tests
+
+We expect all Penpot code (either in frontend, backend or common subsystems) to
+have unit tests, i.e. the ones that test a single unit of code, in isolation
+from other blocks. Currently we are quite far from that objective, but we are
+working to improve this.
+
+### Running tests with kaocha
+
+Unit tests are executed inside the [development environment](/technical-guide/developer/devenv).
+
+We can use [kaocha test runner](https://cljdoc.org/d/lambdaisland/kaocha/), and
+we have prepared, for convenience, some aliases in `deps.edn` files. To run
+them, just go to `backend`, `frontend` or `common` and execute:
+
+```bash
+# To run all tests once
+clojure -M:dev:test
+
+# To run all tests and keep watching for changes
+clojure -M:dev:test --watch
+
+# To run a single tests module
+clojure -M:dev:test --focus common-tests.logic.comp-sync-test
+
+# To run a single test
+clojure -M:dev:test --focus common-tests.logic.comp-sync-test/test-sync-when-changing-attribute
+```
+
+Watch mode runs all tests when some file changes, except if some tests failed
+previously. In this case it only runs the failed tests. When they pass, then
+runs all of them again.
+
+You can also mark tests in the code by adding metadata:
+
+```clojure
+;; To skip a test, for example when is not working or too slow
+(deftest ^:kaocha/skip bad-test
+  (is (= 2 1)))
+
+;; To skip it but warn you during test run, so you don't forget it
+(deftest ^:kaocha/pending bad-test
+  (is (= 2 1)))
+```
+
+Please refer to the [kaocha manual](https://cljdoc.org/d/lambdaisland/kaocha/1.91.1392/doc/6-focusing-and-skipping)
+for how to define custom metadata and other ways of selecting tests.
+
+**NOTE**: in `frontend` we still can't use kaocha to run the tests. We are on
+it, but for now we use shadow-cljs with `package.json` scripts:
+
+```bash
+yarn run test
+yarn run test:watch
+```
+
+#### Test output
+
+The default kaocha reporter outputs a summary for the test run. There is a pair
+of brackets `[ ]` for each suite, a pair of parentheses `( )` for each test,
+and a dot `.` for each assertion `t/is` inside tests.
+
+```bash
+penpot@c261c95d4623:~/penpot/common$ clojure -M:dev:test
+[(...)(............................................................
+.............................)(....................................
+..)(..........)(.................................)(.)(.............
+.......................................................)(..........
+.....)(......)(.)(......)(.........................................
+..............................................)(............)]
+190 tests, 3434 assertions, 0 failures.
+```
+
+All standard output from the tests is captured and hidden, except if some test
+fails. In this case, the output for the failing test is shown in a box:
+
+```bash
+FAIL in sample-test/stdout-fail-test (sample_test.clj:10)
+Expected:
+  :same
+Actual:
+  -:same +:not-same
+╭───── Test output ───────────────────────────────────────────────────────
+│ Can you see this?
+╰─────────────────────────────────────────────────────────────────────────
+2 tests, 2 assertions, 1 failures.
+```
+
+You can bypass the capture with the command line:
+
+```bash
+clojure -M:dev:test --no-capture-output
+```
+
+Or for some specific output:
+
+```clojure
+(ns sample-test
+  (:require [clojure.test :refer :all]
+            [kaocha.plugin.capture-output :as capture]))
+
+(deftest stdout-pass-test
+  (capture/bypass
+    (println "This message should be displayed"))
+  (is (= :same :same)))
+```
+
+### Running tests in the REPL
+
+An alternative way of running tests is to do it from inside the REPL you can
+use in the backend and common apps in the [development environment](/technical-guide/developer/devenv).
+
+We have a helper function `(run-tests)` that refresh the environment (to avoid
+having [stale tests](https://practical.li/clojure/testing/unit-testing/#command-line-test-runners))
+and runs all tests or a selection. It is defined in `backend/dev/user.clj` and
+`common/dev/user.clj`, so it's available in the REPL without importing anything.
+
+```clojure
+;; To run all tests
+(run-tests)
+
+;; To run all tests in one namespace
+(run-tests 'some.namespace)
+
+;; To run a single test
+(run-tests 'some.namespace/some-test)
+
+;; To run all tests in one or several namespaces,
+;; selected by a regular expression
+(run-tests #"^backend-tests.rpc.*")
+```
+
+### Writing unit tests
+
+(tbd)
+
