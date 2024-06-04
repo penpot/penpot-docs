@@ -38,5 +38,5 @@
     "markdown-it-anchor": "^8.6.6",
     "markdown-it-plantuml": "^1.4.1"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.2.2"
 }
