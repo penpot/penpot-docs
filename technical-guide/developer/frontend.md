@@ -296,20 +296,6 @@ msgstr[1] "%s projects"
 ;; => "1 project"
 ```
 
-## Unit Tests
-
-Unit tests have to be compiled first, and then run with node.
-
-```bash
-npx shadow-cljs compile tests && node target/tests.js
-```
-
-Or run the watch (that automatically runs the test):
-
-```bash
-npx shadow-cljs watch tests
-```
-
 ## Integration tests
 
 ### Setup
@@ -330,7 +316,7 @@ Ensure your development environment docker image is up to date.
 ./manage.sh start-devenv
 ```
 
-**NOTE** You can learn more about how to set up, start and stop our development environment [here](http://localhost:8080/technical-guide/developer/devenv/#getting-started)
+**NOTE** You can learn more about how to set up, start and stop our development environment [here](/technical-guide/developer/devenv)
 
 ### Running the integration tests
 
