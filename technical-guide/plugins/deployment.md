@@ -4,71 +4,183 @@ title: 5.3. Deployment
 
 # Deployment
 
-## Prepare
+When it comes to deploying your plugin there are several platforms to choose from. Each platform has its unique features and benefits, so the choice depends on you.
 
-Before we deploy our plugin we need to have a domain at hand. You can use your own domain name and configure it through your chosen hosting service, but in this example, we are going to use Netlify and a free netlify.app domain.
+In this guide you will found some options for static sites that have free plans.
 
-We will be using `https://example-plugin-penpot.netlify.app`. Make sure to check your domain availability beforehand or else you may need to repeat all the steps.
+## Building your project
 
-By default the plugin is ready to run locally at `http://localhost:4201`, and we need it to run remotely at `https://example-plugin-penpot.netlify.app`. **You may or may not be using a diferent host or port, so keep that in mind**.
+The building may vary between frameworks but if you had previously configured your scripts in `package.json`, `npm run build` should work.
 
-Also note that if you want to keep working locally you will need to revert all these changes. You could use a different branch, copy the project folder or simply checkout the changes once you have built your plugin.
+The resulting build should be located somewhere in the `dist/` folder, maybe somewhere else if you have configured so.
 
-Now that you know everything we can proceed with the changes.
+Be wary that some framework's builders can add additional folders like `apps/project-name/`, `project-name/` or `browser/`.
 
-### Manifest
+Examples:
 
-First of all, we need to update the manifest file so it points to the correct plugin configuration. Go to `public/manifest.json` and change the line where it states that the code is in `http://localhost:4201`. Use the url where the plugin will be hosted, like this:
+![Vue dist example](/img/plugins/vue_dist.png)
+![Angular dist example](/img/plugins/angular_dist.png)
 
-```json
-{
-  "name": "Example plugin",
-  "code": "https://example-plugin-penpot.netlify.app/plugin.js",
-  "permissions": ["page:read", "file:read", "selection:read"]
-}
-```
+## Netlify
 
-### Configuration
+### CORS issues
 
-Our manifest is ready, but the opening function must be also updated. Go to `src/plugin.ts` (or the file where you have placed your `penpot.ui.open()`) and, again, change the `http://localhost:4201` to your chosen domain.
-
-```ts
-penpot.ui.open("Plugin name", "https://example-plugin-penpot.netlify.app", {
-  width: 500,
-  height: 600,
-});
-```
-
-### Headers
-
-Last but not least, to avoid cross-origin issues you can add a `_header` file to the `public/` folder. It should contain something similar to:
+To avoid these issues you can add a `_headers` file to your plugin. Place it in the `public/` folder or alongside the main files.
 
 ```js
 /*
   Access-Control-Allow-Origin: *
 ```
 
-Feel free to configure it as you need.
+### Drag and drop
 
-## Build
+Netlify offers a simple drag and drop method. Check [Netlify Drop](https://app.netlify.com/drop).
 
-Now that our plugin is ready for deployment we need to build it.
+#### How to deploy
 
-For building the plugin we simply need to run the command: `npx nx build example-plugin --emptyOutDir=true`.
+1. Build your project
 
-The resulting code would be found in `dist/apps/example-plugin` by default.
+```bash
+npm run build
+```
 
-## Deploy
+2. Go to [Netlify Drop](https://app.netlify.com/drop).
 
-Deployment may vary according to the chosen host service. To deploy your plugin to Netlify you simply need to drag and drop the folder found in `dist/apps/example-plugin`into the Netlify Sites.
+3. Drag and drop the build folder into Netlify Sites. Dropping the whole dist may not work, you should drop the folder where the main files are located.
 
-Once the deployment is complete, don't forget to configure the site name through Site Configuration in Netlify, so the resulting url match with the one we provided in the manifest and the plugin opening function. In this example, the name should be `example-plugin-penpot`, which would result in the url `https://example-plugin-penpot.netlify.app`.
+![Angular dist example](/img/plugins/drag&drop.gif)
 
-## Test
+4. Done!
 
-Congratulations, you have successfully deployed your first plugin! Now it's time to test it.
+### Connect to Git
 
-You need to:
+Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket or Azure DevOps.
 
-- Open some penpot project as usual.
-- Load the plugin with `ɵloadPlugin({ manifest: 'https://example-plugin-penpot.netlify.app/manifest.json' })`.
+- [Configure builds](https://docs.netlify.com/configure-builds/overview/).
+
+#### How to deploy
+
+1. Go to [Start](https://app.netlify.com/start) and connect with your repository. Allow Netlify to be installed in either all your projects or just the selected ones.
+
+![Netlify git installation](/img/plugins/install_netlify.png)
+
+2. Configure your build settings. Netlify auto-detects your framework and offers a basic configuration. This is usually enough.
+
+![Netlify git configuration](/img/plugins/build_settings.png)
+
+3. Deploy your plugin.
+
+## Cloudflare
+
+### CORS issues
+
+To avoid these issues you can add a `_headers` file to your plugin. Place it in the `public/` folder or alongside the main files.
+
+```js
+/*
+  Access-Control-Allow-Origin: *
+```
+
+### Direct upload
+
+You can directly upload your plugin folder.
+
+- [Direct upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)
+
+#### How to deploy
+
+1. Build your plugin.
+
+```bash
+npm run build
+```
+
+2. Go to Workers & Pages > Create > Page > Upload assets.
+
+3. Create a new page.
+
+![Cloudflare new page](/img/plugins/cf_new_page.png)
+
+4. Upload your plugin files. You can drag and drop or select the folder.
+
+![Cloudflare page upload files](/img/plugins/cf_upload_files.png)
+
+5. Deploy site.
+
+### Connect to Git
+
+Cloudflare allows you to import an existing project from GitHub or GitLab.
+
+- [Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/)
+
+#### How to deploy
+
+1. Go to Workers & Pages > Create > Page > Connect to git
+
+2. Select a repository. Allow Cloudflare to be installed in either all your projects or just the selected ones.
+
+![Cloudflare git installation](/img/plugins/install_cloudflare.png)
+
+4. Configure your build settings.
+
+![Cloudflare git configuration](/img/plugins/cf_build_settings.png)
+
+5. Save and deploy.
+
+## Surge
+
+Surge provides a CLI tool for easy deployment.
+
+- [Getting Started](https://surge.sh/help/getting-started-with-surge).
+
+### CORS issues
+
+To avoid these issues you can add a `CORS` file to your plugin. Place it in the `public/` folder or alongside the main files.
+
+The `CORS` can contain a `*` for any domain, or a list of specific domains.
+
+Check [Enabling Cross-Origin Resources sharing](https://surge.sh/help/enabling-cross-origin-resource-sharing).
+
+### How to deploy
+
+1. Install surge CLI globally and log into your account or create one.
+
+```bash
+npm install --global surge
+surge login
+# or
+surge signup
+```
+
+2. Create a CORS file to allow all sites.
+
+```bash
+echo '*' > public/CORS
+```
+
+3. Build your project.
+
+```bash
+npm run build
+```
+
+4. Start surge deployment
+
+```bash
+surge
+
+# Your plugin build folder
+project: /home/user/example-plugin/dist/
+
+# your domain, surge offers a free .surge.sh domain and free ssl
+domain: https://example-plugin-penpot.surge.sh
+
+upload: [====================] 100% eta: 0.0s (10 files, 305761 bytes)
+CDN: [====================] 100%
+encryption: *.surge.sh, surge.sh (346 days)
+IP: XXX.XXX.XXX.XXX
+
+Success! - Published to example-plugin-penpot.surge.sh
+```
+
+5. Done!
