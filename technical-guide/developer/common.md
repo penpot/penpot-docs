@@ -337,13 +337,22 @@ Or for some specific output:
 
 ### Running tests in the REPL
 
-An alternative way of running tests is to do it from inside the REPL you can
-use in the backend and common apps in the [development environment](/technical-guide/developer/devenv).
+An alternative way of running tests is to do it from inside the
+[REPL](/technical-guide/developer/backend/#repl) you can use in the backend and
+common apps in the development environment.
 
-We have a helper function `(run-tests)` that refresh the environment (to avoid
+We have a helper function `(run-tests)` that refreshes the environment (to avoid
 having [stale tests](https://practical.li/clojure/testing/unit-testing/#command-line-test-runners))
 and runs all tests or a selection. It is defined in `backend/dev/user.clj` and
-`common/dev/user.clj`, so it's available in the REPL without importing anything.
+`common/dev/user.clj`, so it's available without importing anything.
+
+First start a REPL:
+
+```bash
+~/penpot/backend$ scripts/repl
+```
+
+And then:
 
 ```clojure
 ;; To run all tests
