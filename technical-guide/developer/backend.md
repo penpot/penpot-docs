@@ -94,29 +94,6 @@ using postgresql:
 pg_dump -h postgres -s  > schema.sql
 ```
 
-
-## Tests ##
-
-You can run the tests directly with:
-
-```bash
-~/penpot/backend$ clojure -M:dev:tests
-```
-
-Alternatively, you can run them from a shell. First start a REPL.
-
-```bash
-~/penpot/backend$ scripts/repl
-```
-
-And then:
-
-```bash
-user=> (run-tests)
-user=> (run-tests 'namespace)
-user=> (run-tests 'namespace/test)
-```
-
 ## Linter ##
 
 There are no watch process for the linter; you will need to execute it
