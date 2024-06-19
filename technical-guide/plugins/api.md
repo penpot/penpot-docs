@@ -5130,7 +5130,7 @@ Returns a new instance of the shape with identical properties.
 
 #### Source: [index.d.ts:1302](https://github.com/penpot/penpot-plugins/blob/14ca2abc6f9392f801ddc341b55c65f2505a658e/libs/plugin-types/index.d.ts#L1302)
 
-### PepotFrame
+### PenpotFrame
 
 Represents a frame shape in Penpot.
 This interface extends  `PenpotShapeBase`  and includes properties specific to frames.
