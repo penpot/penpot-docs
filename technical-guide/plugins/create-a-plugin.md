@@ -11,7 +11,6 @@ You can check the examples in [Plugin examples](https://github.com/penpot/plugin
 **Related:**
 
 - For the starter vanilla template go to [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template).
-- For the nx monorepo documentation go to [Creating a Plugin](https://github.com/penpot/penpot-plugins/blob/main/docs/create-plugin.md) or [Creating a Plugin (angular)](https://github.com/penpot/penpot-plugins/blob/main/docs/create-angular-plugin.md).
 
 ## Step 1. Create a project
 
@@ -84,7 +83,7 @@ Check the [Api Documentation](/technical-guide/plugins/api) for more.
 
 This step is for locally serving purposes, for a detailed guide about building and deploying you can check the documentation at [Deployment](/technical-guide/plugins/deployment).
 
-Note: if you're using javascript you can skip this step by placing the `plugin.js` file directly in your `public\` folder, like we did in the React example.
+Note: if you're using javascript you can skip this step by placing the `plugin.js` file directly in your `public\` folder.
 
 If you wish to run your plugin locally and test it live you need to make your plugin file reachable. Right now, your `plugin.ts` file is somewhere in the `src\` folder, and you can't access it through `http://localhost:XXXX/plugin.js`.
 
@@ -284,11 +283,11 @@ export class AppComponent {
 
 ### React
 
-- `App.js`
+- `App.tsx`
 
 ```js
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const url = new URL(window.location.href);
