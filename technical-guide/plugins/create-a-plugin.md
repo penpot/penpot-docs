@@ -161,17 +161,21 @@ Now that everything is in place you need a `manifest.json` file to provide Penpo
 }
 ```
 
-## Live serve
+## Step 6. Load the Plugin in Penpot
 
-To test the plugin locally you need to serve it.
+To test the plugin locally you need to serve it. Make sure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` can be reached.
 
-Make sure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` can be reached.
+To load your plugin into Penpot you can use the shortcut `Ctrl + Alt + P` to directly open the Plugin manager modal. There you need to provide the plugin's manifest URL (example: `http://plugin.example/manifest.json`) for the installation. If there's no issues the plugin will be installed and then you would be able to open it whenever you like.
 
-Use your `manifest.json` url to install your plugin in Penpot and test it live.
+You can also open the Plugin manager modal via:
+
+- Menu
+
+  ![Penpot's menu image](/img/plugins/plugin-menu.png)
 
 ## Penpot theme (optional)
 
-Penpot have a dark and a light theme. This step covers a way to get this value in your plugin so you can customize it to match the current Penpot theme.
+Penpot have a dark and a light theme. You can create your own implementation, but this step covers a way to get this value in your plugin so you can customize it to match the current Penpot theme.
 
 ### Common
 
