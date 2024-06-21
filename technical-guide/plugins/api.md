@@ -128,7 +128,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:4](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L4)
+#### Source: [index.d.ts:4](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L4)
 
 ### PenpotFile
 
@@ -269,7 +269,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:59](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L59)
+#### Source: [index.d.ts:59](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L59)
 
 ### PenpotPage
 
@@ -437,7 +437,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `PenpotShape[]`
 
-#### Source: [index.d.ts:69](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L69)
+#### Source: [index.d.ts:69](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L69)
 
 ### PenpotFill
 
@@ -488,7 +488,7 @@ Defaults to 1 if omitted.
     ```
     The optional image fill defined by a PenpotImageData object.
 
-#### Source: [index.d.ts:162](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L162)
+#### Source: [index.d.ts:162](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L162)
 
 ### PenpotStroke
 
@@ -567,7 +567,7 @@ Defaults to 1 if omitted.
     ```
     The optional gradient stroke defined by a PenpotGradient object.
 
-#### Source: [index.d.ts:207](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L207)
+#### Source: [index.d.ts:207](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L207)
 
 ### PenpotColor
 
@@ -639,7 +639,7 @@ Defaults to 1 if omitted.
     ```
     The optional image fill defined by a PenpotImageData object.
 
-#### Source: [index.d.ts:255](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L255)
+#### Source: [index.d.ts:255](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L255)
 
 ### PenpotShadow
 
@@ -706,7 +706,7 @@ Defaults to false if omitted.
     ```
     The optional color of the shadow, defined by a PenpotColor object.
 
-#### Source: [index.d.ts:299](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L299)
+#### Source: [index.d.ts:299](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L299)
 
 ### PenpotBlur
 
@@ -744,7 +744,7 @@ Currently, only 'layer-blur' is supported.
     Specifies whether the blur effect is hidden.
 Defaults to false if omitted.
 
-#### Source: [index.d.ts:341](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L341)
+#### Source: [index.d.ts:341](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L341)
 
 ### PenpotFrameGuideColumnParams
 
@@ -799,7 +799,7 @@ This interface includes properties for defining the appearance and layout of col
     ```
     The optional gutter width between columns.
 
-#### Source: [index.d.ts:366](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L366)
+#### Source: [index.d.ts:366](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L366)
 
 ### PenpotFrameGuideSquareParams
 
@@ -822,7 +822,7 @@ This interface includes properties for defining the appearance and size of squar
     ```
     The optional size of each square guide.
 
-#### Source: [index.d.ts:401](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L401)
+#### Source: [index.d.ts:401](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L401)
 
 ### PenpotFrameGuideColumn
 
@@ -851,7 +851,7 @@ This interface includes properties for defining the type, visibility, and parame
     ```
     The parameters defining the appearance and layout of the column guides.
 
-#### Source: [index.d.ts:416](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L416)
+#### Source: [index.d.ts:416](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L416)
 
 ### PenpotFrameGuideRow
 
@@ -881,7 +881,7 @@ This interface includes properties for defining the type, visibility, and parame
     The parameters defining the appearance and layout of the row guides.
 Note: This reuses the same parameter structure as column guides.
 
-#### Source: [index.d.ts:435](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L435)
+#### Source: [index.d.ts:435](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L435)
 
 ### PenpotFrameGuideSquare
 
@@ -910,17 +910,36 @@ This interface includes properties for defining the type, visibility, and parame
     ```
     The parameters defining the appearance and layout of the square guides.
 
-#### Source: [index.d.ts:455](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L455)
+#### Source: [index.d.ts:455](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L455)
 
 ### PenpotExport
 
 Represents export settings in Penpot.
 This interface includes properties for defining export configurations.
 
-```javascript
-PenpotExport: undefined
-```
-#### Source: [index.d.ts:483](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L483)
+#### Properties
+* **type**
+
+    ```javascript
+    type: svg | png | jpeg | pdf
+    ```
+    Type of the file to export. Can be one of the following values: png, jpeg, svg, pdf
+
+* **scale**
+
+    ```javascript
+    scale: number
+    ```
+    For bitmap formats represent the scale of the original size to resize the export
+
+* **suffix**
+
+    ```javascript
+    suffix: string
+    ```
+    Suffix that will be appended to the resulting exported file
+
+#### Source: [index.d.ts:483](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L483)
 
 ### PenpotTrack
 
@@ -948,7 +967,7 @@ This can be one of the following values:
     The value of the track.
 This can be a number representing the size of the track, or null if not applicable.
 
-#### Source: [index.d.ts:495](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L495)
+#### Source: [index.d.ts:508](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L508)
 
 ### PenpotCommonLayout
 
@@ -1099,7 +1118,7 @@ It can be one of the following values:
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:516](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L516)
+#### Source: [index.d.ts:529](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L529)
 
 ### PenpotGridLayout
 
@@ -1472,7 +1491,7 @@ This property is read-only.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:636](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L636)
+#### Source: [index.d.ts:649](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L649)
 
 ### PenpotFlexLayout
 
@@ -1662,7 +1681,7 @@ It can be one of the following values:
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:718](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L718)
+#### Source: [index.d.ts:731](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L731)
 
 ### PenpotPathCommand
 
@@ -1714,7 +1733,168 @@ Possible values include:
 
   * **sweepFlag**
 
-#### Source: [index.d.ts:744](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L744)
+#### Source: [index.d.ts:757](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L757)
+
+### PenpotLayoutChildProperties
+
+TODO PenpotLayoutChildProperties
+
+#### Properties
+* **absolute**
+
+    ```javascript
+    absolute: boolean
+    ```
+    TODO absolute
+
+* **zIndex**
+
+    ```javascript
+    zIndex: number
+    ```
+    TODO zIndex
+
+* **horizontalSizing**
+
+    ```javascript
+    horizontalSizing: fill | auto | fix
+    ```
+    TODO horizontalSizing
+
+* **verticalSizing**
+
+    ```javascript
+    verticalSizing: fill | auto | fix
+    ```
+    TODO verticalSizing
+
+* **alignSelf**
+
+    ```javascript
+    alignSelf: center | auto | stretch | start | end
+    ```
+    TODO alignSelf
+
+* **horizontalMargin**
+
+    ```javascript
+    horizontalMargin: number
+    ```
+    TODO horizontalMargin
+
+* **verticalMargin**
+
+    ```javascript
+    verticalMargin: number
+    ```
+    TODO verticalMargin
+
+* **topMargin**
+
+    ```javascript
+    topMargin: number
+    ```
+    TODO topMargin
+
+* **rightMargin**
+
+    ```javascript
+    rightMargin: number
+    ```
+    TODO rightMargin
+
+* **bottomMargin**
+
+    ```javascript
+    bottomMargin: number
+    ```
+    TODO bottomMargin
+
+* **leftMargin**
+
+    ```javascript
+    leftMargin: number
+    ```
+    TODO leftMargin
+
+* **maxWidth**
+
+    ```javascript
+    maxWidth: null | number
+    ```
+    TODO maxWidth
+
+* **maxHeight**
+
+    ```javascript
+    maxHeight: null | number
+    ```
+    TODO maxHeight
+
+* **minWidth**
+
+    ```javascript
+    minWidth: null | number
+    ```
+    TODO minWidth
+
+* **minHeight**
+
+    ```javascript
+    minHeight: null | number
+    ```
+    TODO minHeight
+
+#### Source: [index.d.ts:858](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L858)
+
+### PenpotLayoutCellProperties
+
+TODO PenpotLayoutCellProperties
+
+#### Properties
+* **row**
+
+    ```javascript
+    row?: number
+    ```
+    TODO row
+
+* **rowSpan**
+
+    ```javascript
+    rowSpan?: number
+    ```
+    TODO rowSpan
+
+* **column**
+
+    ```javascript
+    column?: number
+    ```
+    TODO column
+
+* **columnSpan**
+
+    ```javascript
+    columnSpan?: number
+    ```
+    TODO columnSpan
+
+* **areaName**
+
+    ```javascript
+    areaName?: string
+    ```
+    TODO areaName
+
+* **position**
+
+    ```javascript
+    position?: area | auto | manual
+    ```
+    TODO position
+
+#### Source: [index.d.ts:929](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L929)
 
 ### PenpotShapeBase
 
@@ -1865,7 +2045,7 @@ This interface provides common properties and methods shared by all shapes.
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -1934,54 +2114,38 @@ This interface provides common properties and methods shared by all shapes.
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 #### Methods
 * **getPluginData**
 
@@ -2100,6 +2264,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -2163,7 +2375,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:846](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L846)
+#### Source: [index.d.ts:960](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L960)
 
 ### PenpotFrame
 
@@ -2314,7 +2526,7 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -2383,54 +2595,38 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -2598,6 +2794,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -2722,7 +2966,7 @@ Returns the grid layout configuration added to the frame.
   **Returns:**
 `PenpotGridLayout`
 
-#### Source: [index.d.ts:1080](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1080)
+#### Source: [index.d.ts:1220](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1220)
 
 ### PenpotGroup
 
@@ -2873,7 +3117,7 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -2942,54 +3186,38 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -3121,6 +3349,54 @@ Returns an array of strings representing all the keys in the namespace.
   ```
   **Returns:**
 `string[]`
+
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
 
 * **resize**
 
@@ -3254,7 +3530,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1143](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1143)
+#### Source: [index.d.ts:1283](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1283)
 
 ### PenpotBool
 
@@ -3405,7 +3681,7 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -3474,54 +3750,38 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -3661,6 +3921,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -3774,7 +4082,7 @@ Returns the path data (d attribute) as a string.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1195](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1195)
+#### Source: [index.d.ts:1335](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1335)
 
 ### PenpotRectangle
 
@@ -3925,7 +4233,7 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -3994,54 +4302,38 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -4167,6 +4459,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -4230,7 +4570,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1233](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1233)
+#### Source: [index.d.ts:1373](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1373)
 
 ### PenpotPath
 
@@ -4381,7 +4721,7 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -4450,54 +4790,38 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -4630,6 +4954,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -4704,7 +5076,7 @@ Returns the path data (d attribute) as a string.
   **Returns:**
 `string`
 
-#### Source: [index.d.ts:1244](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1244)
+#### Source: [index.d.ts:1384](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1384)
 
 ### PenpotTextRange
 
@@ -4827,7 +5199,7 @@ This interface provides properties for styling and formatting text ranges.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1264](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1264)
+#### Source: [index.d.ts:1404](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1404)
 
 ### PenpotText
 
@@ -4978,7 +5350,7 @@ It includes various properties to define the text content and its styling attrib
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -5047,54 +5419,38 @@ It includes various properties to define the text content and its styling attrib
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -5315,6 +5671,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -5411,7 +5815,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1345](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1345)
+#### Source: [index.d.ts:1485](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1485)
 
 ### PenpotEllipse
 
@@ -5562,7 +5966,7 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to e
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -5631,54 +6035,38 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to e
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -5802,6 +6190,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -5865,7 +6301,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1449](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1449)
+#### Source: [index.d.ts:1589](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1589)
 
 ### PenpotSvgRaw
 
@@ -6016,7 +6452,7 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -6085,54 +6521,38 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -6256,6 +6676,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -6319,7 +6787,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1457](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1457)
+#### Source: [index.d.ts:1597](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1597)
 
 ### PenpotImage
 
@@ -6470,7 +6938,7 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to i
 * **exports**
 
     ```javascript
-    exports: PenpotExport
+    exports: PenpotExport[]
     ```
     The export settings of the shape.
 
@@ -6539,54 +7007,38 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to i
 
 * **layoutChild**
 
+    ```javascript
+    layoutChild?: PenpotLayoutChildProperties
+    ```
     Layout properties for children of the shape.
-
-  * **absolute**
-
-  * **zIndex**
-
-  * **horizontalSizing**
-
-  * **verticalSizing**
-
-  * **alignSelf**
-
-  * **horizontalMargin**
-
-  * **verticalMargin**
-
-  * **topMargin**
-
-  * **rightMargin**
-
-  * **bottomMargin**
-
-  * **leftMargin**
-
-  * **maxWidth**
-
-  * **maxHeight**
-
-  * **minWidth**
-
-  * **minHeight**
 
 * **layoutCell**
 
+    ```javascript
+    layoutCell?: PenpotLayoutChildProperties
+    ```
     Layout properties for cells in a grid layout.
 
-  * **row**
+* **componentRefShape**
 
-  * **rowSpan**
+    ```javascript
+    componentRefShape: null | PenpotShape
+    ```
+* **componentRoot**
 
-  * **column**
+    ```javascript
+    componentRoot: null | PenpotShape
+    ```
+* **componentHead**
 
-  * **columnSpan**
+    ```javascript
+    componentHead: null | PenpotShape
+    ```
+* **component**
 
-  * **areaName**
-
-  * **position**
-
+    ```javascript
+    component: null | PenpotLibraryComponent
+    ```
 * **type**
 
     ```javascript
@@ -6710,6 +7162,54 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
+* **isComponentInstance**
+
+  ```javascript
+  isComponentInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentMainInstance**
+
+  ```javascript
+  isComponentMainInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentCopyInstance**
+
+  ```javascript
+  isComponentCopyInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentNestedInstance**
+
+  ```javascript
+  isComponentNestedInstance(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentRoot**
+
+  ```javascript
+  isComponentRoot(): boolean
+  ```
+  **Returns:**
+`boolean`
+
+* **isComponentHead**
+
+  ```javascript
+  isComponentHead(): boolean
+  ```
+  **Returns:**
+`boolean`
+
 * **resize**
 
   ```javascript
@@ -6773,7 +7273,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1465](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1465)
+#### Source: [index.d.ts:1605](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1605)
 
 ### PenpotViewport
 
@@ -6796,7 +7296,7 @@ It includes the center point, zoom level, and the bounds of the viewport.
     ```javascript
     bounds: PenpotBounds
     ```
-#### Source: [index.d.ts:1489](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1489)
+#### Source: [index.d.ts:1629](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1629)
 
 ### EventsMap
 
@@ -6840,7 +7340,7 @@ This event passes a list of identifiers of the selected elements.
     ```
     The  `finish`  event is triggered when some operation is finished.
 
-#### Source: [index.d.ts:1514](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1514)
+#### Source: [index.d.ts:1654](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1654)
 
 ### PenpotLibraryElement
 
@@ -6994,7 +7494,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:1547](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1547)
+#### Source: [index.d.ts:1687](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1687)
 
 ### PenpotLibraryColor
 
@@ -7210,7 +7710,7 @@ Returns a  `PenpotStroke`  object representing the color as a stroke.
   **Returns:**
 `PenpotStroke`
 
-#### Source: [index.d.ts:1573](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1573)
+#### Source: [index.d.ts:1713](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1713)
 
 ### PenpotLibraryTypography
 
@@ -7490,7 +7990,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1618](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1618)
+#### Source: [index.d.ts:1758](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1758)
 
 ### PenpotLibraryComponent
 
@@ -7526,6 +8026,11 @@ This interface extends  `PenpotLibraryElement`  and includes properties specific
     ```
     The path of the library element.
 
+* **mainInstance**
+
+    ```javascript
+    mainInstance: PenpotShape
+    ```
 #### Methods
 * **getPluginData**
 
@@ -7661,7 +8166,7 @@ Returns a  `PenpotShape`  object representing the instance of the component.
   **Returns:**
 `PenpotShape`
 
-#### Source: [index.d.ts:1694](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1694)
+#### Source: [index.d.ts:1834](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1834)
 
 ### PenpotLibrary
 
@@ -7669,6 +8174,20 @@ Represents a library in Penpot, containing colors, typographies, and components.
 This type provides methods to create new color, typography, and component elements within the library.
 
 #### Properties
+* **id**
+
+    ```javascript
+    id: string
+    ```
+    TODO id
+
+* **name**
+
+    ```javascript
+    name: string
+    ```
+    TODO name
+
 * **colors**
 
     ```javascript
@@ -7867,7 +8386,7 @@ Returns a new  `PenpotLibraryComponent`  object representing the created compone
   **Returns:**
 `PenpotLibraryComponent`
 
-#### Source: [index.d.ts:1710](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1710)
+#### Source: [index.d.ts:1855](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1855)
 
 ### PenpotFontVariant
 
@@ -7902,7 +8421,7 @@ TODO PenpotFontVariant
     ```
     TODO fontStyle
 
-#### Source: [index.d.ts:1785](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1785)
+#### Source: [index.d.ts:1940](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1940)
 
 ### PenpotFont
 
@@ -7993,7 +8512,7 @@ TODO PenpotFont
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1807](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1807)
+#### Source: [index.d.ts:1962](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1962)
 
 ### PenpotFontsContext
 
@@ -8072,7 +8591,7 @@ TODO PenpotFontsContext
   **Returns:**
 `PenpotFont[]`
 
-#### Source: [index.d.ts:1849](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1849)
+#### Source: [index.d.ts:2004](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2004)
 
 ### PenpotUser
 
@@ -8144,7 +8663,7 @@ Represents a user in Penpot.
     const sessionId = user.sessionId;
     ```
 
-#### Source: [index.d.ts:1875](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1875)
+#### Source: [index.d.ts:2030](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2030)
 
 ### PenpotActiveUser
 
@@ -8244,7 +8763,7 @@ This interface includes additional properties specific to active users.
     const userZoom = activeUser.zoom;
     ```
 
-#### Source: [index.d.ts:1926](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1926)
+#### Source: [index.d.ts:2081](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2081)
 
 ### PenpotContext
 
@@ -8669,7 +9188,7 @@ Returns the newly created PenpotGroup containing the shapes from the SVG.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1948](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1948)
+#### Source: [index.d.ts:2103](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2103)
 
 ### PenpotContextGeometryUtils
 
@@ -8692,7 +9211,7 @@ TODO PenpotContextGeometryUtils
   **Returns:**
 `null | `
 
-#### Source: [index.d.ts:2158](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L2158)
+#### Source: [index.d.ts:2313](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2313)
 
 ### PenpotContextTypesUtils
 
@@ -8843,7 +9362,7 @@ TODO PenpotContextTypesUtils
   **Returns:**
 `undefined`
 
-#### Source: [index.d.ts:2168](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L2168)
+#### Source: [index.d.ts:2323](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2323)
 
 ### PenpotContextUtils
 
@@ -8864,7 +9383,7 @@ TODO PenpotContextUtils
     ```
     TODO PenpotContextTypesUtils
 
-#### Source: [index.d.ts:2210](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L2210)
+#### Source: [index.d.ts:2365](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2365)
 
 ### Penpot
 
@@ -9415,7 +9934,7 @@ Returns the newly created PenpotGroup containing the shapes from the SVG.
   **Returns:**
 `PenpotText`
 
-#### Source: [index.d.ts:2225](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L2225)
+#### Source: [index.d.ts:2380](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L2380)
 
 ## Type Aliases
 
@@ -9427,7 +9946,7 @@ A gradient can be either linear or radial and includes properties to define its 
 ```javascript
 PenpotGradient: undefined
 ```
-#### Source: [index.d.ts:93](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L93)
+#### Source: [index.d.ts:93](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L93)
 
 ### PenpotImageData
 
@@ -9437,7 +9956,7 @@ This includes properties for defining the image's dimensions, metadata, and aspe
 ```javascript
 PenpotImageData: undefined
 ```
-#### Source: [index.d.ts:130](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L130)
+#### Source: [index.d.ts:130](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L130)
 
 ### PenpotStrokeCap
 
@@ -9447,7 +9966,7 @@ This type defines various styles for the ends of a stroke.
 ```javascript
 PenpotStrokeCap: round | square | line-arrow | triangle-arrow | square-marker | circle-marker | diamond-marker
 ```
-#### Source: [index.d.ts:194](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L194)
+#### Source: [index.d.ts:194](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L194)
 
 ### PenpotFrameGuide
 
@@ -9457,7 +9976,7 @@ This type can be one of several specific frame guide types: column, row, or squa
 ```javascript
 PenpotFrameGuide: PenpotFrameGuideColumn | PenpotFrameGuideRow | PenpotFrameGuideSquare
 ```
-#### Source: [index.d.ts:474](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L474)
+#### Source: [index.d.ts:474](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L474)
 
 ### PenpotTrackType
 
@@ -9467,7 +9986,7 @@ This type defines various track types that can be used in layout configurations.
 ```javascript
 PenpotTrackType: flex | fixed | percent | auto
 ```
-#### Source: [index.d.ts:489](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L489)
+#### Source: [index.d.ts:502](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L502)
 
 ### PenpotBoolType
 
@@ -9477,7 +9996,7 @@ These types define how shapes can be combined or modified using boolean operatio
 ```javascript
 PenpotBoolType: union | difference | exclude | intersection
 ```
-#### Source: [index.d.ts:1185](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1185)
+#### Source: [index.d.ts:1325](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1325)
 
 ### PenpotPoint
 
@@ -9486,7 +10005,7 @@ PenpotPoint represents a point in 2D space, typically with x and y coordinates.
 ```javascript
 PenpotPoint: undefined
 ```
-#### Source: [index.d.ts:1472](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1472)
+#### Source: [index.d.ts:1612](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1612)
 
 ### PenpotBounds
 
@@ -9496,7 +10015,7 @@ defined by the coordinates of the top-left corner and the dimensions of the rect
 ```javascript
 PenpotBounds: undefined
 ```
-#### Source: [index.d.ts:1478](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1478)
+#### Source: [index.d.ts:1618](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1618)
 
 ### PenpotShape
 
@@ -9506,7 +10025,7 @@ This type allows for different shapes to be handled under a single type umbrella
 ```javascript
 PenpotShape: PenpotFrame | PenpotGroup | PenpotBool | PenpotRectangle | PenpotPath | PenpotText | PenpotEllipse | PenpotSvgRaw | PenpotImage
 ```
-#### Source: [index.d.ts:1499](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1499)
+#### Source: [index.d.ts:1639](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1639)
 
 ### PenpotTheme
 
@@ -9515,7 +10034,7 @@ This type specifies the possible themes: 'light' or 'dark'.
 ```javascript
 PenpotTheme: light | dark
 ```
-#### Source: [index.d.ts:1541](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1541)
+#### Source: [index.d.ts:1681](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1681)
 
 ### PenpotLibraryContext
 
@@ -9525,5 +10044,5 @@ This type contains references to the local library and an array of connected lib
 ```javascript
 PenpotLibraryContext: undefined
 ```
-#### Source: [index.d.ts:1762](https://github.com/penpot/penpot-plugins/blob/b4e7415891d33940052fa514fa25d38fe9fdcb57/libs/plugin-types/index.d.ts#L1762)
+#### Source: [index.d.ts:1917](https://github.com/penpot/penpot-plugins/blob/452e60cb74811d290bce2205925d30dd009e69eb/libs/plugin-types/index.d.ts#L1917)
 
