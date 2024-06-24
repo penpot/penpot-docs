@@ -455,7 +455,7 @@ headless web browser).
   configuration is designed only for dev purposes right now)
 - `enable-backend-api-doc`: Enables the `/api/doc` endpoint that lists all rpc methods
   available on backend
-- `enable-insecure-register`: Enables the insecure process of profile registrion
+- `enable-insecure-register`: Enables the insecure process of profile registration
   deactivating the email verification process (only for local or internal setups)
 - `disable-secure-session-cookies`: By default, penpot uses the `secure` flag on cookies,
   this flag disables it; it is usefull if you have plan to serve penpot under different
