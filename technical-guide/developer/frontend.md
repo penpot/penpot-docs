@@ -296,20 +296,6 @@ msgstr[1] "%s projects"
 ;; => "1 project"
 ```
 
-## Unit Tests
-
-Unit tests have to be compiled first, and then run with node.
-
-```bash
-npx shadow-cljs compile tests && node target/tests.js
-```
-
-Or run the watch (that automatically runs the test):
-
-```bash
-npx shadow-cljs watch tests
-```
-
 ## Integration tests
 
 ### Setup
@@ -330,15 +316,15 @@ Ensure your development environment docker image is up to date.
 ./manage.sh start-devenv
 ```
 
-**NOTE** You can learn more about how to set up, start and stop our development environment [here](http://localhost:8080/technical-guide/developer/devenv/#getting-started)
+**NOTE** You can learn more about how to set up, start and stop our development environment [here](/technical-guide/developer/devenv)
 
 ### Running the integration tests
 
-1. To run the integration tests, open a new tab in your development environment:
+#### Headless mode
 
-```bash
-ctrl+b c
-```
+Here's how to run the tests with a headless browser (i.e. within the terminal, no UI):
+
+1. With the developer environment tmux session opened, create a new tab with `Ctrl + b c`.
 
 2. Go to the frontend folder:
 
@@ -346,88 +332,112 @@ ctrl+b c
 cd penpot/frontend
 ```
 
-3. Then, execute the following command:
+3. Run the tests with `yarn`:
 
 ```bash
 yarn e2e:test
 ```
 
-These tests will use a headless browser and display the results accordingly.
+> 💡 **TIP:** By default, the tests will _not_ run in parallel. You can set the amount of workers to run the tests with `--workers`. Note that, depending on your machine, this might make some tests flaky.
 
-### Running tests with a browser
+```bash
+# run in parallel with 4 workers
+yarn e2e:test --workers 4
+```
 
-To access the testing UI, please follow these steps:
+#### Running the tests in Chromium
 
-1. In a terminal on your host machine, navigate to the frontend folder, then run the next command:
+To access the testing UI and run the tests in a real browser, follow these steps:
+
+1. In a terminal _in your host machine_, navigate to the `frontend` folder, then run:
 
 ```bash
 # cd <repo>/frontend
-
 npx playwright test --ui
 ```
 
-> ❗**WARNING** It is important to be on the right folder `frontend` of the project or we may have silent errors trying to run the tests.
+> ⚠️ **WARNING:** It is important to be in the right folder (`frontend`) to launch the command above, or you may have errors trying to run the tests.
+
+> ❗️ **IMPORTANT**: You might need to [install Playwright's browsers and dependencies](https://playwright.dev/docs/intro) in your host machine with: `npx playwright install --with-deps`. In case you are using a Linux distribution other than Ubuntu, [you might need to install the dependencies manually](https://github.com/microsoft/playwright/issues/11122).
 
 ### How to write a test
 
+When writing integration tests, we are simulating user actions and events triggered by them, in other to mirror real-world user interactions. The difference with fully end-to-end tests is that here we are faking the backend by intercepting the network requests, so tests can run faster and more tied to the front-end.
+
+Keep in mind:
+
+- **Use Realistic User Scenarios:** Design test cases that mimic real user scenarios and interactions with the application.
+
+- **Simulate User Inputs**: Such as mouse clicks, keyboard inputs, form submissions, or touch gestures, using the testing framework's API. Mimic user interactions as closely as possible to accurately simulate user behavior.
+
+- **Intercept the network**: Playwright offers ways to fake network responses to API calls, websocket messages, etc. Remember that there is no backend here, so you will need to intercept every request made by the front-end app.
+
 #### Page Object Model
 
-When conducting a significant number of tests, encountering repetitive code and common actions is typical.
-To address this issue, we recommend leveraging Page Object Models (POM).
+When writing a significant number of tests, encountering repetitive code and common actions is typical. To address this issue, we recommend leveraging **Page Object Models** (POM), which is a single class that encapsulates common locators, user interactions, etc.
 
-Page Object Models allow us to consolidate information into a single class and encapsulate it.
+POMs do not necessarily refer to entire pages but can also represent specific regions of a page that are the focus of our tests. For example, we may have a POM for the login form, or the projects section.
 
-POMs do not necessarily refer to entire pages but can also represent specific regions of a page that are the focus of our tests. For example, we may have a POM for the login form, the footer of a complex page, or the projects section.
-
-In a POM, we define locators for page elements:
+In a POM, we can define locators in the constructor itself — remember that locators will be accessed when interacted with (with a `click()`, for instance) or when asserting expectations.
 
 ```js
-class LoginPage extends BasePage {
+class LoginPage {
   constructor(page) {
-    super(page)
+    super(page);
     this.loginButton = page.getByRole("button", { name: "Login" });
     this.passwordInput = page.getByLabel("Password");
     this.emailInput = page.getByLabel("Email");
   }
-  // Other functions and methods...
+
+  // ...
 }
 ```
 
-These locators are used in assertions as follows:
+We can later use this POM and its locators:
 
 ```js
-await expect(loginPage.loginButton).toBeVisible();
+test("Sample test", async ({ page }) => {
+  const loginPage = new loginPage(page);
+  // ...
+  await expect(loginPage.loginButton).toBeVisible();
+});
 ```
 
-In addition to locators, POMs also include methods that perform actions on those elements.
+> 💡 **TIP**: Locators that are generic and meant to be used in multiple tests should be part of the POM.
+>
+> If your locator is ad-hoc for a specific test, there's no need to add it to the POM.
 
-We are simulating user actions and events users trigger, so in other to mirror real-world user interactions. To achieve this:
-
-**Use Realistic User Scenarios:** Design test cases that mimic real user scenarios and interactions with the application.
-
-**Simulate User Inputs**: Such as mouse clicks, keyboard inputs, form submissions, or touch gestures, using the testing framework's API. Mimic user interactions as closely as possible to accurately simulate user behavior.
+In addition to locators, POMs also include methods that perform common actions on those elements, like filling out a group of related input fields.
 
 ```js
-async fillEmailAndPasswordInputs(email, password) {
-  await this.emailInput.fill(email);
-  await this.passwordInput.fill(password);
+class LoginPage {
+  // ...
+  async fillEmailAndPasswordInputs(email, password) {
+    await this.emailInput.fill(email);
+    await this.passwordInput.fill(password);
+  }
 }
 ```
 
-Lastly, POMs can include interception functions necessary to load that section or page. Only include common intercepts in the POM.
+POMs can also include the interception of network requests (but only include interceptions commont to multiple tests in the POM):
 
 ```js
-async setupLoginSuccess() {
-  await this.mockRPC("login-with-password", "logged-in-user/login-with-password-success.json");
+class LoginPage {
+  // ...
+  async setupLoginSuccess() {
+    await this.mockRPC(
+      "login-with-password",
+      "logged-in-user/login-with-password-success.json"
+    );
+  }
 }
 ```
 
-With all these elements, a login test could look like this:
+Here's an example of a test that uses a POM:
 
 ```js
 test("User submits a wrong formatted email", async ({ page }) => {
   const loginPage = new LoginPage(page);
-
   await loginPage.setupLoginSuccess();
 
   await loginPage.fillEmailAndPasswordInputs("foo", "lorenIpsum");
@@ -436,106 +446,142 @@ test("User submits a wrong formatted email", async ({ page }) => {
 });
 ```
 
-#### Mocking
+#### Mocking the back-end
 
-**API calls**
+In the penpot repository there are some POMs that are meant to be extended by more specific pages. These include methods that should be useful when you write your own POMs.
 
-In order to mock API calls we just need to inherit our POM from `BasePage` and then call the method `mockRPC` like this:
+- `BasePage` contains methods to intercept network requests and return JSON data fixtures.
+
+- `BaseWebSocketPage` also can intercept websocket connections, which are a must for tests in the workspace, or any other Penpot page that uses a WebSocket.
+
+##### API calls
+
+In order to mock API calls we just need to extend from the `BasePage` POM and then call its method `mockRPC`:
 
 ```js
-export class MyPOM extends BasePage {
-  setupMyPOMRPCs() {
-    this.mockRPC("rpc/command/name", "json-file-with-fake-response.json")
-    // We can use regular expressions to match API calls.
-    this.mockRPC(/this\/can\/be\/a\/regex/, "json-file-with-fake-response.json")
-    // ...and pass options like `status` or `contentType`.
+export class FooPage extends BasePage {
+  setupNetworkResponses() {
+    this.mockRPC("lorem/ipsum", "json-file-with-fake-response.json");
+
+    // Regexes are supported too
+    this.mockRPC(
+      /a\-regex$/
+      "json-file-with-fake-response.json"
+    );
+
+    // ...You can also pass custom status code and override other options
     this.mockRPC("something/not/found", "json-file-with-fake-response.json", {
-      status: 404
-    })
+      status: 404,
+    });
   }
 }
 ```
 
-**Websockets**
+> ❗️ **IMPORTANT:** The `mockRPC` method is meant to intercept calls to Penpot's RPC API, and already prefixes the path you provide with `/api/rpc/command/`. So, if you need to intercept `/api/rpc/command/get-profile` you would just need to call `mockRPC("get-profile", "json-data.json")`.
 
-To test WebSocket communications it is necessary to initialize the `MockWebSocketHelper`. This can be done by inheriting your POM from `BaseWebSocketPage` and then calling the static method `setupWebSockets` on the `beforeEach` test hook like this:
+##### WebSockets
 
-```js
-test.beforeEach(async ({ page }) => {
-  // ... Other page initialization ...
+Any Penpot page that uses a WebSocket requires it to be intercepted and mocked. To do that, you can extend from the POM `BaseWebSocketPage` _and_ call its `initWebSockets()` methods before each test.
 
-  // In this case we call `BaseWebSocketPage` but it could be
-  // the name of your inherited class.
-  await BaseWebSocketPage.setupWebSockets(page)
-
-  // ... Other page initialization ...
-})
-```
-
-And then you should be able to `await` for a specific WebSocket endpoint with
-`waitForWebSocket` or call `waitForNotificationsWebSocket` if you want to mock
-the `/ws/notifications` WebSocket.
+Here's an an actual example from the Penpot repository:
 
 ```js
-export class MyPOM extends BaseWebSocketPage {
-  // ... Your Page Object Model code
+// frontend/playwright/ui/pages/WorkspacePage.js
+export class WorkspacePage extends BaseWebSocketPage {
+  static async init(page) {
+    await BaseWebSocketPage.init(page);
+    // ...
+  }
 }
-
-test("My test", ({ page }) => {
-  const myPOM = new MyPOM(page)
-
-  const ws = await myPOM.waitForNotificationsWebSocket()
-  // ^ this is equivalent to:
-  // const ws = await myPOM.waitForWebSocket('ws://0.0.0.0:3500/ws/notifications')
-
-  // Simulate the open event of the WebSocket.
-  ws.mockOpen()
-
-  // Simulate a message sent from the server.
-  ws.mockMessage(data)
-
-  // Simulate the close event of the WebSocket.
-  ws.mockClose()
-})
 ```
 
-### Testing best practices
+```js
+// frontend/playwright/ui/specs/workspace.spec.js
+test.beforeEach(async ({ page }) => {
+  await WorkspacePage.init(page);
+});
+```
+
+`BaseWebSocketPage` also includes methods to wait for a specific WebSocket connection and to fake sending/receiving messages.
+
+When testing the workspace, you will want to wait for the `/ws/notifications` WebSocket. There's a convenience method, `waitForNotificationsWebSocket` to do that:
+
+```js
+// frontend/playwright/ui/pages/WorkspacePage.js
+export class WorkspacePage extends BaseWebSocketPage {
+  // ...
+
+  // browses to the Workspace and waits for the /ws/notifications socket to be ready
+  // to be listened to.
+  async goToWorkspace() {
+    // ...
+    this.#ws = await this.waitForNotificationsWebSocket();
+    await this.#ws.mockOpen();
+    // ...
+  }
+
+  // sends a message over the notifications websocket
+  async sendPresenceMessage(fixture) {
+    await this.#ws.mockMessage(JSON.stringify(fixture));
+  }
+
+  // ...
+}
+```
+
+```js
+// frontend/playwright/ui/specs/workspace.spec.js
+test("User receives presence notifications updates in the workspace", async ({
+  page,
+}) => {
+  const workspacePage = new WorkspacePage(page);
+  // ...
+
+  await workspacePage.goToWorkspace();
+  await workspacePage.sendPresenceMessage(presenceFixture);
+
+  await expect(
+    page.getByTestId("active-users-list").getByAltText("Princesa Leia")
+  ).toHaveCount(2);
+});
+```
+
+### Best practices for writing tests
 
 Our best practices are based on [Testing library documentation](https://testing-library.com/docs/).
 
 This is a summary of the most important points to take into account:
 
-#### Query priority
-
-Queries are the methods to find elements on the page.
-Your test should simulate as closely as possible the way users interact with the application.
-Depending on the content of the page and the element to be selected, we will choose one method or the other following these priorities:
-
-- **Queries Accessible to Everyone**: Queries that simulate the experience of visual users or use assistive technologies.
-
-  1. [`page.getByRole`](https://playwright.dev/docs/locators#locate-by-role): This selector allows us to locate exposed elements in the [accessibility tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree).
-
-  2. [`page.getByLabel`](https://playwright.dev/docs/locators#locate-by-label): If we need to query for form fields we prefer this way.
-
-  3. [`page.getByPlaceholder`](https://playwright.dev/docs/locators#locate-by-placeholder): If your form field does not have a label you can use this locator.
-
-  4. [`page.getByText`](https://playwright.dev/docs/locators#locate-by-text): Use this selector to located non-interactionable elements such as div p, or span by its text content.
-
-- **Semantic Queries** -> These selectors comply with HTML5 and ARIA standards. However, it's important to note that the user experience when interacting with these attributes may differ significantly depending on the browser and assistive technology being used.
-
-  1. [`page.byAltText`](https://playwright.dev/docs/locators#locate-by-alt-text): If your element is one which supports alt text (img, area, input, and any custom element), then you can use this to find that element.
-
-  2. [`page.byTitle`](https://playwright.dev/docs/locators#locate-by-title): The title attribute is not consistently read by screen readers, and is not visible by default for sighted users.
-
-- **Test IDs** -> Finally, if none of the previous options is possible, we can choose to locate the element by its TestId. We must keep in mind that this type of locator is not user-oriented.
-
-  1. [`page.getByTestId`](https://playwright.dev/docs/locators#locate-by-test-id): Use this method if you can not locate by role or text.
+#### Query priority for locators
 
 For our integration tests we use Playwright, you can find more info about this library and the different locators [here](https://playwright.dev/docs/intro).
 
-Simple how-to guide on locating elements for our tests:
+Locator queries are the methods to find DOM elements in the page. Your test should simulate as closely as possible the way users interact with the application. Depending on the content of the page and the element to be selected, we will choose one method or the other following these priorities:
 
-Given this DOM structure.
+1. **Queries accessible to everyone**: Queries that simulate the experience of visual users or use assistive technologies.
+
+- [`page.getByRole`](https://playwright.dev/docs/locators#locate-by-role): To locate exposed elements in the [accessibility tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree).
+
+- [`page.getByLabel`](https://playwright.dev/docs/locators#locate-by-label): For querying form fields.
+
+- [`page.getByPlaceholder`](https://playwright.dev/docs/locators#locate-by-placeholder): For when the placeholder text is more relevant than the label (or the label does not exist).
+
+- [`page.getByText`](https://playwright.dev/docs/locators#locate-by-text): For the non-form elements that also do not have a role in the accesibility tree, but have a distintive text.
+
+2. **Semantic queries**: Less preferable than the above, since the user experience when interacting with these attributes may differ significantly depending on the browser and assistive technology being used.
+
+- [`page.byAltText`](https://playwright.dev/docs/locators#locate-by-alt-text): For elements that support `alt` text (`<img>`, `<area>`, a custom element, etc.).
+
+- [`page.byTitle`](https://playwright.dev/docs/locators#locate-by-title): For elements with a `title`.
+
+3. **Test IDs**: If none of the queries above are feasible, we can locate by the `data-testid` attribute. This locator is the least preffered since it's not user-interaction oriented.
+
+- [`page.getByTestId`](https://playwright.dev/docs/locators#locate-by-test-id): For elements with a `data-testid` attribute.
+
+#### A practical example for using locator queries.
+
+Given this DOM structure:
+
 ```html
 <form>
   <p>Penpot is the free open-...</p>
@@ -557,178 +603,61 @@ Given this DOM structure.
   <button type="submit">Login</button>
 </form>
 ```
-That represent this part of the app.
+
+The DOM above represents this part of the app:
 
 ![Login page](/img/login-locators.webp)
 
-Our first task will be to locate the login button.
+Our first task will be to locate the **login button**:
 
 ![Login Button](/img/login-btn.webp)
 
-Our initial approach involves following the instructions of the first group of locators, **Queries Accessible to Everyone**. To achieve this, we inspect the accessibility tree to gather information.
+Our initial approach involves following the instructions of the first group of locators, "Queries accessible to everyone". To achieve this, we inspect the accessibility tree to gather information:
 
 ![Accessibility tree Login Button](/img/a11y-tree-btn.webp)
 
-Having examined the accessibility tree, we identify that the button can be located by its role and name, which is our primary option.
+Having examined the accessibility tree, we identify that the button can be located by its role and name, which is our primary option:
 
 ```js
 page.getByRole("button", { name: "Login" });
 ```
 
-For selecting the input within the form, we opt for `getByLabel` as it is the recommended method for locating form inputs with available labels.
+For selecting the `<input>` within the form, we opt for `getByLabel`, as it is the recommended method for locating form inputs:
 
 ![Password input](/img/locate_by_label.webp)
-
-So we can use this in our assertions:
 
 ```js
 page.getByLabel("Password");
 ```
 
-In cases where the previous input  does not have a proper label, we can locate it by its placeholder.
-
-```js
-page.getByPlaceholder("Password");
-```
-
-When we need to locate a text with no specific role, we employ the `getByText` method.
+If we need to locate a text with no specific role, we can use the `getByText` method:
 
 ```js
 page.getByText("Penpot is the free open-");
 ```
+
 To locate the rest of the elements we continue exploring the list of queries according to the order of priority. If none of the above options match the item, we resort to `getByTestId` as a last resort.
-
-For example, we use this approach when we try to select a page element within the list of pages in our file.
-
-![Page item](/img/page-item-locator1.webp)
-
-This element has a generic role, no label or placeholder, and no title or alt text.
-
-![Page item accessibility tree information](/img/page-item-locator2.webp)
-
-Moreover, its text may change.
-
-```html
-<div data-test="page-name">Page 1</div>
-```
-In these cases, the only way to locate it is to assign a test id.
-
-```js
-page.getByTestId("page-name")
-```
-
 
 #### Assertions
 
-Assertions follow this structure:
+Assertions use Playwright's `expect` method. Here are some tips for writing your assertions:
 
-```js
-expect(query).toBeTruthy();
-```
+- **Keep assertions clear and concise:** Each assertion should verify a single expected behavior or outcome. Avoid combining multiple assertions into a single line, to maintain clarity and readability.
 
-**Keep Assertions Clear and Concise:** Each assertion should verify a single expected behavior or outcome. Avoid combining multiple assertions into a single line to maintain clarity and readability.
+- **Use descriptive assertions:** Use assertion messages that clearly communicate the purpose of the assertion.
 
-**Use Descriptive Assertions:** Use descriptive assertion messages that clearly communicate the purpose of the assertion.
+- **Favor writing assertions from the user's point of view:** For instance, whenever possible, assert things about elements that the user can see or interact with.
 
-**Preferably choose assertions from the user's point of view:**.
+- **Cover the error state of a page**: Verify that the application handles errors gracefully by asserting the presence of error messages. We do not have to cover all error cases, that will be taken care of by the unit tests.
 
-The title exists or is visible.
-
-```js
-await expect(
-  page.getByRole("heading", { name: "Log into my account" })
-).toBeVisible();
-```
-
-The url contains a given substring or regex.
-
-```js
-await expect(page).toHaveURL(/dashboard/);
-```
-
-Avoid asking for something user can not see.
-
-```js
-const locator = page.locator(".my-element");
-await expect(locator).toBeHidden();
-```
-
-**Avoid hard-coded values:** Avoid hard-coding expected values in assertions whenever possible.
-
-In this example we have the error message hard-coded on the test.
-
-```js
-test("User submits a wrong formatted email", async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const errorMessage = "Enter a valid email please";
-
-  await loginPage.setupLoginSuccess();
-
-  await loginPage.fillEmailAndPasswordInputs("foo", "lorenIpsum");
-
-  await expect(errorMessage).toBeVisible();
-});
-```
-
-It is preferable to obtain these values from a POM in which all data are encapsulated, stored and can be consulted, used and modified if necessary.
-
-```js
-test("User submits a wrong formatted email", async ({ page }) => {
-  const loginPage = new LoginPage(page);
-
-  await loginPage.setupLoginSuccess();
-
-  await loginPage.fillEmailAndPasswordInputs("foo", "lorenIpsum");
-
-  await expect(loginPage.errorLoginMessage).toBeVisible();
-});
-```
-
-**Cover the error state of a page**: Verify that the application handles errors gracefully by asserting the presence of error messages. We do not have to cover all error cases, that will be taken care of by the unit tests.
-
-```js
-await expect(
-  page.getByRole("alert", { name: "Email or password is incorrect" })
-).toBeVisible();
-```
-
-**Preferably positive assertions:** Avoid using `expect(query).not.toBeTruthy();`
-
-```js
-test("Check if user is not logged in", async () => {
-  const loginPage = new LoginPage(page);
-  const isLoggedIn = await loginPage.checkUserLoggedIn();
-
-  expect(isLoggedIn).not.toBeTruthy(); // Negative assertion
-});
-```
-
-Instead, it's better to write tests with positive assertions that explicitly verify the expected behavior. For example, we could rewrite the test to explicitly check if the user is logged out:
-
-```js
-test("Check if user is logged out", async () => {
-  const loginPage = new LoginPage(page);
-  const isLoggedIn = await loginPage.checkUserLoggedIn();
-
-  expect(isLoggedIn).toBeFalsy(); // Positive assertion for user being logged out
-});
-```
+- **Prefer positive assertions:** Avoid using `.not` in your assertions (i.e. `expect(false).not.toBeTruthy()`) —it helps with readability.
 
 #### Naming tests
 
-**User-Centric Approach:** Tests should be named from the perspective of user actions.
+- **User-centric approach:** Tests should be named from the perspective of user actions. For instance, `"User logs in successfully"` instead of `"Test login"`.
 
-Instead of `testLoginFunctionality`, use `shouldLoginSuccessfully` or `verifyLoginFailureMessage`.
+- **Descriptive names:** Test names should be descriptive, clearly indicating the action being tested.
 
-**Descriptive Names:** Test names should be descriptive, clearly indicating the action being tested.
+- **Clarity and conciseness:** Keep test names clear and concise.
 
-`shouldDisplayErrorMessageOnInvalidCredentials` communicates the expected behavior more effectively than `test1`.
-
-**Clarity and Conciseness:** Keep test names clear and concise, avoiding unnecessary verbosity.
-
-`verifyErrorMessageShownOnInvalidCredentials` is clearer than
-`ensureThatAnErrorMessageIsDisplayedWhenIncorrectCredentialsAreEntered`.
-
-**Use Action Verbs:** Start test names with action verbs to denote the action being tested.
-
-`shouldNavigateToLoginPage` or `verifySuccessfulLogout`.
+- **Use action verbs:** Start test names with action verbs to denote the action being tested. Example: `"Adds a new file to the project"`.

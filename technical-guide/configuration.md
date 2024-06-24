@@ -47,7 +47,15 @@ You also can restrict the registrations to a closed list of domains:
 ```bash
 # comma separated list of domains (backend only)
 PENPOT_REGISTRATION_DOMAIN_WHITELIST=""
+
+# OR
+PENPOT_EMAIL_DOMAIN_WHITELIST=path/to/whitelist.txt
 ```
+
+**NOTE**: Since version 2.1, email whitelisting should be explicitly
+enabled with `enable-email-whitelist`. For backward compatibility, we
+autoenable it when `PENPOT_REGISTRATION_DOMAIN_WHITELIST` is set with
+not-empty content.
 
 ### Demo users ###
 
@@ -61,9 +69,6 @@ You can enable demo users using the following variable:
 ```bash
 PENPOT_FLAGS="$PENPOT_FLAGS enable-demo-users"
 ```
-
-They are disabled by default since 1.13.0
-
 
 ### Authentication Providers
 
@@ -175,8 +180,11 @@ PENPOT_OIDC_ROLES="role1 role2"
 # not provided, the roles checking will be disabled.
 PENPOT_OIDC_ROLES_ATTR=
 ```
+<br />
 
-Since version 1.6.0:
+__Since version 1.6.0__
+
+Added the ability to specify custom OIDC scopes.
 
 ```bash
 # This settings allow overwrite the required scopes, use with caution
@@ -184,8 +192,12 @@ Since version 1.6.0:
 # user info. Optional, defaults to `openid profile`.
 PENPOT_OIDC_SCOPES="scope1 scope2"
 ```
+<br />
 
-Since version 1.12.0
+__Since version 1.12.0__
+
+Added the ability to specify the name and email attribute to use from
+the userinfo object for the profile creation.
 
 ```bash
 # Attribute to use for lookup the name on the user object. Optional,
@@ -195,6 +207,22 @@ PENPOT_OIDC_NAME_ATTR=
 # Attribute to use for lookup the email on the user object. Optional,
 # if not perovided, the `email` prop will be used.
 PENPOT_OIDC_EMAIL_ATTR=
+```
+<br />
+
+__Since version 1.19.0__
+
+Introduced the ability to lookup the user info from the token instead
+of making a request to the userinfo endpoint. This reduces the latency
+of OIDC login operations and increases compatibility with some
+providers that exposes some claims on tokens but not in userinfo
+endpoint.
+
+```bash
+# Set the default USER INFO source. Can be `token` or `userinfo`. By default
+# is unset (both will be tried, starting with token).
+
+PENPOT_OIDC_USER_INFO_SOURCE=
 ```
 
 
@@ -422,28 +450,37 @@ headless web browser).
 
 
 ## Other flags
-
-- `enable-cors`: Enables the default cors configuration that allows all domains (this
-  configuration is designed only for dev purposes right now).
-- `enable-backend-api-docs`: Enables the `/api/_doc` endpoint that lists all rpc methods
-  available on backend.
-- `enable-insecure-register`: Enables the insecure process of profile registrion
-  deactivating the email verification process (only for local or internal setups).
-- `enable-user-feedback`: Enables the feedback form at the dashboard.
+- `enable-cors`: Enables the default cors cofiguration that allows all domains (this
+  configuration is designed only for dev purposes right now)
+- `enable-backend-api-doc`: Enables the `/api/doc` endpoint that lists all rpc methods
+  available on backend
+- `enable-insecure-register`: Enables the insecure process of profile registration
+  deactivating the email verification process (only for local or internal setups)
 - `disable-secure-session-cookies`: By default, penpot uses the `secure` flag on cookies,
-  this flag disables it; it is useful if you have plan to serve penpot under different
-  domain than `localhost` without HTTPS.
-- `disable-login`: allows disable password based login form.
+  this flag disables it; it is usefull if you have plan to serve penpot under different
+  domain than `localhost` without HTTPS
+- `disable-login-with-password`: allows disable password based login form
 - `disable-registration`: disables registration (still enabled for invitations only).
-- `enable-prepl-server`: enables PREPL server, used by `manage.py` and other additional
-  tools for communicate internally with penpot backend.
+- `enable-prepl-server`: enables PREPL server, used by manage.py and other additional
+  tools for communicate internally with penpot backend
 
-Since version 1.13.0:
+__Since version 1.13.0__
 
 - `enable-log-invitation-tokens`: for cases where you don't have email configured, this
-  will log to console the invitation tokens.
+  will log to console the invitation tokens
 - `enable-log-emails`: if you want to log in console send emails. This only works if smtp
-  is not configured.
+  is not configured
+
+__Since version 2.0.0__
+
+- `disable-onboarding-team`: for disable onboarding team creation modal
+- `disable-onboarding-newsletter`: for disable onboarding newsletter modal
+- `disable-onboarding-questions`: for disable onboarding survey
+- `disable-onboarding`: for disable onboarding modal
+- `disable-dashboard-templates-section`: for hide the templates section from dashboard
+- `enable-webhooks`: for enable webhooks
+- `enable-access-tokens`: for enable access tokens
+- `disable-google-fonts-provider`: disables the google fonts provider (frontend)
 
 [1]: /technical-guide/getting-started#configure-penpot-with-elestio
 [2]: /technical-guide/getting-started#configure-penpot-with-docker
