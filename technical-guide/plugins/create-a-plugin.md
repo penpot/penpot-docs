@@ -6,11 +6,14 @@ title: 5.2. Create a Plugin
 
 This guide covers the creation of a Penpot plugin with the most popular front frameworks.
 
-You can check the examples in [Plugin examples](https://github.com/penpot/plugin-examples).
+Penpot offers two ways to kickstart your journey towards developing a plugin:
 
-**Related:**
+- Using the [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template): A basic yet functional plugin starter written in pure JavaScript.
+- Follow to the next section to understand how to bootstrap a new plugin using one of the three major JavaScript frameworks.
 
-- For the starter vanilla template go to [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template).
+<p class="advice">
+Before you start, you might want to have the <a target="_blank" href="https://github.com/penpot/plugin-examples"> Plugin examples </a> at hand.
+</p>
 
 ## Step 1. Create a project
 
@@ -64,7 +67,7 @@ If you're using typescript, don't forget to add `@penpot/plugin-types` to your t
 
 ## Step 3. Create a plugin file
 
-A plugin file is needed to interact with Penpot and its API. You can use either javascript or typescript and it can be placed wherever you like. It normally goes alongside the main files inside the `src/` folder.
+A plugin file is needed to interact with Penpot and its API. You can use either javascript or typescript and it can be placed wherever you like. It normally goes alongside the main files inside the `src/` folder. We highly recommend labeling your creation as `plugin.js` or `plugin.ts`, depending upon your preferred language.
 
 You can start with something like this:
 
@@ -77,41 +80,39 @@ penpot.ui.open("Plugin name", "", {
 
 The sizing values are optional. By default the plugin will open with a size of 285x540 pixels.
 
+## Step 4. Connect API and plugin interface
+
+To be able to interact with the Penpot API from your plugin you'll need to implement messaging-type JavaScript events.
+
+Dispatch a message from the API to your plugin interface:
+
+```js
+penpot.ui.sendMessage(message);
+```
+
+Capture incoming messages in your plugin interface using:
+
+```js
+window.addEventListener("message", (event) => {
+  \\ console.log(event.data)
+});
+```
+
+This way, any information you retrieve through the API can reach the plugin interface.
+
 Check the [Api Documentation](/technical-guide/plugins/api) for more.
 
-## Step 4. Build the plugin file
+## Step 5. Build the plugin file
 
-This step is for locally serving purposes, for a detailed guide about building and deploying you can check the documentation at [Deployment](/technical-guide/plugins/deployment).
-
-Note: if you're using javascript you can skip this step by placing the `plugin.js` file directly in your `public\` folder.
+<div class="advice">
+<p>This step is only for local serving.
+For a detailed guide about building and deploying you can check the documentation at <a target="_blank" href="/technical-guide/plugins/deployment/">Deployment</a> </p>
+<p>You can skip this step if working exclusively with JavaScript by simply moving `plugin.js` to your `public/` directory.</p>
+</div>
 
 If you wish to run your plugin locally and test it live you need to make your plugin file reachable. Right now, your `plugin.ts` file is somewhere in the `src\` folder, and you can't access it through `http://localhost:XXXX/plugin.js`.
 
 You can achieve this through multiple solutions but we offer two simple ways of doing so. Of course you can come up with your own.
-
-#### Esbuild
-
-```bash
-$ npm i -D esbuild        # install as dev dependency
-```
-
-Now you can use esbuild to parse and move your plugin file.
-
-```bash
-esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js
-```
-
-You can add it to your `package.json` scripts so you don't need to manually re-run the build:
-
-```json
-  "scripts": {
-    "start": "npm run build:plugin && ng serve",
-    "build:plugin": "esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js"
-    [...]
-  },
-```
-
-Keep in mind that you'll need to build again your plugin file if you modify it mid-serve.
 
 #### Vite
 
@@ -147,7 +148,31 @@ And then add the following scripts to your `package.json`:
 }
 ```
 
-## Step 5. Configure the manifest file
+#### Esbuild
+
+```bash
+$ npm i -D esbuild        # install as dev dependency
+```
+
+Now you can use esbuild to parse and move your plugin file.
+
+```bash
+esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js
+```
+
+You can add it to your `package.json` scripts so you don't need to manually re-run the build:
+
+```json
+  "scripts": {
+    "start": "npm run build:plugin && ng serve",
+    "build:plugin": "esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js"
+    [...]
+  },
+```
+
+Keep in mind that you'll need to build again your plugin file if you modify it mid-serve.
+
+## Step 6. Configure the manifest file
 
 Now that everything is in place you need a `manifest.json` file to provide Penpot with your plugin data. Remember to make it reachable by placing it in the `public/` folder.
 
@@ -161,7 +186,7 @@ Now that everything is in place you need a `manifest.json` file to provide Penpo
 }
 ```
 
-## Step 6. Load the Plugin in Penpot
+## Step 7. Load the Plugin in Penpot
 
 To test the plugin locally you need to serve it. Make sure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` can be reached.
 
@@ -234,6 +259,18 @@ penpot.on("themechange", (theme) => {
 function sendMessage(message) {
   penpot.ui.sendMessage(message);
 }
+```
+
+- `main.js`
+
+```js
+window.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "theme") {
+    document
+      .querySelector("#app")
+      .setAttribute("data-theme", event.data.content);
+  }
+});
 ```
 
 ### Angular
