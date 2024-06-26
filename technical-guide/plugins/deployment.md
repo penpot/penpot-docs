@@ -23,6 +23,10 @@ Examples:
 
 ## Netlify
 
+### Create an account
+
+You need a Netlify account if you don't already have one. You can [sign up](https://app.netlify.com/signup) with Github, GItlab, BItbucket or via email and password.
+
 ### CORS issues
 
 To avoid these issues you can add a `_headers` file to your plugin. Place it in the `public/` folder or alongside the main files.
@@ -31,26 +35,6 @@ To avoid these issues you can add a `_headers` file to your plugin. Place it in 
 /*
   Access-Control-Allow-Origin: *
 ```
-
-### Drag and drop
-
-Netlify offers a simple drag and drop method. Check [Netlify Drop](https://app.netlify.com/drop).
-
-#### How to deploy
-
-1. Build your project
-
-```bash
-npm run build
-```
-
-2. Go to [Netlify Drop](https://app.netlify.com/drop).
-
-3. Drag and drop the build folder into Netlify Sites. Dropping the whole dist may not work, you should drop the folder where the main files are located.
-
-![Angular dist example](/img/plugins/drag&drop.gif)
-
-4. Done!
 
 ### Connect to Git
 
@@ -70,7 +54,29 @@ Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket 
 
 3. Deploy your plugin.
 
+### Drag and drop
+
+Netlify offers a simple drag and drop method. Check [Netlify Drop](https://app.netlify.com/drop).
+
+#### How to deploy
+
+1. Build your project
+
+```bash
+npm run build
+```
+
+2. Go to [Netlify Drop](https://app.netlify.com/drop).
+
+3. Drag and drop the build folder into Netlify Sites. Dropping the whole dist may not work, you should drop the folder where the main files are located.
+
+4. Done!
+
 ## Cloudflare
+
+### Create an account
+
+You need a Cloudflare account if you don't already have one. You can [sign up](https://dash.cloudflare.com/sign-up) via email and password.
 
 ### CORS issues
 
@@ -80,6 +86,26 @@ To avoid these issues you can add a `_headers` file to your plugin. Place it in 
 /*
   Access-Control-Allow-Origin: *
 ```
+
+### Connect to Git
+
+Cloudflare allows you to import an existing project from GitHub or GitLab.
+
+- [Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/)
+
+#### How to deploy
+
+1. Go to Workers & Pages > Create > Page > Connect to git
+
+2. Select a repository. Allow Cloudflare to be installed in either all your projects or just the selected ones.
+
+![Cloudflare git installation](/img/plugins/install_cloudflare.png)
+
+4. Configure your build settings.
+
+![Cloudflare git configuration](/img/plugins/cf_build_settings.png)
+
+5. Save and deploy.
 
 ### Direct upload
 
@@ -106,26 +132,6 @@ npm run build
 ![Cloudflare page upload files](/img/plugins/cf_upload_files.png)
 
 5. Deploy site.
-
-### Connect to Git
-
-Cloudflare allows you to import an existing project from GitHub or GitLab.
-
-- [Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/)
-
-#### How to deploy
-
-1. Go to Workers & Pages > Create > Page > Connect to git
-
-2. Select a repository. Allow Cloudflare to be installed in either all your projects or just the selected ones.
-
-![Cloudflare git installation](/img/plugins/install_cloudflare.png)
-
-4. Configure your build settings.
-
-![Cloudflare git configuration](/img/plugins/cf_build_settings.png)
-
-5. Save and deploy.
 
 ## Surge
 

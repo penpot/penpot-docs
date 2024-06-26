@@ -8,14 +8,63 @@ title: 5.1. Getting started
 
 Welcome to Penpot Plugins!
 
-Penpot plugins are a piece of software that extend the functionality of the Penpot tool. They can be created by the community of by the Penpot team.
-Penpot plugins allow users to automate repetitive tasks or add new features. Developers can create plugins using Typescript and the Penpot Plugin API.
-There are a variety of utilities that can be developed, such as icon generators or assets importers.
+Plugins are the perfect tool to easily extend Penpot's functionality, you can automate repetitive tasks, add new features and much more.
+
+Plugins can be created with your favorite framework or with not framework at all. Feel free to use whatever you want because Plugins are independent from Penpot's code and therefore you don't need any extra knowledge.
+
+So, how does this works?
+
+A plugin is essentially an independent applications that can be loaded in Penpot as an iframe. Said iframe communicates with Penpot via events and API calls.
+
+The plugins will be hosted outside Penpot, and each creator need to host theirs.
 
 ## Pre-requisites
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+- Basic experience with Penpot.
+- Basic experience with JavaScript, HTML and CSS.
+- Node and npm ([How to install Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)).
+- A text editor, ideally an IDE like [VSC](<(https://code.visualstudio.com/)>) or similar.
+
+Nice to have:
+
+- Git basic knowledge.
+- A Github account or a similar service to host and share your plugin code.
+- Experience with any front framework (angular, react, vue...) for complex user interfaces.
+- A hosting service of your choice for plugin's deployment.
 
 ## Installation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+### Step 1. Penpot
+
+For testing purposes we have enabled the plugins system in https://early.penpot.dev. Just keep in mind that this is a demo service.
+
+You can also use penpot's development environment for which we have a Developer guide: [Development environment](https://help.penpot.app/technical-guide/developer/devenv/). Plugins system is enabled in the develop branch.
+
+### Step 2. Installation
+
+Now that penpot is running and the plugins system is enabled, you need to go to any project to open the plugin manager.
+
+You can open the plugin manager in any project via:
+
+- Shortcut (Ctrl + Alt + P).
+
+- Menu.
+
+  ![Penpot's plugin menu image](/img/plugins/plugin-menu.png)
+
+The plugin manager looks like this:
+
+![Penpot's plugin manager](/img/plugins/plugin-manager.png)
+
+You need to provide the plugin's manifest URL for the installation. If there's no issues the plugin will be installed and then you would be able to open it whenever you like.
+
+### Examples
+
+| Name          | URL                                                                 |
+| ------------- | ------------------------------------------------------------------- |
+| Lorem Ipsum   | https://lorem-ipsum-penpot-plugin.pages.dev/assets/manifest.json    |
+| Contrast      | https://contrast-penpot-plugin.pages.dev/assets/manifest.json       |
+| Feather icons | https://icons-penpot-plugin.pages.dev/assets/manifest.json          |
+| Tablas        | https://table-penpot-plugin.pages.dev/assets/manifest.json          |
+| Paleta Color  | https://create-palette-penpot-plugin.pages.dev/assets/manifest.json |
+| Rename layers | https://rename-layers-penpot-plugin.pages.dev/assets/manifest.json  |
