@@ -128,7 +128,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:4](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L4)
+#### Source: [index.d.ts:4](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L4)
 
 ### PenpotFile
 
@@ -269,7 +269,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:59](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L59)
+#### Source: [index.d.ts:59](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L59)
 
 ### PenpotPage
 
@@ -430,14 +430,24 @@ Returns an array of strings representing all the keys in the namespace.
 * **findShapes**
 
   ```javascript
-  findShapes(): PenpotShape[]
+  findShapes(criteria): PenpotShape[]
   ```
   Finds all shapes on the page.
+Optionaly it gets a criteria object to search for specific criteria
 
+  **Parameters:**
+
+  ```javascript
+  criteria: {
+    name: string
+    nameLike: string
+    type: undefined
+  }
+  ```
   **Returns:**
 `PenpotShape[]`
 
-#### Source: [index.d.ts:69](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L69)
+#### Source: [index.d.ts:69](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L69)
 
 ### PenpotFill
 
@@ -488,7 +498,7 @@ Defaults to 1 if omitted.
     ```
     The optional image fill defined by a PenpotImageData object.
 
-#### Source: [index.d.ts:162](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L162)
+#### Source: [index.d.ts:180](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L180)
 
 ### PenpotStroke
 
@@ -567,7 +577,7 @@ Defaults to 1 if omitted.
     ```
     The optional gradient stroke defined by a PenpotGradient object.
 
-#### Source: [index.d.ts:207](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L207)
+#### Source: [index.d.ts:225](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L225)
 
 ### PenpotColor
 
@@ -639,7 +649,7 @@ Defaults to 1 if omitted.
     ```
     The optional image fill defined by a PenpotImageData object.
 
-#### Source: [index.d.ts:255](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L255)
+#### Source: [index.d.ts:273](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L273)
 
 ### PenpotColorShapeInfoEntry
 
@@ -668,7 +678,7 @@ of the color inside that property.
     ```
     Identifier of the shape that contains the color
 
-#### Source: [index.d.ts:298](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L298)
+#### Source: [index.d.ts:316](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L316)
 
 ### PenpotColorShapeInfo
 
@@ -682,7 +692,7 @@ Additional color information for the methods to extract colors from a list of sh
     ```
     List of shapes with additional information
 
-#### Source: [index.d.ts:319](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L319)
+#### Source: [index.d.ts:337](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L337)
 
 ### PenpotShadow
 
@@ -749,7 +759,7 @@ Defaults to false if omitted.
     ```
     The optional color of the shadow, defined by a PenpotColor object.
 
-#### Source: [index.d.ts:330](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L330)
+#### Source: [index.d.ts:348](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L348)
 
 ### PenpotBlur
 
@@ -787,7 +797,7 @@ Currently, only 'layer-blur' is supported.
     Specifies whether the blur effect is hidden.
 Defaults to false if omitted.
 
-#### Source: [index.d.ts:372](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L372)
+#### Source: [index.d.ts:390](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L390)
 
 ### PenpotFrameGuideColumnParams
 
@@ -842,7 +852,7 @@ This interface includes properties for defining the appearance and layout of col
     ```
     The optional gutter width between columns.
 
-#### Source: [index.d.ts:397](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L397)
+#### Source: [index.d.ts:415](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L415)
 
 ### PenpotFrameGuideSquareParams
 
@@ -865,7 +875,7 @@ This interface includes properties for defining the appearance and size of squar
     ```
     The optional size of each square guide.
 
-#### Source: [index.d.ts:432](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L432)
+#### Source: [index.d.ts:450](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L450)
 
 ### PenpotFrameGuideColumn
 
@@ -894,7 +904,7 @@ This interface includes properties for defining the type, visibility, and parame
     ```
     The parameters defining the appearance and layout of the column guides.
 
-#### Source: [index.d.ts:447](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L447)
+#### Source: [index.d.ts:465](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L465)
 
 ### PenpotFrameGuideRow
 
@@ -924,7 +934,7 @@ This interface includes properties for defining the type, visibility, and parame
     The parameters defining the appearance and layout of the row guides.
 Note: This reuses the same parameter structure as column guides.
 
-#### Source: [index.d.ts:466](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L466)
+#### Source: [index.d.ts:484](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L484)
 
 ### PenpotFrameGuideSquare
 
@@ -935,9 +945,9 @@ This interface includes properties for defining the type, visibility, and parame
 * **type**
 
     ```javascript
-    type: "column"
+    type: "square"
     ```
-    The type of the guide, which is always 'column' for square guides.
+    The type of the guide, which is always 'square' for square guides.
 
 * **display**
 
@@ -953,7 +963,7 @@ This interface includes properties for defining the type, visibility, and parame
     ```
     The parameters defining the appearance and layout of the square guides.
 
-#### Source: [index.d.ts:486](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L486)
+#### Source: [index.d.ts:504](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L504)
 
 ### PenpotExport
 
@@ -982,7 +992,7 @@ This interface includes properties for defining export configurations.
     ```
     Suffix that will be appended to the resulting exported file
 
-#### Source: [index.d.ts:514](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L514)
+#### Source: [index.d.ts:532](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L532)
 
 ### PenpotTrack
 
@@ -1010,7 +1020,7 @@ This can be one of the following values:
     The value of the track.
 This can be a number representing the size of the track, or null if not applicable.
 
-#### Source: [index.d.ts:539](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L539)
+#### Source: [index.d.ts:557](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L557)
 
 ### PenpotCommonLayout
 
@@ -1161,7 +1171,7 @@ It can be one of the following values:
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:560](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L560)
+#### Source: [index.d.ts:578](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L578)
 
 ### PenpotGridLayout
 
@@ -1534,7 +1544,7 @@ This property is read-only.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:680](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L680)
+#### Source: [index.d.ts:698](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L698)
 
 ### PenpotFlexLayout
 
@@ -1724,7 +1734,7 @@ It can be one of the following values:
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:762](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L762)
+#### Source: [index.d.ts:780](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L780)
 
 ### PenpotPathCommand
 
@@ -1776,7 +1786,7 @@ Possible values include:
 
   * **sweepFlag**
 
-#### Source: [index.d.ts:788](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L788)
+#### Source: [index.d.ts:806](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L806)
 
 ### PenpotLayoutChildProperties
 
@@ -1911,7 +1921,7 @@ If set to null, there is no minimum width constraint.
     Defines the minimum height of the child element.
 If set to null, there is no minimum height constraint.
 
-#### Source: [index.d.ts:889](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L889)
+#### Source: [index.d.ts:907](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L907)
 
 ### PenpotLayoutCellProperties
 
@@ -1966,7 +1976,7 @@ This value is optional and can be used to define named grid areas.
     The positioning mode of the cell.
 This value can be 'auto', 'manual', or 'area' and determines how the cell is positioned within the layout.
 
-#### Source: [index.d.ts:991](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L991)
+#### Source: [index.d.ts:1009](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1009)
 
 ### PenpotShapeBase
 
@@ -2173,7 +2183,7 @@ This interface provides common properties and methods shared by all shapes.
 * **fills**
 
     ```javascript
-    fills: PenpotFill[]
+    fills: mixed | 
     ```
     The fills applied to the shape.
 
@@ -2447,7 +2457,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1033](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1033)
+#### Source: [index.d.ts:1051](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1051)
 
 ### PenpotFrame
 
@@ -2651,13 +2661,6 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -2740,6 +2743,13 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     verticalSizing?: auto | fix
     ```
     The vertical sizing behavior of the frame.
+
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
 
 * **children**
 
@@ -3038,7 +3048,7 @@ Returns the grid layout configuration added to the frame.
   **Returns:**
 `PenpotGridLayout`
 
-#### Source: [index.d.ts:1293](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1293)
+#### Source: [index.d.ts:1311](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1311)
 
 ### PenpotGroup
 
@@ -3245,7 +3255,7 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
 * **fills**
 
     ```javascript
-    fills: PenpotFill[]
+    fills: mixed | 
     ```
     The fills applied to the shape.
 
@@ -3603,7 +3613,7 @@ A mask defines a clipping path for its child shapes.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1356](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1356)
+#### Source: [index.d.ts:1379](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1379)
 
 ### PenpotBool
 
@@ -3807,13 +3817,6 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -3868,6 +3871,13 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     content: PenpotPathCommand[]
     ```
     The content of the boolean shape, defined as an array of path commands.
+
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
 
 * **children**
 
@@ -4155,7 +4165,7 @@ Returns the path data (d attribute) as a string.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1409](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1409)
+#### Source: [index.d.ts:1432](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1432)
 
 ### PenpotRectangle
 
@@ -4359,13 +4369,6 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -4413,6 +4416,13 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
     type: "rect"
     ```
     The type of the shape, which is always 'rect' for rectangle shapes.
+
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
 
 #### Methods
 * **getPluginData**
@@ -4643,7 +4653,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1447](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1447)
+#### Source: [index.d.ts:1475](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1475)
 
 ### PenpotPath
 
@@ -4847,13 +4857,6 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -4908,6 +4911,13 @@ This interface extends  `PenpotShapeBase`  and includes properties and methods s
     content: PenpotPathCommand[]
     ```
     The content of the path shape, defined as an array of path commands.
+
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
 
 #### Methods
 * **getPluginData**
@@ -5149,7 +5159,7 @@ Returns the path data (d attribute) as a string.
   **Returns:**
 `string`
 
-#### Source: [index.d.ts:1458](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1458)
+#### Source: [index.d.ts:1491](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1491)
 
 ### PenpotTextRange
 
@@ -5209,7 +5219,7 @@ This interface provides properties for styling and formatting text ranges.
 * **fontStyle**
 
     ```javascript
-    fontStyle: string
+    fontStyle: null | mixed | normal | italic
     ```
     The font style of the text range. It can be a specific font style or 'mixed' if multiple font styles are used.
 
@@ -5230,42 +5240,42 @@ This interface provides properties for styling and formatting text ranges.
 * **textTransform**
 
     ```javascript
-    textTransform: string
+    textTransform: null | mixed | none | uppercase | capitalize | lowercase
     ```
     The text transform applied to the text range. It can be a specific text transform or 'mixed' if multiple text transforms are used.
 
 * **textDecoration**
 
     ```javascript
-    textDecoration: string
+    textDecoration: null | mixed | none | underline | line-through
     ```
     The text decoration applied to the text range. It can be a specific text decoration or 'mixed' if multiple text decorations are used.
 
 * **direction**
 
     ```javascript
-    direction: string
+    direction: null | mixed | ltr | rtl
     ```
     The text direction for the text range. It can be a specific direction or 'mixed' if multiple directions are used.
 
 * **fills**
 
     ```javascript
-    fills: PenpotFill[]
+    fills: mixed | 
     ```
     The fill styles applied to the text range.
 
 * **align**
 
     ```javascript
-    align: string
+    align: null | center | mixed | left | right | justify
     ```
     The horizontal alignment of the text range. It can be a specific alignment or 'mixed' if multiple alignments are used.
 
 * **verticalAlign**
 
     ```javascript
-    verticalAlign: string
+    verticalAlign: null | center | mixed | top | bottom
     ```
     The vertical alignment of the text range. It can be a specific alignment or 'mixed' if multiple alignments are used.
 
@@ -5289,7 +5299,7 @@ This method sets various typography properties for the text range according to t
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1478](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1478)
+#### Source: [index.d.ts:1516](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1516)
 
 ### PenpotText
 
@@ -5496,7 +5506,7 @@ It includes various properties to define the text content and its styling attrib
 * **fills**
 
     ```javascript
-    fills: PenpotFill[]
+    fills: mixed | 
     ```
     The fills applied to the shape.
 
@@ -5604,7 +5614,7 @@ Possible values are:
 * **fontStyle**
 
     ```javascript
-    fontStyle: string
+    fontStyle: null | mixed | normal | italic
     ```
     The font style used in the text shape, or 'mixed' if multiple font styles are used.
 
@@ -5625,35 +5635,35 @@ Possible values are:
 * **textTransform**
 
     ```javascript
-    textTransform: string
+    textTransform: null | mixed | uppercase | capitalize | lowercase
     ```
     The text transform applied to the text shape, or 'mixed' if multiple text transforms are used.
 
 * **textDecoration**
 
     ```javascript
-    textDecoration: string
+    textDecoration: null | mixed | underline | line-through
     ```
     The text decoration applied to the text shape, or 'mixed' if multiple text decorations are used.
 
 * **direction**
 
     ```javascript
-    direction: string
+    direction: null | mixed | ltr | rtl
     ```
     The text direction for the text shape, or 'mixed' if multiple directions are used.
 
 * **align**
 
     ```javascript
-    align: string
+    align: null | center | mixed | left | right | justify
     ```
     The horizontal alignment of the text shape. It can be a specific alignment or 'mixed' if multiple alignments are used.
 
 * **verticalAlign**
 
     ```javascript
-    verticalAlign: string
+    verticalAlign: null | center | top | bottom
     ```
     The vertical alignment of the text shape. It can be a specific alignment or 'mixed' if multiple alignments are used.
 
@@ -5930,7 +5940,7 @@ Returns a PenpotTextRange object representing the specified text range.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1571](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1571)
+#### Source: [index.d.ts:1615](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1615)
 
 ### PenpotEllipse
 
@@ -6134,13 +6144,6 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to e
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -6187,6 +6190,13 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to e
     ```javascript
     type: "circle"
     ```
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
+
 #### Methods
 * **getPluginData**
 
@@ -6416,7 +6426,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1691](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1691)
+#### Source: [index.d.ts:1719](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1719)
 
 ### PenpotSvgRaw
 
@@ -6623,7 +6633,7 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to r
 * **fills**
 
     ```javascript
-    fills: PenpotFill[]
+    fills: mixed | 
     ```
     The fills applied to the shape.
 
@@ -6902,7 +6912,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1699](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1699)
+#### Source: [index.d.ts:1732](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1732)
 
 ### PenpotImage
 
@@ -7106,13 +7116,6 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to i
     ```
     Returns the rotation in degrees of the shape with respect to it's center.
 
-* **fills**
-
-    ```javascript
-    fills: PenpotFill[]
-    ```
-    The fills applied to the shape.
-
 * **strokes**
 
     ```javascript
@@ -7159,6 +7162,13 @@ This interface extends  `PenpotShapeBase`  and includes properties specific to i
     ```javascript
     type: "image"
     ```
+* **fills**
+
+    ```javascript
+    fills: PenpotFill[]
+    ```
+    The fills applied to the shape.
+
 #### Methods
 * **getPluginData**
 
@@ -7388,7 +7398,7 @@ Returns a new instance of the shape with identical properties.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1707](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1707)
+#### Source: [index.d.ts:1740](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1740)
 
 ### PenpotViewport
 
@@ -7411,7 +7421,7 @@ It includes the center point, zoom level, and the bounds of the viewport.
     ```javascript
     bounds: PenpotBounds
     ```
-#### Source: [index.d.ts:1731](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1731)
+#### Source: [index.d.ts:1781](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1781)
 
 ### EventsMap
 
@@ -7455,7 +7465,7 @@ This event passes a list of identifiers of the selected elements.
     ```
     The  `finish`  event is triggered when some operation is finished.
 
-#### Source: [index.d.ts:1756](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1756)
+#### Source: [index.d.ts:1806](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1806)
 
 ### PenpotLibraryElement
 
@@ -7609,7 +7619,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `string[]`
 
-#### Source: [index.d.ts:1789](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1789)
+#### Source: [index.d.ts:1839](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1839)
 
 ### PenpotLibraryColor
 
@@ -7825,7 +7835,7 @@ Returns a  `PenpotStroke`  object representing the color as a stroke.
   **Returns:**
 `PenpotStroke`
 
-#### Source: [index.d.ts:1815](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1815)
+#### Source: [index.d.ts:1865](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1865)
 
 ### PenpotLibraryTypography
 
@@ -7899,7 +7909,7 @@ This interface extends  `PenpotLibraryElement`  and includes properties specific
 * **fontStyle**
 
     ```javascript
-    fontStyle: string
+    fontStyle?: null | normal | italic
     ```
     The font style of the typography element.
 
@@ -7920,7 +7930,7 @@ This interface extends  `PenpotLibraryElement`  and includes properties specific
 * **textTransform**
 
     ```javascript
-    textTransform: string
+    textTransform?: null | uppercase | capitalize | lowercase
     ```
     The text transform applied to the typography element.
 
@@ -8115,7 +8125,7 @@ Returns an array of strings representing all the keys in the namespace.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:1860](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1860)
+#### Source: [index.d.ts:1910](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1910)
 
 ### PenpotLibraryComponent
 
@@ -8291,7 +8301,7 @@ Returns a  `PenpotShape`  object representing the instance of the component.
   **Returns:**
 `PenpotShape`
 
-#### Source: [index.d.ts:1942](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1942)
+#### Source: [index.d.ts:1992](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1992)
 
 ### PenpotLibrarySummary
 
@@ -8334,7 +8344,7 @@ This interface provides properties for summarizing various aspects of a Penpot l
     ```
     The number of typographies in the library.
 
-#### Source: [index.d.ts:1963](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1963)
+#### Source: [index.d.ts:2013](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2013)
 
 ### PenpotLibrary
 
@@ -8553,7 +8563,7 @@ Returns a new  `PenpotLibraryComponent`  object representing the created compone
   **Returns:**
 `PenpotLibraryComponent`
 
-#### Source: [index.d.ts:1993](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1993)
+#### Source: [index.d.ts:2043](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2043)
 
 ### PenpotFontVariant
 
@@ -8585,11 +8595,11 @@ This interface provides properties for describing the characteristics of a font 
 * **fontStyle**
 
     ```javascript
-    fontStyle: string
+    fontStyle: normal | italic
     ```
     The font style of the font variant.
 
-#### Source: [index.d.ts:2103](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2103)
+#### Source: [index.d.ts:2153](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2153)
 
 ### PenpotFont
 
@@ -8621,7 +8631,7 @@ This interface provides properties and methods for describing and applying fonts
 * **fontStyle**
 
     ```javascript
-    fontStyle: string
+    fontStyle?: null | normal | italic
     ```
     The default font style of the font.
 
@@ -8689,7 +8699,7 @@ This interface provides properties and methods for describing and applying fonts
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:2129](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2129)
+#### Source: [index.d.ts:2179](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2179)
 
 ### PenpotFontsContext
 
@@ -8781,7 +8791,7 @@ Returns an array of  `PenpotFont`  objects matching the provided name.
   **Returns:**
 `PenpotFont[]`
 
-#### Source: [index.d.ts:2184](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2184)
+#### Source: [index.d.ts:2234](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2234)
 
 ### PenpotUser
 
@@ -8853,7 +8863,7 @@ Represents a user in Penpot.
     const sessionId = user.sessionId;
     ```
 
-#### Source: [index.d.ts:2222](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2222)
+#### Source: [index.d.ts:2272](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2272)
 
 ### PenpotActiveUser
 
@@ -8953,7 +8963,7 @@ This interface includes additional properties specific to active users.
     const userZoom = activeUser.zoom;
     ```
 
-#### Source: [index.d.ts:2273](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2273)
+#### Source: [index.d.ts:2323](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2323)
 
 ### PenpotContext
 
@@ -9473,7 +9483,7 @@ Returns the new created shape, if the shape wasn't created can return null.
   **Returns:**
 `void`
 
-#### Source: [index.d.ts:2295](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2295)
+#### Source: [index.d.ts:2345](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2345)
 
 ### PenpotContextGeometryUtils
 
@@ -9500,7 +9510,7 @@ Returns the center point as an object with  `x`  and  `y`  coordinates, or null 
   **Returns:**
 `null | `
 
-#### Source: [index.d.ts:2565](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2565)
+#### Source: [index.d.ts:2615](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2615)
 
 ### PenpotContextTypesUtils
 
@@ -9678,7 +9688,7 @@ Returns true if the shape is a PenpotSvgRaw, otherwise false.
   **Returns:**
 `undefined`
 
-#### Source: [index.d.ts:2579](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2579)
+#### Source: [index.d.ts:2629](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2629)
 
 ### PenpotContextUtils
 
@@ -9701,7 +9711,7 @@ Provides methods for geometric calculations, such as finding the center of a gro
     Type utility methods for Penpot.
 Provides methods for determining the types of various shapes in Penpot.
 
-#### Source: [index.d.ts:2647](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2647)
+#### Source: [index.d.ts:2697](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2697)
 
 ### Penpot
 
@@ -10347,7 +10357,7 @@ Returns the new created shape, if the shape wasn't created can return null.
   **Returns:**
 `string`
 
-#### Source: [index.d.ts:2664](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2664)
+#### Source: [index.d.ts:2714](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2714)
 
 ## Type Aliases
 
@@ -10359,7 +10369,7 @@ A gradient can be either linear or radial and includes properties to define its 
 ```javascript
 PenpotGradient: undefined
 ```
-#### Source: [index.d.ts:93](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L93)
+#### Source: [index.d.ts:111](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L111)
 
 ### PenpotImageData
 
@@ -10369,7 +10379,7 @@ This includes properties for defining the image's dimensions, metadata, and aspe
 ```javascript
 PenpotImageData: undefined
 ```
-#### Source: [index.d.ts:130](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L130)
+#### Source: [index.d.ts:148](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L148)
 
 ### PenpotStrokeCap
 
@@ -10379,7 +10389,7 @@ This type defines various styles for the ends of a stroke.
 ```javascript
 PenpotStrokeCap: round | square | line-arrow | triangle-arrow | square-marker | circle-marker | diamond-marker
 ```
-#### Source: [index.d.ts:194](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L194)
+#### Source: [index.d.ts:212](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L212)
 
 ### PenpotFrameGuide
 
@@ -10389,7 +10399,7 @@ This type can be one of several specific frame guide types: column, row, or squa
 ```javascript
 PenpotFrameGuide: PenpotFrameGuideColumn | PenpotFrameGuideRow | PenpotFrameGuideSquare
 ```
-#### Source: [index.d.ts:505](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L505)
+#### Source: [index.d.ts:523](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L523)
 
 ### PenpotTrackType
 
@@ -10399,7 +10409,7 @@ This type defines various track types that can be used in layout configurations.
 ```javascript
 PenpotTrackType: flex | fixed | percent | auto
 ```
-#### Source: [index.d.ts:533](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L533)
+#### Source: [index.d.ts:551](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L551)
 
 ### PenpotBoolType
 
@@ -10409,7 +10419,7 @@ These types define how shapes can be combined or modified using boolean operatio
 ```javascript
 PenpotBoolType: union | difference | exclude | intersection
 ```
-#### Source: [index.d.ts:1399](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1399)
+#### Source: [index.d.ts:1422](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1422)
 
 ### PenpotPoint
 
@@ -10418,7 +10428,7 @@ PenpotPoint represents a point in 2D space, typically with x and y coordinates.
 ```javascript
 PenpotPoint: undefined
 ```
-#### Source: [index.d.ts:1714](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1714)
+#### Source: [index.d.ts:1752](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1752)
 
 ### PenpotBounds
 
@@ -10428,7 +10438,7 @@ defined by the coordinates of the top-left corner and the dimensions of the rect
 ```javascript
 PenpotBounds: undefined
 ```
-#### Source: [index.d.ts:1720](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1720)
+#### Source: [index.d.ts:1758](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1758)
 
 ### PenpotShape
 
@@ -10438,7 +10448,7 @@ This type allows for different shapes to be handled under a single type umbrella
 ```javascript
 PenpotShape: PenpotFrame | PenpotGroup | PenpotBool | PenpotRectangle | PenpotPath | PenpotText | PenpotEllipse | PenpotSvgRaw | PenpotImage
 ```
-#### Source: [index.d.ts:1741](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1741)
+#### Source: [index.d.ts:1791](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1791)
 
 ### PenpotTheme
 
@@ -10447,7 +10457,7 @@ This type specifies the possible themes: 'light' or 'dark'.
 ```javascript
 PenpotTheme: light | dark
 ```
-#### Source: [index.d.ts:1783](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L1783)
+#### Source: [index.d.ts:1833](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L1833)
 
 ### PenpotLibraryContext
 
@@ -10457,5 +10467,5 @@ This type contains references to the local library and an array of connected lib
 ```javascript
 PenpotLibraryContext: undefined
 ```
-#### Source: [index.d.ts:2055](https://github.com/penpot/penpot-plugins/blob/00a15652092f68efde48f68c35269e08ebae330c/libs/plugin-types/index.d.ts#L2055)
+#### Source: [index.d.ts:2105](https://github.com/penpot/penpot-plugins/blob/8cd51c29f106ad435352af7405b209d20bfddae0/libs/plugin-types/index.d.ts#L2105)
 
