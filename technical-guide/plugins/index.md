@@ -12,3 +12,4 @@ Whether you want to install an existing plugin or learn how to create your own, 
 [2]: /technical-guide/plugins/create-a-plugin/
 [3]: /technical-guide/plugins/deployment/
 [4]: /technical-guide/plugins/api/
+[5]: /technical-guide/plugins/faq/
