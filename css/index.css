@@ -902,7 +902,6 @@ table {
 /* th {
   background: rgba(0,0,0,.06);
 } */
-table>tbody>tr:first-child>td,
 table>thead>tr:first-child>th {
     font-weight: bold;
     background: none repeat scroll 0 0 #ededed;
