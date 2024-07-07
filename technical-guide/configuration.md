@@ -291,7 +291,14 @@ The username and password are optional.
 ### Email (SMTP)
 
 By default, when no SMTP (email) is configured, the email will be printed to the console,
-which means that the emails will be shown in the stdout. If you have an SMTP service,
+which means that the emails will be shown in the stdout. 
+
+Note that if you plan to invite members to a team, it is recommended that you enable SMTP
+as they will need to login to their account after recieving the invite link sent an in email.
+It is currently not possible to just add someone to a team without them accepting an 
+invatation email.
+
+If you have an SMTP service,
 uncomment the appropriate settings section in `docker-compose.yml` and configure those
 environment variables.
 
