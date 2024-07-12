@@ -8,7 +8,7 @@ This guide covers the creation of a Penpot plugin with the most popular front fr
 
 Penpot offers two ways to kickstart your journey towards developing a plugin:
 
-- Using the [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template): A basic yet functional plugin starter written in pure JavaScript.
+- Using the [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template): A basic template with the required files for quickstarting your plugin. This template uses Typescript and Vite.
 - Follow to the next section to understand how to bootstrap a new plugin using one of the three major JavaScript frameworks.
 
 <p class="advice">
