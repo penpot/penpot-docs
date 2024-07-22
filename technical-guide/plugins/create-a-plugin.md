@@ -194,11 +194,15 @@ Now that everything is in place you need a `manifest.json` file to provide Penpo
 
 Types of permissions:
 
-- read content of files `content:read`
-- modify content of files `content:write`
-- read user info `user:read`
-- read libraries and assets `library:read`
-- modify libraries and assets `library:write`
+- `content:read`: Allows reading of content-related data. Grants read access to all endpoints and operations dealing with content. Typical use cases: viewing shapes, pages, or other design elements in a project; accessing the properties and settings of content within the application.
+
+- `content:write`: Allows writing or modifying content-related data. Grants write access to all endpoints and operations dealing with content modifications, except those marked as read-only. Typical use cases: adding, updating, or deleting shapes and elements in a design; uploading media or other assets to the project.
+
+- `user:read`: Allows reading of user-related data. Grants read access to all endpoints and operations dealing with user data. Typical use cases: viewing user profiles and their associated information or listing active users in a particular context or project.
+
+- `library:read`: Allows reading of library-related data and assets. Grants read access to all endpoints and operations dealing with the library context. Typical use cases: accessing shared design elements and components from a library or viewing the details and properties of library assets.
+
+- `library:write`: Allows writing or modifying library-related data and assets. Grants write access to all endpoints and operations dealing with library modifications. Typical use cases: adding new components or assets to the library or updating or removing existing library elements.
 
 ## Step 7. Load the Plugin in Penpot
 
