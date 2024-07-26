@@ -157,7 +157,7 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/penpot/penpot/main
 Then simply launch composer:
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml up -d
+docker-compose -p penpot -f docker-compose.yaml up -d
 ```
 
 At the end it will start listening on http://localhost:9001
@@ -168,7 +168,7 @@ At the end it will start listening on http://localhost:9001
 If you want to stop running Penpot, just type
 
 ```bash
-docker compose -p penpot -f docker-compose.yaml down
+docker-compose -p penpot -f docker-compose.yaml down
 ```
 
 
@@ -209,7 +209,7 @@ To get the latest version of Penpot in your local installation, you just need to
 execute:
 
 ```bash
-docker compose -f docker-compose.yaml pull
+docker-compose -f docker-compose.yaml pull
 ```
 
 This will fetch the latest images. When you do `docker compose up` again, the
