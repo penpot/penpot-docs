@@ -44,11 +44,15 @@ With the plugins system enabled, you need to go to any project to open the plugi
 
 You can open the plugin manager in any project via:
 
-- Shortcut (Ctrl + Alt + P).
+##### Shortcut #####
 
-- Menu.
+| Linux and Windows                         | macOS                                  |
+| ----------------------------------------- | -------------------------------------- |
+| <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>P</kbd> | <kbd>⌘</kbd><kbd>Alt</kbd><kbd>P</kbd> |
 
-  ![Penpot's plugin menu image](/img/plugins/plugin-menu.png)
+##### Menu #####
+
+![Penpot's plugin menu image](/img/plugins/plugin-menu.png)
 
 The plugin manager looks like this:
 
