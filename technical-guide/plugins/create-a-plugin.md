@@ -17,7 +17,7 @@ Before you start, you might want to have the <a target="_blank" href="https://gi
 
 ## Step 1. Create a project
 
-Create your own app with the framework of your choice.
+Create your own app with the framework of your choice. See examples for each framework <a target="_blank" href="https://github.com/penpot/plugin-examples"> here </a>
 
 | Framework | Command                                                     | Version\* |
 | --------- | ----------------------------------------------------------- | --------- |
