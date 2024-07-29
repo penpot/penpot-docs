@@ -10,11 +10,11 @@ Currently we are using the v22.2.0
 
 ### Should I create my plugin for dark and light themes?
 
-It’s not obligatory but keep in mind that the containing modal will change colors automatically to match Penpot’s theme. Check the [documentation](</technical-guide/plugins/create-a-plugin/#penpot-theme-(optional)>) for an example on how to apply dark and light themes to your plugin.
+It’s not obligatory but keep in mind that the containing modal will change colors automatically to match Penpot’s theme. Check the <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#penpot-theme-(optional)">documentation</a> for an example on how to apply dark and light themes to your plugin.
 
 ### Should I always host my plugin?
 
-By the time being any and all plugins must be hosted independently and outside the Penpot environment. Check the [documentation](/technical-guide/plugins/deployment/) for a guide on how to deploy your plugin on some deployment services like Netlify or Cloudflare.
+By the time being any and all plugins must be hosted independently and outside the Penpot environment. Check the <a target="_blank" href="/technical-guide/plugins/deployment/">documentation</a> for a guide on how to deploy your plugin on some deployment services like Netlify or Cloudflare.
 
 ### Is there any way to export my figma plugins to penpot?
 
@@ -30,7 +30,7 @@ The name of the plugin should be short and followed by the suffix ‘-plugins’
 
 ### Which framework do you recommend for creating the plugin?
 
-Any framework you are familiar with would be a good choice. Our examples are in vue, angular and react. Check the [documentation](/technical-guide/plugins/create-a-plugin/#step-1.-create-a-project)
+Any framework you are familiar with would be a good choice. Our examples are in vue, angular and react. Check the <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#step-1.-create-a-project">documentation</a>
 
 ### Is it necessary to use the plugin styles library?
 
@@ -42,11 +42,11 @@ Not yet, but it’s being considered for a second phase.
 
 ### Are there any security or quality criteria I should be aware of?
 
-There are no set requirements. However, we can recommend the use of [eslint](https://typescript-eslint.io/) or [prettier](https://prettier.io/), which is what we use.
+There are no set requirements. However, we can recommend the use of <a target="_blank" href="https://typescript-eslint.io/">eslint</a> or <a target="_blank" href="https://prettier.io/">prettier</a>, which is what we use.
 
 ### Is it necessary to create plugins with a UI?
 
-No, it’s completely optional, in fact, we have an example of a plugin without UI. Try the plugin using this url to install it: `https://create-palette-penpot-plugin.pages.dev/assets/manifest.json` or check the code [here](https://github.com/penpot/penpot-plugins/tree/main/apps/create-palette-plugin)
+No, it’s completely optional, in fact, we have an example of a plugin without UI. Try the plugin using this url to install it: `https://create-palette-penpot-plugin.pages.dev/assets/manifest.json` or check the code <a target="_blank" href="https://github.com/penpot/penpot-plugins/tree/main/apps/create-palette-plugin">here</a>
 
 ### Can I create components?
 
@@ -56,15 +56,15 @@ Yes, it is possible to create components using:
 createComponent(shapes: PenpotShape[]): PenpotLibraryComponent;
 ```
 
-Check PenpotLibrary methods in the [API documentation](/technical-guide/plugins/api/#penpotlibrary)
+Check PenpotLibrary methods in the <a target="_blank" href="/technical-guide/plugins/api/#penpotlibrary">API documentation</a>
 
 ### Is there a place where I can share my plugin?
 
-You will be able to share your plugin with the [Penpot community](https://community.penpot.app/). In the future, we plan to create a place where we will publish the plugins we know about, but this is still something we have to define.
+You will be able to share your plugin with the <a target="_blank" href="https://community.penpot.app/">Penpot community</a>. In the future, we plan to create a place where we will publish the plugins we know about, but this is still something we have to define.
 
 ### My plugin works on my local machine, but I couldn’t install it on Penpot. What could be the problem?
 
-The url you that you need to provide in the plugin manager should look [like this](/technical-guide/plugins/create-a-plugin/#step-6.-configure-the-manifest-file): `https://yourdomain.com/assents/manifest.json`
+The url you that you need to provide in the plugin manager should look <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#step-6.-configure-the-manifest-file">like this</a>: `https://yourdomain.com/assents/manifest.json`
 
 ### Where can I get support if I find a bug or an unexpected behavior?
 

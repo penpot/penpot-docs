@@ -25,7 +25,7 @@ Examples:
 
 ### Create an account
 
-You need a Netlify account if you don't already have one. You can [sign up](https://app.netlify.com/signup) with Github, GItlab, BItbucket or via email and password.
+You need a Netlify account if you don't already have one. You can <a target="_blank" href="https://app.netlify.com/signup">sign up</a> with Github, GItlab, BItbucket or via email and password.
 
 ### CORS issues
 
@@ -40,11 +40,11 @@ To avoid these issues you can add a `_headers` file to your plugin. Place it in 
 
 Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket or Azure DevOps.
 
-- [Configure builds](https://docs.netlify.com/configure-builds/overview/).
+- <a target="_blank" href="https://docs.netlify.com/configure-builds/overview/">Configure builds</a>.
 
 #### How to deploy
 
-1. Go to [Start](https://app.netlify.com/start) and connect with your repository. Allow Netlify to be installed in either all your projects or just the selected ones.
+1. Go to <a target="_blank" href="https://app.netlify.com/start">Start</a> and connect with your repository. Allow Netlify to be installed in either all your projects or just the selected ones.
 
 ![Netlify git installation](/img/plugins/install_netlify.png)
 
@@ -56,7 +56,7 @@ Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket 
 
 ### Drag and drop
 
-Netlify offers a simple drag and drop method. Check [Netlify Drop](https://app.netlify.com/drop).
+Netlify offers a simple drag and drop method. Check <a target="_blank" href="https://app.netlify.com/drop">Netlify Drop</a>.
 
 #### How to deploy
 
@@ -66,7 +66,7 @@ Netlify offers a simple drag and drop method. Check [Netlify Drop](https://app.n
 npm run build
 ```
 
-2. Go to [Netlify Drop](https://app.netlify.com/drop).
+2. Go to <a target="_blank" href="https://app.netlify.com/drop">Netlify Drop</a>.
 
 3. Drag and drop the build folder into Netlify Sites. Dropping the whole dist may not work, you should drop the folder where the main files are located.
 
@@ -76,7 +76,7 @@ npm run build
 
 ### Create an account
 
-You need a Cloudflare account if you don't already have one. You can [sign up](https://dash.cloudflare.com/sign-up) via email and password.
+You need a Cloudflare account if you don't already have one. You can <a target="_blank" href="https://dash.cloudflare.com/sign-up">sign up</a> via email and password.
 
 ### CORS issues
 
@@ -91,7 +91,7 @@ To avoid these issues you can add a `_headers` file to your plugin. Place it in 
 
 Cloudflare allows you to import an existing project from GitHub or GitLab.
 
-- [Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/)
+- <a target="_blank" href="https://developers.cloudflare.com/pages/get-started/git-integration/">Git integration</a>
 
 #### How to deploy
 
@@ -111,7 +111,7 @@ Cloudflare allows you to import an existing project from GitHub or GitLab.
 
 You can directly upload your plugin folder.
 
-- [Direct upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)
+- <a target="_blank" href="https://developers.cloudflare.com/pages/get-started/direct-upload/">Direct upload</a>
 
 #### How to deploy
 
@@ -137,7 +137,7 @@ npm run build
 
 Surge provides a CLI tool for easy deployment.
 
-- [Getting Started](https://surge.sh/help/getting-started-with-surge).
+- <a target="_blank" href="https://surge.sh/help/getting-started-with-surge">Getting Started</a>.
 
 ### CORS issues
 
@@ -145,7 +145,7 @@ To avoid these issues you can add a `CORS` file to your plugin. Place it in the 
 
 The `CORS` can contain a `*` for any domain, or a list of specific domains.
 
-Check [Enabling Cross-Origin Resources sharing](https://surge.sh/help/enabling-cross-origin-resource-sharing).
+Check <a target="_blank" href="https://surge.sh/help/enabling-cross-origin-resource-sharing">Enabling Cross-Origin Resources sharing</a>.
 
 ### How to deploy
 
