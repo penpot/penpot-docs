@@ -192,7 +192,11 @@ Now that everything is in place you need a `manifest.json` file to provide Penpo
 }
 ```
 
-Types of permissions:
+### Icon
+
+The plugin icon must be an image file. All image formats are valid, so you can use whichever format works best for your needs. Although there is no specific size requirement, it is recommended that the icon be 56x56 pixels in order to ensure its optimal appearance across all devices.
+
+### Types of permissions
 
 - `content:read`: Allows reading of content-related data. Grants read access to all endpoints and operations dealing with content. Typical use cases: viewing shapes, pages, or other design elements in a project; accessing the properties and settings of content within the application.
 
