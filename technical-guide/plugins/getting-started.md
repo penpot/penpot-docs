@@ -22,8 +22,8 @@ The plugins will be hosted outside Penpot, and each creator need to host theirs.
 
 - Basic experience with Penpot.
 - Basic experience with JavaScript, HTML and CSS.
-- Node and npm ([How to install Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)).
-- A text editor, ideally an IDE like [Visual Studio Code](https://code.visualstudio.com) or similar.
+- Node and npm (<a target="_blank" href="https://nodejs.org/en/learn/getting-started/how-to-install-nodejs">How to install Node.js</a>).
+- A text editor, ideally an IDE like <a target="_blank" href="https://code.visualstudio.com">Visual Studio Code</a> or similar.
 
 Nice to have:
 
@@ -36,7 +36,7 @@ Nice to have:
 
 ### Step 1. Penpot
 
-For testing purposes we have enabled the plugins system in https://early.penpot.dev. Just keep in mind that this is a demo service.
+For testing purposes we have enabled the plugins system in <a target="_blank" href="https://early.penpot.dev">https://early.penpot.dev</a>. Just keep in mind that this is a demo service.
 
 ### Step 2. Installation
 

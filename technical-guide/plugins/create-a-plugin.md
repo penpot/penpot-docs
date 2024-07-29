@@ -8,7 +8,7 @@ This guide covers the creation of a Penpot plugin with the most popular front fr
 
 Penpot offers two ways to kickstart your journey towards developing a plugin:
 
-- Using the [Penpot Plugin Starter Template](https://github.com/penpot/penpot-plugin-starter-template): A basic template with the required files for quickstarting your plugin. This template uses Typescript and Vite.
+- Using the <a target="_blank" href="https://github.com/penpot/penpot-plugin-starter-template">Penpot Plugin Starter Template</a>: A basic template with the required files for quickstarting your plugin. This template uses Typescript and Vite.
 - Follow to the next section to understand how to bootstrap a new plugin using one of the three major JavaScript frameworks.
 
 <p class="advice">
@@ -33,7 +33,7 @@ There are two libraries that can help you with your plugin's development. They a
 
 ### Plugin styles
 
-`@penpot/plugin-style` contains styles to help build the UI for Penpot plugins. To check the styles go to [Plugin styles](https://penpot.github.io/penpot-plugins/).
+`@penpot/plugin-style` contains styles to help build the UI for Penpot plugins. To check the styles go to <a target="_blank" href="https://penpot.github.io/penpot-plugins/">Plugin styles</a>.
 
 ```bash
 npm install @penpot/plugin-styles
@@ -100,7 +100,7 @@ window.addEventListener("message", (event) => {
 
 This way, any information you retrieve through the API can reach the plugin interface.
 
-Check the [Api Documentation](/technical-guide/plugins/api) for more.
+Check the <a target="_blank" href="/technical-guide/plugins/api">Api Documentation</a> for more.
 
 ## Step 5. Build the plugin file
 
