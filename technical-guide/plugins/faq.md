@@ -56,7 +56,7 @@ Yes, it is possible to create components using:
 createComponent(shapes: PenpotShape[]): PenpotLibraryComponent;
 ```
 
-Check PenpotLibrary methods in the <a target="_blank" href="/technical-guide/plugins/api/#penpotlibrary">API documentation</a>
+Check PenpotLibrary methods in the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotLibrary">API documentation</a>
 
 ### Is there a place where I can share my plugin?
 
