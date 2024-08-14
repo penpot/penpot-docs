@@ -25,6 +25,7 @@ Nice to have:
 
 - Git basic knowledge.
 - A Github account or a similar service to host and share your plugin code.
+- TypeScript basic knowledge.
 - Experience with any front framework (angular, react, vue...) for complex user interfaces.
 - A hosting service of your choice for plugin's deployment.
 
@@ -49,6 +50,11 @@ You can open the plugin manager in any project via:
 ##### Menu
 
 ![Penpot's plugin menu image](/img/plugins/plugin-menu.png)
+
+##### Toolbar
+
+![Penpot's toolbar image](/img/plugins/plugin-toolbar.png)
+
 
 The plugin manager looks like this:
 

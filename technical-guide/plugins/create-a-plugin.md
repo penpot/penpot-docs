@@ -82,25 +82,48 @@ The sizing values are optional. By default the plugin will open with a size of 2
 
 ## Step 4. Connect API and plugin interface
 
-To be able to interact with the Penpot API from your plugin you'll need to implement messaging-type JavaScript events.
+To enable interaction between your plugin and the Penpot API, you'll need to implement message-based communication using JavaScript events. This communication occurs between the main Penpot application and your plugin, which runs in an iframe. The `window` object facilitates this communication by sending and receiving messages between the two.
 
-Dispatch a message from the API to your plugin interface:
+### Sending messages from Penpot to your plugin
+
+To send a message from the Penpot API to your plugin interface, use the following command in `plugin.ts`:
 
 ```js
 penpot.ui.sendMessage(message);
 ```
 
-Capture incoming messages in your plugin interface using:
+Here, `message` can be any data or instruction you want to pass to your plugin. This message is dispatched from Penpot and is received by your plugin's iframe.
+
+### Receiving Messages in Your Plugin Interface
+
+Your plugin can capture incoming messages from Penpot using the `window` object's `message` event. To do this, set up an event listener in your plugin like this:
 
 ```js
 window.addEventListener("message", (event) => {
-  \\ console.log(event.data)
+  // Handle the incoming message
+  console.log(event.data);
 });
 ```
 
-This way, any information you retrieve through the API can reach the plugin interface.
+The `event.data` object contains the message sent from Penpot. You can use this data to update your plugin's interface or trigger specific actions within your plugin.
 
-Check the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/">Api Documentation</a> for more.
+### Two-Way Communication
+
+This setup allows for two-way communication between Penpot and your plugin. Penpot can send messages to your plugin, and your plugin can respond or send messages back to Penpot using the same `postMessage` API. For example:
+
+```js
+// Sending a message back to Penpot from your plugin
+parent.postMessage(responseMessage, targetOrigin);
+```
+
+- `responseMessage` is the data you want to send back to Penpot.
+- `targetOrigin` should be the origin of the Penpot application to ensure messages are only sent to the intended recipient. You can use `'*'` to allow all.
+
+### Summary
+
+By using these message-based events, any data retrieved through the Penpot API can be communicated to and from your plugin interface seamlessly.
+
+For more detailed information, refer to the [Penpot Plugins API Documentation](https://penpot-plugins-api-doc.pages.dev/).
 
 ## Step 5. Build the plugin file
 
@@ -210,9 +233,13 @@ The plugin icon must be an image file. All image formats are valid, so you can u
 
 ## Step 7. Load the Plugin in Penpot
 
-To test the plugin locally you need to serve it. Make sure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` can be reached.
+<p class="advice"><b>Serving an application:</b> This refers to making your application accessible over a network, typically for testing or development purposes. <br><br>When using a tool like <a href="https://www.npmjs.com/package/live-server" target="_blank">live-server</a>, a local web server is created on your machine, which serves your application files over HTTP. Most modern frameworks offer their own methods for serving applications, and there are build tools like Vite and Webpack that can handle this process as well. </p>
 
-To load your plugin into Penpot you can use the shortcut `Ctrl + Alt + P` to directly open the Plugin manager modal. There you need to provide the plugin's manifest URL (example: `http://plugin.example/manifest.json`) for the installation. If there's no issues the plugin will be installed and then you would be able to open it whenever you like.
+**You don't need to deploy your plugin just to test it**. Locally serving your plugin is compatible with `https://early.penpot.dev/`. However, be mindful of potential CORS (Cross-Origin Resource Sharing) issues. To avoid these, ensure your plugin includes the appropriate cross-origin headers.
+
+Serving your plugin will generate a URL that looks something like `http://localhost:XXXX`, where `XXXX` represents the port number on which the plugin is served. Ensure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` are accessible. If these files are inside a specific folder, the URL should be adjusted accordingly (e.g., `http://localhost:XXXX/folder/manifest.json`).
+
+Once your plugin is served you are ready to load it into Penpot. You can use the shortcut `Ctrl + Alt + P` to open the Plugin Manager modal. In this modal, provide the URL to your plugin's manifest file (e.g., `http://localhost:XXXX/manifest.json`) for installation. If everything is set up correctly, the plugin will be installed, and you can launch it whenever needed.
 
 You can also open the Plugin manager modal via:
 
@@ -220,199 +247,6 @@ You can also open the Plugin manager modal via:
 
   ![Penpot's menu image](/img/plugins/plugin-menu.png)
 
-## Penpot theme (optional)
+- Toolbar
 
-Penpot have a dark and a light theme. You can create your own implementation, but this step covers a way to get this value in your plugin so you can customize it to match the current Penpot theme.
-
-### Common
-
-The common steps includes modifying the plugin file to add the theme. We also added a basic interface file for typescript. This file is supposed to grow as you create more Events for your plugin.
-
-#### Typescript
-
-- Add a `model.ts` along the `plugin.ts` file with the following:
-
-```ts
-/**
- * This file contains the typescript interfaces for the plugin events.
- */
-
-export interface ThemePluginEvent {
-  type: "theme";
-  content: string;
-}
-
-export type PluginMessageEvent = ThemePluginEvent;
-```
-
-- `plugin.ts`
-
-```ts
-import type { PluginMessageEvent } from "./model";
-
-penpot.ui.open("Plugin name", `?theme=${penpot.getTheme()}`, {
-  width: 500,
-  height: 600,
-});
-
-penpot.on("themechange", (theme) => {
-  sendMessage({ type: "theme", content: theme });
-});
-
-function sendMessage(message: PluginMessageEvent) {
-  penpot.ui.sendMessage(message);
-}
-```
-
-#### Javascript
-
-- `plugin.js`
-
-```js
-penpot.ui.open("Plugin name", `?theme=${penpot.getTheme()}`, {
-  width: 500,
-  height: 600,
-});
-
-penpot.on("themechange", (theme) => {
-  sendMessage({ type: "theme", content: theme });
-});
-
-function sendMessage(message) {
-  penpot.ui.sendMessage(message);
-}
-```
-
-- `main.js`
-
-```js
-window.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "theme") {
-    document
-      .querySelector("#app")
-      .setAttribute("data-theme", event.data.content);
-  }
-});
-```
-
-### Angular
-
-- `app.component.ts`
-
-```ts
-import { Component, inject } from "@angular/core";
-import { toSignal } from "@angular/core/rxjs-interop";
-import { ActivatedRoute, RouterOutlet } from "@angular/router";
-import { fromEvent, map, filter, take, merge } from "rxjs";
-import { PluginMessageEvent } from "../model";
-
-@Component({
-  selector: "app-root",
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css",
-  host: {
-    "[attr.data-theme]": "theme()",
-  },
-})
-export class AppComponent {
-  public route = inject(ActivatedRoute);
-
-  public messages$ = fromEvent<MessageEvent<PluginMessageEvent>>(
-    window,
-    "message"
-  );
-
-  public initialTheme$ = this.route.queryParamMap.pipe(
-    map((params) => params.get("theme")),
-    filter((theme) => !!theme),
-    take(1)
-  );
-
-  public theme = toSignal(
-    merge(
-      this.initialTheme$,
-      this.messages$.pipe(
-        filter((event) => event.data.type === "theme"),
-        map((event) => {
-          return event.data.content;
-        })
-      )
-    )
-  );
-}
-```
-
-### React
-
-- `App.tsx`
-
-```js
-import { useState } from "react";
-import "./App.css";
-
-function App() {
-  const url = new URL(window.location.href);
-  const initialTheme = url.searchParams.get("theme");
-
-  const [theme, setTheme] = useState(initialTheme || null);
-
-  window.addEventListener("message", (event) => {
-    if (event.data.type === "theme") {
-      setTheme(event.data.content);
-    }
-  });
-
-  return <div data-theme={theme}>Welcome to your plugin!</div>;
-}
-
-export default App;
-```
-
-### Vue
-
-- `App.vue`
-
-```html
-<script setup lang="ts">
-  import { onMounted } from "vue";
-  import { signal } from "vue-signals";
-
-  const theme = signal<string | null>(null);
-
-  onMounted(() => {
-    const url = new URL(window.location.href);
-
-    const initialTheme = url.searchParams.get("theme");
-
-    if (initialTheme) {
-      theme.set(initialTheme as string);
-    }
-
-    window.addEventListener("message", (event) => {
-      if (event.data.type === "theme") {
-        theme.set(event.data.content);
-      }
-    });
-  });
-</script>
-
-<template>
-  <div :data-theme="theme()">Welcome to your plugin!</div>
-</template>
-```
-
-### Styling
-
-It may vary depending on where you have placed the theme attribute.
-
-```css
-[data-theme="dark"] {
-  /** Dark styles */
-}
-
-[data-theme="light"] {
-  /** Light styles */
-}
-```
+  ![Penpot's toolbar image](/img/plugins/plugin-toolbar.png)
