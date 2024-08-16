@@ -1,5 +1,6 @@
 ---
-title: 5.4. API
+layout: layouts/plugins.njk
+title: 4. API
 ---
 
 # Penpot plugins API
