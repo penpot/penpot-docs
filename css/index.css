@@ -626,6 +626,7 @@ a[href].post-tag:visited {
   border-bottom: 2px solid var(--primarydark);
   color: var(--darkest);
 }
+.main-content.plugins a[href],
 .main-content a[href]:has(img),
 .main-content a[href]:has(img):hover{
   border-bottom: none;
@@ -813,6 +814,7 @@ a[href].post-tag:visited {
   /* box-shadow: 0px 8px 20px rgb(28 56 71 / 5%); */
   border: 1px solid var(--color-gray-medium);
   border-radius: 8px;
+  max-width: 47%;
   min-height: 12rem;
   background-color: white;
 }
@@ -833,6 +835,9 @@ a[href].post-tag:visited {
 }
 .illus-techguide {
   background-image: url(/img/home-techguide.png);
+}
+.illus-plugins {
+  background-image: url(/img/home-plugins.png);
 }
 .illus-contributing {
   background-image: url(/img/home-contributing.png);
@@ -885,6 +890,8 @@ a[href].post-tag:visited {
   border-top: 1px dashed var(--color-gray-medium);
   border-bottom: 1px dashed var(--color-gray-medium);
   margin-top: 4rem;
+  flex-basis: 100%;
+  max-width: 100%;
 }
 .help-sections > li.github a:hover h2,
 .help-sections > li.github a:hover h3 {
@@ -980,6 +987,24 @@ a[href].post-tag:visited {
   line-height: 1.45;
 }
 
+.plugins .illus-getting-started {
+  background-image: url(/img/plugins/getting_started.png);
+}
+.plugins .illus-create-plugin {
+  background-image: url(/img/plugins/create_plugin.png);
+}
+.plugins .illus-deployment {
+  background-image: url(/img/plugins/deployment.png);
+}
+.plugins .illus-api {
+  background-image: url(/img/plugins/api.png);
+}
+.plugins .illus-examples {
+  background-image: url(/img/plugins/examples.png);
+}
+.plugins .illus-faq {
+  background-image: url(/img/plugins/faqs.png);
+}
 
 table, tr, th, td {
     color: var(--graydark);
