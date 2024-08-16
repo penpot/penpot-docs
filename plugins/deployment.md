@@ -1,5 +1,6 @@
 ---
-title: 5.3. Deployment
+layout: layouts/plugins.njk
+title: 3. Deployment
 ---
 
 # Deployment
@@ -8,7 +9,7 @@ When it comes to deploying your plugin there are several platforms to choose fro
 
 In this guide you will found some options for static sites that have free plans.
 
-## Building your project
+## 3.1. Building your project
 
 The building may vary between frameworks but if you had previously configured your scripts in `package.json`, `npm run build` should work.
 
@@ -21,7 +22,7 @@ Examples:
 ![Vue dist example](/img/plugins/vue_dist.png)
 ![Angular dist example](/img/plugins/angular_dist.png)
 
-## Netlify
+## 3.2. Netlify
 
 ### Create an account
 
@@ -72,7 +73,7 @@ npm run build
 
 4. Done!
 
-## Cloudflare
+## 3.3. Cloudflare
 
 ### Create an account
 
@@ -133,7 +134,7 @@ npm run build
 
 5. Deploy site.
 
-## Surge
+## 3.4. Surge
 
 Surge provides a CLI tool for easy deployment.
 
