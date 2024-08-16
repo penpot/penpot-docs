@@ -54,7 +54,7 @@ The plugin manager looks like this:
 
 ![Penpot's plugin manager](/img/plugins/plugin-manager.png)
 
-You need to provide the plugin's manifest URL for the installation. If there's no issues the plugin will be installed and then you would be able to open it whenever you like.
+You need to provide the plugin's manifest URL for the installation. If there are no issues the plugin will be installed and then you would be able to open it whenever you like.
 
 ### Examples
 
@@ -157,13 +157,13 @@ The `manifest.json` file contains the basic information about the plugin. It def
 
 The `plugin.ts` file is where you write code to interact with the Penpot API using TypeScript. This file is then compiled into `plugin.js` which is the final JavaScript code that runs the plugin. You don't write `plugin.js` directly; it's generated from the `plugin.ts` file.
 
-**Note that this is also the only file where you can use the Penpot object.** Do not try to use the Penpot object in your plugin interface scripts.
+<p class="advice">
+<b>This is also the only file where you can use the Penpot object.</b> Do not try to use the Penpot object in your plugin interface scripts.
+</p>
 
 You can check some samples in:
 
-<!-- TODO: Add links -->
-
-- Penpot plugin samples.
+- <a href="https://github.com/penpot/penpot-plugins-samples/" target="_blank">Penpot plugin samples.</a>
 
 ### What is TypeScript?
 

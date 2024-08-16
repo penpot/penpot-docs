@@ -22,7 +22,7 @@ No. The feature set of figma and penpot are not the same so it’s not compatibl
 
 ### What is the recommended size for my plugin icon?
 
-You can make it any size since it will be automatically adjusted to 28x28 px in the plugin manager modal. Just make sure to keep it square size.
+You can make it any size since it will be automatically adjusted to 56x56 px in the plugin manager modal. Just make sure to keep it square size.
 
 ### Are there any naming conventions for the plugin name?
 
