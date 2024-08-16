@@ -1,10 +1,11 @@
 ---
-title: 5.1. Getting started
+layout: layouts/plugins.njk
+title: 1. Getting started
 ---
 
 # Getting started
 
-## Introduction
+## 1.1. Introduction
 
 Welcome to Penpot Plugins!
 
@@ -14,7 +15,7 @@ Plugins can be created with your favorite framework or with not framework at all
 
 The plugins will be hosted outside Penpot, and each creator need to host theirs.
 
-## Pre-requisites
+## 1.2. Pre-requisites
 
 - Basic experience with Penpot.
 - Basic experience with JavaScript, HTML and CSS.
@@ -29,7 +30,7 @@ Nice to have:
 - Experience with any front framework (angular, react, vue...) for complex user interfaces.
 - A hosting service of your choice for plugin's deployment.
 
-## Installation
+## 1.3. Installation
 
 ### Step 1. Penpot
 
@@ -73,7 +74,7 @@ You need to provide the plugin's manifest URL for the installation. If there are
 | Paleta Color  | https://create-palette-penpot-plugin.pages.dev/assets/manifest.json |
 | Rename layers | https://rename-layers-penpot-plugin.pages.dev/assets/manifest.json  |
 
-## Plugin's basics
+## 1.4. Plugin's basics
 
 ### How does it work?
 

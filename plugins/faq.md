@@ -1,5 +1,6 @@
 ---
-title: 5.5. FAQ
+layout: layouts/plugins.njk
+title: 6. FAQ
 ---
 
 # FAQ
