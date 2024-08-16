@@ -1,5 +1,6 @@
 ---
-title: 5.2. Create a Plugin
+layout: layouts/plugins.njk
+title: 2. Create a Plugin
 ---
 
 # Create a Plugin
@@ -15,7 +16,7 @@ Penpot offers two ways to kickstart your journey towards developing a plugin:
 Before you start, you might want to have the <a target="_blank" href="https://github.com/penpot/plugin-examples"> Plugin examples </a> at hand.
 </p>
 
-## Step 1. Create a project
+## 2.1. Step 1. Create a project
 
 Create your own app with the framework of your choice. See examples for each framework <a target="_blank" href="https://github.com/penpot/plugin-examples"> here </a>
 
@@ -27,7 +28,7 @@ Create your own app with the framework of your choice. See examples for each fra
 
 _\*: version we used in the examples._
 
-## Step 2. Install Penpot libraries
+## 2.2. Step 2. Install Penpot libraries
 
 There are two libraries that can help you with your plugin's development. They are `@penpot/plugin-styles` and `@penpot/plugin-types`.
 
@@ -65,7 +66,7 @@ If you're using typescript, don't forget to add `@penpot/plugin-types` to your t
 }
 ```
 
-## Step 3. Create a plugin file
+## 2.3. Step 3. Create a plugin file
 
 A plugin file is needed to interact with Penpot and its API. You can use either javascript or typescript and it can be placed wherever you like. It normally goes alongside the main files inside the `src/` folder. We highly recommend labeling your creation as `plugin.js` or `plugin.ts`, depending upon your preferred language.
 
@@ -80,7 +81,7 @@ penpot.ui.open("Plugin name", "", {
 
 The sizing values are optional. By default the plugin will open with a size of 285x540 pixels.
 
-## Step 4. Connect API and plugin interface
+## 2.4. Step 4. Connect API and plugin interface
 
 To enable interaction between your plugin and the Penpot API, you'll need to implement message-based communication using JavaScript events. This communication occurs between the main Penpot application and your plugin, which runs in an iframe. The `window` object facilitates this communication by sending and receiving messages between the two.
 
@@ -125,7 +126,7 @@ By using these message-based events, any data retrieved through the Penpot API c
 
 For more detailed information, refer to the [Penpot Plugins API Documentation](https://penpot-plugins-api-doc.pages.dev/).
 
-## Step 5. Build the plugin file
+## 2.5. Step 5. Build the plugin file
 
 <div class="advice">
 <p>This step is only for local serving.
@@ -195,7 +196,7 @@ You can add it to your `package.json` scripts so you don't need to manually re-r
 
 Keep in mind that you'll need to build again your plugin file if you modify it mid-serve.
 
-## Step 6. Configure the manifest file
+## 2.6. Step 6. Configure the manifest file
 
 Now that everything is in place you need a `manifest.json` file to provide Penpot with your plugin data. Remember to make it reachable by placing it in the `public/` folder.
 
@@ -231,7 +232,7 @@ The plugin icon must be an image file. All image formats are valid, so you can u
 
 - `library:write`: Allows writing or modifying library-related data and assets. Grants write access to all endpoints and operations dealing with library modifications. Typical use cases: adding new components or assets to the library or updating or removing existing library elements.
 
-## Step 7. Load the Plugin in Penpot
+## 2.7. Step 7. Load the Plugin in Penpot
 
 <p class="advice"><b>Serving an application:</b> This refers to making your application accessible over a network, typically for testing or development purposes. <br><br>When using a tool like <a href="https://www.npmjs.com/package/live-server" target="_blank">live-server</a>, a local web server is created on your machine, which serves your application files over HTTP. Most modern frameworks offer their own methods for serving applications, and there are build tools like Vite and Webpack that can handle this process as well. </p>
 
