@@ -224,6 +224,16 @@ endpoint.
 
 PENPOT_OIDC_USER_INFO_SOURCE=
 ```
+<br />
+
+__Since version 2.1.2__
+
+Allows users to register and login with oidc without having to previously 
+register with another method.
+
+```bash
+PENPOT_FLAGS="[...] enable-oidc-registration"
+```
 
 
 #### Azure Active Directory using OpenID Connect
