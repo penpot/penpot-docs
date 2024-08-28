@@ -5,16 +5,20 @@ title: 2. Create a Plugin
 
 # Create a Plugin
 
-This guide covers the creation of a Penpot plugin with the most popular front frameworks.
+This guide covers the creation of a Penpot plugin. Penpot offers two ways to kickstart your development:
 
-Penpot offers two ways to kickstart your journey towards developing a plugin:
+1. Using a Template:
 
-- Using the <a target="_blank" href="https://github.com/penpot/penpot-plugin-starter-template">Penpot Plugin Starter Template</a>: A basic template with the required files for quickstarting your plugin. This template uses Typescript and Vite.
-- Follow to the next section to understand how to bootstrap a new plugin using one of the three major JavaScript frameworks.
+   - **Typescript template**: Using the <a target="_blank" href="https://github.com/penpot/penpot-plugin-starter-template">Penpot Plugin Starter Template</a>: A basic template with the required files for quickstarting your plugin. This template uses Typescript and Vite.
+   - **Framework templates**: These templates already have everything you need to start <a target="_blank" href="https://github.com/penpot/plugin-examples">developing a plugin using a JavaScript framework. </a>
 
 <p class="advice">
-Before you start, you might want to have the <a target="_blank" href="https://github.com/penpot/plugin-examples"> Plugin examples </a> at hand.
+In case you'll use any of these templates, you can skip to <a href="#2.7.-step-7.-load-the-plugin-in-penpot">step 2.7</a>
 </p>
+
+2. Creating a plugin from scratch using a major framework.
+
+   Follow to the next section to understand how to bootstrap a new plugin using one of the three major JavaScript frameworks.
 
 ## 2.1. Step 1. Create a project
 
@@ -40,7 +44,7 @@ There are two libraries that can help you with your plugin's development. They a
 npm install @penpot/plugin-styles
 ```
 
-You can add the styles to your global css file.
+You can add the styles to your global CSS file.
 
 ```css
 @import "@penpot/plugin-styles/styles.css";
@@ -79,7 +83,7 @@ penpot.ui.open("Plugin name", "", {
 });
 ```
 
-The sizing values are optional. By default the plugin will open with a size of 285x540 pixels.
+The sizing values are optional. By default, the plugin will open with a size of 285x540 pixels.
 
 ## 2.4. Step 4. Connect API and plugin interface
 
@@ -136,7 +140,7 @@ For a detailed guide about building and deploying you can check the documentatio
 
 If you wish to run your plugin locally and test it live you need to make your plugin file reachable. Right now, your `plugin.ts` file is somewhere in the `src\` folder, and you can't access it through `http://localhost:XXXX/plugin.js`.
 
-You can achieve this through multiple solutions but we offer two simple ways of doing so. Of course you can come up with your own.
+You can achieve this through multiple solutions, but we offer two simple ways of doing so. Of course, you can come up with your own.
 
 #### Vite
 
@@ -236,7 +240,7 @@ The plugin icon must be an image file. All image formats are valid, so you can u
 
 <p class="advice"><b>Serving an application:</b> This refers to making your application accessible over a network, typically for testing or development purposes. <br><br>When using a tool like <a href="https://www.npmjs.com/package/live-server" target="_blank">live-server</a>, a local web server is created on your machine, which serves your application files over HTTP. Most modern frameworks offer their own methods for serving applications, and there are build tools like Vite and Webpack that can handle this process as well. </p>
 
-**You don't need to deploy your plugin just to test it**. Locally serving your plugin is compatible with `https://early.penpot.dev/`. However, be mindful of potential CORS (Cross-Origin Resource Sharing) issues. To avoid these, ensure your plugin includes the appropriate cross-origin headers.
+**You don't need to deploy your plugin just to test it**. Locally serving your plugin is compatible with `https://early.penpot.dev/`. However, be mindful of potential CORS (Cross-Origin Resource Sharing) issues. To avoid these, ensure your plugin includes the appropriate cross-origin headers. (Find more info about this at the <a target="_blank" href="/technical-guide/plugins/deployment/">Deployment step</a>)
 
 Serving your plugin will generate a URL that looks something like `http://localhost:XXXX`, where `XXXX` represents the port number on which the plugin is served. Ensure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` are accessible. If these files are inside a specific folder, the URL should be adjusted accordingly (e.g., `http://localhost:XXXX/folder/manifest.json`).
 
@@ -245,9 +249,15 @@ Once your plugin is served you are ready to load it into Penpot. You can use the
 You can also open the Plugin manager modal via:
 
 - Menu
-
-  ![Penpot's menu image](/img/plugins/plugin-menu.png)
+  <figure>
+    <video title="Open plugin manager from  penpot menu" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/plugins-menu.png" height="auto">
+      <source src="/img/plugins/plugins-menu.mp4" type="video/mp4">
+    </video>
+  </figure>
 
 - Toolbar
-
-  ![Penpot's toolbar image](/img/plugins/plugin-toolbar.png)
+  <figure>
+    <video title="Open plugin manager from penpot toolbar" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/plugins-toolbar.png" height="auto">
+      <source src="/img/plugins/plugins-toolbar.mp4" type="video/mp4">
+    </video>
+  </figure>
