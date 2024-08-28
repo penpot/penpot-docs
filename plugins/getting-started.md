@@ -50,11 +50,19 @@ You can open the plugin manager in any project via:
 
 ##### Menu
 
-![Penpot's plugin menu image](/img/plugins/plugin-menu.png)
+<figure>
+  <video title="Open plugin manager from  penpot menu" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/plugins-menu.png" height="auto">
+    <source src="/img/plugins/plugins-menu.mp4" type="video/mp4">
+  </video>
+</figure>
 
 ##### Toolbar
 
-![Penpot's toolbar image](/img/plugins/plugin-toolbar.png)
+<figure>
+  <video title="Open plugin manager from penpot toolbar" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/plugins-toolbar.png" height="auto">
+    <source src="/img/plugins/plugins-toolbar.mp4" type="video/mp4">
+  </video>
+</figure>
 
 
 The plugin manager looks like this:
