@@ -70,8 +70,8 @@ You need to provide the plugin's manifest URL for the installation. If there are
 | Lorem Ipsum   | https://lorem-ipsum-penpot-plugin.pages.dev/assets/manifest.json    |
 | Contrast      | https://contrast-penpot-plugin.pages.dev/assets/manifest.json       |
 | Feather icons | https://icons-penpot-plugin.pages.dev/assets/manifest.json          |
-| Tablas        | https://table-penpot-plugin.pages.dev/assets/manifest.json          |
-| Paleta Color  | https://create-palette-penpot-plugin.pages.dev/assets/manifest.json |
+| Tables        | https://table-penpot-plugin.pages.dev/assets/manifest.json          |
+| Color palette | https://create-palette-penpot-plugin.pages.dev/assets/manifest.json |
 | Rename layers | https://rename-layers-penpot-plugin.pages.dev/assets/manifest.json  |
 
 ## 1.4. Plugin's basics
