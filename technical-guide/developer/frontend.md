@@ -7,25 +7,9 @@ title: 3.5. Frontend Guide
 This guide intends to explain the essential details of the frontend
 application.
 
-## Icons & Assets
+## UI
 
-The icons used on the frontend application are loaded using svgsprite
-(properly handled by the gulp watch task). All icons should be in SVG
-format located in `resources/images/icons`. The gulp task will
-generate the sprite and the embed it into the `index.html` file.
-
-Then, you can reference the icon from the sprite using the
-`app.builtins.icons/icon-xref` macro:
-
-```clojure
-(ns some.namespace
-  (:require-macros [app.main.ui.icons :refer [icon-xref]]))
-
-(icon-xref :arrow)
-```
-
-For performance reasons, all used icons are statically defined in the
-`src/app/main/ui/icons.cljs` file.
+Please refer to the [UI Guide](/technical-guide/developer/ui) to learn about implementing UI components and our design system.
 
 ## Logging, Tracing & Debugging
 
