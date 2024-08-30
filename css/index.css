@@ -1030,6 +1030,12 @@ table tr:nth-child(odd) {
     background: rgba(0,0,0,.02);
 }
 
+@media (max-width: 1114px) {
+  .help-sections > li {
+    max-width: none;
+  }
+}
+
 
 @media (max-width: 1024px) {
   hr {
