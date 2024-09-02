@@ -1036,7 +1036,6 @@ table tr:nth-child(odd) {
   }
 }
 
-
 @media (max-width: 1024px) {
   hr {
     margin-top: 5rem;
