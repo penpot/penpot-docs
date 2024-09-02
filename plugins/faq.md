@@ -11,11 +11,11 @@ Currently we are using the v22.2.0
 
 ### Should I create my plugin for dark and light themes?
 
-It’s not obligatory but keep in mind that the containing modal will change colors automatically to match Penpot’s theme. Check the <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#penpot-theme-(optional)">documentation</a> for an example on how to apply dark and light themes to your plugin.
+It’s not obligatory but keep in mind that the containing modal will change colors automatically to match Penpot’s theme. Check this <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/theme">example</a> on how to apply dark and light themes to your plugin.
 
 ### Should I always host my plugin?
 
-By the time being any and all plugins must be hosted independently and outside the Penpot environment. Check the <a target="_blank" href="/technical-guide/plugins/deployment/">documentation</a> for a guide on how to deploy your plugin on some deployment services like Netlify or Cloudflare.
+By the time being any and all plugins must be hosted independently and outside the Penpot environment. Check the <a target="_blank" href="/plugins/deployment/">documentation</a> for a guide on how to deploy your plugin on some deployment services like Netlify or Cloudflare.
 
 ### Is there any way to export my figma plugins to penpot?
 
@@ -31,15 +31,15 @@ The name of the plugin should be short and followed by the suffix ‘-plugins’
 
 ### Which framework do you recommend for creating the plugin?
 
-Any framework you are familiar with would be a good choice. Our examples are in vue, angular and react. Check the <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#step-1.-create-a-project">documentation</a>
+Any framework you are familiar with would be a good choice. Our examples are in vue, angular and react. Check the <a target="_blank" href="/plugins/create-a-plugin/">documentation</a>
 
 ### Is it necessary to use the plugin styles library?
 
-The plugin styles library is not obligatory, although we recommend its use because it'll help you with the dark and light theming and to maintain the Penpot look-and-feel.
+The plugin <a target="_blank" href="https://www.npmjs.com/package/@penpot/plugin-styles">styles library</a> is not obligatory, although we recommend its use because it'll help you with the dark and light theming and to maintain the Penpot look-and-feel.
 
 ### Is the API ready to use the prototyping features?
 
-Not yet, but it’s being considered for a second phase.
+Absolutely! You can definitely create flows and interactions in the same elements as in the interface, like frames, shapes, and groups. Just check out the API documentation for the methods: createFlow, addInteraction, or removeInteraction. And if you need more help, you can always check out the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotFlow">PenpotFlow</a> or <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotInteraction">PenpotInteraction</a> interfaces.
 
 ### Are there any security or quality criteria I should be aware of?
 
@@ -57,7 +57,7 @@ Yes, it is possible to create components using:
 createComponent(shapes: PenpotShape[]): PenpotLibraryComponent;
 ```
 
-Check PenpotLibrary methods in the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotLibrary">API documentation</a>
+Take a look at the PenpotLibrary methods in the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotLibrary">API documentation</a> or this <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">simple example</a>.
 
 ### Is there a place where I can share my plugin?
 
@@ -65,7 +65,7 @@ You will be able to share your plugin with the <a target="_blank" href="https://
 
 ### My plugin works on my local machine, but I couldn’t install it on Penpot. What could be the problem?
 
-The url you that you need to provide in the plugin manager should look <a target="_blank" href="/technical-guide/plugins/create-a-plugin/#step-6.-configure-the-manifest-file">like this</a>: `https://yourdomain.com/assents/manifest.json`
+The url you that you need to provide in the plugin manager should look <a target="_blank" href="/plugins/create-a-plugin/#2.6.-step-6.-configure-the-manifest-file">like this</a>: `https://yourdomain.com/assents/manifest.json`
 
 ### Where can I get support if I find a bug or an unexpected behavior?
 
