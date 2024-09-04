@@ -56,11 +56,19 @@ Grid Layout lets you create flexible designs that automatically adapt to differe
 
 Using components is a great way to reuse objects or groups of objects, making sure everything looks the same and works well across your designs. This example shows you how to create a component, which lets you make your workflow easier by defining reusable design elements.
 
+<p class="advice">
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <b>manifest.json</b>.
+</p>
+
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">Components example</a>
 
 ### Create a colors library
 
 Having quick access to your go-to colors and fonts can really help you work more efficiently, letting you build a solid set of assets with minimal effort. In this example, you'll see how to add a color to your library, so you'll have instant access whenever you need it. The same goes for typography assets—just replace createColor with createTypography. This flexibility means your most commonly used design elements are always at your fingertips, ready to enhance your creative workflow.
+
+<p class="advice">
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <b>manifest.json</b>.
+</p>
 
 ```
 // just replace
