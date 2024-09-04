@@ -45,6 +45,12 @@ Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket 
 
 #### How to deploy
 
+<figure>
+  <video title="Deploy your plugin with Netlify using GitHub" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/deploy-netlify-repo.png" height="auto">
+    <source src="/img/plugins/deploy-netlify-repo.mp4" type="video/mp4">
+  </video>
+</figure>
+
 1. Go to <a target="_blank" href="https://app.netlify.com/start">Start</a> and connect with your repository. Allow Netlify to be installed in either all your projects or just the selected ones.
 
 ![Netlify git installation](/img/plugins/install_netlify.png)
@@ -60,6 +66,12 @@ Netlify allows you to import an existing project from GitHub, GitLab, Bitbucket 
 Netlify offers a simple drag and drop method. Check <a target="_blank" href="https://app.netlify.com/drop">Netlify Drop</a>.
 
 #### How to deploy
+
+<figure>
+  <video title="Deploy your plugin with Netlify using drag and drop" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/deploy-netlify-dragdrop.png" height="auto">
+    <source src="/img/plugins/deploy-netlify-dragdrop.mp4" type="video/mp4">
+  </video>
+</figure>
 
 1. Build your project
 
@@ -96,6 +108,13 @@ Cloudflare allows you to import an existing project from GitHub or GitLab.
 
 #### How to deploy
 
+<figure>
+  <video title="Deploy your plugin with Cloudflare using GitHub" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/deploy-cloudflare-repo.png" height="auto">
+    <source src="/img/plugins/deploy-cloudflare-repo.mp4" type="video/mp4">
+  </video>
+</figure>
+
+
 1. Go to Workers & Pages > Create > Page > Connect to git
 
 2. Select a repository. Allow Cloudflare to be installed in either all your projects or just the selected ones.
@@ -115,6 +134,12 @@ You can directly upload your plugin folder.
 - <a target="_blank" href="https://developers.cloudflare.com/pages/get-started/direct-upload/">Direct upload</a>
 
 #### How to deploy
+
+<figure>
+  <video title="Deploy your plugin with Cloudflare using drag and drop" muted="" playsinline="" controls="" width="100%" poster="/img/plugins/deploy-netlify-dragdrop.png" height="auto">
+    <source src="/img/plugins/deploy-netlify-dragdrop.mp4" type="video/mp4">
+  </video>
+</figure>
 
 1. Build your plugin.
 
