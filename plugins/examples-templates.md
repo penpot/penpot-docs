@@ -6,6 +6,7 @@ title: 5. Examples and templates
 # Examples and templates
 
 ## 5.1. Examples
+
 We've put together a handy list of some of the most common actions you can perform in penpot, and we've also included a helpful example for each one. We hope this makes it easier for you to create your plugins!
 
 <p class="advice">
@@ -25,6 +26,7 @@ penpot.createEllipse();
 penpot.createPath();
 penpot.createFrame();
 ```
+
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-shape">Shape example</a>
 
 ### Create a text
@@ -34,7 +36,6 @@ You'll learn how to insert text and explore a variety of styling options to cust
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-text">Text example</a>
 
 ### Group and ungroup shapes
-
 
 It's really important to keep your layers organized if you want to keep your workflow clean and efficient. Grouping shapes together makes it much easier to manage and manipulate multiple elements as a single unit. This not only makes your design process much more streamlined, but it also helps you maintain a structured and organized layer hierarchy. When you need to make individual adjustments, you can easily ungroup these shapes, which gives you flexibility while keeping your workspace tidy and well-organized.
 
@@ -57,7 +58,7 @@ Grid Layout lets you create flexible designs that automatically adapt to differe
 Using components is a great way to reuse objects or groups of objects, making sure everything looks the same and works well across your designs. This example shows you how to create a component, which lets you make your workflow easier by defining reusable design elements.
 
 <p class="advice">
-Just a friendly reminder that it's important to have the <b>library permissions</b> in the <b>manifest.json</b>.
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code><strong>manifest.json</strong></code>.
 </p>
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">Components example</a>
@@ -67,7 +68,7 @@ Just a friendly reminder that it's important to have the <b>library permissions<
 Having quick access to your go-to colors and fonts can really help you work more efficiently, letting you build a solid set of assets with minimal effort. In this example, you'll see how to add a color to your library, so you'll have instant access whenever you need it. The same goes for typography assets—just replace createColor with createTypography. This flexibility means your most commonly used design elements are always at your fingertips, ready to enhance your creative workflow.
 
 <p class="advice">
-Just a friendly reminder that it's important to have the <b>library permissions</b> in the <b>manifest.json</b>.
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code><strong>manifest.json</strong></code>.
 </p>
 
 ```
@@ -77,7 +78,6 @@ penpot.library.local.createColor();
 // for
 penpot.library.local.createTypography();
 ```
-
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/colors-library">Colors library example</a>
 
@@ -95,16 +95,17 @@ Often, we want to make our plugins better by adding external libraries, new feat
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/third-party-api">Third party API example</a>
 
-###  Interactive prototype
+### Interactive prototype
 
 With the ability to create an interactive prototype, you can turn your design from a static layout into a dynamic, navigable experience. This lets users interact with the design in a more seamless way and gives them a better preview of the final product.
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-interactive-prototype">Interactive prototype example</a>
 
 ## 5.2. Templates
+
 As we mentioned in the <a target="_blank" href="/plugins/create-a-plugin/">Create a plugin</a> section, we've got two great options for you to get started with your plugin.
 The first is a basic **Typescript** template with all the essential structure you'll need.
 The second is the same, but uses one of the most popular frameworks like **Angular, Vue, or React**. We've included links to the repositories below:
-* <a target="_blank" href="https://github.com/penpot/penpot-plugin-starter-template">Plugin Starter Template with plain Typescript</a><br>
-* <a target="_blank" href="https://github.com/penpot/plugin-examples">Plugin Starter Template using a framework</a>
 
+- <a target="_blank" href="https://github.com/penpot/penpot-plugin-starter-template">Plugin Starter Template with plain Typescript</a><br>
+- <a target="_blank" href="https://github.com/penpot/plugin-examples">Plugin Starter Template using a framework</a>

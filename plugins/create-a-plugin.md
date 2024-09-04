@@ -135,7 +135,7 @@ For more detailed information, refer to the [Penpot Plugins API Documentation](h
 <div class="advice">
 <p>This step is only for local serving.
 For a detailed guide about building and deploying you can check the documentation at <a target="_blank" href="/technical-guide/plugins/deployment/">Deployment</a> </p>
-<p>You can skip this step if working exclusively with JavaScript by simply moving `plugin.js` to your `public/` directory.</p>
+<p>You can skip this step if working exclusively with JavaScript by simply moving <strong><code>plugin.js</code></strong> to your <strong><code>public/</code></strong> directory.</p>
 </div>
 
 If you wish to run your plugin locally and test it live you need to make your plugin file reachable. Right now, your `plugin.ts` file is somewhere in the `src\` folder, and you can't access it through `http://localhost:XXXX/plugin.js`.
