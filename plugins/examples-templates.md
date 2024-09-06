@@ -24,7 +24,7 @@ penpot.createRectangle();
 // for one of these other options:
 penpot.createEllipse();
 penpot.createPath();
-penpot.createFrame();
+penpot.createBoard();
 ```
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-shape">Shape example</a>
