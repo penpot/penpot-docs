@@ -54,10 +54,10 @@ No, it’s completely optional, in fact, we have an example of a plugin without 
 Yes, it is possible to create components using:
 
 ```js
-createComponent(shapes: PenpotShape[]): PenpotLibraryComponent;
+createComponent(shapes: Shape[]): LibraryComponent;
 ```
 
-Take a look at the PenpotLibrary methods in the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/PenpotLibrary">API documentation</a> or this <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">simple example</a>.
+Take a look at the Penpot Library methods in the <a target="_blank" href="https://penpot-plugins-api-doc.pages.dev/interfaces/Library">API documentation</a> or this <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">simple example</a>.
 
 ### Is there a place where I can share my plugin?
 
