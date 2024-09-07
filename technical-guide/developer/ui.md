@@ -483,7 +483,18 @@ Creating an array of static elements and iterating over it to generate DOM may b
 
 Penpot has started to use a **design system**, which is located at `frontend/src/app/main/ui/ds`. The components of the design system is published in a Storybook at [hourly.penpot.dev/storybook/](https://hourly.penpot.dev/storybook/) with the contents of the `develop` branch of the repository.
 
-==When a UI component is **available in the design system**, use it!!==. If it's not available but it's part of the Design System (ask the design folks if you are unsure), then do add it to the design system and Storybook.
+<mark>When a UI component is **available in the design system**, use it!</mark>. If it's not available but it's part of the Design System (ask the design folks if you are unsure), then do add it to the design system and Storybook.
+
+### Adding a new component
+
+In order to implement a new component for the design system, you need to:
+
+- Add a new `<component>.cljs` file within the `ds/` folder tree. This contains the CLJS implementation of the component, and related code (props schemas, private components, etc.).
+- Add a `<component>.css` file with the styles for the component. This is a CSS Module file, and the selectors are scoped to this component.
+- Add a `<component>.stories.jsx` Storybook file (see the _Storybook_ section below).
+- (Optional) When available docs, add a `<component>.mdx` doc file (see _Storybook_ section below).
+
+In addition to the above, you also need to **specifically export the new component** with a JavaScript-friendly name in `frontend/src/app/main/ui/ds.cljs`.
 
 ### Tokens
 
@@ -535,3 +546,117 @@ For instance, this is how we handle the styles of `<Toast>`, which have a differ
 ### Using icons and SVG assets
 
 Please refer to the Storybook [documentation for icons](https://hourly.penpot.dev/storybook/?path=/docs/foundations-assets-icon--docs) and other [SVG assets](https://hourly.penpot.dev/storybook/?path=/docs/foundations-assets-rawsvg--docs) (logos, illustrations, etc.).
+
+### Storybook
+
+We use [Storybook](https://storybook.js.org/) to implement and showcase the components of the Design System.
+
+The Storybook is available at the `/storybook` path in the URL for each environment. For instance, the one built out of our `develop` branch is available at [hourly.penpot.dev/storybook](https://hourly.penpot.dev/storybook).
+
+#### Local development
+
+Use `yarn watch:storybook` to develop the Design System components with the help of Storybook.
+
+> **⚠️ WARNING**: Do stop any existing Shadow CLJS and asset compilation jobs (like the ones running at tabs `0` and `1` in the devenv tmux), because `watch:storybook` will spawn their own.
+
+#### Writing stories
+
+You should add a Storybook file for each design system component you implement. This is a `.jsx` file located at the same place as your component file, with the same name. For instance, a component defined in `loader.cljs` should have a `loader.stories.jsx` files alongside.
+
+A **story showcases how to use** a component. For the most relevant props of your component, it's important to have at least one story to show how it's used and what effect it has.
+
+Things to take into account when considering which stories to add and how to write them:
+
+- Stories show have a `Default` story that showcases how the component looks like with default values for all the props.
+
+- If a component has variants, we should show each one in its own story.
+
+- Leverage setting base prop values in `args` and common rendering code in `render` to reuse those in the stories and avoid code duplication.
+
+For instance, the stories file for the `button*` component looks like this:
+
+```jsx
+// ...
+
+export default {
+  title: "Buttons/Button",
+  component: Components.Button,
+  // These are the props of the component, and we set here default values for
+  // all stories.
+  args: {
+    children: "Lorem ipsum",
+    disabled: false,
+    variant: undefined,
+  },
+  // ...
+  render: ({ ...args }) => <Button {...args} />,
+};
+
+export const Default = {};
+
+// An important prop: `icon`
+export const WithIcon = {
+  args: {
+    icon: "effects",
+  },
+};
+
+// A variant
+export const Primary = {
+  args: {
+    variant: "primary",
+  },
+};
+
+// Another variant
+export const Secondary = {
+  args: {
+    variant: "secondary",
+  },
+};
+
+// More variants here…
+```
+
+In addition to the above, please **use the [Controls addon](https://storybook.js.org/docs/essentials/controls)** to let users change props and see their effect on the fly.
+
+Controls are customized with `argTypes`, and you can control which ones to show / hide with `parameters.controls.exclude`. For instance, for the `button*` stories file, its relevant control-related code looks like this:
+
+```jsx
+// ...
+const { icons } = Components.meta;
+
+export default {
+  // ...
+  argTypes: {
+    // Use the `icons` array for possible values for the `icon` prop, and
+    // display them in a dropdown select
+    icon: {
+      options: icons,
+      control: { type: "select" },
+    },
+    // Use a toggle for the `disabled` flag prop
+    disabled: { control: "boolean" },
+    // Show these values in a dropdown for the `variant` prop.
+    variant: {
+      options: ["primary", "secondary", "ghost", "destructive"],
+      control: { type: "select" },
+    },
+  },
+  parameters: {
+    // Always hide the `children` controls.
+    controls: { exclude: ["children"] },
+  },
+  // ...
+};
+```
+
+#### Adding docs
+
+Often, Design System components come along extra documentation provided by Design. Furthermore, they might be technical things to be aware of. For this, you can add documentation in [MDX format](https://storybook.js.org/docs/writing-docs/mdx).
+
+You can use Storybook's `<Canvas>` element to showcase specific stories to enrich the documentation.
+
+When including codeblocks, please add code in Clojure syntax (not JSX).
+
+You can find an example MDX file in the [Buttons docs](https://hourly.penpot.dev/storybook/?path=/docs/buttons-docs--docs).
