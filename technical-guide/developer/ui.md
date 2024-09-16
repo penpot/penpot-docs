@@ -660,3 +660,97 @@ You can use Storybook's `<Canvas>` element to showcase specific stories to enric
 When including codeblocks, please add code in Clojure syntax (not JSX).
 
 You can find an example MDX file in the [Buttons docs](https://hourly.penpot.dev/storybook/?path=/docs/buttons-docs--docs).
+
+### Replacing a deprecated component
+
+#### Run visual regression tests
+
+We need to generate the screenshots for the visual regression tests _before_ making
+any changes, so we can compare the "before substitution" and "after substitution" states.
+
+
+Execute the tests in the playwright's `ds` project. In order to do so, stop the Shadow CLJS compiler in tmux tab `#1` and run;
+```bash
+clojure -M:dev:shadow-cljs release main
+```
+This will package the frontend in release mode so the tests run faster.
+
+In your terminal, in the frontend folder, run:
+```bash
+npx playwright test --ui --project=ds
+```
+This will open the test runner UI in the selected project.
+
+![Playwright UI](/img/tech-guide/playwright-projects.webp)
+
+The first time you run these tests they'll fail because there are no screenshots yet, but the second time, they should pass.
+
+#### Import the new component
+
+In the selected file add the new namespace from the `ds` folder in alphabetical order:
+
+```clojure
+[app.main.ui.ds.tab-switcher :refer [tab-switcher*]]
+...
+
+[:> tab-switcher* {}]
+```
+
+> **⚠️ NOTE**: Components with a `*` suffix are meant to be used with the `[:>` handler. 
+
+<small>Please refer to [Rumext User Guide](https://funcool.github.io/rumext/latest/user-guide.html) for more information.</small>
+
+#### Pass props to the component
+
+Check the props schema in the component’s source file
+ 
+```clojure
+(def ^:private schema:tab-switcher
+  [:map
+   [:class {:optional true} :string]
+   [:action-button-position {:optional true}
+    [:enum "start" "end"]]
+   [:default-selected {:optional true} :string]
+   [:tabs [:vector {:min 1} schema:tab]]])
+
+
+(mf/defc tab-switcher*
+  {::mf/props :obj
+   ::mf/schema schema:tab-switcher}...)
+```
+This schema shows which props are required and which are optional, so you can 
+include the necessary values with the correct types.
+
+Populate the component with the required props.
+
+```clojure
+(let [tabs
+        #js [#js {:label (tr "inspect.tabs.info")
+                  :id "info"
+                  :content info-content}
+
+             #js {:label (tr "inspect.tabs.code")
+                  :data-testid "code"
+                  :id "code"
+                  :content code-content}]]
+             
+  [:> tab-switcher* {:tabs tabs
+                     :default-selected "info"
+                     :on-change-tab handle-change-tab
+                     :class (stl/css :viewer-tab-switcher)}])
+``` 
+
+Once the component is rendering correctly, remove the old component and its imports.
+
+#### Check tests after changes
+
+Verify that everything looks the same after making the changes. To do this, run
+the visual tests again as previously described.
+
+If the design hasn’t changed, the tests should pass without issues.
+
+However, there are cases where the design might have changed from the original.
+In this case, first check the `diff` files provided by the test runner to ensure
+that the differences are expected (e.g., positioning, size, etc.). 
+
+Once confirmed, inform the QA team about these changes so they can review and take any necessary actions.
