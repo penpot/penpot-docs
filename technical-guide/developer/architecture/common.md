@@ -40,7 +40,7 @@ Some of the modules need some refactoring, to organize them more cleanly.
       rectangle.
 * **path** contains functions to manage SVG paths, transform them and also
   convert other types of shapes into paths.
-* **pages** contains the definition of the [Penpot data model](./model.md) and
+* **pages** contains the definition of the [Penpot data model](/technical-guide/developer/data-model/) and
   the conceptual business logic (transformations of the model entities,
   independent of the user interface or data storage).
     - **spec** has the definitions of data structures of files and shapes, and

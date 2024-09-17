@@ -134,7 +134,7 @@ Rel(ui_viewer, data_viewer, "Uses")
 
 * **store** contains the global state of the application. Uses an event loop
   paradigm, similar to Redux, with a global state object and a stream of events
-  that modify it. Made with [potok library](https://funcool.github.io/potok).
+  that modify it. Made with [potok library](https://funcool.github.io/potok/latest/).
 
 * **refs** has the collection of references or lenses: RX streams that you can
   use to subscribe to parts of the global state, and be notified when they
