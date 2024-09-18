@@ -101,6 +101,19 @@ With the ability to create an interactive prototype, you can turn your design fr
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-interactive-prototype">Interactive prototype example</a>
 
+### Add ruler guides
+
+Ruler guides are great for aligning elements exactly where you want them. Check out how to add horizontal and vertical guides to your page or boards. This makes it easier to keep your design looking the same from one place to the next.
+
+<a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-ruler-guides">Ruler guides example</a>
+
+### Create a comment
+
+Comments are a great way for designers and team members to give each other feedback on a design right away. This example shows how to add comments to specific parts of a design, which makes it easier for everyone to work together and improve their workflow.
+
+<a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-comments">Comments example</a>
+
+
 ## 5.2. Templates
 
 As we mentioned in the <a target="_blank" href="/plugins/create-a-plugin/">Create a plugin</a> section, we've got two great options for you to get started with your plugin.
