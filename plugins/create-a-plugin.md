@@ -215,7 +215,10 @@ Now that everything is in place you need a `manifest.json` file to provide Penpo
     "content:write",
     "library:read",
     "library:write",
-    "user:read"
+    "user:read",
+    "comment:read",
+    "comment:write",
+    "allow:downloads"
   ]
 }
 ```
@@ -226,15 +229,26 @@ The plugin icon must be an image file. All image formats are valid, so you can u
 
 ### Types of permissions
 
-- `content:read`: Allows reading of content-related data. Grants read access to all endpoints and operations dealing with content. Typical use cases: viewing shapes, pages, or other design elements in a project; accessing the properties and settings of content within the application.
+- **`content:read`**: Allows reading of content-related data. Grants read access to all endpoints and operations dealing with content. Typical use cases: viewing shapes, pages, or other design elements in a project; accessing the properties and settings of content within the application.
 
-- `content:write`: Allows writing or modifying content-related data. Grants write access to all endpoints and operations dealing with content modifications, except those marked as read-only. Typical use cases: adding, updating, or deleting shapes and elements in a design; uploading media or other assets to the project.
+- **`content:write`**: Allows writing or modifying content-related data. Grants write access to all endpoints and operations dealing with content modifications, except those marked as read-only. Typical use cases: adding, updating, or deleting shapes and elements in a design; uploading media or other assets to the project.
 
-- `user:read`: Allows reading of user-related data. Grants read access to all endpoints and operations dealing with user data. Typical use cases: viewing user profiles and their associated information or listing active users in a particular context or project.
+- **`user:read`**: Allows reading of user-related data. Grants read access to all endpoints and operations dealing with user data. Typical use cases: viewing user profiles and their associated information or listing active users in a particular context or project.
 
-- `library:read`: Allows reading of library-related data and assets. Grants read access to all endpoints and operations dealing with the library context. Typical use cases: accessing shared design elements and components from a library or viewing the details and properties of library assets.
+- **`library:read`**: Allows reading of library-related data and assets. Grants read access to all endpoints and operations dealing with the library context. Typical use cases: accessing shared design elements and components from a library or viewing the details and properties of library assets.
 
-- `library:write`: Allows writing or modifying library-related data and assets. Grants write access to all endpoints and operations dealing with library modifications. Typical use cases: adding new components or assets to the library or updating or removing existing library elements.
+- **`library:write`**: Allows writing or modifying library-related data and assets. Grants write access to all endpoints and operations dealing with library modifications. Typical use cases: adding new components or assets to the library or updating or removing existing library elements.
+
+- **`comment:read`**: Allows reading of comment-related data. Grants read access to all endpoints and operations dealing with comments.
+Typical use cases: viewing comments on pages; accessing feedback or annotations provided by collaborators in the project.
+
+- **`comment:write`**: Allows writing or modifying comment-related data. Grants write access to all endpoints and operations dealing with creating, replying, or deleting comments.
+Typical use cases: adding new comments to pages; deleting existing comments; replying to comments within the project's context.
+
+- **`allow:downloads`**: Allows downloading of the project file. Grants access to endpoints and operations that enable the downloading of the entire project file.
+Typical use cases: downloading the full project file for backup or sharing.
+
+_Note: Write permissions automatically includes its corresponding read permission (e.g., `content:write` includes `content:read`) because reading is required to perform write or modification actions._
 
 ## 2.7. Step 7. Load the Plugin in Penpot
 
@@ -244,7 +258,7 @@ The plugin icon must be an image file. All image formats are valid, so you can u
 
 Serving your plugin will generate a URL that looks something like `http://localhost:XXXX`, where `XXXX` represents the port number on which the plugin is served. Ensure that both `http://localhost:XXXX/manifest.json` and `http://localhost:XXXX/plugin.js` are accessible. If these files are inside a specific folder, the URL should be adjusted accordingly (e.g., `http://localhost:XXXX/folder/manifest.json`).
 
-Once your plugin is served you are ready to load it into Penpot. You can use the shortcut `Ctrl + Alt + P` to open the Plugin Manager modal. In this modal, provide the URL to your plugin's manifest file (e.g., `http://localhost:XXXX/manifest.json`) for installation. If everything is set up correctly, the plugin will be installed, and you can launch it whenever needed.
+Once your plugin is served you are ready to load it into Penpot. You can use the shortcut **`Ctrl + Alt + P`** to open the Plugin Manager modal. In this modal, provide the URL to your plugin's manifest file (e.g., `http://localhost:XXXX/manifest.json`) for installation. If everything is set up correctly, the plugin will be installed, and you can launch it whenever needed.
 
 You can also open the Plugin manager modal via:
 

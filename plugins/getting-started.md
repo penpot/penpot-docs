@@ -142,7 +142,10 @@ The `manifest.json` file contains the basic information about the plugin. It def
     "content:write",
     "library:read",
     "library:write",
-    "user:read"
+    "user:read",
+    "comment:read",
+    "comment:write",
+    "allow:downloads"
   ]
 }
 ```
@@ -165,6 +168,15 @@ The `manifest.json` file contains the basic information about the plugin. It def
 - **`library:read`**: Allows reading of library-related data and assets. Grants read access to all endpoints and operations dealing with the library context. Typical use cases: accessing shared design elements and components from a library or viewing the details and properties of library assets.
 
 - **`library:write`**: Allows writing or modifying library-related data and assets. Grants write access to all endpoints and operations dealing with library modifications. Typical use cases: adding new components or assets to the library or updating or removing existing library elements.
+
+- **`comment:read`**: Allows reading of comment-related data. Grants read access to all endpoints and operations dealing with comments.
+Typical use cases: viewing comments on pages; accessing feedback or annotations provided by collaborators in the project.
+
+- **`comment:write`**: Allows writing or modifying comment-related data. Grants write access to all endpoints and operations dealing with creating, replying, or deleting comments.
+Typical use cases: adding new comments to pages; deleting existing comments; replying to comments within the project's context.
+
+- **`allow:downloads`**: Allows downloading of the project file. Grants access to endpoints and operations that enable the downloading of the entire project file.
+Typical use cases: downloading the full project file for backup or sharing.
 
 _Note: Write permissions automatically includes its corresponding read permission (e.g., `content:write` includes `content:read`) because reading is required to perform write or modification actions._
 
