@@ -111,6 +111,10 @@ Ruler guides are great for aligning elements exactly where you want them. Check 
 
 Comments are a great way for designers and team members to give each other feedback on a design right away. This example shows how to add comments to specific parts of a design, which makes it easier for everyone to work together and improve their workflow.
 
+<p class="advice">
+Just a friendly reminder that it's important to have the <b>comment permissions</b> in the <code><strong>manifest.json</strong></code>.
+</p>
+
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-comments">Comments example</a>
 
 
