@@ -17,7 +17,7 @@ If you just want to get to the examples, you can go straight to the repository <
 
 One of the most basic things you can do in design is create a shape. It's really simple. In this example, we'll show you how to make a rectangle, but you can use the same principles to make other shapes. This makes it easy for you to add different shapes to your design, which is great for building more complex elements and layouts.
 
-```
+```js
 // just replace
 penpot.createRectangle();
 
@@ -58,7 +58,7 @@ Grid Layout lets you create flexible designs that automatically adapt to differe
 Using components is a great way to reuse objects or groups of objects, making sure everything looks the same and works well across your designs. This example shows you how to create a component, which lets you make your workflow easier by defining reusable design elements.
 
 <p class="advice">
-Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code><strong>manifest.json</strong></code>.
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code class="language-bash">manifest.json</code>.
 </p>
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/components-library">Components example</a>
@@ -68,10 +68,10 @@ Just a friendly reminder that it's important to have the <b>library permissions<
 Having quick access to your go-to colors and fonts can really help you work more efficiently, letting you build a solid set of assets with minimal effort. In this example, you'll see how to add a color to your library, so you'll have instant access whenever you need it. The same goes for typography assets—just replace createColor with createTypography. This flexibility means your most commonly used design elements are always at your fingertips, ready to enhance your creative workflow.
 
 <p class="advice">
-Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code><strong>manifest.json</strong></code>.
+Just a friendly reminder that it's important to have the <b>library permissions</b> in the <code class="language-bash">manifest.json</code>.
 </p>
 
-```
+```js
 // just replace
 penpot.library.local.createColor();
 
@@ -85,7 +85,7 @@ penpot.library.local.createTypography();
 
 Penpot has dark and light modes, and you can easily add this to your plugin so your interface adapts to both themes. When you add theme support, your plugin will automatically sync with Penpot's interface settings, so the user experience is consistent no matter which mode is selected. This makes your plugin look better and also ensures it stays in line with Penpot's overall design.
 
-Just a heads-up: if you use the <a target="_blank" href="https://penpot-plugins-styles.pages.dev/">plugin-styles library</a>, many elements will automatically adapt to dark or light mode without any extra effort from you. However, if you need to customize specific elements, be sure to use the selectors provided in the `styles.css` of the example.
+Just a heads-up: if you use the <a target="_blank" href="https://penpot-plugins-styles.pages.dev/">plugin-styles library</a>, many elements will automatically adapt to dark or light mode without any extra effort from you. However, if you need to customize specific elements, be sure to use the selectors provided in the <code class="language-bash">styles.css</code> of the example.
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/theme">Theme example</a>
 
@@ -112,7 +112,7 @@ Ruler guides are great for aligning elements exactly where you want them. Check 
 Comments are a great way for designers and team members to give each other feedback on a design right away. This example shows how to add comments to specific parts of a design, which makes it easier for everyone to work together and improve their workflow.
 
 <p class="advice">
-Just a friendly reminder that it's important to have the <b>comment permissions</b> in the <code><strong>manifest.json</strong></code>.
+Just a friendly reminder that it's important to have the <b>comment permissions</b> in the <code class="language-bash">manifest.json</code>.
 </p>
 
 <a target="_blank" href="https://github.com/penpot/penpot-plugins-samples/tree/main/create-comments">Comments example</a>

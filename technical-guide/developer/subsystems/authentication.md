@@ -143,7 +143,7 @@ Finally, to test LDAP, in the devenv we include a [test LDAP](https://github.com
 server, that is already configured, and only needs to be enabled in frontend
 `config.js`:
 
-```javascript
+```js
 var penpotFlags = "enable-login-with-ldap";
 ```
 
