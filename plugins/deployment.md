@@ -11,11 +11,11 @@ In this guide you will found some options for static sites that have free plans.
 
 ## 3.1. Building your project
 
-The building may vary between frameworks but if you had previously configured your scripts in `package.json`, `npm run build` should work.
+The building may vary between frameworks but if you had previously configured your scripts in <code class="language-bash">package.json</code>, <code class="language-bash">npm run build</code> should work.
 
-The resulting build should be located somewhere in the `dist/` folder, maybe somewhere else if you have configured so.
+The resulting build should be located somewhere in the <code class="language-bash">dist/</code> folder, maybe somewhere else if you have configured so.
 
-Be wary that some framework's builders can add additional folders like `apps/project-name/`, `project-name/` or `browser/`.
+Be wary that some framework's builders can add additional folders like <code class="language-bash">apps/project-name/</code>, <code class="language-bash">project-name/</code> or <code class="language-bash">browser/</code>.
 
 Examples:
 
@@ -30,7 +30,7 @@ You need a Netlify account if you don't already have one. You can <a target="_bl
 
 ### CORS issues
 
-To avoid these issues you can add a `_headers` file to your plugin. Place it in the `public/` folder or alongside the main files.
+To avoid these issues you can add a <code class="language-bash">_headers</code> file to your plugin. Place it in the <code class="language-bash">public/</code> folder or alongside the main files.
 
 ```js
 /*
@@ -93,7 +93,7 @@ You need a Cloudflare account if you don't already have one. You can <a target="
 
 ### CORS issues
 
-To avoid these issues you can add a `_headers` file to your plugin. Place it in the `public/` folder or alongside the main files.
+To avoid these issues you can add a <code class="language-bash">_headers</code> file to your plugin. Place it in the <code class="language-bash">public/</code> folder or alongside the main files.
 
 ```js
 /*
@@ -167,9 +167,9 @@ Surge provides a CLI tool for easy deployment.
 
 ### CORS issues
 
-To avoid these issues you can add a `CORS` file to your plugin. Place it in the `public/` folder or alongside the main files.
+To avoid these issues you can add a <code class="language-bash">CORS</code> file to your plugin. Place it in the <code class="language-bash">public/</code> folder or alongside the main files.
 
-The `CORS` can contain a `*` for any domain, or a list of specific domains.
+The <code class="language-bash">CORS</code> can contain a <code class="language-bash">*</code> for any domain, or a list of specific domains.
 
 Check <a target="_blank" href="https://surge.sh/help/enabling-cross-origin-resource-sharing">Enabling Cross-Origin Resources sharing</a>.
 

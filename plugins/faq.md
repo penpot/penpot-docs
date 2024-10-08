@@ -47,7 +47,7 @@ There are no set requirements. However, we can recommend the use of <a target="_
 
 ### Is it necessary to create plugins with a UI?
 
-No, it’s completely optional, in fact, we have an example of a plugin without UI. Try the plugin using this url to install it: `https://create-palette-penpot-plugin.pages.dev/assets/manifest.json` or check the code <a target="_blank" href="https://github.com/penpot/penpot-plugins/tree/main/apps/create-palette-plugin">here</a>
+No, it’s completely optional, in fact, we have an example of a plugin without UI. Try the plugin using this url to install it: <code class="language-js">https:\/\/create-palette-penpot-plugin.pages.dev/assets/manifest.json</code> or check the code <a target="_blank" href="https://github.com/penpot/penpot-plugins/tree/main/apps/create-palette-plugin">here</a>
 
 ### Can I create components?
 
@@ -65,7 +65,7 @@ You will be able to share your plugin with the <a target="_blank" href="https://
 
 ### My plugin works on my local machine, but I couldn’t install it on Penpot. What could be the problem?
 
-The url you that you need to provide in the plugin manager should look <a target="_blank" href="/plugins/create-a-plugin/#2.6.-step-6.-configure-the-manifest-file">like this</a>: `https://yourdomain.com/assents/manifest.json`
+The url you that you need to provide in the plugin manager should look <a target="_blank" href="/plugins/create-a-plugin/#2.6.-step-6.-configure-the-manifest-file">like this</a>: <code class="language-bash">https:\/\/yourdomain.com/assents/manifest.json</code>
 
 ### Where can I get support if I find a bug or an unexpected behavior?
 
