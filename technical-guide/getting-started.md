@@ -136,12 +136,12 @@ plugin. You can use the old **docker-compose** tool, but all the documentation s
 you are using the V2.
 
 You can easily check which version of **docker compose** you have. If you can execute
-`docker compose` command, then you have V2. If you need to write `docker-compose` (with a
-`-`) for it to work, you have the old version.
+<code class="language-bash">docker compose</code> command, then you have V2. If you need to write <code class="language-bash">docker-compose</code> (with a
+<code class="language-bash">-</code>) for it to work, you have the old version.
 
 ### Start Penpot
 
-As first step you will need to obtain the `docker-compose.yaml` file. You can download it
+As first step you will need to obtain the <code class="language-bash">docker-compose.yaml</code> file. You can download it
 <a
 href="https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml"
 target="_blank">from Penpot repository</a>.
@@ -174,13 +174,13 @@ docker compose -p penpot -f docker-compose.yaml down
 
 ### Configure Penpot with Docker
 
-The configuration is defined using environment variables in the `docker-compose.yaml`
+The configuration is defined using environment variables in the <code class="language-bash">docker-compose.yaml</code>
 file. The default downloaded file already comes with the essential variables already set,
 and other ones commented out with some explanations.
 
 #### Create users using CLI
 
-By default (or when `disable-email-verification` flag is used), the email verification process
+By default (or when <code class="language-bash">disable-email-verification</code> flag is used), the email verification process
 is completely disabled for new registrations but it is highly recommended enabling email
 verification or disabling registration if you are going to expose your penpot instance to
 the internet.
@@ -194,10 +194,10 @@ docker exec -ti penpot-penpot-backend-1 python3 manage.py create-profile
 ```
 
 **NOTE:** the exact container name depends on your docker version and platform.
-For example it could be `penpot-penpot-backend-1` or `penpot_penpot-backend-1`.
-You can check the correct name executing `docker ps`.
+For example it could be <code class="language-bash">penpot-penpot-backend-1</code> or <code class="language-bash">penpot_penpot-backend-1</code>.
+You can check the correct name executing <code class="language-bash">docker ps</code>.
 
-**NOTE:** This script only will works when you properly have the `enable-prepl-server`
+**NOTE:** This script only will works when you properly have the <code class="language-bash">enable-prepl-server</code>
 flag set on backend (is set by default on the latest docker-compose.yaml file)
 
 You can find all configuration options in the [Configuration][1] section.
@@ -212,8 +212,7 @@ execute:
 docker compose -f docker-compose.yaml pull
 ```
 
-This will fetch the latest images. When you do `docker compose up` again, the
-containers will be recreated with the latest version.
+This will fetch the latest images. When you do <code class="language-bash">docker compose up</code> again, the containers will be recreated with the latest version.
 
 
 **Important: Upgrade from version 1.x to 2.0**
@@ -227,8 +226,8 @@ extensively), this process may take a few minutes.
 
 In some cases, such as when the script encounters an error, it may be
 convenient to run the process manually. To do this, you can disable
-the automatic migration process using the `disable-v2-migration` flag
-in `PENPOT_FLAGS` environment variable. You can then execute the
+the automatic migration process using the <code class="language-bash">disable-v2-migration</code> flag
+in <code class="language-bash">PENPOT_FLAGS</code> environment variable. You can then execute the
 migration process manually with the following command:
 
 ```bash

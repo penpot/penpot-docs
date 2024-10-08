@@ -42,7 +42,7 @@ target="_blank">backend API documentation</a>, generated automatically from <a
 href="https://github.com/penpot/penpot/tree/main/backend/src/app/rpc"
 target="_blank">source code</a>, as a guide.
 
-All backend RPC calls labelled as `WEBHOOK` trigger webhook calls, if
+All backend RPC calls labelled as <code class="language-bash">WEBHOOK</code> trigger webhook calls, if
 appropriate, with an equivalent payload.
 
 The payload content is specified as <a href="https://clojure.org/guides/spec"
@@ -50,8 +50,8 @@ target="_blank">Clojure Spec</a> predicates:
 
 ![Example of a RPC call](/img/tech-guide/webhook-call.webp)
 
-The listed spec details all required (`:req` or `:req-un`) and optional
-(`:opt-un`) attributes of the RPC parameters.
+The listed spec details all required (<code class="language-bash">:req</code> or <code class="language-bash">:req-un</code>) and optional
+(<code class="language-bash">:opt-un</code>) attributes of the RPC parameters.
 
 The payload of the webhook is similar, but there may be some changes (some
 parameters ommited or others added). The recommended way of understanding the
@@ -63,7 +63,7 @@ Generate a site URL and set it into Penpot. Then you can inspect the calls recei
 
 Personal access tokens function like an alternative to our login/password authentication system and can be used to allow an application to access the internal Penpot API.
 
-<p class="advice"><strong>Important:</strong> Treat your access tokens like passwords as they provide access to our account.</p> 
+<p class="advice"><strong>Important:</strong> Treat your access tokens like passwords as they provide access to our account.</p>
 
 ### Manage access tokens
 In Penpot, access tokens are configured at user account level. To manage your access tokens, go to Your account > Access tokens.
