@@ -26,11 +26,11 @@ We want to hold our UI code to the same quality standards of the rest of the cod
 
 **Composability is a common pattern** in the Web. We can see it in the standard HTML elements, which are made to be nested one inside another to craft more complex content. Standard Web components also offer slots to make composability more flexible.
 
-<mark>Our UI components must be composable</mark>. In React, this is achieved via the `children` prop, in addition to pass slotted components via regular props.
+<mark>Our UI components must be composable</mark>. In React, this is achieved via the <code class="language-clojure">children</code> prop, in addition to pass slotted components via regular props.
 
-#### Use of `children`
+#### Use of <code class="language-clojure">children</code>
 
-> **⚠️ NOTE**: Avoid manipulating `children` in your component. See [React docs](https://react.dev/reference/react/Children#alternatives) about the topic.
+> **⚠️ NOTE**: Avoid manipulating <code class="language-clojure">children</code> in your component. See [React docs](https://react.dev/reference/react/Children#alternatives) about the topic.
 
 ✅ **DO: Use children when we need to enable composing**
 
@@ -59,13 +59,13 @@ When we need to either:
 - Inject multiple (and separate) groups of elements.
 - Manipulate the provided components to add, remove, filter them, etc.
 
-Instead of `children`, we can pass the component(s) via a regular a prop.
+Instead of <code class="language-clojure">children</code>, we can pass the component(s) via a regular a prop.
 
 #### When _not_ to pass a component via a prop
 
 It's about **ownership**. By allowing the passing of a full component, the responsibility of styling and handling the events of that component belong to whoever instantiated that component and passed it to another one.
 
-For instance, here the user would be in total control of the `icon` component for styling (and for choosing which component to use as an icon, be it another React component, or a plain SVG, etc.)
+For instance, here the user would be in total control of the <code class="language-clojure">icon</code> component for styling (and for choosing which component to use as an icon, be it another React component, or a plain SVG, etc.)
 
 ```clojure
 (mf/defc button*
@@ -94,25 +94,25 @@ It's important we are aware of:
 
 - What are the **boundaries** of our component (i.e. what it can and cannot do)
   - Like in regular programming, it's good to keep all the inner elements at the same level of abstraction.
-  - If a component grows too big, we can split it in several ones. Note that we can mark components as private with the `::mf/private true` meta tag.
+  - If a component grows too big, we can split it in several ones. Note that we can mark components as private with the <code class="language-clojure">::mf/private true</code> meta tag.
 - Which component is **responsible for what**.
 
 As a rule of thumb:
 
 - Components own the stuff they instantiate themselves.
-- Slotted components or `children` belong to the place they have been instantiated.
+- Slotted components or <code class="language-clojure">children</code> belong to the place they have been instantiated.
 
 This ownership materializes in other areas, like **styles**. For instance, parent components are usually reponsible for placing their children into a layout. Or, as mentioned earlier, we should avoid manipulating the styles of a component we don't have ownership over.
 
 ## Styling components
 
-We use **CSS modules** and **Sass** to style components. Use the `(stl/css)` and `(stl/css-case)` functions to generate the class names for the CSS modules.
+We use **CSS modules** and **Sass** to style components. Use the <code class="language-clojure">(stl/css)</code> and <code class="language-clojure">(stl/css-case)</code> functions to generate the class names for the CSS modules.
 
 ### Allow passing a class name
 
 Our components should allow some customization by whoever is instantiating them. This is useful for positioning elements in a layout, providing CSS properties, etc.
 
-This is achieved by accepting a `class` prop (equivalent to `className` in JSX). Then, we need to join the class name we have received as a prop with our own class name for CSS modules.
+This is achieved by accepting a <code class="language-clojure">class</code> prop (equivalent to <code class="language-clojure">className</code> in JSX). Then, we need to join the class name we have received as a prop with our own class name for CSS modules.
 
 ```clojure
 (mf/defc button*
@@ -214,20 +214,20 @@ Whenever possible, leverage HTML semantic elements, which have been implemented 
 
 This includes:
 
-- Using `<a>` for link (navigation, downloading files, sending e-mails via `mailto:`, etc.)
-- Using `<button>` for triggering actions (submitting a form, closing a modal, selecting a tool, etc.)
+- Using <code class="language-html">\<a></code> for link (navigation, downloading files, sending e-mails via <code class="language-html">mailto:</code>, etc.)
+- Using <code class="language-html">\<button></code> for triggering actions (submitting a form, closing a modal, selecting a tool, etc.)
 - Using the proper heading level.
 - Etc.
 
-Also, elements **should be focusable** with keyboard. Pay attention to `tabindex` and the use of focus.
+Also, elements **should be focusable** with keyboard. Pay attention to <code class="language-html">tabindex</code> and the use of focus.
 
 ### Aria roles
 
-If you cannot use a native element because of styling (like a `<select>` for a dropdown menu), consider either adding one that is hidden (except for assistive software) or use relevant [aria roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) in your custom markup.
+If you cannot use a native element because of styling (like a <code class="language-html">\<select></code> for a dropdown menu), consider either adding one that is hidden (except for assistive software) or use relevant [aria roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) in your custom markup.
 
-When using images as icons, they should have an `aria-label`, `alt`, or similar if they are not decorative and there's no text around to tag the button. Think, for instance, of a generic toolbar without text labels, just icon buttons.
+When using images as icons, they should have an <code class="language-html">aria-label</code>, <code class="language-html">alt</code>, or similar if they are not decorative and there's no text around to tag the button. Think, for instance, of a generic toolbar without text labels, just icon buttons.
 
-For decorative images, they don't need to be anounced to assistive devices and should have `aria-hidden` set to `true`.
+For decorative images, they don't need to be anounced to assistive devices and should have <code class="language-html">aria-hidden</code> set to <code class="language-html">true</code>.
 
 ## Clojure / Rumext implementation notes
 
@@ -235,9 +235,9 @@ Please refer to the [Rumext User Guide](https://funcool.github.io/rumext/latest/
 
 Some things to have in mind:
 
-- When you want to use JavaScript props, use the meta `{::mf/props :obj}`. In this case, avoid using `?` for boolean props, since they don't get a clean translation to JavaScript.
-- You can use type hints such as `^boolean` to get JS semantics.
-- Split big components into smaller ones. You can mark components as private with the `::mf/private true` meta.
+- When you want to use JavaScript props, use the meta <code class="language-clojure">{::mf/props :obj}</code>. In this case, avoid using <code class="language-clojure">?</code> for boolean props, since they don't get a clean translation to JavaScript.
+- You can use type hints such as <code class="language-clojure">^boolean</code> to get JS semantics.
+- Split big components into smaller ones. You can mark components as private with the <code class="language-clojure">::mf/private true</code> meta.
 
 ### Delegating props
 
@@ -258,7 +258,7 @@ We just need to use `:rest ` when declaring the component props.
   [:> "button" other children])
 ```
 
-If we need to augment this props object, we can use `spread-props` and the usual transformations that Rumext does (like `class` -> `className`, for instance) will be applied too.
+If we need to augment this props object, we can use <code class="language-clojure">spread-props</code> and the usual transformations that Rumext does (like <code class="language-clojure">class</code> -> <code class="language-clojure">className</code>, for instance) will be applied too.
 
 ```clojure
 (mf/defc button*
@@ -283,7 +283,7 @@ Most of this techniques revolve around achieving one of these:
 
 It's faster to use a JS Object for props instead of a native Clojure map, because then that conversion will not happen in runtime in each re-render.
 
-✅ **DO: Use the metadata `::mf/props :obj` when creating a component**
+✅ **DO: Use the metadata <code class="language-clojure">::mf/props :obj</code> when creating a component**
 
 ```clojure
 (mf/defc icon*
@@ -325,11 +325,11 @@ This creates a brand new function every render. Instead, create the function on 
 
 ```
 
-#### Avoid defining functions inside of a component (via `let`)
+#### Avoid defining functions inside of a component (via <code class="language-clojure">let</code>)
 
 When we do this inside of a component, a brand new function is created in every render.
 
-❌ \*\*AVOID: Using `let` to define functions
+❌ \*\*AVOID: Using <code class="language-clojure">let</code> to define functions
 
 ```clojure
 (mf/defc login-button
@@ -354,9 +354,9 @@ When we do this inside of a component, a brand new function is created in every 
   [:button {:on-click login} "Login"])
 ```
 
-#### Avoid defining functions with `partial` inside of components
+#### Avoid defining functions with <code class="language-clojure">partial</code> inside of components
 
-`partial` returns a brand new anonymous function, so we should avoid using it in each render. For callback handlers that need parameters, a work around is to store these as `data-*` attributes and retrieve them inside the function.
+<code class="language-clojure">partial</code> returns a brand new anonymous function, so we should avoid using it in each render. For callback handlers that need parameters, a work around is to store these as <code class="language-clojure">data-*</code> attributes and retrieve them inside the function.
 
 ❌ **AVOID: Using `partial` inside of a component**
 
@@ -371,7 +371,7 @@ When we do this inside of a component, a brand new function is created in every 
     [:> numeric-input* {:on-change (partial set-margin :right)}] ])
 ```
 
-✅ **DO: Use `data-*` attributes to modify a function (many uses)**
+✅ **DO: Use <code class="language-clojure">data-*</code> attributes to modify a function (many uses)**
 
 ```clojure
 (defn- set-margin [value event]
@@ -390,7 +390,7 @@ When we do this inside of a component, a brand new function is created in every 
 
 ```
 
-✅ **DO: Store the returned function from `partial` (few uses)**
+✅ **DO: Store the returned function from <code class="language-clojure">partial</code> (few uses)**
 
 ```clojure
 (defn- set-padding [sides value]
@@ -412,7 +412,7 @@ Often we need to access values from props. It's best if we destructure them (bec
 
 ##### Destructuring props
 
-✅ **DO: Destructure props with `:keys`**
+✅ **DO: Destructure props with <code class="language-clojure">:keys</code>**
 
 ```clojure
 (defc icon
@@ -440,7 +440,7 @@ Often we need to access values from props. It's best if we destructure them (bec
 
 ##### Storing state values
 
-We can avoid multiple calls to `(deref)` if we store the value in a variable.
+We can avoid multiple calls to <code class="language-clojure">(deref)</code> if we store the value in a variable.
 
 ✅ **DO: store state values**
 
@@ -481,7 +481,7 @@ Creating an array of static elements and iterating over it to generate DOM may b
 
 ## Penpot Design System
 
-Penpot has started to use a **design system**, which is located at `frontend/src/app/main/ui/ds`. The components of the design system is published in a Storybook at [hourly.penpot.dev/storybook/](https://hourly.penpot.dev/storybook/) with the contents of the `develop` branch of the repository.
+Penpot has started to use a **design system**, which is located at <code class="language-bash">frontend/src/app/main/ui/ds</code>. The components of the design system is published in a Storybook at [hourly.penpot.dev/storybook/](https://hourly.penpot.dev/storybook/) with the contents of the <code class="language-bash">develop</code> branch of the repository.
 
 <mark>When a UI component is **available in the design system**, use it!</mark>. If it's not available but it's part of the Design System (ask the design folks if you are unsure), then do add it to the design system and Storybook.
 
@@ -489,28 +489,28 @@ Penpot has started to use a **design system**, which is located at `frontend/src
 
 In order to implement a new component for the design system, you need to:
 
-- Add a new `<component>.cljs` file within the `ds/` folder tree. This contains the CLJS implementation of the component, and related code (props schemas, private components, etc.).
-- Add a `<component>.css` file with the styles for the component. This is a CSS Module file, and the selectors are scoped to this component.
-- Add a `<component>.stories.jsx` Storybook file (see the _Storybook_ section below).
-- (Optional) When available docs, add a `<component>.mdx` doc file (see _Storybook_ section below).
+- Add a new <code class="language-bash">\<component>.cljs</code> file within the <code class="language-bash">ds/</code> folder tree. This contains the CLJS implementation of the component, and related code (props schemas, private components, etc.).
+- Add a <code class="language-bash">\<component>.css</code> file with the styles for the component. This is a CSS Module file, and the selectors are scoped to this component.
+- Add a <code class="language-bash">\<component>.stories.jsx</code> Storybook file (see the _Storybook_ section below).
+- (Optional) When available docs, add a <code class="language-bash">\<component>.mdx</code> doc file (see _Storybook_ section below).
 
-In addition to the above, you also need to **specifically export the new component** with a JavaScript-friendly name in `frontend/src/app/main/ui/ds.cljs`.
+In addition to the above, you also need to **specifically export the new component** with a JavaScript-friendly name in <code class="language-bash">frontend/src/app/main/ui/ds.cljs</code>.
 
 ### Tokens
 
 We use three **levels of tokens**:
 
-- **Primary** tokens, referring to raw values (i.e. pixels, hex colors, etc.) of color, sizes, borders, etc. These are implemented as Sass variables. Examples are: `$mint-250`, `$sz-16`, `$br-circle`, etc.
+- **Primary** tokens, referring to raw values (i.e. pixels, hex colors, etc.) of color, sizes, borders, etc. These are implemented as Sass variables. Examples are: <code class="language-css">$mint-250</code>, <code class="language-css">$sz-16</code>, <code class="language-css">$br-circle</code>, etc.
 
-- **Semantic** tokens, used mainly for theming. These are implemented with **CSS custom properties**. Depending on the theme, these semantic tokens would have different primary tokens as values. For instance, `--color-accent-primary` is `$purple-700` when the light theme is active, but `$mint-150` in the default theme. These custom properties have **global scope**.
+- **Semantic** tokens, used mainly for theming. These are implemented with **CSS custom properties**. Depending on the theme, these semantic tokens would have different primary tokens as values. For instance, <code class="language-css">--color-accent-primary</code> is <code class="language-css">$purple-700</code> when the light theme is active, but <code class="language-css">$mint-150</code> in the default theme. These custom properties have **global scope**.
 
-- **Component** tokens, defined at component level as **CSS custom properties**. These are very useful when implementing variants. Examples include `--button-bg-color` or `--toast-icon-color`. These custom properties are constrained to the **local scope** of its component.
+- **Component** tokens, defined at component level as **CSS custom properties**. These are very useful when implementing variants. Examples include <code class="language-css">--button-bg-color</code> or <code class="language-css">--toast-icon-color</code>. These custom properties are constrained to the **local scope** of its component.
 
 ### Implementing variants
 
 We can leverage component tokens to easily implement variants, by overriding their values in each component variant.
 
-For instance, this is how we handle the styles of `<Toast>`, which have a different style depending on the level of the message (default, info, error, etc.)
+For instance, this is how we handle the styles of <code class="language-clojure">\<Toast></code>, which have a different style depending on the level of the message (default, info, error, etc.)
 
 ```scss
 .toast {
@@ -551,29 +551,29 @@ Please refer to the Storybook [documentation for icons](https://hourly.penpot.de
 
 We use [Storybook](https://storybook.js.org/) to implement and showcase the components of the Design System.
 
-The Storybook is available at the `/storybook` path in the URL for each environment. For instance, the one built out of our `develop` branch is available at [hourly.penpot.dev/storybook](https://hourly.penpot.dev/storybook).
+The Storybook is available at the <code class="language-bash">/storybook</code> path in the URL for each environment. For instance, the one built out of our <code class="language-bash">develop</code> branch is available at [hourly.penpot.dev/storybook](https://hourly.penpot.dev/storybook).
 
 #### Local development
 
-Use `yarn watch:storybook` to develop the Design System components with the help of Storybook.
+Use <code class="language-bash">yarn watch:storybook</code> to develop the Design System components with the help of Storybook.
 
-> **⚠️ WARNING**: Do stop any existing Shadow CLJS and asset compilation jobs (like the ones running at tabs `0` and `1` in the devenv tmux), because `watch:storybook` will spawn their own.
+> **⚠️ WARNING**: Do stop any existing Shadow CLJS and asset compilation jobs (like the ones running at tabs <code class="language-bash">0</code> and <code class="language-bash">1</code> in the devenv tmux), because <code class="language-bash">watch:storybook</code> will spawn their own.
 
 #### Writing stories
 
-You should add a Storybook file for each design system component you implement. This is a `.jsx` file located at the same place as your component file, with the same name. For instance, a component defined in `loader.cljs` should have a `loader.stories.jsx` files alongside.
+You should add a Storybook file for each design system component you implement. This is a <code class="language-bash">.jsx</code> file located at the same place as your component file, with the same name. For instance, a component defined in <code class="language-bash">loader.cljs</code> should have a <code class="language-bash">loader.stories.jsx</code> files alongside.
 
 A **story showcases how to use** a component. For the most relevant props of your component, it's important to have at least one story to show how it's used and what effect it has.
 
 Things to take into account when considering which stories to add and how to write them:
 
-- Stories show have a `Default` story that showcases how the component looks like with default values for all the props.
+- Stories show have a <code class="language-bash">Default</code> story that showcases how the component looks like with default values for all the props.
 
 - If a component has variants, we should show each one in its own story.
 
-- Leverage setting base prop values in `args` and common rendering code in `render` to reuse those in the stories and avoid code duplication.
+- Leverage setting base prop values in <code class="language-bash">args</code> and common rendering code in <code class="language-bash">render</code> to reuse those in the stories and avoid code duplication.
 
-For instance, the stories file for the `button*` component looks like this:
+For instance, the stories file for the <code class="language-bash">button*</code> component looks like this:
 
 ```jsx
 // ...
@@ -620,7 +620,7 @@ export const Secondary = {
 
 In addition to the above, please **use the [Controls addon](https://storybook.js.org/docs/essentials/controls)** to let users change props and see their effect on the fly.
 
-Controls are customized with `argTypes`, and you can control which ones to show / hide with `parameters.controls.exclude`. For instance, for the `button*` stories file, its relevant control-related code looks like this:
+Controls are customized with <code class="language-bash">argTypes</code>, and you can control which ones to show / hide with <code class="language-bash">parameters.controls.exclude</code>. For instance, for the <code class="language-bash">button*</code> stories file, its relevant control-related code looks like this:
 
 ```jsx
 // ...
@@ -655,7 +655,7 @@ export default {
 
 Often, Design System components come along extra documentation provided by Design. Furthermore, they might be technical things to be aware of. For this, you can add documentation in [MDX format](https://storybook.js.org/docs/writing-docs/mdx).
 
-You can use Storybook's `<Canvas>` element to showcase specific stories to enrich the documentation.
+You can use Storybook's <code class="language-bash">\<Canvas></code> element to showcase specific stories to enrich the documentation.
 
 When including codeblocks, please add code in Clojure syntax (not JSX).
 
@@ -669,7 +669,7 @@ We need to generate the screenshots for the visual regression tests _before_ mak
 any changes, so we can compare the "before substitution" and "after substitution" states.
 
 
-Execute the tests in the playwright's `ds` project. In order to do so, stop the Shadow CLJS compiler in tmux tab `#1` and run;
+Execute the tests in the playwright's <code class="language-bash">ds</code> project. In order to do so, stop the Shadow CLJS compiler in tmux tab <code class="language-bash">#1</code> and run;
 ```bash
 clojure -M:dev:shadow-cljs release main
 ```
@@ -687,7 +687,7 @@ The first time you run these tests they'll fail because there are no screenshots
 
 #### Import the new component
 
-In the selected file add the new namespace from the `ds` folder in alphabetical order:
+In the selected file add the new namespace from the <code class="language-bash">ds</code> folder in alphabetical order:
 
 ```clojure
 [app.main.ui.ds.tab-switcher :refer [tab-switcher*]]
@@ -696,14 +696,14 @@ In the selected file add the new namespace from the `ds` folder in alphabetical 
 [:> tab-switcher* {}]
 ```
 
-> **⚠️ NOTE**: Components with a `*` suffix are meant to be used with the `[:>` handler. 
+> **⚠️ NOTE**: Components with a <code class="language-bash">*</code> suffix are meant to be used with the <code class="language-clojure">[:></code> handler.
 
 <small>Please refer to [Rumext User Guide](https://funcool.github.io/rumext/latest/user-guide.html) for more information.</small>
 
 #### Pass props to the component
 
 Check the props schema in the component’s source file
- 
+
 ```clojure
 (def ^:private schema:tab-switcher
   [:map
@@ -718,7 +718,7 @@ Check the props schema in the component’s source file
   {::mf/props :obj
    ::mf/schema schema:tab-switcher}...)
 ```
-This schema shows which props are required and which are optional, so you can 
+This schema shows which props are required and which are optional, so you can
 include the necessary values with the correct types.
 
 Populate the component with the required props.
@@ -733,12 +733,12 @@ Populate the component with the required props.
                   :data-testid "code"
                   :id "code"
                   :content code-content}]]
-             
+
   [:> tab-switcher* {:tabs tabs
                      :default-selected "info"
                      :on-change-tab handle-change-tab
                      :class (stl/css :viewer-tab-switcher)}])
-``` 
+```
 
 Once the component is rendering correctly, remove the old component and its imports.
 
@@ -750,7 +750,7 @@ the visual tests again as previously described.
 If the design hasn’t changed, the tests should pass without issues.
 
 However, there are cases where the design might have changed from the original.
-In this case, first check the `diff` files provided by the test runner to ensure
-that the differences are expected (e.g., positioning, size, etc.). 
+In this case, first check the <code class="language-bash">diff</code> files provided by the test runner to ensure
+that the differences are expected (e.g., positioning, size, etc.).
 
 Once confirmed, inform the QA team about these changes so they can review and take any necessary actions.
