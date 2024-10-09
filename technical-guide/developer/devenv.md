@@ -6,7 +6,7 @@ title: 3.3. Dev environment
 
 ## System requirements
 
-You need to have `docker` and `docker-compose V2` installed on your system
+You need to have <code class="language-bash">docker</code> and <code class="language-bash">docker-compose V2</code> installed on your system
 in order to correctly set up the development environment.
 
 You can [look here][1] for complete instructions.
@@ -115,25 +115,25 @@ This process does not start automatically.
 ### Backend
 
 The backend related process is located in the tmux **window 3**, and
-you can go directly to it using `ctrl+b 3` shortcut.
+you can go directly to it using <code class="language-bash">ctrl+b 3</code> shortcut.
 
 By default the backend will be started in a non-interactive mode for convenience
-but you can press `Ctrl+c` to exit and execute the following to start the repl:
+but you can press <code class="language-bash">Ctrl+c</code> to exit and execute the following to start the repl:
 
 ```bash
 ./scripts/repl
 ```
 
 On the REPL you have these helper functions:
-- `(start)`: start all the environment
-- `(stop)`: stops the environment
-- `(restart)`: stops, reload and start again.
+- <code class="language-bash">(start)</code>: start all the environment
+- <code class="language-bash">(stop)</code>: stops the environment
+- <code class="language-bash">(restart)</code>: stops, reload and start again.
 
-And many other that are defined in the `dev/user.clj` file.
+And many other that are defined in the <code class="language-bash">dev/user.clj</code> file.
 
 If an exception is raised or an error occurs when code is reloaded, just use
-`(repl/refresh-all)` to finish loading the code correctly and then use
-`(restart)` again.
+<code class="language-bash">(repl/refresh-all)</code> to finish loading the code correctly and then use
+<code class="language-bash">(restart)</code> again.
 
 ## Email
 
