@@ -8,7 +8,7 @@ This app is in charge of CRUD of data, integrity validation and persistence
 into a database and also into a file system for media attachments.
 
 To handle deletions it uses a garbage collector mechanism: no object in the
-database is deleted instantly. Instead, a field `deleted_at` is set with the
+database is deleted instantly. Instead, a field <code class="language-bash">deleted_at</code> is set with the
 date and time of the deletion, and every query ignores db rows that have this
 field set. Then, an async task that runs periodically, locates rows whose
 deletion date is older than a given threshold and permanently deletes them.
@@ -20,7 +20,7 @@ and detecting unused media attachment, for removing them from the file storage.
 
 ## Backend structure
 
-Penpot backend app code resides under `backend/src/app` path in the main repository.
+Penpot backend app code resides under <code class="language-text">backend/src/app</code> path in the main repository.
 
 @startuml BackendGeneral
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
@@ -73,34 +73,34 @@ Rel(backend_app, redis, "Notifies", "pub/sub")
       ...
 ```
 
-* `main.clj` defines the app global settings and the main entry point of the
+* <code class="language-text">main.clj</code> defines the app global settings and the main entry point of the
   application, served by a JVM.
-* `config.clj` defines of the configuration options read from linux
+* <code class="language-text">config.clj</code> defines of the configuration options read from linux
   environment.
-* `http` contains the HTTP server and the backend routes list.
-* `migrations` contains the SQL scripts that define the database schema, in
+* <code class="language-text">http</code> contains the HTTP server and the backend routes list.
+* <code class="language-text">migrations</code> contains the SQL scripts that define the database schema, in
   the form of a sequence of migrations.
-* `rpc` is the main module to handle the RPC API calls.
-* `notifications.clj` is the main module that manages the websocket. It allows
+* <code class="language-text">rpc</code> is the main module to handle the RPC API calls.
+* <code class="language-text">notifications.clj</code> is the main module that manages the websocket. It allows
   clients to subscribe to open files, intercepts update RPC calls and notify
   them to all subscribers of the file.
-* `setup` initializes the environment (loads config variables, sets up the
+* <code class="language-text">setup</code> initializes the environment (loads config variables, sets up the
   database, executes migrations, loads initial data, etc).
-* `srepl` sets up an interactive REPL shell, with some useful commands to be
+* <code class="language-text">srepl</code> sets up an interactive REPL shell, with some useful commands to be
   used to debug a running instance.
-* `cli` sets a command-line interface, with some more maintenance commands.
-* `metrics.clj` has some interceptors that watches RPC calls, calculate
+* <code class="language-text">cli</code> sets a command-line interface, with some more maintenance commands.
+* <code class="language-text">metrics.clj</code> has some interceptors that watches RPC calls, calculate
   statistics and other metrics, and send them to external systems to store and
   analyze.
-* `worker.clj` and `tasks` define some async tasks that are executed in
+* <code class="language-text">worker.clj</code> and <code class="language-text">tasks</code> define some async tasks that are executed in
   parallel to the main http server (using java threads), and scheduled in a
   cron-like table. They are useful to do some garbage collection, data packing
   and similar periodic maintenance tasks.
-* `db.clj`, `emails.clj`, `media.clj`, `msgbus.clj`, `storage.clj`,
-  `rlimits.clj` are general libraries to use I/O resources (SQL database,
+* <code class="language-text">db.clj</code>, <code class="language-text">emails.clj</code>, <code class="language-text">media.clj</code>, <code class="language-text">msgbus.clj</code>, <code class="language-text">storage.clj</code>,
+  <code class="language-text">rlimits.clj</code> are general libraries to use I/O resources (SQL database,
   send emails, handle multimedia objects, use REDIS messages, external file
   storage and semaphores).
-* `util/` has a collection of generic utility functions.
+* <code class="language-text">util/</code> has a collection of generic utility functions.
 
 ### RPC calls
 
@@ -109,16 +109,16 @@ to expose clojure functions as an HTTP endpoint. We take advantage of being
 using Clojure at both front and back ends, to avoid needing complex data
 conversions.
 
-  1. Frontend initiates a "query" or "mutation" call to `:xxx` method, and
+  1. Frontend initiates a "query" or "mutation" call to <code class="language-text">:xxx</code> method, and
      passes a Clojure object as params.
   2. Params are string-encoded using
      [transit](https://github.com/cognitect/transit-clj), a format similar to
      JSON but more powerful.
-  3. The call is mapped to `<backend-host>/api/rpc/query/xxx` or
-     `<backend-host>/api/rpc/mutation/xxx`.
-  4. The `rpc` module receives the call, decode the parameters and executes the
-     corresponding method inside `src/app/rpc/queries/` or `src/app/rpc/mutations/`.
-     We have created a `defmethod` macro to declare an RPC method and its
+  3. The call is mapped to <code class="language-text"><backend-host>/api/rpc/query/xxx</code> or
+     <code class="language-text"><backend-host>/api/rpc/mutation/xxx</code>.
+  4. The <code class="language-text">rpc</code> module receives the call, decode the parameters and executes the
+     corresponding method inside <code class="language-text">src/app/rpc/queries/</code> or <code class="language-text">src/app/rpc/mutations/</code>.
+     We have created a <code class="language-text">defmethod</code> macro to declare an RPC method and its
      parameter specs.
   5. The result value is also transit-encoded and returned to the frontend.
 

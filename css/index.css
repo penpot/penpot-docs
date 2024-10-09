@@ -91,6 +91,10 @@ a[href]:visited {
   /* color: var(--primarydark); */
 }
 
+/* href with code in the text */
+:not(pre) > a > code[class*="language-"] {
+  text-decoration: underline;
+}
 
 main {
   padding: 1rem;

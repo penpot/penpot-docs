@@ -21,7 +21,7 @@ time.
 
 ## Frontend structure
 
-Penpot frontend app code resides under `frontend/src/app` path in the main repository.
+Penpot frontend app code resides under <code class="language-text">frontend/src/app</code> path in the main repository.
 
 @startuml FrontendGeneral
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
@@ -41,7 +41,7 @@ BiRel_L(frontend_app, worker, "Works with")
 
 @enduml
 
-```
+```text
   ▾ frontend/src/app/
     ▸ main/
     ▸ util/
@@ -50,12 +50,12 @@ BiRel_L(frontend_app, worker, "Works with")
       worker.cljs
 ```
 
-* `main.cljs` and `main/` contain the main frontend app, written in
+* <code class="language-text">main.cljs</code> and <code class="language-text">main/</code> contain the main frontend app, written in
   ClojureScript language and using React framework, wrapped in [rumext
   library](https://github.com/funcool/rumext).
-* `worker.cljs` and `worker/` contain the web worker, to make expensive
+* <code class="language-text">worker.cljs</code> and <code class="language-text">worker/</code> contain the web worker, to make expensive
   calculations in background.
-* `util/` contains many generic utilities, non dependant on the user
+* <code class="language-text">util/</code> contains many generic utilities, non dependant on the user
   interface.
 
 @startuml FrontendMain
@@ -252,7 +252,7 @@ Rel(impl, selection, "Uses")
 
 * **impl** has a simple method to update all indexes in a page at once.
 
-* **import** has a method to import a whole file from an external `.penpot` archive.
+* **import** has a method to import a whole file from an external <code class="language-text">.penpot</code> archive.
 
-* **export** has a method to export a whole file to an external `.penpot` archive.
+* **export** has a method to export a whole file to an external <code class="language-text">.penpot</code> archive.
 

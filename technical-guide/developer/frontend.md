@@ -19,7 +19,7 @@ To trace and debug the execution of the code, one method is to enable the log
 traces that currently are in the code using the [Logging
 framework](/technical-guide/developer/common/#system-logging). You can edit a
 module and set a lower log level, to see more traces in console. Search for
-this kind of line and change to `:info` or `:debug`:
+this kind of line and change to <code class="language-clojure">:info</code> or <code class="language-clojure">:debug</code>:
 
 ```clojure
 (ns some.ns
@@ -40,7 +40,7 @@ Of course, you have the traditional way of inserting temporary traces inside
 the code to output data to the devtools console. There are several ways of
 doing this.
 
-#### Use clojurescript helper `prn`
+#### Use clojurescript helper <code class="language-clojure">prn</code>
 
 This helper automatically formats the clojure and js data structures as plain
 [EDN](https://clojuredocs.org/clojure.edn) for visual inspection and to know
@@ -52,13 +52,13 @@ the exact type of the data.
 
 ![prn example](/img/traces1.png)
 
-#### Use `pprint` function
+#### Use <code class="language-clojure">pprint</code> function
 
 We have set up a wrapper over [fipp](https://github.com/brandonbloom/fipp)
-`pprint` function, that gives a human-readable formatting to the data, useful
+<code class="language-clojure">pprint</code> function, that gives a human-readable formatting to the data, useful
 for easy understanding of larger data structures.
 
-The wrapper allows to easily specify `level`, `length` and `width` parameters,
+The wrapper allows to easily specify <code class="language-clojure">level</code>, <code class="language-clojure">length</code> and <code class="language-clojure">width</code> parameters,
 with reasonable defaults, to control the depth level of objects to print, the
 number of attributes to show and the display width.
 
@@ -75,7 +75,7 @@ number of attributes to show and the display width.
 
 #### Use the js native functions
 
-The `clj->js` function converts the clojure data structure into a javacript
+The <code class="language-clojure">clj->js</code> function converts the clojure data structure into a javacript
 object, interactively inspectable in the devtools.console.
 
 ```clojure
@@ -97,7 +97,7 @@ The Clojurescript environment generates source maps to trace your code step by
 step and inspect variable values. You may also insert breakpoints from the
 sources tab, like when you debug javascript code.
 
-One way of locating a source file is to output a trace with `(js/console.log)`
+One way of locating a source file is to output a trace with <code class="language-clojure">(js/console.log)</code>
 and then clicking in the source link that shows in the console at the right
 of the trace.
 
@@ -115,7 +115,7 @@ app.main.store.emit_BANG_(app.main.data.workspace.reset_zoom);
 
 ### Debug utility
 
-We have defined, at `src/debug.cljs`, a `debug` namespace with many functions
+We have defined, at <code class="language-clojure">src/debug.cljs</code>, a <code class="language-clojure">debug</code> namespace with many functions
 easily accesible from devtools console.
 
 #### Change log level
@@ -167,7 +167,7 @@ And a bunch of other utilities (see the file for more).
 Debugging a problem in the viewport algorithms for grouping and
 rotating is difficult. We have set a visual debug mode that displays
 some annotations on screen, to help understanding what's happening.
-This is also in the `debug` namespace.
+This is also in the <code class="language-clojure">debug</code> namespace.
 
 To activate it, open the javascript console and type:
 
@@ -175,8 +175,8 @@ To activate it, open the javascript console and type:
 debug.toggle_debug("option");
 ```
 
-Current options are `bounding-boxes`, `group`, `events` and
-`rotation-handler`.
+Current options are <code class="language-clojure">bounding-boxes</code>, <code class="language-clojure">group</code>, <code class="language-clojure">events</code> and
+<code class="language-clojure">rotation-handler</code>.
 
 You can also activate or deactivate all visual aids with
 
@@ -190,21 +190,21 @@ debug.debug_none();
 ### How it works
 
 All the translation strings of this application are stored in
-standard _gettext_ files in `frontend/translations/*.po`.
+standard _gettext_ files in <code class="language-bash">frontend/translations/*.po</code>.
 
 They have a self explanatory format that looks like this:
 
-```
+```bash
 #: src/app/main/ui/auth/register.cljs, src/app/main/ui/auth/login.cljs
 msgid "auth.create-demo-account"
 msgstr "Create demo account"
 ```
 
-The files are automatically bundled into the `index.html` file on
+The files are automatically bundled into the <code class="language-bash">index.html</code> file on
 compile time (in development and production). The bundled content is a
 simplified version of this data structure to avoid loading unnecesary
 data. The development environment has a watch process that detect
-changes on that file and recompiles the `index.html`.
+changes on that file and recompiles the <code class="language-bash">index.html</code>.
 
 **There are no hot reload for translations strings**, you just need to
 refresh the browser tab to refresh the translations in the running the
@@ -225,14 +225,14 @@ the others are managed in https://weblate.org.
 **When a new language is available in weblate**, to enable it in the application
 you need to add it in two places:
 
-```
+```bash
 frontend/src/app/util/i18n.cljs (supported-locales)
 frontend/gulpfile.js (const langs)
 ```
 
 ### How to use it
 
-You need to use the `app.util.i18n/tr` function for lookup translation
+You need to use the <code class="language-bash">app.util.i18n/tr</code> function for lookup translation
 strings:
 
 ```clojure
@@ -242,10 +242,10 @@ strings:
 ;; => "Create demo account"
 ```
 
-If you want to insert a variable into a translated text, use `%s` as
-placeholder, and then pass the variable value to the `(tr ...)` call.:
+If you want to insert a variable into a translated text, use <code class="language-clojure">%s</code> as
+placeholder, and then pass the variable value to the <code class="language-clojure">(tr ...)</code> call.:
 
-```
+```bash
 #: src/app/main/ui/settings/change_email.cljs
 msgid "notifications.validation-email-sent"
 msgstr "Verification email sent to %s. Check your email!"
@@ -262,7 +262,7 @@ If you have defined plurals for some translation resource, then you
 need to pass an additional parameter marked as counter in order to
 allow the system know when to show the plural:
 
-```
+```bash
 #: src/app/main/ui/dashboard/team.cljs
 msgid "labels.num-of-projects"
 msgid_plural "labels.num-of-projects"
@@ -308,7 +308,7 @@ Ensure your development environment docker image is up to date.
 
 Here's how to run the tests with a headless browser (i.e. within the terminal, no UI):
 
-1. With the developer environment tmux session opened, create a new tab with `Ctrl + b c`.
+1. With the developer environment tmux session opened, create a new tab with <code class="language-bash">Ctrl + b c</code>.
 
 2. Go to the frontend folder:
 
@@ -316,13 +316,13 @@ Here's how to run the tests with a headless browser (i.e. within the terminal, n
 cd penpot/frontend
 ```
 
-3. Run the tests with `yarn`:
+3. Run the tests with <code class="language-bash">yarn</code>:
 
 ```bash
 yarn e2e:test
 ```
 
-> 💡 **TIP:** By default, the tests will _not_ run in parallel. You can set the amount of workers to run the tests with `--workers`. Note that, depending on your machine, this might make some tests flaky.
+> 💡 **TIP:** By default, the tests will _not_ run in parallel. You can set the amount of workers to run the tests with <code class="language-bash">--workers</code>. Note that, depending on your machine, this might make some tests flaky.
 
 ```bash
 # run in parallel with 4 workers
@@ -333,16 +333,16 @@ yarn e2e:test --workers 4
 
 To access the testing UI and run the tests in a real browser, follow these steps:
 
-1. In a terminal _in your host machine_, navigate to the `frontend` folder, then run:
+1. In a terminal _in your host machine_, navigate to the <code class="language-bash">frontend</code> folder, then run:
 
 ```bash
 # cd <repo>/frontend
 npx playwright test --ui
 ```
 
-> ⚠️ **WARNING:** It is important to be in the right folder (`frontend`) to launch the command above, or you may have errors trying to run the tests.
+> ⚠️ **WARNING:** It is important to be in the right folder (<code class="language-bash">frontend</code>) to launch the command above, or you may have errors trying to run the tests.
 
-> ❗️ **IMPORTANT**: You might need to [install Playwright's browsers and dependencies](https://playwright.dev/docs/intro) in your host machine with: `npx playwright install --with-deps`. In case you are using a Linux distribution other than Ubuntu, [you might need to install the dependencies manually](https://github.com/microsoft/playwright/issues/11122).
+> ❗️ **IMPORTANT**: You might need to [install Playwright's browsers and dependencies](https://playwright.dev/docs/intro) in your host machine with: <code class="language-bash">npx playwright install --with-deps</code>. In case you are using a Linux distribution other than Ubuntu, [you might need to install the dependencies manually](https://github.com/microsoft/playwright/issues/11122).
 
 ### How to write a test
 
@@ -362,7 +362,7 @@ When writing a significant number of tests, encountering repetitive code and com
 
 POMs do not necessarily refer to entire pages but can also represent specific regions of a page that are the focus of our tests. For example, we may have a POM for the login form, or the projects section.
 
-In a POM, we can define locators in the constructor itself — remember that locators will be accessed when interacted with (with a `click()`, for instance) or when asserting expectations.
+In a POM, we can define locators in the constructor itself — remember that locators will be accessed when interacted with (with a <code class="language-js">click()</code>, for instance) or when asserting expectations.
 
 ```js
 class LoginPage {
@@ -434,13 +434,13 @@ test("User submits a wrong formatted email", async ({ page }) => {
 
 In the penpot repository there are some POMs that are meant to be extended by more specific pages. These include methods that should be useful when you write your own POMs.
 
-- `BasePage` contains methods to intercept network requests and return JSON data fixtures.
+- <code class="language-bash">BasePage</code> contains methods to intercept network requests and return JSON data fixtures.
 
-- `BaseWebSocketPage` also can intercept websocket connections, which are a must for tests in the workspace, or any other Penpot page that uses a WebSocket.
+- <code class="language-bash">BaseWebSocketPage</code> also can intercept websocket connections, which are a must for tests in the workspace, or any other Penpot page that uses a WebSocket.
 
 ##### API calls
 
-In order to mock API calls we just need to extend from the `BasePage` POM and then call its method `mockRPC`:
+In order to mock API calls we just need to extend from the <code class="language-bash">BasePage</code> POM and then call its method <code class="language-bash">mockRPC</code>:
 
 ```js
 export class FooPage extends BasePage {
@@ -461,11 +461,11 @@ export class FooPage extends BasePage {
 }
 ```
 
-> ❗️ **IMPORTANT:** The `mockRPC` method is meant to intercept calls to Penpot's RPC API, and already prefixes the path you provide with `/api/rpc/command/`. So, if you need to intercept `/api/rpc/command/get-profile` you would just need to call `mockRPC("get-profile", "json-data.json")`.
+> ❗️ **IMPORTANT:** The <code class="language-bash">mockRPC</code> method is meant to intercept calls to Penpot's RPC API, and already prefixes the path you provide with <code class="language-bash">/api/rpc/command/</code>. So, if you need to intercept <code class="language-bash">/api/rpc/command/get-profile</code> you would just need to call <code class="language-bash">mockRPC("get-profile", "json-data.json")</code>.
 
 ##### WebSockets
 
-Any Penpot page that uses a WebSocket requires it to be intercepted and mocked. To do that, you can extend from the POM `BaseWebSocketPage` _and_ call its `initWebSockets()` methods before each test.
+Any Penpot page that uses a WebSocket requires it to be intercepted and mocked. To do that, you can extend from the POM <code class="language-bash">BaseWebSocketPage</code> _and_ call its <code class="language-bash">initWebSockets()</code> methods before each test.
 
 Here's an an actual example from the Penpot repository:
 
@@ -486,9 +486,9 @@ test.beforeEach(async ({ page }) => {
 });
 ```
 
-`BaseWebSocketPage` also includes methods to wait for a specific WebSocket connection and to fake sending/receiving messages.
+<code class="language-bash">BaseWebSocketPage</code> also includes methods to wait for a specific WebSocket connection and to fake sending/receiving messages.
 
-When testing the workspace, you will want to wait for the `/ws/notifications` WebSocket. There's a convenience method, `waitForNotificationsWebSocket` to do that:
+When testing the workspace, you will want to wait for the <code class="language-bash">/ws/notifications</code> WebSocket. There's a convenience method, <code class="language-bash">waitForNotificationsWebSocket</code> to do that:
 
 ```js
 // frontend/playwright/ui/pages/WorkspacePage.js
@@ -544,23 +544,23 @@ Locator queries are the methods to find DOM elements in the page. Your test shou
 
 1. **Queries accessible to everyone**: Queries that simulate the experience of visual users or use assistive technologies.
 
-- [`page.getByRole`](https://playwright.dev/docs/locators#locate-by-role): To locate exposed elements in the [accessibility tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree).
+- [<code class="language-js">page.getByRole</code>](https://playwright.dev/docs/locators#locate-by-role): To locate exposed elements in the [accessibility tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree).
 
-- [`page.getByLabel`](https://playwright.dev/docs/locators#locate-by-label): For querying form fields.
+- [<code class="language-js">page.getByLabel</code>](https://playwright.dev/docs/locators#locate-by-label): For querying form fields.
 
-- [`page.getByPlaceholder`](https://playwright.dev/docs/locators#locate-by-placeholder): For when the placeholder text is more relevant than the label (or the label does not exist).
+- [<code class="language-js">page.getByPlaceholder</code>](https://playwright.dev/docs/locators#locate-by-placeholder): For when the placeholder text is more relevant than the label (or the label does not exist).
 
-- [`page.getByText`](https://playwright.dev/docs/locators#locate-by-text): For the non-form elements that also do not have a role in the accesibility tree, but have a distintive text.
+- [<code class="language-js">page.getByText</code>](https://playwright.dev/docs/locators#locate-by-text): For the non-form elements that also do not have a role in the accesibility tree, but have a distintive text.
 
 2. **Semantic queries**: Less preferable than the above, since the user experience when interacting with these attributes may differ significantly depending on the browser and assistive technology being used.
 
-- [`page.byAltText`](https://playwright.dev/docs/locators#locate-by-alt-text): For elements that support `alt` text (`<img>`, `<area>`, a custom element, etc.).
+- [<code class="language-js">page.byAltText</code>](https://playwright.dev/docs/locators#locate-by-alt-text): For elements that support <code class="language-js">alt</code> text (<code class="language-js">\<img></code>, <code class="language-js">\<area></code>, a custom element, etc.).
 
-- [`page.byTitle`](https://playwright.dev/docs/locators#locate-by-title): For elements with a `title`.
+- [<code class="language-js">page.byTitle</code>](https://playwright.dev/docs/locators#locate-by-title): For elements with a <code class="language-html">title</code>.
 
-3. **Test IDs**: If none of the queries above are feasible, we can locate by the `data-testid` attribute. This locator is the least preffered since it's not user-interaction oriented.
+3. **Test IDs**: If none of the queries above are feasible, we can locate by the <code class="language-html">data-testid</code> attribute. This locator is the least preffered since it's not user-interaction oriented.
 
-- [`page.getByTestId`](https://playwright.dev/docs/locators#locate-by-test-id): For elements with a `data-testid` attribute.
+- [<code class="language-js">page.getByTestId</code>](https://playwright.dev/docs/locators#locate-by-test-id): For elements with a <code class="language-html">data-testid</code> attribute.
 
 #### A practical example for using locator queries.
 
@@ -606,7 +606,7 @@ Having examined the accessibility tree, we identify that the button can be locat
 page.getByRole("button", { name: "Login" });
 ```
 
-For selecting the `<input>` within the form, we opt for `getByLabel`, as it is the recommended method for locating form inputs:
+For selecting the <code class="language-js">\<input></code> within the form, we opt for <code class="language-js">getByLabel</code>, as it is the recommended method for locating form inputs:
 
 ![Password input](/img/locate_by_label.webp)
 
@@ -614,17 +614,17 @@ For selecting the `<input>` within the form, we opt for `getByLabel`, as it is t
 page.getByLabel("Password");
 ```
 
-If we need to locate a text with no specific role, we can use the `getByText` method:
+If we need to locate a text with no specific role, we can use the <code class="language-js">getByText</code> method:
 
 ```js
 page.getByText("Penpot is the free open-");
 ```
 
-To locate the rest of the elements we continue exploring the list of queries according to the order of priority. If none of the above options match the item, we resort to `getByTestId` as a last resort.
+To locate the rest of the elements we continue exploring the list of queries according to the order of priority. If none of the above options match the item, we resort to <code class="language-js">getByTestId</code> as a last resort.
 
 #### Assertions
 
-Assertions use Playwright's `expect` method. Here are some tips for writing your assertions:
+Assertions use Playwright's <code class="language-js">expect</code> method. Here are some tips for writing your assertions:
 
 - **Keep assertions clear and concise:** Each assertion should verify a single expected behavior or outcome. Avoid combining multiple assertions into a single line, to maintain clarity and readability.
 
@@ -634,14 +634,14 @@ Assertions use Playwright's `expect` method. Here are some tips for writing your
 
 - **Cover the error state of a page**: Verify that the application handles errors gracefully by asserting the presence of error messages. We do not have to cover all error cases, that will be taken care of by the unit tests.
 
-- **Prefer positive assertions:** Avoid using `.not` in your assertions (i.e. `expect(false).not.toBeTruthy()`) —it helps with readability.
+- **Prefer positive assertions:** Avoid using <code class="language-js">.not</code> in your assertions (i.e. <code class="language-js">expect(false).not.toBeTruthy()</code>) —it helps with readability.
 
 #### Naming tests
 
-- **User-centric approach:** Tests should be named from the perspective of user actions. For instance, `"User logs in successfully"` instead of `"Test login"`.
+- **User-centric approach:** Tests should be named from the perspective of user actions. For instance, <code class="language-js">"User logs in successfully"</code> instead of <code class="language-js">"Test login"</code>.
 
 - **Descriptive names:** Test names should be descriptive, clearly indicating the action being tested.
 
 - **Clarity and conciseness:** Keep test names clear and concise.
 
-- **Use action verbs:** Start test names with action verbs to denote the action being tested. Example: `"Adds a new file to the project"`.
+- **Use action verbs:** Start test names with action verbs to denote the action being tested. Example: <code class="language-js">"Adds a new file to the project"</code>.

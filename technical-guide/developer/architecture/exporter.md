@@ -15,7 +15,7 @@ it to a file that the user can download.
 
 ## Exporter structure
 
-Penpot exporter app code resides under `exporter/src/app` path in the main repository.
+Penpot exporter app code resides under <code class="language-text">exporter/src/app</code> path in the main repository.
 
 @startuml Exporter
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
@@ -39,7 +39,7 @@ Rel_U(browser, frontend_app, "Uses", "HTTPS")
 
 @enduml
 
-```
+```text
   ▾ exporter/src/app/
     ▸ http/
     ▸ renderer/
