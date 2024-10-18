@@ -16,7 +16,7 @@ title: 10· Plugins
 </ul>
 
 <h3 id="installation">How to install Plugins</h3>
-<p>You can install plugins by writing the desired Plugin's URL and clicking on <strong>Install</strong>. You can find all available Plugins at the <a href="https://penpot-docs-plugins.pages.dev/plugins/getting-started/#examples">Plugin Marketplace</a>.</p>
+<p>You can find all available Plugins at the <a href="https://penpot-docs-plugins.pages.dev/plugins/getting-started/#examples">Plugin Marketplace</a>. You can install plugins directly from the Plugin Markeptlace by clicking on <strong>Install</strong> next to the desired plugin. </p>
 
 <p>Please note that you'll need to grant access to your files. Plugins may be created by external parties, so ensure you trust it before granting access. Your data privacy and security are important to us. If you have any concerns, please contact <a href="mailto:support@penpot.app">support</a>.</p>
 
