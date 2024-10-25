@@ -32,12 +32,6 @@ Nice to have:
 
 ## 1.3. Installation
 
-### Step 1. Penpot
-
-For testing purposes we have enabled the plugins system in <a target="_blank" href="https://early.penpot.dev">https://early.penpot.dev</a>. Just keep in mind that this is a demo service.
-
-### Step 2. Installation
-
 With the plugins system enabled, you need to go to any project to open the plugin manager.
 
 You can open the plugin manager in any project via:
