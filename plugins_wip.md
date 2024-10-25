@@ -7,23 +7,43 @@ title: 10· Plugins
 <h2 id="plugins">Plugins</h2>
 <p class="main-paragraph">Plugins are the perfect tool to extend Penpot's functionalities. You can install available plugins or create one that fits your needs!</p>
 
-<h3 id="plugin-manager">Plugin Manager</h3>
+<h2 id="installation">How to install Plugins</h2>
+<h3 id="hub-installation">From PenpotHub</h2>
+
+<p>You can find available Plugins at the <a href="https://penpot-docs-plugins.pages.dev/plugins/getting-started/#examples">Penpot Hub</a> and install plugins directly from the Plugins page by clicking on <strong>Install</strong> next to the desired plugin.</p>
+
+<img>00_PenpotHub_plugins</img>
+
+<h3 id="url-installation">With a URL</h3>
+<p>Another way to install a plugin is by copying the URL (with .json extension) provided by the plugin’s author and pasting it on to the Plugin Manager.</p>
+
+<img>02_install_url</img>
+
+<p class="advice">Please note that you'll need to grant access to your files. Plugins may be created by external parties, so ensure you trust it before granting access. Your data privacy and security are important to us. If you have any concerns, please contact <a href="mailto:support@penpot.app">support</a>.</p>
+<p class="advice">If a plugin is later updated by the author and requires new permissions, we will notify you so that you can update it.</p>
+
+<img>01_Oauth_permissions</img>
+
+<p>Once a plugin has been installed you can access it on your files, as long as you have permissions to access it, in any of your teams. If another member of your team wants to use the plugin, they will need to install it individually.</p>
+
+<h2 id="plugin-manager">Plugin Manager</h2>
 <p class="main-paragraph">To start using Plugins you first need to open the Plugin Manager. There are a few different ways to access the Plugins Manager in the Worskpace:</p>
 <ul>
   <li>From the toolbar;</li>
   <li>From the menu;</li>
-  <li>Using the shortcut Ctrl + Alt + P.</li>
+  <li>Using the shortcut <strong>Ctrl + Alt + P</strong>.</li>
 </ul>
 
-<h3 id="installation">How to install Plugins</h3>
-<p>You can find all available Plugins at the <a href="https://penpot-docs-plugins.pages.dev/plugins/getting-started/#examples">Plugin Marketplace</a>. You can install plugins directly from the Plugin Markeptlace by clicking on <strong>Install</strong> next to the desired plugin. </p>
+<h3>Toolbar</h3>
+<img>03_toolbar_plugins</img>
 
-<p>Please note that you'll need to grant access to your files. Plugins may be created by external parties, so ensure you trust it before granting access. Your data privacy and security are important to us. If you have any concerns, please contact <a href="mailto:support@penpot.app">support</a>.</p>
+<h3>Menu</h3>
+<img>04_menu_plugins</img>
 
-<p>Once a plugin has been installed, you'll be able to see it at the Plugin Manager under <strong>Installed Plugins</strong></a>.</p>
+<h2 id="using-plugins">Using plugins</h2>
+<p>To use a plugin, go to the Plugin Manager, and click on <strong>Open</strong> next to the desired plugin, and that’s it, enjoy!</p>
 
-<h3 id="using-plugins">Using Plugins</h3>
-<p>To use a plugin, go to the Plugin Manager and click on <strong>Open<strong> next to the desired plugin.</p>
+<img>05_plugin_manager</img>
 
 <h2 id="create-plugin">Create a Plugin</h2>
 <p>You can create your own plugin from scratch or use a Template to get started. You can find the complete guide to creating Plugins at the <a href="https://penpot-docs-plugins.pages.dev/plugins/create-a-plugin/">Technical Guide</a>.</p>
