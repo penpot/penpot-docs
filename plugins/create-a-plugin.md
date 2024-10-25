@@ -134,7 +134,7 @@ For more detailed information, refer to the [Penpot Plugins API Documentation](h
 
 <div class="advice">
 <p>This step is only for local serving.
-For a detailed guide about building and deploying you can check the documentation at <a target="_blank" href="/technical-guide/plugins/deployment/">Deployment</a> </p>
+For a detailed guide about building and deploying you can check the documentation at <a target="_blank" href="/plugins/deployment/">Deployment</a> </p>
 <p>You can skip this step if working exclusively with JavaScript by simply moving <code class="language-text">plugin.js</code> to your <code class="language-text">public/</code> directory.</p>
 </div>
 
@@ -254,7 +254,7 @@ _Note: Write permissions automatically includes its corresponding read permissio
 
 <p class="advice"><b>Serving an application:</b> This refers to making your application accessible over a network, typically for testing or development purposes. <br><br>When using a tool like <a href="https://www.npmjs.com/package/live-server" target="_blank">live-server</a>, a local web server is created on your machine, which serves your application files over HTTP. Most modern frameworks offer their own methods for serving applications, and there are build tools like Vite and Webpack that can handle this process as well. </p>
 
-**You don't need to deploy your plugin just to test it**. Locally serving your plugin is compatible with <code class="language-js">https:\/\/early.penpot.dev/</code>. However, be mindful of potential CORS (Cross-Origin Resource Sharing) issues. To avoid these, ensure your plugin includes the appropriate cross-origin headers. (Find more info about this at the <a target="_blank" href="/technical-guide/plugins/deployment/">Deployment step</a>)
+**You don't need to deploy your plugin just to test it**. Locally serving your plugin is compatible with <code class="language-js">https:\/\/penpot.app/</code>. However, be mindful of potential CORS (Cross-Origin Resource Sharing) issues. To avoid these, ensure your plugin includes the appropriate cross-origin headers. (Find more info about this at the <a target="_blank" href="/plugins/deployment/">Deployment step</a>)
 
 Serving your plugin will generate a URL that looks something like <code class="language-js">http:\/\/localhost:XXXX</code>, where <code class="language-js">XXXX</code> represents the port number on which the plugin is served. Ensure that both <code class="language-js">http:\/\/localhost:XXXX/manifest.json</code> and <code class="language-js">http:\/\/localhost:XXXX/plugin.js</code> are accessible. If these files are inside a specific folder, the URL should be adjusted accordingly (e.g., <code class="language-js">http:\/\/localhost:XXXX/folder/manifest.json</code>).
 
