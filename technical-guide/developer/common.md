@@ -11,7 +11,7 @@ exporter) such as: code style hints, architecture decisions, etc...
 ## Configuration
 
 Both in the backend, the frontend and the exporter subsystems, there are an
-`app.config` namespace that defines the global configuration variables,
+<code class="language-text">app.config</code> namespace that defines the global configuration variables,
 their specs and the default values.
 
 All variables have a conservative default, meaning that you can set up a Penpot
@@ -20,10 +20,10 @@ and useful.
 
 In backend and exporter, to change the runtime values you need to set them in
 the process environment, following the rule that an environment variable in the
-form `PENPOT_<VARIABLE_NAME_IN_UPPERCASE>` correspond to a configuration
-variable named `variable-name-in-lowercase`. Example:
+form <code class="language-bash">PENPOT_<VARIABLE_NAME_IN_UPPERCASE></code> correspond to a configuration
+variable named <code class="language-bash">variable-name-in-lowercase</code>. Example:
 
-```
+```bash
 (env)
 PENPOT_ASSETS_STORAGE_BACKEND=assets-s3
 
@@ -31,13 +31,13 @@ PENPOT_ASSETS_STORAGE_BACKEND=assets-s3
 assets-storage-backend :assets-s3
 ```
 
-In frontend, the main `resources/public/index.html` file includes (if it
-exists) a file named `js/config.js`, where you can set configuration values
+In frontend, the main <code class="language-text">resources/public/index.html</code> file includes (if it
+exists) a file named <code class="language-text">js/config.js</code>, where you can set configuration values
 as javascript global variables. The file is not created by default, so if
 you need it you must create it blank, and set the variables you want, in
-the form `penpot<VariableNameInCamelCase>`:
+the form <code class="language-bash">penpot\<VariableNameInCamelCase></code>:
 
-```
+```js
 (js/config.js)
 var penpotPublicURI = "https://penpot.example.com";
 
@@ -55,8 +55,8 @@ backend, exporter and frontend.
 
 For this last one, there is a script
 [nginx-entrypoint.sh](https://github.com/penpot/penpot/blob/develop/docker/images/files/nginx-entrypoint.sh)
-that reads the environment and generates the `js/config.js` when the container
-is started. This way all configuration is made in the single `config.env` file.
+that reads the environment and generates the <code class="language-text">js/config.js</code> when the container
+is started. This way all configuration is made in the single <code class="language-text">config.env</code> file.
 
 
 ### Dev environment
@@ -73,11 +73,11 @@ some more variables.
 The frontend uses only the defaults.
 
 If you want to change any variable for your local environment, you can change
-`docker-compose.yaml` and shut down and start again the container. Or you can
+<code class="language-text">docker-compose.yaml</code> and shut down and start again the container. Or you can
 modify the start script or directly set the environment variable in your
 session, and restart backend or exporter processes.
 
-For frontend, you can manually create `resources/public/js/config.js` (it's
+For frontend, you can manually create <code class="language-text">resources/public/js/config.js</code> (it's
 ignored in git) and define your settings there. Then, just reload the page.
 
 ## System logging
@@ -86,8 +86,8 @@ In [app.common.logging](https://github.com/penpot/penpot/blob/develop/common/src
 we have a general system logging utility, that may be used throughout all our
 code to generate execution traces, mainly for debugging.
 
-You can add a trace anywhere, specifying the log level (`trace`, `debug`,
-`info`, `warn`, `error`) and any number of key-values:
+You can add a trace anywhere, specifying the log level (<code class="language-text">trace</code>, <code class="language-text">debug</code>,
+<code class="language-text">info</code>, <code class="language-text">warn</code>, <code class="language-text">error</code>) and any number of key-values:
 
 ```clojure
 (ns app.main.data.workspace.libraries-helpers
@@ -106,22 +106,22 @@ You can add a trace anywhere, specifying the log level (`trace`, `debug`,
 ```
 
 The current namespace is tracked within the log message, and you can configure
-at runtime, by namespace, the log level (by default `:warn`). Any trace below
+at runtime, by namespace, the log level (by default <code class="language-clojure">:warn</code>). Any trace below
 this level will be ignored.
 
 Some keys have a special meaning:
- * `:msg` is the main trace message.
- * `::log/raw` outputs the value without any processing or prettifying.
- * `::log/context` append metadata to the trace (not printed, it's to be
+ * <code class="language-clojure">:msg</code> is the main trace message.
+ * <code class="language-clojure">::log/raw</code> outputs the value without any processing or prettifying.
+ * <code class="language-clojure">::log/context</code> append metadata to the trace (not printed, it's to be
    processed by other tools).
- * `::log/cause` (only in backend) attach a java exception object that will
+ * <code class="language-clojure">::log/cause</code> (only in backend) attach a java exception object that will
    be printed in a readable way with the stack trace.
- * `::log/async` (only in backend) if set to false, makes the log processing
+ * <code class="language-clojure">::log/async</code> (only in backend) if set to false, makes the log processing
    synchronous. If true (the default), it's executed in a separate thread.
- * `:js/<key>` (only in frontend) if you prefix the key with the `js/`
+ * <code class="language-clojure">:js/\<key></code> (only in frontend) if you prefix the key with the <code class="language-text">js/</code>
    namespace, the value will be printed as a javascript interactively
    inspectionable object.
- * `:err` (only in frontend) attach a javascript exception object, and it
+ * <code class="language-clojure">:err</code> (only in frontend) attach a javascript exception object, and it
    will be printed in a readable way with the stack trace.
 
 ### backend
@@ -133,26 +133,26 @@ much flexibility.
 The configuration is made in [log4j2.xml](https://github.com/penpot/penpot/blob/develop/backend/resources/log4j2.xml)
 file. The Logger used for this is named "app" (there are other loggers for
 other subsystems). The default configuration just outputs all traces of level
-`debug` or higher to the console standard output.
+<code class="language-clojure">debug</code> or higher to the console standard output.
 
 There is a different [log4j2-devenv](https://github.com/penpot/penpot/blob/develop/backend/resources/log4j2-devenv.xml)
-for the development environment. This one outputs traces of level `trace` or
-higher to a file, and `debug` or higher to a `zmq` queue, that may be
+for the development environment. This one outputs traces of level <code class="language-text">trace</code> or
+higher to a file, and <code class="language-text">debug</code> or higher to a <code class="language-text">zmq</code> queue, that may be
 subscribed for other parts of the application for further processing.
 
-The ouput for a trace in `logs/main.log` uses the format
+The ouput for a trace in <code class="language-text">logs/main.log</code> uses the format
 
-```
+```bash
 [<date time>] : <level> <namespace> - <key1=val1> <key2=val2> ...
 ```
 
 Example:
 
-```
-[2022-04-27 06:59:08.820] T app.rpc - action="register", name="update-file" 
+```bash
+[2022-04-27 06:59:08.820] T app.rpc - action="register", name="update-file"
 ```
 
-The `zmq` queue is not used in the default on premise or devenv setups, but there
+The <code class="language-text">zmq</code> queue is not used in the default on premise or devenv setups, but there
 are a number of handlers you can use in custom instances to save errors in the
 database, or send them to a [Sentry](https://sentry.io/welcome/) or similar
 service, for example.
@@ -191,9 +191,9 @@ environment all asserts like this will be ignored by runtime.
 
 ### **spec/assert**
 
-Using the `app.common.spec/assert` macro.
+Using the <code class="language-text">app.common.spec/assert</code> macro.
 
-This macro is based in `cojure.spec.alpha/assert` macro, and it's
+This macro is based in <code class="language-text">cojure.spec.alpha/assert</code> macro, and it's
 also ignored in a production environment.
 
 The Penpot variant doesn't have any runtime checks to know if asserts
@@ -240,8 +240,8 @@ working to improve this.
 Unit tests are executed inside the [development environment](/technical-guide/developer/devenv).
 
 We can use [kaocha test runner](https://cljdoc.org/d/lambdaisland/kaocha/), and
-we have prepared, for convenience, some aliases in `deps.edn` files. To run
-them, just go to `backend`, `frontend` or `common` and execute:
+we have prepared, for convenience, some aliases in <code class="language-text">deps.edn</code> files. To run
+them, just go to <code class="language-text">backend</code>, <code class="language-text">frontend</code> or <code class="language-text">common</code> and execute:
 
 ```bash
 # To run all tests once
@@ -276,8 +276,8 @@ You can also mark tests in the code by adding metadata:
 Please refer to the [kaocha manual](https://cljdoc.org/d/lambdaisland/kaocha/1.91.1392/doc/6-focusing-and-skipping)
 for how to define custom metadata and other ways of selecting tests.
 
-**NOTE**: in `frontend` we still can't use kaocha to run the tests. We are on
-it, but for now we use shadow-cljs with `package.json` scripts:
+**NOTE**: in <code class="language-text">frontend</code> we still can't use kaocha to run the tests. We are on
+it, but for now we use shadow-cljs with <code class="language-text">package.json</code> scripts:
 
 ```bash
 yarn run test
@@ -287,8 +287,8 @@ yarn run test:watch
 #### Test output
 
 The default kaocha reporter outputs a summary for the test run. There is a pair
-of brackets `[ ]` for each suite, a pair of parentheses `( )` for each test,
-and a dot `.` for each assertion `t/is` inside tests.
+of brackets <code class="language-bash">[ ]</code> for each suite, a pair of parentheses <code class="language-bash">( )</code> for each test,
+and a dot <code class="language-bash">.</code> for each assertion <code class="language-bash">t/is</code> inside tests.
 
 ```bash
 penpot@c261c95d4623:~/penpot/common$ clojure -M:dev:test
@@ -341,10 +341,10 @@ An alternative way of running tests is to do it from inside the
 [REPL](/technical-guide/developer/backend/#repl) you can use in the backend and
 common apps in the development environment.
 
-We have a helper function `(run-tests)` that refreshes the environment (to avoid
+We have a helper function <code class="language-bash">(run-tests)</code> that refreshes the environment (to avoid
 having [stale tests](https://practical.li/clojure/testing/unit-testing/#command-line-test-runners))
-and runs all tests or a selection. It is defined in `backend/dev/user.clj` and
-`common/dev/user.clj`, so it's available without importing anything.
+and runs all tests or a selection. It is defined in <code class="language-bash">backend/dev/user.clj</code> and
+<code class="language-text">common/dev/user.clj</code>, so it's available without importing anything.
 
 First start a REPL:
 
@@ -383,7 +383,7 @@ specific configurations we need to test. For this, we have defined a namespace
 of helpers to easily create files and its elements with sample data.
 
 To make handling of uuids more convenient, those functions have a uuid
-registry. Whenever you create an object, you may give a `:label`, and the id of
+registry. Whenever you create an object, you may give a <code class="language-clojure">:label</code>, and the id of
 the object will be stored in the registry associated with this label, so you
 can easily recover it later.
 
@@ -391,7 +391,7 @@ You have functions to create files, pages and shapes, to connect them and
 specify their attributes, having all of them default values if not set.
 
 Files also store in metadata the **current page**, so you can control in what
-page the `add-` and `get-` functions will operate.
+page the <code class="language-clojure">add-</code> and <code class="language-clojure">get-</code> functions will operate.
 
 ```clojure
 (ns common-tests.sample-helpers-test

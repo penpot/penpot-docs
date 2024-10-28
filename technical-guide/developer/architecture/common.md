@@ -9,7 +9,7 @@ backend, to have a bunch of shared code.
 
 Sometimes, we use conditional compilation, for small chunks of code that
 are different in a Clojure+Java or ClojureScript+JS environments. We use
-the `#?` construct, like this, for example:
+the <code class="language-clojure">#?</code> construct, like this, for example:
 
 ```clojure
 (defn ordered-set?
@@ -18,7 +18,7 @@ the `#?` construct, like this, for example:
      :clj (instance? LinkedSet o)))
 ```
 
-```
+```text
   ▾ common/src/app/common/
     ▸ geom/
     ▸ pages/
@@ -70,7 +70,7 @@ The main ones are:
 * **data** basic data structures and utility functions that could be added to
   Clojure standard library.
 * **math** some mathematic functions that could also be standard.
-* **file_builder** functions to parse the content of a `.penpot` exported file
+* **file_builder** functions to parse the content of a <code class="language-text">.penpot</code> exported file
   and build a File data structure from it.
 * **logging** functions to generate traces for debugging and usage analysis.
 * **text** an adapter layer over the [DraftJS editor](https://draftjs.org) that
