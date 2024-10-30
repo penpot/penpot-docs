@@ -70,7 +70,7 @@ module.exports = function(eleventyConfig) {
       index.addDoc({
         id: page.url,
         title: page.template.frontMatter.data.title,
-        content: page.template.inputContent,
+        content: page.template.frontMatter.content,
       });
     });
 
