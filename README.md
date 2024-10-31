@@ -1,3 +1,6 @@
+> [!WARNING]
+> The content of this repository is outdated. Currently, the documentation is located in [the main penpot repository](https://github.com/penpot/penpot/tree/develop/docs) where it is up to date.
+
 # Penpot Docs
 
 Penpot documentation website.
